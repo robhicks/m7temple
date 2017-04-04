@@ -1,0 +1,17 @@
+node_modules
+.idea
+npm-debug.log
+.foreman
+.env*
+nodemon.json
+.sonar
+coverage
+reports
+tags
+.tags*
+build
+dist/
+/components/
+!/modules/components/
+rollup.build.css
+.git

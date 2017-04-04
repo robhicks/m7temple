@@ -1,0 +1,39 @@
+{
+  "name": "m7h",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "esnext-router": "https://github.com/robhicks/esnext-router",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "grant-express": "^3.7.1",
+    "gulp-intercept": "^0.1.0",
+    "gulp-rename": "^1.2.2",
+    "incremental-dom": "^0.5.1",
+    "socketcluster": "^5.9.1",
+    "socketcluster-client": "^5.3.0",
+    "webcomponents.js": "https://github.com/webcomponents/webcomponentsjs.git"
+  },
+  "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-latest": "^6.24.0",
+    "chai": "^3.5.0",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-hub": "fs-webdev/gulp-hub#registry-init",
+    "karma": "^0.13.22",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.3",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-less": "^0.1.3",
+    "rollup-plugin-node-resolve": "^2.1.1",
+    "rollup-plugin-stylus-import": "https://github.com/robhicks/rollup-plugin-stylus-import",
+    "rollup-watch": "^3.2.2",
+    "superviews.js": "^3.0.2"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "server": {
+    "protocol": "http",
+    "host": "dummy.com:3000",
+    "transport": "session",
+    "state": true
+  },
+  "familysearch": {
+
+  }
+}
