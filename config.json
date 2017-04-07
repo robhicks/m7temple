@@ -5,7 +5,9 @@
     "transport": "session",
     "state": true
   },
-  "familysearch": {
-
+  "google": {
+    "key": "706759234084-he9q1a5k36lrdv0tjmgt5vdehpponp95.apps.googleusercontent.com",
+    "secret": "dfwtv3CtpAMK9_Y8naCA9dwx",
+    "callback": "/oauth2callback"
   }
 }

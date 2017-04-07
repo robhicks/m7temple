@@ -1,0 +1,69 @@
+@import '../css/variables.less';
+
+@marging-v: 2vh;
+@marging-h: 2vw;
+
+
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 98%;
+}
+
+section#search {
+  display: flex;
+  margin: @marging-h @marging-v 0;
+  height: 36px;
+  input {
+    flex-grow: 1;
+    width: inherit;
+    height: 36px;
+    font-size: 1em;
+    padding-left: @marging-h
+  }
+}
+
+section#skills {
+  display: flex;
+  flex-direction: column;
+  flex: 6;
+  margin: @marging-h @marging-v 0;
+  background-color: @site-background;
+  padding: @marging-h @marging-v;
+  overflow-y: auto;
+}
+
+#mine-wrapper {
+  display: flex;
+  background-color: @site-background;
+  align-items: center;
+  height: 42px;
+  padding: 0 1vw;
+  margin-left: 1vw;
+  #mine-checkbox {
+    margin-right: 1vw;
+  }
+}
+
+collapsable-panel {
+  display: block;
+  width: 100%;
+  height: auto;
+  &.odd {
+    background-color: rgba(98, 171, 239, 15%);
+  }
+}
+
+@media (max-width: 500px) {
+
+}

@@ -1,0 +1,34 @@
+@import '../css/variables.less';
+@import '../css/wc/base.less';
+@import '../css/wc/typography.less';
+@import '../css/wc/r-grid.less';
+@import '../css/wc/buttons.less';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: url('/img/background.svg');
+  background-size: cover;
+  background-color: #0f76a1;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  h1 {
+    text-align: center;
+    color: white;
+    font: bold 1.5em museo, sans-serif;
+  }
+  h3 {
+    font-size: 32px;
+    color: white;
+  }
+  a {
+    font-size: 1em !important;
+  }
+}

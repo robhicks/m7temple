@@ -1,0 +1,145 @@
+@import '../css/variables.less';
+@import '../css/wc/base.less';
+@import '../css/wc/typography.less';
+@import '../css/wc/buttons.less';
+
+.collapsable-panel {
+  .panel {
+    border: 1px solid #ccc;
+    margin-bottom: 8px;
+    .heading {
+      display: flex;
+      border-bottom: 1px solid #ccc;
+      .title {
+        font-size: 1em;
+        flex: 1;
+        padding-left: 1vw;
+      }
+      .button-group {
+        display: flex;
+        justify-content: flex-end;
+        button {
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: transparent;
+          border: 0;
+          outline: none;
+          width: 28px;
+          height: 28px;
+          border-left: 1px solid #ccc;
+          border-bottom: 1px solid #ccc;
+          font-size: .5em;
+          cursor: pointer;
+          line-height: normal;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+
+    }
+    .description {
+      font-size: .75em;
+      padding-left: 1vw;
+    }
+    .html {
+      font-size: .65em;
+      padding: 1vw;
+      border-top: 1px solid #ccc;
+    }
+    alert {
+      display: flex;
+      padding: 1vh 1vw;
+      font-size: .75em;
+      border-top: 1px solid #ccc;
+      &.good {
+        background-color: rgba(100, 200, 100, .1);
+      }
+      &.bad {
+        background-color: rgba(200, 100, 100, .1);
+      }
+    }
+  }
+  skill-editor {
+    display: flex;
+    flex-direction: column;
+    margin: 1vh 1vw;
+    border: 2px solid gold;
+    font-size: .75em;
+    padding: 1vh 1vw;
+    header{
+      display: block;
+      font-size: 1em;
+    }
+    p {
+      font-size: .75em;
+    }
+    .control-container, .button-group {
+      display: flex;
+      font-size: .8em;
+      margin-top: 1vh;
+      align-items: center;
+    }
+    input[type='checkbox'] {
+      margin-right: 2vw;
+    }
+    .button-group {
+      a {
+        margin-left: 2vw;
+      }
+    }
+  }
+  achievements-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 1vh 1vw;
+    padding: 1vh 1vw;
+    background-color: rgba(245, 191, 35, .20);
+    font-size: .75em;
+    header {
+      display: flex;
+      button {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: none;
+        width: 16px;
+        height: 16px;
+        position: relative;
+        top: -1vh;
+        img {
+          width: inherit;
+          height: inherit;
+        }
+      }
+      title {
+        display: block;
+        flex: 1;
+      }
+    }
+    section {
+      flex: 1;
+      story {
+        font-size: .8em;
+      }
+      status {
+        display: flex;
+        border-top: 1px solid #ccc;
+        align-items: flex-end;
+        state {
+          display: inline-block;
+          flex: 1;
+            font-size: .7em;
+        }
+        date {
+          display: inline-block;
+          font-size: .6em;
+        }
+      }
+
+    }
+  }
+}

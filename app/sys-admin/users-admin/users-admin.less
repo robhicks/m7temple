@@ -1,0 +1,97 @@
+@import '../../css/wc/base.less';
+@import '../../css/wc/buttons.less';
+@import '../../css/wc/forms.less';
+
+:host {
+  font-size: 1em;
+}
+
+users-search {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1vh;
+  input {
+    flex: 6;
+  }
+  button {
+    flex: 1;
+    margin-left: 8px;
+  }
+}
+
+users-list {
+  display: flex;
+  flex-direction: column;
+  // padding-top: 2vh;
+}
+
+user-item {
+  display: flex;
+  padding: 1vh 1vw;
+  .info {
+    display: flex;
+    flex: 6;
+    flex-direction: column;
+    .title {
+      font-size: 17px;
+      font-weight: bold;
+    }
+    .description {
+      font-size: 16px;
+    }
+    .category {
+      font-size: 15px;
+    }
+  }
+  .action {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    button {
+      margin-right: 2vw;
+    }
+  }
+  &.even {
+    background-color: #efefef;
+  }
+}
+
+form[name='user'] {
+  display: flex;
+  flex-direction: column;
+  &>* {
+    display: flex;
+    justify-content: space-between;
+    label {
+      font-size: 18px;
+      flex: 1.25;
+    }
+    input, select {
+      flex: 3;
+      margin-bottom: 1vh;
+    }
+  }
+  skill-editor-instructions {
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 18px;
+    }
+    #skill-editor {
+      height: 40vh;
+      margin-bottom: 1vh;
+    }
+  }
+  button[name='cancel'] {
+    margin: 0 1vw;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+user-editor-actions {
+  justify-content: flex-start !important;
+}

@@ -1,0 +1,73 @@
+@import '../../css/wc/buttons.less';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+section[name='header'] {
+  display: flex;
+  flex-direction: column;
+  input[name="search"] {
+    height: 38px;
+    font-size: 1em;
+    padding-left: 1vw;
+  }
+  #filter {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    border: 1px solid #ccc;
+    border-top: 0;
+    label {
+      flex: 1;
+      padding-left: 1vw;
+    }
+  }
+}
+
+section[name='awards'] {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-top: 1vh;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 1vw 1vh;
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: .9em;
+    user, skill, date, story, actions {
+      display: flex;
+      height: 28px;
+      width: 100%;
+      align-items: center;
+      name {
+        flex: 1;
+        font-weight: bold;
+      }
+      value {
+        display: inline-block;
+        flex: 4;
+      }
+    }
+    story {
+      value {
+        border: 1px solid #ccc;
+        padding: 1vh 1vw;
+      }
+    }
+    actions {
+      height: 48px;
+      value {
+        padding: 0;
+        button {
+          margin-top: 2vh;
+        }
+      }
+    }
+  }
+}

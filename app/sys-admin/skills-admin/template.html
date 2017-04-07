@@ -1,0 +1,50 @@
+<skills-search if="!ctrl.skillEditor">
+  <input type="text" name="skillsearch" placeholder="Search ..." onkeyup="{ctrl.filterSkills(this.value)}">
+  <button type="button" name="add" onclick="{ctrl.addSkill()}">Add</button>
+</skills-search>
+<skills-list>
+
+  <form name="skill" if="ctrl.skillEditor">
+    <skill-editor-title>
+      <label>Title:</label>
+      <input type="text" name="{ctrl.skill.title}" value="{ctrl.skill.title}" onchange="{ctrl.skill.title = this.value}" required>
+    </skill-editor-title>
+    <skill-editor-description>
+      <label>Description:</label>
+      <input type="text" name="{ctrl.skill.description}" value="{ctrl.skill.description}" onchange="{ctrl.skill.description = this.value}" required>
+    </skill-editor-description>
+    <skill-editor-category>
+      <label>Category:</label>
+      <select name="category" onchange="{ctrl.skill.category = this.value}" required>
+          <option value="">Select</option>
+          <option value="booklet" selected="{ctrl.skill.category ==='booklet' ? true : null}">Booklet</option>
+          <option value="find" selected="{ctrl.skill.category ==='find' ? true : null}">Find</option>
+          <option value="take" selected="{ctrl.skill.category ==='take' ? true : null}">Take</option>
+          <option value="indexing" selected="{ctrl.skill.category ==='indexing' ? true : null}">Indexing</option>
+        </select>
+    </skill-editor-category>
+    <skill-editor-multiplicity>
+      <label>Allow Multiple:</label>
+      <input type="checkbox" checked="{ctrl.skill.multiple}" onchange="{ctrl.skill.multiple = this.checked}">
+    </skill-editor-multiplicity>
+    <skill-editor-instructions>
+      <label>Instructions:</label>
+      <div id="skill-editor"></div>
+    </skill-editor-instructions>
+    <skill-editor-actions>
+      <button type="button" name="save" onclick="{ctrl.saveSkill()}" class="primary">Save</button>
+      <button type="button" name="cancel" onclick="{ctrl.cancelEdit()}">Cancel</button>
+    </skill-editor-actions>
+  </form>
+
+  <skill-item if="!ctrl.skillEditor" each="skill in ctrl.viewSkills" class="{$item % 2 ? 'odd' : 'even'}">
+    <div class="info">
+      <div class="title">{skill.title}</div>
+      <div class="description">{skill.description}</div>
+    </div>
+    <div class="action">
+      <button type="button" disabled="{ctrl.skillFormValid}" onclick="{ctrl.editSkill($value)}">Edit</button>
+    </div>
+  </skill-item>
+
+</skills-list>

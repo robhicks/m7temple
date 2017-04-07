@@ -1,0 +1,14 @@
+<div id="overlay" if="ctrl._show">
+  <div id="modal">
+    <div id="content">
+      <div id="header">
+        <h4>{ctrl._heading}</h4>
+      </div>
+      <div id="body">{ctrl._body}</div>
+      <div id="buttons">
+        <button type="button" name="primary" class="button primary" onclick="{ctrl._clickButton('primary')}">{ctrl._primary}</button>
+        <button type="button" if="ctrl._cancel" name="cancel" class="button minor" onclick="{ctrl._clickButton('cancel')}">{ctrl._cancel}</button>
+      </div>
+    </div>
+  </div>
+</div>

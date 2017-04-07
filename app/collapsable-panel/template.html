@@ -1,0 +1,87 @@
+<div class="panel">
+  <div class="heading">
+    <div class="title">{ctrl.heading}</div>
+    <div class="button-group">
+      <button if="!ctrl.added && !ctrl.multiple" type="button" name="add" onclick="{ctrl.add(ctrl.iid)}">
+        <img src="/img/add.svg" alt="">
+      </button>
+      <button if="!ctrl.earned && !ctrl.multiple && !ctrl.pending" type="button" name="apply" onclick="{ctrl.addAndShowAchievementEditor(ctrl.iid)}">
+        <img src="/img/skill-apply.svg" alt="">
+      </button>
+      <button if="ctrl.earned" type="button" name="earned" onclick="{ctrl.showAwards(ctrl.iid, 'earned')}">
+        <img src="/img/skill-earned.svg" alt="">
+      </button>
+      <button if="ctrl.pending" type="button" name="pending" onclick="{ctrl.showAwards(ctrl.iid, 'pending')}">
+        <img src="/img/skill-pending.svg" alt="">
+      </button>
+      <button type="button" name="add" onclick="{ctrl.getHelp(ctrl.iid)}">
+        <img src="/img/help.svg" alt="">
+      </button>
+      <button if="ctrl.added" type="button" name="delete" onclick="{ctrl.delete(ctrl.iid)}">
+        <img src="/img/delete.svg" alt="">
+      </button>
+      <button class="achievements">{ctrl.achievements}</button>
+      <button type="button" class="collapser" name="collapser" onclick="{ctrl.toggle()}">
+        <span if="!ctrl.collapsed">▲</span>
+        <span if="ctrl.collapsed">▼</span>
+      </button>
+    </div>
+  </div>
+  <div class="description">{ctrl.description}</div>
+  <achievements-wrapper if="ctrl.showAchievements">
+    <header>
+      <title>Achievements:</title>
+      <button type="button" name="close" onclick="{ctrl.hideAchievements(ctrl.iid)}">
+        <img src="/img/close.svg" alt="">
+      </button>
+    </header>
+    <section name="achievements" each="item in ctrl.awards">
+      <if condition="ctrl.awards[item].pending && parseInt(ctrl.awards[item].skillId, 10) === parseInt(ctrl.iid, 10)">
+        <story>{ctrl.awards[item].pending.story}</story>
+        <status>
+          <state>Pending</state>
+          <date>Date: ({new Date(ctrl.awards[item].pending.date).toLocaleString()})</date>
+        </status>
+      </if>
+      <if condition="ctrl.awards[item].awarded && ctrl.awards[item].skillId === ctrl.iid">
+        <story>{ctrl.awards[item].awarded.story}</story>
+        <status>
+          <state>Awarded</state>
+          <date>Date: ({new Date(ctrl.awards[item].awarded.date).toLocaleString()})</date>
+        </status>
+      </if>
+    </section>
+  </achievements-wrapper>
+  <alert if="ctrl.showAlert" class="{ctrl.alertClass}">{ctrl.alertText}</alert>
+  <skill-editor if="ctrl.showSkillEditor">
+    <header>
+      Applying for a Skill Achievement
+    </header>
+    <p>
+      Congratultions on applying for a skill achievment award! Once you submit your request,
+      someone will review and approve it. Please share your experience, and sign up to help others.
+    </p>
+    <textarea name="achievement" rows="8"></textarea>
+    <div class="control-container">
+      <input type="checkbox" name="share" checked>
+      <span>Yes, I'm willing to share my experience</span>
+    </div>
+    <div class="control-container">
+      <input type="checkbox" name="helping" checked>
+      <span>Yes, I'm willing to help others achieve this skill.</span>
+    </div>
+    <div class="button-group">
+      <button type="button" class="primary" onclick="{ctrl.applyForAchievment()}">Apply</button>
+      <a href="javascript:void(0)" onclick="{ctrl.hideSkillEditor()}">Cancel</a>
+    </div>
+  </skill-editor>
+  <div class="html" if="!ctrl.collapsed">
+    <script>
+      if (ctrl.html && ctrl.html !== '') {
+        var el = currentElement();
+        el.innerHTML = ctrl.html;
+      }
+      skip();
+    </script>
+  </div>
+</div>

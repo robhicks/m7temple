@@ -1,9 +1,11 @@
 const babel = require('rollup-plugin-babel');
+const join = require('path').join;
 const less = require('rollup-plugin-less');
 const resolve = require('rollup-plugin-node-resolve');
+const root = process.cwd();
 
 module.exports = {
-	entry: 'src/app-layout/app-layout.js',
+	entry: join(root, 'app', 'app-router', 'app-router.js'),
 	external: ['incremental-dom'],
 	globals: {
 		'incremental-dom': 'IncrementalDOM'
@@ -15,9 +17,9 @@ module.exports = {
 	],
 	targets: [
 		{
-			dest: 'dist/app-bundle.js',
+			dest: join(root, 'public', 'bundle.js'),
 			format: 'iife',
-			moduleName: 'IdxAdmin'
+			moduleName: 'M7Temple'
 		}
 	]
 };

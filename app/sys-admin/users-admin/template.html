@@ -1,0 +1,57 @@
+<users-search if="!ctrl.userEditor">
+  <input type="text" name="usersearch" placeholder="Search ..." onkeyup="{ctrl.filterUsers(this.value)}">
+</users-search>
+<users-list>
+
+  <form name="user" if="ctrl.userEditor">
+    <user-editor-name>
+      <label>Certificate Name:</label>
+      <input type="text" value="{ctrl.user.name}" onchange="{ctrl.user.name = this.value}" required>
+    </user-editor-name>
+    <user-editor-display-name>
+      <label>Display Name:</label>
+      <input type="text" name="{ctrl.user.displayName}" value="{ctrl.user.displayName}" onchange="{ctrl.user.displayName = this.value}" required>
+    </user-editor-display-name>
+    <user-editor-email>
+      <label>Email:</label>
+      <input type="text" name="{ctrl.user.email}" value="{ctrl.user.email}" onchange="{ctrl.user.email = this.value}" disabled="true">
+    </user-editor-email>
+    <user-editor-category>
+      <label>Organization:</label>
+      <select name="group" onchange="{ctrl.user.group = this.value}" required>
+          <option value="">Select</option>
+          <option value="be" selected="{ctrl.user.group ==='be' ? true : null}">Beehive</option>
+          <option value="dn" selected="{ctrl.user.group ==='dn' ? true : null}">Deacon</option>
+          <option value="eq" selected="{ctrl.user.group ==='eq' ? true : null}">Elders</option>
+          <option value="hp" selected="{ctrl.user.group ==='hp' ? true : null}">High Priest</option>
+          <option value="ll" selected="{ctrl.user.group ==='ll' ? true : null}">Laurel</option>
+          <option value="mm" selected="{ctrl.user.group ==='mm' ? true : null}">Miamaid</option>
+          <option value="pr" selected="{ctrl.user.group ==='pr' ? true : null}">Priest</option>
+          <option value="py" selected="{ctrl.user.group ==='py' ? true : null}">Primary</option>
+          <option value="rs" selected="{ctrl.user.group ==='rs' ? true : null}">Relief Society</option>
+          <option value="tr" selected="{ctrl.user.group ==='tr' ? true : null}">Teacher</option>
+        </select>
+    </user-editor-category>
+    <user-admin>
+      <label>Admin:</label>
+      <input type="checkbox" checked="{ctrl.user.admin ? true : null}" onchange="{ctrl.user.admin = this.checked}">
+    </user-admin>
+    <user-editor-actions>
+      <button type="button" name="save" onclick="{ctrl.saveUser()}" class="primary">Save</button>
+      <button type="button" name="cancel" onclick="{ctrl.cancelEdit()}">Cancel</button>
+    </user-editor-actions>
+  </form>
+
+  <user-item if="!ctrl.userEditor" each="user in ctrl.viewUsers" class="{$item % 2 ? 'odd' : 'even'}">
+    <div class="info">
+      <div if="user.name" class="name bold">{user.name}</div>
+      <div class="display-name bold">{user.displayName}</div>
+      <div class="email">{user.email}</div>
+      <div if="user.group" class="group">{ctrl.getGroupName(user)}</div>
+    </div>
+    <div class="action">
+      <button type="button" disabled="{ctrl.userFormValid}" onclick="{ctrl.editUser($value)}">Edit</button>
+    </div>
+  </user-item>
+
+</users-list>

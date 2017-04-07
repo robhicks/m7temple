@@ -1,0 +1,67 @@
+@import '../css/variables.less';
+@import '../css/wc/base.less';
+@import '../css/wc/typography.less';
+
+:host {
+  display: block;
+  height: 64px;;
+  width: 100%;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  border-bottom: 1px solid #ccc;
+  padding: 0 1em;
+  a {
+    text-decoration: none;
+    font-size: 0.9em;
+    cursor: pointer;
+    &.active {
+      border-bottom: 2px solid #f26100;
+    }
+  }
+  #brand {
+    img {
+      width: 36px;
+      height: 36px;
+    }
+    span {
+      position: relative;
+      top: -5px;
+    }
+  }
+  nav {
+    display: flex;
+    align-items: flex-end;
+    a {
+      padding: 0 0.5em;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  #brand {
+    img {
+      width: 16px !important;
+      height: 16px !important;
+    }
+  }
+  a {
+    font-size: 0.4em !important;
+  }
+}
+
+@media (max-width: 500px) {
+  #brand {
+    img {
+      width: 32px !important;
+      height: 32px !important;
+    }
+  }
+  a {
+    font-size: 0.7em !important;
+  }
+}

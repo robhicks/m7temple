@@ -1,1 +1,1 @@
-web: nodemon -e js,ejs,json -w controllers -w locales -w views -w server.js -w worker.js -w broker.js -w package.json server.js
+web: nodemon -e js,ejs,json,pug -w views -w server.js -w worker.js -w broker.js -w db.js -w package.json server.js
