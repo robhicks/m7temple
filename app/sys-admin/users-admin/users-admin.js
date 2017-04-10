@@ -15,6 +15,7 @@ class UsersAdmin extends HTMLElement {
     this.element = this.shadowRoot.querySelector('container');
     this.user = user;
     this.model = {};
+    this.dv = users.addDynamicView('users');
     document.addEventListener('usersChanged', this._updateView.bind(this));
   }
 
@@ -29,20 +30,11 @@ class UsersAdmin extends HTMLElement {
     this.user = null;
     this.userId = null;
     this.userEditor = false;
-    this.viewUsers = users.find();
+
     this._updateView();
   }
 
   connectedCallback() {
-    if (users && users.find) {
-      this.users = this.viewUsers = users.find();
-      this._updateView();
-    } else {
-      setTimeout(() => {
-        this.viewUsers = users.find();
-        this._updateView();
-      }, 500);
-    }
     this._updateView();
   }
 
@@ -59,13 +51,15 @@ class UsersAdmin extends HTMLElement {
   filterUsers(val) {
     let str = val ? val.toLowerCase() : null;
 
-    this.viewUsers = users.where((_user) =>
+    this.dv.applyWhere((_user) =>
       _user.displayName && _user.displayName.toLowerCase().indexOf(str) !== -1
       || _user.name && _user.name.toLowerCase().indexOf(str) !== -1
       || _user.group && _user.group.toLowerCase().indexOf(str) !== -1
       || _user.email && _user.email.toLowerCase().indexOf(str) !== -1);
 
-    if (!str || str === '') this.viewUsers = users.find();
+    if (!str || str === '') {
+      this.dv.removeFilters();
+    }
 
     this._updateView();
   }
@@ -98,7 +92,7 @@ class UsersAdmin extends HTMLElement {
   }
 
   _updateView() {
-    console.log("_updateView", this.viewUsers)
+    this.viewUsers = this.dv.data();
     if (this.element) patch(this.element, render, this);
   }
 

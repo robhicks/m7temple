@@ -2608,6 +2608,7 @@ var UsersAdmin = function (_HTMLElement) {
     _this.element = _this.shadowRoot.querySelector('container');
     _this.user = user;
     _this.model = {};
+    _this.dv = users.addDynamicView('users');
     document.addEventListener('usersChanged', _this._updateView.bind(_this));
     return _this;
   }
@@ -2626,23 +2627,12 @@ var UsersAdmin = function (_HTMLElement) {
       this.user = null;
       this.userId = null;
       this.userEditor = false;
-      this.viewUsers = users.find();
+
       this._updateView();
     }
   }, {
     key: 'connectedCallback',
     value: function connectedCallback() {
-      var _this2 = this;
-
-      if (users && users.find) {
-        this.users = this.viewUsers = users.find();
-        this._updateView();
-      } else {
-        setTimeout(function () {
-          _this2.viewUsers = users.find();
-          _this2._updateView();
-        }, 500);
-      }
       this._updateView();
     }
   }, {
@@ -2660,11 +2650,13 @@ var UsersAdmin = function (_HTMLElement) {
     value: function filterUsers(val) {
       var str = val ? val.toLowerCase() : null;
 
-      this.viewUsers = users.where(function (_user) {
+      this.dv.applyWhere(function (_user) {
         return _user.displayName && _user.displayName.toLowerCase().indexOf(str) !== -1 || _user.name && _user.name.toLowerCase().indexOf(str) !== -1 || _user.group && _user.group.toLowerCase().indexOf(str) !== -1 || _user.email && _user.email.toLowerCase().indexOf(str) !== -1;
       });
 
-      if (!str || str === '') this.viewUsers = users.find();
+      if (!str || str === '') {
+        this.dv.removeFilters();
+      }
 
       this._updateView();
     }
@@ -2711,7 +2703,7 @@ var UsersAdmin = function (_HTMLElement) {
   }, {
     key: '_updateView',
     value: function _updateView() {
-      console.log("_updateView", this.viewUsers);
+      this.viewUsers = this.dv.data();
       if (this.element) incrementalDom.patch(this.element, render$13, this);
     }
   }], [{
