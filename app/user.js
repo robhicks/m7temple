@@ -1,6 +1,6 @@
-import {socket, users} from './db.js';
 import {router} from './app-router/app-router.js';
 import {RbhModal} from './rbh-modal/rbh-modal.js';
+import {socket} from './db.js';
 
 let user = {
   authenticated: false,
@@ -21,14 +21,8 @@ hello.on('auth.login', (auth) => {
   // console.log("auth", auth)
   hello(auth.network).api('me')
   .then((r) => {
-    console.log("r", r)
-    user.initialized = true;
-    user.displayName = r.displayName;
-    user.id = r.id;
-    user.firstName = r.first_name;
-    user.lastName = r.last_name;
-    user.email = r.email;
-    socket.emit('auth', user);
+    Object.assign(user, r);
+    user.authenticate();
   }, (err) => {
     let modal = new RbhModal();
     modal.heading = 'Authentication Provider Error';
@@ -41,10 +35,37 @@ hello.on('auth.login', (auth) => {
   });
 });
 
+user.authenticate = () => {
+  return new Promise((resolve, reject) => {
+    socket.emit('auth', user, (err) => {
+      if (err) {
+        reject(err);
+        router.navigate('/login');
+      } else {
+        Object.assign(user, socket.authToken.user, {authenticated: true, admin: true});
+        document.dispatchEvent(new CustomEvent('userChanged', {detail: user}));
+        resolve(user);
+        // console.log("socket.authToken", socket.authToken)
+        // console.log("router.desiredRoute", router.desiredRoute)
+        if (router.state.value === '/login') router.navigate('/home/authenticated');
+      }
+    });
+  });
+};
+
 
 user.logout = () => {
   hello.logout();
-  router.navigate('/home');
+  user = { authenticated: false };
+  document.dispatchEvent(new CustomEvent('userChanged', {detail: user}));
 };
 
+user.getUser = () => {
+  if (user.authenticated) return Promise.resolve(user);
+  return user.authenticate();
+}
+
 export {user};
+
+
+// document.dispatchEvent(new CustomEvent('userChanged', {detail: usr}));

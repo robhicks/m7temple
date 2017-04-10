@@ -1,16 +1,19 @@
 @import '../css/variables.less';
+@import '../css/wc/base.less';
+@import '../css/wc/typography.less';
 
 @marging-v: 2vh;
 @marging-h: 2vw;
 
 
 :host {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: url('/img/background.svg');
+  background-size: cover;
+  background-color: #0f76a1;
+  font-size: 1em;
 }
 
 #home {
@@ -23,7 +26,7 @@
 section#search {
   display: flex;
   margin: @marging-h @marging-v 0;
-  height: 36px;
+  height: 42px;;
   input {
     flex-grow: 1;
     width: inherit;

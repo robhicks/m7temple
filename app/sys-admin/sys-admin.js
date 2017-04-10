@@ -2,7 +2,7 @@ import {patch} from 'incremental-dom';
 import {render} from './template.js';
 import {router} from '../app-router/app-router.js';
 import {user} from '../user.js';
-import css from './component.less';
+import css from './sys-admin.less';
 import './assistance-admin/assistance-admin.js';
 import './awards-admin/awards-admin.js';
 import './reports-admin/reports-admin.js';
@@ -12,9 +12,10 @@ import './users-admin/users-admin.js';
 class SysAdmin extends HTMLElement {
   constructor() {
     super();
-    document.addEventListener('userChanged', (evt) => {
-      let user = evt.detail;
-      if (!user.admin) router.navigate('/home');
+    document.addEventListener('userChanged', () => {
+      console.log('SysAdmin::userChanged', user);
+      if (!user.authenticated) router.navigate('/login');
+      else if (!user.admin) router.navigate('/home/authenticated');
     });
 
     router.add('/admin/users', (req, evt, next) => {
@@ -51,6 +52,7 @@ class SysAdmin extends HTMLElement {
       let input = tab.querySelector('input');
       if (state.indexOf(input.value) !== -1) input.setAttribute('checked', true);
     });
+    // user.getUser();
     router.navigate(state);
   }
 

@@ -1,7 +1,60 @@
-@import '../../css/wc/base.less';
 @import '../../css/wc/buttons.less';
 @import '../../css/wc/forms.less';
 
-:host {
-
+skills-admin {
+  container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    skills-search {
+      display: flex;
+      align-items: center;
+      input {
+        margin-right: 1vw;
+        flex: 1;
+      }
+    }
+    skills-list {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    form, skill-item {
+      flex: 1;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      skill-editor-title,
+      skill-editor-description,
+      skill-editor-multiplicity,
+      skill-editor-category {
+        display: flex;
+        margin-bottom: 1vh;
+        label {
+          flex: 1;
+        }
+        input, select {
+          flex: 4;
+        }
+      }
+      #skill-editor {
+        min-height: 20vh;
+        margin-bottom: 2vh;
+      }
+      skill-editor-actions {
+        button {
+          margin-right: 1vw;
+        }
+      }
+    }
+    skill-item {
+      display: flex;
+      align-items: center;
+      .info {
+        flex: 1;
+        margin-right: 1vw;
+      }
+    }
+  }
 }

@@ -4,8 +4,8 @@ import {patch} from 'incremental-dom';
 import isJson from './isJson.js';
 import {router} from '../../app-router/app-router.js';
 import {user} from '../../user.js';
-// import {firebase} from '../../db.js';
 import {debounce} from '../../utilities.js';
+import {users} from '../../db.js';
 
 class UsersAdmin extends HTMLElement {
   constructor() {
@@ -15,11 +15,7 @@ class UsersAdmin extends HTMLElement {
     this.element = this.shadowRoot.querySelector('container');
     this.user = user;
     this.model = {};
-    this.db = firebase.database();
-    document.addEventListener('userChanged', (evt) => {
-      let user = evt.detail;
-      if (!user.admin) router.navigate('/home');
-    });
+    document.addEventListener('usersChanged', this._updateView.bind(this));
   }
 
   attributeChangedCallback(name, oVal, nVal) {
@@ -33,31 +29,29 @@ class UsersAdmin extends HTMLElement {
     this.user = null;
     this.userId = null;
     this.userEditor = false;
-    this.viewUsers = JSON.parse(JSON.stringify(this.users));
+    this.viewUsers = users.find();
     this._updateView();
   }
 
   connectedCallback() {
-    this.db.ref('/users/').on('value', (snapshot) => {
-      let obj = JSON.parse(JSON.stringify(snapshot.val()));
-      let temp = [];
-      Object.keys(obj).forEach((key) => {
-        let entry = obj[key];
-        entry.id = key;
-        temp.push(entry)
-      });
-      this.users = Object.assign([], temp);
-      this.viewUsers = Object.assign([], temp);
+    if (users && users.find) {
+      this.users = this.viewUsers = users.find();
       this._updateView();
-    });
+    } else {
+      setTimeout(() => {
+        this.viewUsers = users.find();
+        this._updateView();
+      }, 500);
+    }
+    this._updateView();
   }
 
   disconnectedCallback() {
 
   }
 
-  editUser(user) {
-    this.user = user
+  editUser(_user) {
+    this.user = _user;
     this.userEditor = true;
     this._updateView();
   }
@@ -65,19 +59,19 @@ class UsersAdmin extends HTMLElement {
   filterUsers(val) {
     let str = val ? val.toLowerCase() : null;
 
-    this.viewUsers = this.users.filter((user) =>
-      user.displayName && user.displayName.toLowerCase().indexOf(str) !== -1
-      || user.name && user.name.toLowerCase().indexOf(str) !== -1
-      || user.group && user.group.toLowerCase().indexOf(str) !== -1
-      || user.email && user.email.toLowerCase().indexOf(str) !== -1);
+    this.viewUsers = users.where((_user) =>
+      _user.displayName && _user.displayName.toLowerCase().indexOf(str) !== -1
+      || _user.name && _user.name.toLowerCase().indexOf(str) !== -1
+      || _user.group && _user.group.toLowerCase().indexOf(str) !== -1
+      || _user.email && _user.email.toLowerCase().indexOf(str) !== -1);
 
-    if (!str || str === '') this.viewUsers = Object.assign([], this.users);
+    if (!str || str === '') this.viewUsers = users.find();
 
     this._updateView();
   }
 
-  getGroupName(user) {
-    let group = user.group;
+  getGroupName(_user) {
+    let group = _user.group;
     let groupName;
     switch(group) {
       case 'be': groupName = 'Beehive'; break;
@@ -96,14 +90,15 @@ class UsersAdmin extends HTMLElement {
   }
 
   saveUser() {
-    let user = Object.assign({}, this.user);
-    let userId = user.id;
-    delete user.id;
-    this.db.ref('/users/' + userId).set(user)
-      .then(() => this.cancelEdit());
+    let _user = Object.assign({}, this.user);
+    delete _user.authenticated;
+    delete _user.initialized;
+    users.update(_user);
+    this.cancelEdit();
   }
 
   _updateView() {
+    console.log("_updateView", this.viewUsers)
     if (this.element) patch(this.element, render, this);
   }
 

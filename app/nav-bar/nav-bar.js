@@ -8,17 +8,12 @@ import {contains} from '../utilities.js';
 class NavBar extends HTMLElement {
   constructor() {
     super();
-    this.user = user;
     this.state = 'home';
+    this.user = user;
 
-    setTimeout(() => {
-      this.state = router.state.value;
-      router.on('navigate', () => {
-        this.state = router.state.value;
-        this.updateView();
-      });
+    document.addEventListener('userChanged', () => {
       this.updateView();
-    }, 500);
+    });
   }
 
   attributeChangedCallback(name, oVal, nVal) {
@@ -37,16 +32,13 @@ class NavBar extends HTMLElement {
     this.attachShadow({mode: 'open'});
     this.shadowRoot.innerHTML = `<style>${css}</style><div id="navbar"></div>`;
     this.element = this.shadowRoot.querySelector('div#navbar');
-    document.addEventListener('userChanged', this.userChanged.bind(this));
-    this.updateView();
     setTimeout(() => {
-      router.addComponentAnchorEventListeners(this.element);
+      this.updateView();
     }, 10);
   }
 
   disconnectedCallback() {
     this.shadowRoot.removeEventListener('click', this.anchorClickHandler.bind(this));
-    document.removeEventListener('userChanged', this.userChanged.bind(this));
   }
 
   go(path) {
@@ -54,21 +46,23 @@ class NavBar extends HTMLElement {
   }
 
   stateContains(val) {
-    if (contains(this.state, val)) return 'active';
+    if (router && router.state.value.indexOf(val) !== -1) return 'active';
     return '';
   }
 
   updateView() {
-    if (this.element) patch(this.element, render, this);
-  }
-
-  userChanged(evt) {
-    console.log("this.user", this.user)
-    this.updateView();
+    // console.log('navbar::updateView');
+    if (this.element) {
+      this.user = user;
+      patch(this.element, render, this);
+      setTimeout(() => {
+        router.addComponentAnchorEventListeners(this.element);
+      }, 10);
+    }
   }
 
   static get observedAttributes() {
-    return []
+    return [];
   }
 }
 customElements.define('nav-bar', NavBar);

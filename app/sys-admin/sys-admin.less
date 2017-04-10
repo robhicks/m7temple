@@ -1,0 +1,63 @@
+@import "../css/variables.less";
+@import "../css/wc/typography.less";
+
+sys-admin {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: url('/img/background.svg');
+  background-size: cover;
+  background-color: #0f76a1;
+}
+
+#sys-admin {
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  tabs {
+    display: flex;
+    margin: 2vw 2vw 0 2vw;
+    background-color: white;
+    justify-content: flex-start;
+  }
+
+  tab {
+    display: block;
+    flex: 1;
+    input[type=radio] {
+      display: none;
+      &:checked ~ label {
+        background: white;
+        border-bottom: 1px solid white;
+        z-index: 2;
+      }
+    }
+    label {
+      display: block;
+      background: #eee;
+      padding: 10px;
+      border: 1px solid #ccc;
+      font-size: 17px;
+      cursor: pointer;
+    }
+  }
+
+  content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: white;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    margin: 0 2vw 1vh 2vw;
+    padding: 2vw;
+    overflow: hidden;
+  }
+}

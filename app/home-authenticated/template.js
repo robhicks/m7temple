@@ -10,13 +10,13 @@ var hoisted7 = ["shared", "", "collapsed", "true"]
 var __target
 
 export function render (ctrl) {
-elementOpen("section", "df64aeb9-4743-4640-89ab-e2a7f2e2ff1f", hoisted1)
-  elementOpen("input", "96b56b09-1e1d-4fe3-8b31-26faf3ce0a57", hoisted2, "onkeyup", function ($event) {
+elementOpen("section", "c11e30a1-054d-4227-bb7c-a5ff3b3d2887", hoisted1)
+  elementOpen("input", "d44aa64a-b104-4904-b9de-7d01489667c3", hoisted2, "onkeyup", function ($event) {
     var $element = this;
   ctrl.filterSkills(this.value)})
   elementClose("input")
-  elementOpen("label", "20349736-1887-45fe-a088-d28b1e840c1a", hoisted3)
-    elementOpen("input", "5fd6fc9b-8cc5-4b34-9d37-d473e1ff6bd0", hoisted4, "onchange", function ($event) {
+  elementOpen("label", "24ab0df5-17db-4e69-9291-d4308940d29e", hoisted3)
+    elementOpen("input", "5c47e919-9067-4a42-bb6b-9bcd37309778", hoisted4, "onchange", function ($event) {
       var $element = this;
     ctrl.toggleMine()})
     elementClose("input")
@@ -25,14 +25,14 @@ elementOpen("section", "df64aeb9-4743-4640-89ab-e2a7f2e2ff1f", hoisted1)
     elementClose("span")
   elementClose("label")
 elementClose("section")
-elementOpen("section", "783cedc4-2bc3-4ec6-8233-c1ec65ba5f8e", hoisted5)
+elementOpen("section", "68e6cc3e-9535-4260-88e4-a4eea54f35c8", hoisted5)
   __target = ctrl.viewSkills
   if (__target) {
     ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
       var item = $value
-      var $key = "30810aad-9e53-42c4-8ddd-5b06e307f048_" + $item
+      var $key = "f9814ed6-cdb4-427b-ada1-06f4b7d601fc_" + $item
       elementOpen("div", $key, hoisted6)
-        elementOpen("collapsable-panel", "97b5c434-161d-4666-8227-5436d8ce2c29_" + $key, hoisted7, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements)
+        elementOpen("collapsable-panel", "f3299339-9f87-4001-bbea-903f3c279d41_" + $key, hoisted7, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements)
         elementClose("collapsable-panel")
       elementClose("div")
     }, this)

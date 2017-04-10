@@ -85,7 +85,7 @@ CallStack.prototype.next = function next() {
 
 CallStack.global = [];
 
-var regexRoute = function regexRoute(path, keys, sensitive, strict) {
+var regexRoute = function (path, keys, sensitive, strict) {
 
   if (path instanceof RegExp) {
     return path;
@@ -176,6 +176,8 @@ Router.prototype.addComponentAnchorEventListeners = function addComponentAnchorE
   });
 };
 
+Router.prototype._componentEventListner = function _componentEventListner(e) {};
+
 /**
  * Add an route and handler
  *
@@ -192,7 +194,7 @@ Router.prototype.add = function add(route) {
 
   // console.log("this", this)
 
-  var invoke = function invoke() {
+  var invoke = function () {
     // console.log("this", this)
     // Build request parameters
     var req = request.parse(this$1.path());
@@ -322,7 +324,9 @@ Router.prototype.context = function context(context$1) {
  * @return {self} Router
  */
 Router.prototype.navigate = function navigate(path) {
-  return this.path(path).trigger('navigate');
+  if (path) {
+    return this.path(path).trigger('navigate');
+  }
 };
 
 Router.prototype.path = function path(pathname) {
@@ -379,52 +383,14 @@ function render(ctrl) {
   incrementalDom.elementOpen("h3");
   incrementalDom.text("Access to this site requires user login");
   incrementalDom.elementClose("h3");
-  incrementalDom.elementOpen("a", "e2f67c1c-9cbe-4a8e-b756-1b96b397fd11", hoisted1);
+  incrementalDom.elementOpen("a", "20831e97-b19d-4867-a42d-a9aed875363c", hoisted1);
   incrementalDom.text("Please Login");
   incrementalDom.elementClose("a");
 }
 
-var css = ":host {\n  font-size: 1.5em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.grid {\n  display: flex;\n}\n.col {\n  flex: 1;\n}\n@media (max-width: 500px) {\n  .grid {\n    display: block;\n  }\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\nsection {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex: 1;\n}\nsection h1 {\n  text-align: center;\n  color: white;\n  font: bold 1.5em museo, sans-serif;\n}\nsection h3 {\n  font-size: 32px;\n  color: white;\n}\nsection a {\n  font-size: 1em !important;\n}\n";
+var css = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.grid {\n  display: flex;\n}\n.col {\n  flex: 1;\n}\n@media (max-width: 500px) {\n  .grid {\n    display: block;\n  }\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\nsection {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex: 1;\n}\nsection h1 {\n  text-align: center;\n  color: white;\n  font: bold 1.5em museo, sans-serif;\n}\nsection h3 {\n  font-size: 32px;\n  color: white;\n}\nsection a {\n  font-size: 1em !important;\n}\n";
 
-var socket = socketCluster.connect();
-var outgoingDbChannel = socket.subscribe('toServerDbChannel');
-var incomingDbChannel = socket.subscribe('fromServerDbChannel');
-
-outgoingDbChannel.waitForAuth = true;
-
-var idbAdapter = new LokiIndexedAdapter('loki');
-var db = new loki('m7temple.db', {
-  autosave: true,
-  autosaveInterval: 10000, // 10 seconds
-  adapter: idbAdapter,
-  disableChangesApi: false
-});
-
-socket.on('connect', function () {
-  socket.emit('loadDatabase', function (err) {
-    return console.log("err", err);
-  });
-});
-
-socket.on('loadDatabase', function (data, err) {
-  if (data) db.loadJSON(data);
-  console.log("db loaded", db);
-});
-
-db.on('changes', function () {
-  var changes = db.serializeChanges();
-  console.log("client:::changes", changes);
-  if (changes) outgoingDbChannel.publish(changes, function (err) {
-    if (!err) db.clearChanges();
-  });
-});
-
-incomingDbChannel.watch(function (data) {
-  var changes = JSON.parse(data);
-  console.log("dbSyncFromServerChannel:::changes", changes);
-});
-
-var css$1 = ":host {\n  font-size: 1.5em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n:host {\n  display: block;\n  height: 100%;\n  width: 100%;\n}\n#modal-container {\n  height: 100%;\n  width: 100%;\n}\n#overlay {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: #2c2c2c;\n  opacity: 0.95;\n  transition: transform 0.3s, opacity 0.3s;\n  z-index: 9000;\n}\n#modal {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  width: 90%;\n  max-width: 600px;\n  z-index: 9001;\n}\n#content {\n  background: #ffffff;\n  opacity: 1;\n  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35), 0px 3px 2px 0px rgba(0, 0, 0, 0.18);\n  margin: 0 auto;\n  position: relative;\n}\n#header {\n  padding: 2vh 2vw 0 2vw;\n}\n#header h4 {\n  font-size: 1em;\n  padding: 0;\n  margin: 0;\n}\n#body {\n  padding: 2vh 2vw;\n  max-height: 90vh;\n  font-size: 0.8em;\n}\n#buttons {\n  padding: 2vh 2vw;\n}\n#buttons button {\n  margin-right: 8px;\n  font-size: .5em;\n}\n";
+var css$1 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n:host {\n  display: block;\n  height: 100%;\n  width: 100%;\n}\n#modal-container {\n  height: 100%;\n  width: 100%;\n}\n#overlay {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: #2c2c2c;\n  opacity: 0.95;\n  transition: transform 0.3s, opacity 0.3s;\n  z-index: 9000;\n}\n#modal {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  width: 90%;\n  max-width: 600px;\n  z-index: 9001;\n}\n#content {\n  background: #ffffff;\n  opacity: 1;\n  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35), 0px 3px 2px 0px rgba(0, 0, 0, 0.18);\n  margin: 0 auto;\n  position: relative;\n}\n#header {\n  padding: 2vh 2vw 0 2vw;\n}\n#header h4 {\n  font-size: 1em;\n  padding: 0;\n  margin: 0;\n}\n#body {\n  padding: 2vh 2vw;\n  max-height: 90vh;\n  font-size: 0.8em;\n}\n#buttons {\n  padding: 2vh 2vw;\n}\n#buttons button {\n  margin-right: 8px;\n  font-size: .5em;\n}\n";
 
 var hoisted1$1 = ["id", "overlay"];
 var hoisted2 = ["id", "modal"];
@@ -436,26 +402,26 @@ var hoisted7 = ["type", "button", "name", "primary", "class", "button primary"];
 var hoisted8 = ["type", "button", "name", "cancel", "class", "button minor"];
 function render$1(ctrl) {
   if (ctrl._show) {
-    incrementalDom.elementOpen("div", "df634a6e-ae9d-4867-9815-fcffcaaf5f8b", hoisted1$1);
-    incrementalDom.elementOpen("div", "c0244eda-4828-4810-9dee-4fd743a31baf", hoisted2);
-    incrementalDom.elementOpen("div", "9688beca-2788-4a81-aa4c-68c9108371e3", hoisted3);
-    incrementalDom.elementOpen("div", "075de124-c92e-4e74-b83e-2a6faadced45", hoisted4);
+    incrementalDom.elementOpen("div", "a57422bf-e246-408a-953c-4456b71cf06a", hoisted1$1);
+    incrementalDom.elementOpen("div", "d46cdcfd-0df6-4e4d-90d5-294cbb68940c", hoisted2);
+    incrementalDom.elementOpen("div", "e3dc33c3-8bdf-4ddd-b07c-8a41731f08e8", hoisted3);
+    incrementalDom.elementOpen("div", "a01113b3-fc08-4beb-892f-a1bd33ddeeca", hoisted4);
     incrementalDom.elementOpen("h4");
     incrementalDom.text("" + ctrl._heading + "");
     incrementalDom.elementClose("h4");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "b6132dc0-73bd-4480-9bdc-060854c8e0e6", hoisted5);
+    incrementalDom.elementOpen("div", "5e94737a-30c3-4403-bd9e-27ebe520de32", hoisted5);
     incrementalDom.text("" + ctrl._body + "");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "18a7b5d3-f2ed-44b9-969e-5859264f431f", hoisted6);
-    incrementalDom.elementOpen("button", "8c67f961-34cc-422c-a58a-7b58309288a3", hoisted7, "onclick", function ($event) {
+    incrementalDom.elementOpen("div", "355201ed-419d-466a-8ee7-f1304e54972b", hoisted6);
+    incrementalDom.elementOpen("button", "4f1bc8aa-6b80-486d-b022-7e6a34e4a7dc", hoisted7, "onclick", function ($event) {
       var $element = this;
       ctrl._clickButton('primary');
     });
     incrementalDom.text("" + ctrl._primary + "");
     incrementalDom.elementClose("button");
     if (ctrl._cancel) {
-      incrementalDom.elementOpen("button", "89d250bf-e51f-4f3a-a41e-28a85bfa32b0", hoisted8, "onclick", function ($event) {
+      incrementalDom.elementOpen("button", "dff0dc57-3a69-40c5-93cb-fa12fa073427", hoisted8, "onclick", function ($event) {
         var $element = this;
         ctrl._clickButton('cancel');
       });
@@ -640,6 +606,76 @@ var RbhModal = function (_HTMLElement) {
 
 customElements.define('rbh-modal', RbhModal);
 
+var socket = socketCluster.connect();
+
+var updateDbChannel = socket.subscribe('updateDbChannel');
+
+var idbAdapter = new LokiIndexedAdapter('loki');
+var db = new loki('m7temple.db', {
+  autosave: true,
+  autosaveInterval: 10000, // 10 seconds
+  adapter: idbAdapter,
+  disableChangesApi: false
+});
+
+var awards = db.getCollection('awards') || db.addCollection('awards');
+var skills = db.getCollection('skills') || db.addCollection('skills');
+var users = db.getCollection('users') || db.addCollection('users');
+
+function changeHandler() {
+  user.getUser().then(function (_user) {
+    var changes = JSON.parse(db.serializeChanges()).filter(function (change) {
+      return change.operation !== 'I' && change.obj.email === _user.email;
+    });
+    // console.log("changes", changes);
+    if (changes) updateDbChannel.publish(JSON.stringify(changes), function (err) {
+      if (err) console.error("err", err);
+      if (!err) db.clearChanges();
+      db.clearChanges();
+    });
+  });
+}
+
+function updateDb(db, changes) {
+  try {
+    changes.forEach(function (change) {
+      var coll = db.getCollection(change.name);
+      if (change.operation === 'I') coll.insertOne(change.obj);
+      if (change.operation === 'D') coll.findAndRemove({ $loki: change.obj.$loki });
+      if (change.operation === 'U') {
+        var doc = coll.findOne({ $loki: change.obj.$loki });
+        // console.log("doc", doc)
+        // console.log("JSON.stringify(doc) !== JSON.stringify(change.obj))", JSON.stringify(doc) !== JSON.stringify(change.obj))
+        if (doc && JSON.stringify(doc) !== JSON.stringify(change.obj)) coll.update(change.obj);
+      }
+      console.log('dispatching event: ', change.name + 'Changed');
+      document.dispatchEvent(new CustomEvent(change.name + 'Changed'));
+    });
+  } catch (err) {
+    console.error("err", err);
+  }
+}
+
+socket.on('connect', function (status) {
+  socket.emit('loadDatabase');
+  socket.on('loadDatabase', function (data) {
+    db.loadJSON(data);
+    awards = db.getCollection('awards');
+    skills = db.getCollection('skills');
+    users = db.getCollection('users');
+    awards.on(['add', 'update', 'delete'], changeHandler);
+    skills.on(['add', 'update', 'delete'], changeHandler);
+    users.on(['add', 'update', 'delete'], changeHandler);
+  });
+});
+
+updateDbChannel.watch(function (data) {
+  var changes = JSON.parse(data);
+  // console.log("changes", changes)
+  if (Array.isArray(changes)) updateDb(db, changes);
+  db.clearChanges();
+});
+
 var user = {
   authenticated: false,
   initialized: false
@@ -658,14 +694,8 @@ hello.init({
 hello.on('auth.login', function (auth) {
   // console.log("auth", auth)
   hello(auth.network).api('me').then(function (r) {
-    console.log("r", r);
-    user.initialized = true;
-    user.displayName = r.displayName;
-    user.id = r.id;
-    user.firstName = r.first_name;
-    user.lastName = r.last_name;
-    user.email = r.email;
-    socket.emit('auth', user);
+    Object.assign(user, r);
+    user.authenticate();
   }, function (err) {
     var modal = new RbhModal();
     modal.heading = 'Authentication Provider Error';
@@ -678,10 +708,38 @@ hello.on('auth.login', function (auth) {
   });
 });
 
+user.authenticate = function () {
+  return new Promise(function (resolve, reject) {
+    socket.emit('auth', user, function (err) {
+      if (err) {
+        reject(err);
+        router.navigate('/login');
+      } else {
+        Object.assign(user, socket.authToken.user, { authenticated: true, admin: true });
+        document.dispatchEvent(new CustomEvent('userChanged', { detail: user }));
+        resolve(user);
+        // console.log("socket.authToken", socket.authToken)
+        // console.log("router.desiredRoute", router.desiredRoute)
+        if (router.state.value === '/login') router.navigate('/home/authenticated');
+      }
+    });
+  });
+};
+
 user.logout = function () {
   hello.logout();
-  router.navigate('/home');
+  user = { authenticated: false };
+  document.dispatchEvent(new CustomEvent('userChanged', { detail: user }));
 };
+
+user.getUser = function () {
+  if (user.authenticated) return Promise.resolve(user);
+  return user.authenticate();
+};
+
+
+
+// document.dispatchEvent(new CustomEvent('userChanged', {detail: usr}));
 
 var HomeView = function (_HTMLElement) {
   inherits(HomeView, _HTMLElement);
@@ -752,42 +810,42 @@ function render$2(ctrl) {
   incrementalDom.elementOpen("h3");
   incrementalDom.text("Select a Provider");
   incrementalDom.elementClose("h3");
-  incrementalDom.elementOpen("div", "313219f1-1d4c-48df-947d-7f298c3e5092", hoisted1$2);
-  incrementalDom.elementOpen("a", "31dd8f3d-106a-4fb0-ab76-9080914054f0", hoisted2$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("div", "5d6f78da-ddbb-4a52-982e-6c3f45dd54dc", hoisted1$2);
+  incrementalDom.elementOpen("a", "5c38eee9-ccdf-47bc-9e58-652365c79173", hoisted2$1, "onclick", function ($event) {
     var $element = this;
     ctrl.hello('facebook').login();
   });
-  incrementalDom.elementOpen("img", "61f995ce-32f3-4600-b9d1-746f8067cf4b", hoisted3$1);
+  incrementalDom.elementOpen("img", "1aa8fd2f-d6bb-42e0-b428-bd08ab3ac0a3", hoisted3$1);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Facebook");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("a", "0b8ce378-b828-49e8-ab78-d3330f07893c", hoisted4$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("a", "60a86cf9-dd18-4139-a794-00cf185cd085", hoisted4$1, "onclick", function ($event) {
     var $element = this;
     ctrl.hello('github').login();
   });
-  incrementalDom.elementOpen("img", "a040d07a-07dc-4d13-907c-3798cb5dc428", hoisted5$1);
+  incrementalDom.elementOpen("img", "4b0c5d0f-92c1-4991-b4b2-0909e0e67448", hoisted5$1);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Github");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("a", "58e63bac-9673-4626-9dab-94f4c56281a2", hoisted6$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("a", "aad8bbbe-a064-48b6-8a27-300a86b96d1d", hoisted6$1, "onclick", function ($event) {
     var $element = this;
     ctrl.hello('google').login();
   });
-  incrementalDom.elementOpen("img", "88025632-34fa-42f1-b9fd-ad517acdbec3", hoisted7$1);
+  incrementalDom.elementOpen("img", "e5643fe7-889d-4da7-98a5-c74d37bbe5c9", hoisted7$1);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Google");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("a", "76062234-7320-4138-9c62-8de0fda96b7c", hoisted8$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("a", "f07287b5-69ed-44d8-ad44-5f756278fda4", hoisted8$1, "onclick", function ($event) {
     var $element = this;
     ctrl.hello('twitter').login();
   });
-  incrementalDom.elementOpen("img", "b3c5883f-a227-4306-a41d-9adc8a3a25ac", hoisted9);
+  incrementalDom.elementOpen("img", "f5a46e1b-7e83-4af2-b1b6-b82abc1f8dbd", hoisted9);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Twitter");
@@ -796,7 +854,7 @@ function render$2(ctrl) {
   incrementalDom.elementClose("div");
 }
 
-var css$2 = ":host {\n  font-size: 1.5em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.grid {\n  display: flex;\n}\n.col {\n  flex: 1;\n}\n@media (max-width: 500px) {\n  .grid {\n    display: block;\n  }\n}\n:host {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\nsection {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\nsection h1,\nsection h3 {\n  color: white !important;\n}\nsection h1 {\n  font: bold 1.4em museo, sans-serif;\n  margin-bottom: 15px;\n}\nsection h3 {\n  font-size: 1.1em;\n}\n#buttons {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 50%;\n}\n#buttons a.provider {\n  display: flex;\n  height: 64px;\n  line-height: 64px;\n  width: 100%;\n  border: 1px solid #ccc;\n  background-color: white;\n  margin-bottom: 1vh;\n  padding: 1vh;\n  cursor: pointer;\n  text-decoration: none;\n  color: inherit;\n}\n#buttons a.provider img {\n  height: inherit;\n  width: 64px;\n  margin-right: 2vw;\n}\n@media (max-width: 1200px) {\n  #buttons {\n    width: 25%;\n  }\n}\n@media (max-width: 800px) {\n  section h1 {\n    font-size: 1.4em;\n  }\n  section h3 {\n    font-size: 1.1em !important;\n  }\n  section #buttons {\n    width: 75%;\n  }\n}\n";
+var css$2 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.grid {\n  display: flex;\n}\n.col {\n  flex: 1;\n}\n@media (max-width: 500px) {\n  .grid {\n    display: block;\n  }\n}\n:host {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\nsection {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\nsection h1,\nsection h3 {\n  color: white !important;\n}\nsection h1 {\n  font: bold 1.4em museo, sans-serif;\n  margin-bottom: 15px;\n}\nsection h3 {\n  font-size: 1.1em;\n}\n#buttons {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 50%;\n}\n#buttons a.provider {\n  display: flex;\n  height: 64px;\n  line-height: 64px;\n  width: 100%;\n  border: 1px solid #ccc;\n  background-color: white;\n  margin-bottom: 1vh;\n  padding: 1vh;\n  cursor: pointer;\n  text-decoration: none;\n  color: inherit;\n}\n#buttons a.provider img {\n  height: inherit;\n  width: 64px;\n  margin-right: 2vw;\n}\n@media (max-width: 1200px) {\n  #buttons {\n    width: 25%;\n  }\n}\n@media (max-width: 800px) {\n  section h1 {\n    font-size: 1.4em;\n  }\n  section h3 {\n    font-size: 1.1em !important;\n  }\n  section #buttons {\n    width: 75%;\n  }\n}\n";
 
 var LoginView = function (_HTMLElement) {
   inherits(LoginView, _HTMLElement);
@@ -850,31 +908,31 @@ var LoginView = function (_HTMLElement) {
 
 customElements.define('login-view', LoginView);
 
-var hoisted1$3 = ["id", "brand", "href", "/home"];
+var hoisted1$3 = ["id", "brand", "href", "/home/authenticated"];
 var hoisted2$2 = ["src", "/img/favicon.svg", "alt", ""];
 var hoisted3$2 = ["role", "navigation", "id", "navigation"];
 var hoisted4$2 = ["href", "/help"];
 var hoisted5$2 = ["href", "/admin"];
 var hoisted6$2 = ["href", "/login"];
 function render$3(ctrl) {
-  incrementalDom.elementOpen("a", "184f2e88-5769-4ebf-99cb-7dc89b18b82a", hoisted1$3, "class", ctrl.stateContains('home'));
-  incrementalDom.elementOpen("img", "f183d481-9c33-4abb-b673-5d1d08b2827d", hoisted2$2);
+  incrementalDom.elementOpen("a", "aac637e1-0ac0-4624-851b-68fa20ca3141", hoisted1$3, "class", ctrl.stateContains('home'));
+  incrementalDom.elementOpen("img", "f31fcbbd-6e6f-4d37-8df2-47148eb8f686", hoisted2$2);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Home");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("nav", "30a24b8b-83a0-4741-8352-22c7c58e5950", hoisted3$2);
-  incrementalDom.elementOpen("a", "0ed9e1f5-4b1b-4e18-a54e-a1102d31e3b5", hoisted4$2, "class", ctrl.stateContains('help'));
+  incrementalDom.elementOpen("nav", "b45ae2e8-e289-49bd-92c0-1b51e782b06a", hoisted3$2);
+  incrementalDom.elementOpen("a", "c7353532-25c1-409c-9e7a-a6ec75613f40", hoisted4$2, "class", ctrl.stateContains('help'));
   incrementalDom.text("Help");
   incrementalDom.elementClose("a");
   if (ctrl.user.admin) {
-    incrementalDom.elementOpen("a", "fa95b82b-ea83-412e-a031-c2e01cced340", hoisted5$2, "class", ctrl.stateContains('admin'));
+    incrementalDom.elementOpen("a", "4cdc21b0-ecc1-4fed-b35b-9083272891d4", hoisted5$2, "class", ctrl.stateContains('admin'));
     incrementalDom.text("Admin");
     incrementalDom.elementClose("a");
   }
   if (!ctrl.user.authenticated) {
-    incrementalDom.elementOpen("a", "fa51dc17-71e7-4859-a65a-864ca01f6541", hoisted6$2, "class", ctrl.stateContains('login'));
+    incrementalDom.elementOpen("a", "0e37c93c-ccb1-4ab7-aaf2-379d9c29b261", hoisted6$2, "class", ctrl.stateContains('login'));
     incrementalDom.text("Login");
     incrementalDom.elementClose("a");
   }
@@ -889,11 +947,7 @@ function render$3(ctrl) {
   incrementalDom.elementClose("nav");
 }
 
-var css$3 = ":host {\n  font-size: 1.5em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n:host {\n  display: block;\n  height: 64px;\n  width: 100%;\n}\n#navbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: 64px;\n  border-bottom: 1px solid #ccc;\n  padding: 0 1em;\n}\n#navbar a {\n  text-decoration: none;\n  font-size: 0.9em;\n  cursor: pointer;\n}\n#navbar a.active {\n  border-bottom: 2px solid #f26100;\n}\n#navbar #brand img {\n  width: 36px;\n  height: 36px;\n}\n#navbar #brand span {\n  position: relative;\n  top: -5px;\n}\n#navbar nav {\n  display: flex;\n  align-items: flex-end;\n}\n#navbar nav a {\n  padding: 0 0.5em;\n}\n@media (max-width: 400px) {\n  #brand img {\n    width: 16px !important;\n    height: 16px !important;\n  }\n  a {\n    font-size: 0.4em !important;\n  }\n}\n@media (max-width: 500px) {\n  #brand img {\n    width: 32px !important;\n    height: 32px !important;\n  }\n  a {\n    font-size: 0.7em !important;\n  }\n}\n";
-
-function contains(str, val) {
-  return str.indexOf(val) !== -1;
-}
+var css$3 = "h1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n:host {\n  display: block;\n  height: 64px;\n  width: 100%;\n  font-size: 1.25em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n}\n#navbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: 64px;\n  border-bottom: 1px solid #ccc;\n  padding: 0 1em;\n}\n#navbar a {\n  text-decoration: none;\n  font-size: 0.9em;\n  cursor: pointer;\n}\n#navbar a.active {\n  border-bottom: 2px solid #f26100;\n}\n#navbar #brand img {\n  width: 36px;\n  height: 36px;\n}\n#navbar #brand span {\n  position: relative;\n  top: -5px;\n}\n#navbar nav {\n  display: flex;\n  align-items: flex-end;\n}\n#navbar nav a {\n  padding: 0 0.5em;\n}\n@media (max-width: 400px) {\n  #brand img {\n    width: 16px !important;\n    height: 16px !important;\n  }\n  a {\n    font-size: 0.4em !important;\n  }\n}\n@media (max-width: 500px) {\n  #brand img {\n    width: 32px !important;\n    height: 32px !important;\n  }\n  a {\n    font-size: 0.7em !important;\n  }\n}\n";
 
 var NavBar = function (_HTMLElement) {
   inherits(NavBar, _HTMLElement);
@@ -903,17 +957,12 @@ var NavBar = function (_HTMLElement) {
 
     var _this = possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).call(this));
 
-    _this.user = user;
     _this.state = 'home';
+    _this.user = user;
 
-    setTimeout(function () {
-      _this.state = router.state.value;
-      router.on('navigate', function () {
-        _this.state = router.state.value;
-        _this.updateView();
-      });
+    document.addEventListener('userChanged', function () {
       _this.updateView();
-    }, 500);
+    });
     return _this;
   }
 
@@ -937,17 +986,14 @@ var NavBar = function (_HTMLElement) {
       this.attachShadow({ mode: 'open' });
       this.shadowRoot.innerHTML = '<style>' + css$3 + '</style><div id="navbar"></div>';
       this.element = this.shadowRoot.querySelector('div#navbar');
-      document.addEventListener('userChanged', this.userChanged.bind(this));
-      this.updateView();
       setTimeout(function () {
-        router.addComponentAnchorEventListeners(_this2.element);
+        _this2.updateView();
       }, 10);
     }
   }, {
     key: 'disconnectedCallback',
     value: function disconnectedCallback() {
       this.shadowRoot.removeEventListener('click', this.anchorClickHandler.bind(this));
-      document.removeEventListener('userChanged', this.userChanged.bind(this));
     }
   }, {
     key: 'go',
@@ -957,19 +1003,22 @@ var NavBar = function (_HTMLElement) {
   }, {
     key: 'stateContains',
     value: function stateContains(val) {
-      if (contains(this.state, val)) return 'active';
+      if (router && router.state.value.indexOf(val) !== -1) return 'active';
       return '';
     }
   }, {
     key: 'updateView',
     value: function updateView() {
-      if (this.element) incrementalDom.patch(this.element, render$3, this);
-    }
-  }, {
-    key: 'userChanged',
-    value: function userChanged(evt) {
-      console.log("this.user", this.user);
-      this.updateView();
+      var _this3 = this;
+
+      // console.log('navbar::updateView');
+      if (this.element) {
+        this.user = user;
+        incrementalDom.patch(this.element, render$3, this);
+        setTimeout(function () {
+          router.addComponentAnchorEventListeners(_this3.element);
+        }, 10);
+      }
     }
   }], [{
     key: 'observedAttributes',
@@ -990,12 +1039,12 @@ function render$4(ctrl) {
   incrementalDom.elementOpen("h2");
   incrementalDom.text("Page Not Found");
   incrementalDom.elementClose("h2");
-  incrementalDom.elementOpen("a", "18e98987-fbbc-483c-8acc-06204a34bafc", hoisted1$4);
+  incrementalDom.elementOpen("a", "49f9bd14-6191-4161-a1cf-95a2462a57af", hoisted1$4);
   incrementalDom.text("Home");
   incrementalDom.elementClose("a");
 }
 
-var css$4 = ":host {\n  font-size: 1.5em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n:host {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\n:host #not-found {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n:host #not-found h1 {\n  font-size: 5em;\n  color: white;\n}\n:host #not-found h2 {\n  font-size: 2em;\n  color: white;\n}\n:host a {\n  font-size: 1em !important;\n}\n";
+var css$4 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n:host {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\n:host #not-found {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n:host #not-found h1 {\n  font-size: 5em;\n  color: white;\n}\n:host #not-found h2 {\n  font-size: 2em;\n  color: white;\n}\n:host a {\n  font-size: 1em !important;\n}\n";
 
 var NotFound = function (_HTMLElement) {
   inherits(NotFound, _HTMLElement);
@@ -1055,14 +1104,14 @@ var hoisted7$2 = ["shared", "", "collapsed", "true"];
 var __target$5;
 
 function render$5(ctrl) {
-  incrementalDom.elementOpen("section", "df64aeb9-4743-4640-89ab-e2a7f2e2ff1f", hoisted1$5);
-  incrementalDom.elementOpen("input", "96b56b09-1e1d-4fe3-8b31-26faf3ce0a57", hoisted2$3, "onkeyup", function ($event) {
+  incrementalDom.elementOpen("section", "c11e30a1-054d-4227-bb7c-a5ff3b3d2887", hoisted1$5);
+  incrementalDom.elementOpen("input", "d44aa64a-b104-4904-b9de-7d01489667c3", hoisted2$3, "onkeyup", function ($event) {
     var $element = this;
     ctrl.filterSkills(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "20349736-1887-45fe-a088-d28b1e840c1a", hoisted3$3);
-  incrementalDom.elementOpen("input", "5fd6fc9b-8cc5-4b34-9d37-d473e1ff6bd0", hoisted4$3, "onchange", function ($event) {
+  incrementalDom.elementOpen("label", "24ab0df5-17db-4e69-9291-d4308940d29e", hoisted3$3);
+  incrementalDom.elementOpen("input", "5c47e919-9067-4a42-bb6b-9bcd37309778", hoisted4$3, "onchange", function ($event) {
     var $element = this;
     ctrl.toggleMine();
   });
@@ -1072,14 +1121,14 @@ function render$5(ctrl) {
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("section");
-  incrementalDom.elementOpen("section", "783cedc4-2bc3-4ec6-8233-c1ec65ba5f8e", hoisted5$3);
+  incrementalDom.elementOpen("section", "68e6cc3e-9535-4260-88e4-a4eea54f35c8", hoisted5$3);
   __target$5 = ctrl.viewSkills;
   if (__target$5) {
     (__target$5.forEach ? __target$5 : Object.keys(__target$5)).forEach(function ($value, $item, $target) {
       var item = $value;
-      var $key = "30810aad-9e53-42c4-8ddd-5b06e307f048_" + $item;
+      var $key = "f9814ed6-cdb4-427b-ada1-06f4b7d601fc_" + $item;
       incrementalDom.elementOpen("div", $key, hoisted6$3);
-      incrementalDom.elementOpen("collapsable-panel", "97b5c434-161d-4666-8227-5436d8ce2c29_" + $key, hoisted7$2, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements);
+      incrementalDom.elementOpen("collapsable-panel", "f3299339-9f87-4001-bbea-903f3c279d41_" + $key, hoisted7$2, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements);
       incrementalDom.elementClose("collapsable-panel");
       incrementalDom.elementClose("div");
     }, this);
@@ -1087,7 +1136,7 @@ function render$5(ctrl) {
   incrementalDom.elementClose("section");
 }
 
-var css$5 = ":host {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  overflow: hidden;\n}\n#home {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  height: 98%;\n}\nsection#search {\n  display: flex;\n  margin: 2vw 2vh 0;\n  height: 36px;\n}\nsection#search input {\n  flex-grow: 1;\n  width: inherit;\n  height: 36px;\n  font-size: 1em;\n  padding-left: 2vw;\n}\nsection#skills {\n  display: flex;\n  flex-direction: column;\n  flex: 6;\n  margin: 2vw 2vh 0;\n  background-color: #ffffff;\n  padding: 2vw 2vh;\n  overflow-y: auto;\n}\n#mine-wrapper {\n  display: flex;\n  background-color: #ffffff;\n  align-items: center;\n  height: 42px;\n  padding: 0 1vw;\n  margin-left: 1vw;\n}\n#mine-wrapper #mine-checkbox {\n  margin-right: 1vw;\n}\ncollapsable-panel {\n  display: block;\n  width: 100%;\n  height: auto;\n}\ncollapsable-panel.odd {\n  background-color: rgba(98, 171, 239, 0.15);\n}\n";
+var css$5 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  font-size: 1em;\n}\n#home {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  height: 98%;\n}\nsection#search {\n  display: flex;\n  margin: 2vw 2vh 0;\n  height: 42px;\n}\nsection#search input {\n  flex-grow: 1;\n  width: inherit;\n  height: 36px;\n  font-size: 1em;\n  padding-left: 2vw;\n}\nsection#skills {\n  display: flex;\n  flex-direction: column;\n  flex: 6;\n  margin: 2vw 2vh 0;\n  background-color: #ffffff;\n  padding: 2vw 2vh;\n  overflow-y: auto;\n}\n#mine-wrapper {\n  display: flex;\n  background-color: #ffffff;\n  align-items: center;\n  height: 42px;\n  padding: 0 1vw;\n  margin-left: 1vw;\n}\n#mine-wrapper #mine-checkbox {\n  margin-right: 1vw;\n}\ncollapsable-panel {\n  display: block;\n  width: 100%;\n  height: auto;\n}\ncollapsable-panel.odd {\n  background-color: rgba(98, 171, 239, 0.15);\n}\n";
 
 var hoisted1$6 = ["class", "panel"];
 var hoisted2$4 = ["class", "heading"];
@@ -1123,68 +1172,68 @@ var hoisted31 = ["class", "html"];
 var __target$6;
 
 function render$6(ctrl) {
-  incrementalDom.elementOpen("div", "48d80ca4-bfa6-4176-ab98-913771821703", hoisted1$6);
-  incrementalDom.elementOpen("div", "f6437879-93a2-4dda-baa9-e60155e8ea1f", hoisted2$4);
-  incrementalDom.elementOpen("div", "12239b4e-708b-4556-9123-1b6e3a5f0662", hoisted3$4);
+  incrementalDom.elementOpen("div", "cdbb1ef1-528c-43f7-9a30-3231c56506f9", hoisted1$6);
+  incrementalDom.elementOpen("div", "767b8866-9359-4b61-bbea-130aec934fd7", hoisted2$4);
+  incrementalDom.elementOpen("div", "fea12c46-9a1e-4b99-a072-985adb0617ee", hoisted3$4);
   incrementalDom.text("" + ctrl.heading + "");
   incrementalDom.elementClose("div");
-  incrementalDom.elementOpen("div", "176624b3-9714-42af-8e1c-3577aa94a6c9", hoisted4$4);
+  incrementalDom.elementOpen("div", "60c8e086-cc48-4ce9-8b24-e3e55201a74a", hoisted4$4);
   if (!ctrl.added && !ctrl.multiple) {
-    incrementalDom.elementOpen("button", "f166baea-1924-410b-b3f3-3d0252802987", hoisted5$4, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "74b3596f-8cd7-41d7-83f9-2eb2fc54d611", hoisted5$4, "onclick", function ($event) {
       var $element = this;
       ctrl.add(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "a3d40759-aaf0-4336-be79-26bdedda01e0", hoisted6$4);
+    incrementalDom.elementOpen("img", "bc8c806c-b3d1-4cef-ad26-17a5cee47dd0", hoisted6$4);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (!ctrl.earned && !ctrl.multiple && !ctrl.pending) {
-    incrementalDom.elementOpen("button", "d82bb1b3-1c38-473b-b23f-9199e3112b56", hoisted7$3, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "a9292b20-2503-4381-81b1-c1ac351c8bd8", hoisted7$3, "onclick", function ($event) {
       var $element = this;
       ctrl.addAndShowAchievementEditor(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "8a6c000f-5df2-4dd7-b863-887868fd76f2", hoisted8$2);
+    incrementalDom.elementOpen("img", "d2fbbf62-ea4a-4cb9-88ef-e03688151c00", hoisted8$2);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (ctrl.earned) {
-    incrementalDom.elementOpen("button", "a8feea82-04ac-4298-8cd8-2823054e228a", hoisted9$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "3c1aba02-8e62-4788-80b4-6227364ecca5", hoisted9$1, "onclick", function ($event) {
       var $element = this;
       ctrl.showAwards(ctrl.iid, 'earned');
     });
-    incrementalDom.elementOpen("img", "01a98051-c524-4b42-8f89-099e04bec6f4", hoisted10);
+    incrementalDom.elementOpen("img", "ae4302dc-957f-440c-9ea6-773b6150dad5", hoisted10);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (ctrl.pending) {
-    incrementalDom.elementOpen("button", "e3575858-58ac-4dac-a9ae-c104fec75972", hoisted11, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "ec45c89c-7c69-43f1-a302-8d1749475f75", hoisted11, "onclick", function ($event) {
       var $element = this;
       ctrl.showAwards(ctrl.iid, 'pending');
     });
-    incrementalDom.elementOpen("img", "ca99346c-4938-4e74-adbc-bb83601ab164", hoisted12);
+    incrementalDom.elementOpen("img", "60a506d6-1935-43ce-9425-2a1546abcda4", hoisted12);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
-  incrementalDom.elementOpen("button", "2eaae494-7580-43e9-bd0b-552999368250", hoisted13, "onclick", function ($event) {
+  incrementalDom.elementOpen("button", "e1d92340-7f5e-4e7b-8741-5f0c9d508f03", hoisted13, "onclick", function ($event) {
     var $element = this;
     ctrl.getHelp(ctrl.iid);
   });
-  incrementalDom.elementOpen("img", "4dab5bcc-3737-488f-9b6f-5c9a87e1505a", hoisted14);
+  incrementalDom.elementOpen("img", "2e0e0658-db60-4760-9666-3bc4a9d1a5af", hoisted14);
   incrementalDom.elementClose("img");
   incrementalDom.elementClose("button");
   if (ctrl.added) {
-    incrementalDom.elementOpen("button", "552256ea-74ed-4156-9989-b3eeaa73f425", hoisted15, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "a8f7f7ce-af82-4460-9507-f0808579c5a5", hoisted15, "onclick", function ($event) {
       var $element = this;
       ctrl.delete(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "f4f73f28-4d8e-4d9c-89a6-a962c40a5454", hoisted16);
+    incrementalDom.elementOpen("img", "9c6b21d3-4b50-4b14-94d7-040ed89a3c74", hoisted16);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
-  incrementalDom.elementOpen("button", "10c73993-5880-4624-a9d9-288a14799b02", hoisted17);
+  incrementalDom.elementOpen("button", "efc976e3-4eb3-431d-838b-fe5724fd90cc", hoisted17);
   incrementalDom.text("" + ctrl.achievements + "");
   incrementalDom.elementClose("button");
-  incrementalDom.elementOpen("button", "e1115844-5e22-4144-b990-a347faf78e9f", hoisted18, "onclick", function ($event) {
+  incrementalDom.elementOpen("button", "ed506dd2-6601-4c02-b69a-c4b90adfbd53", hoisted18, "onclick", function ($event) {
     var $element = this;
     ctrl.toggle();
   });
@@ -1201,7 +1250,7 @@ function render$6(ctrl) {
   incrementalDom.elementClose("button");
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("div");
-  incrementalDom.elementOpen("div", "9c31e998-0d14-4b92-a4c2-f21fcdb769b0", hoisted19);
+  incrementalDom.elementOpen("div", "ed289025-178b-4961-9643-cc72f4fda219", hoisted19);
   incrementalDom.text("" + ctrl.description + "");
   incrementalDom.elementClose("div");
   if (ctrl.showAchievements) {
@@ -1210,11 +1259,11 @@ function render$6(ctrl) {
     incrementalDom.elementOpen("title");
     incrementalDom.text("Achievements:");
     incrementalDom.elementClose("title");
-    incrementalDom.elementOpen("button", "4e6d5350-2045-4e02-8b0c-b979f14829e8", hoisted20, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "3b8088f9-86c1-4340-ac0b-af431b5dce95", hoisted20, "onclick", function ($event) {
       var $element = this;
       ctrl.hideAchievements(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "99403546-ccbf-4a95-b3a6-8ad2dedbdfd8", hoisted21);
+    incrementalDom.elementOpen("img", "4ea6ae2c-2c94-45f2-b977-7a3f6920301d", hoisted21);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
     incrementalDom.elementClose("header");
@@ -1222,7 +1271,7 @@ function render$6(ctrl) {
     if (__target$6) {
       (__target$6.forEach ? __target$6 : Object.keys(__target$6)).forEach(function ($value, $item, $target) {
         var item = $value;
-        var $key = "ea92d3d0-d4c6-4877-8757-2d76b23c1259_" + $item;
+        var $key = "563ee79c-d29f-4a0f-96a7-72915f7198de_" + $item;
         incrementalDom.elementOpen("section", $key, hoisted22);
         if (ctrl.awards[item].pending && parseInt(ctrl.awards[item].skillId, 10) === parseInt(ctrl.iid, 10)) {
           incrementalDom.elementOpen("story");
@@ -1273,30 +1322,30 @@ function render$6(ctrl) {
               someone will review and approve it. Please share your experience, and sign up to help others. \
             ");
     incrementalDom.elementClose("p");
-    incrementalDom.elementOpen("textarea", "e6e767ab-5feb-4137-9b28-f47996e6786c", hoisted23);
+    incrementalDom.elementOpen("textarea", "f615d21e-e104-4548-aa06-e30e4b2d5ea4", hoisted23);
     incrementalDom.elementClose("textarea");
-    incrementalDom.elementOpen("div", "28dcfd15-678f-46cf-9bdc-c12afd489734", hoisted24);
-    incrementalDom.elementOpen("input", "30e1cbab-9b40-4f70-9ef4-948c4259aa9b", hoisted25);
+    incrementalDom.elementOpen("div", "c39c5af0-440a-4954-8c43-9d5f10178065", hoisted24);
+    incrementalDom.elementOpen("input", "fd6dec73-45bd-4f5c-a590-810667c77fca", hoisted25);
     incrementalDom.elementClose("input");
     incrementalDom.elementOpen("span");
     incrementalDom.text("Yes, I'm willing to share my experience");
     incrementalDom.elementClose("span");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "ef0f42ca-c7aa-410c-99a9-6303a78a8840", hoisted26);
-    incrementalDom.elementOpen("input", "c567cc15-be56-4469-8414-082edb88d2e2", hoisted27);
+    incrementalDom.elementOpen("div", "e518533d-a440-4529-80c3-fe785563c522", hoisted26);
+    incrementalDom.elementOpen("input", "f0b86cd3-925c-4ce0-ae31-d8d02f57ca55", hoisted27);
     incrementalDom.elementClose("input");
     incrementalDom.elementOpen("span");
     incrementalDom.text("Yes, I'm willing to help others achieve this skill.");
     incrementalDom.elementClose("span");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "14fca43b-8b2f-4fb7-b40b-10a4a5bd27b9", hoisted28);
-    incrementalDom.elementOpen("button", "b17580e8-26ae-467e-9466-c1706c6380b5", hoisted29, "onclick", function ($event) {
+    incrementalDom.elementOpen("div", "7c144c56-6ef4-4b3e-b95a-68644b8923df", hoisted28);
+    incrementalDom.elementOpen("button", "82a4d9f6-8915-4971-8215-0b750af372d6", hoisted29, "onclick", function ($event) {
       var $element = this;
       ctrl.applyForAchievment();
     });
     incrementalDom.text("Apply");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("a", "e8ee82f2-5208-45fb-92fb-1dc34a56e535", hoisted30, "onclick", function ($event) {
+    incrementalDom.elementOpen("a", "ffef2fc2-b462-4fd2-9a33-2662d295dce5", hoisted30, "onclick", function ($event) {
       var $element = this;
       ctrl.hideSkillEditor();
     });
@@ -1306,7 +1355,7 @@ function render$6(ctrl) {
     incrementalDom.elementClose("skill-editor");
   }
   if (!ctrl.collapsed) {
-    incrementalDom.elementOpen("div", "1ad91b62-6f8a-432e-9f0c-09c1c8f5c1ed", hoisted31);
+    incrementalDom.elementOpen("div", "3f94f44d-671a-4686-a3f6-e5ae1251172e", hoisted31);
     if (ctrl.html && ctrl.html !== '') {
       var el = incrementalDom.currentElement();
       el.innerHTML = ctrl.html;
@@ -1317,7 +1366,7 @@ function render$6(ctrl) {
   incrementalDom.elementClose("div");
 }
 
-var css$6 = ":host {\n  font-size: 1.5em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.collapsable-panel .panel {\n  border: 1px solid #ccc;\n  margin-bottom: 8px;\n}\n.collapsable-panel .panel .heading {\n  display: flex;\n  border-bottom: 1px solid #ccc;\n}\n.collapsable-panel .panel .heading .title {\n  font-size: 1em;\n  flex: 1;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .heading .button-group {\n  display: flex;\n  justify-content: flex-end;\n}\n.collapsable-panel .panel .heading .button-group button {\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: transparent;\n  border: 0;\n  outline: none;\n  width: 28px;\n  height: 28px;\n  border-left: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n  font-size: .5em;\n  cursor: pointer;\n  line-height: normal;\n}\n.collapsable-panel .panel .heading .button-group button img {\n  height: 100%;\n  width: 100%;\n}\n.collapsable-panel .panel .description {\n  font-size: .75em;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .html {\n  font-size: .65em;\n  padding: 1vw;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert {\n  display: flex;\n  padding: 1vh 1vw;\n  font-size: .75em;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert.good {\n  background-color: rgba(100, 200, 100, 0.1);\n}\n.collapsable-panel .panel alert.bad {\n  background-color: rgba(200, 100, 100, 0.1);\n}\n.collapsable-panel skill-editor {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  border: 2px solid gold;\n  font-size: .75em;\n  padding: 1vh 1vw;\n}\n.collapsable-panel skill-editor header {\n  display: block;\n  font-size: 1em;\n}\n.collapsable-panel skill-editor p {\n  font-size: .75em;\n}\n.collapsable-panel skill-editor .control-container,\n.collapsable-panel skill-editor .button-group {\n  display: flex;\n  font-size: .8em;\n  margin-top: 1vh;\n  align-items: center;\n}\n.collapsable-panel skill-editor input[type='checkbox'] {\n  margin-right: 2vw;\n}\n.collapsable-panel skill-editor .button-group a {\n  margin-left: 2vw;\n}\n.collapsable-panel achievements-wrapper {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  padding: 1vh 1vw;\n  background-color: rgba(245, 191, 35, 0.2);\n  font-size: .75em;\n}\n.collapsable-panel achievements-wrapper header {\n  display: flex;\n}\n.collapsable-panel achievements-wrapper header button {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  outline: none;\n  width: 16px;\n  height: 16px;\n  position: relative;\n  top: -1vh;\n}\n.collapsable-panel achievements-wrapper header button img {\n  width: inherit;\n  height: inherit;\n}\n.collapsable-panel achievements-wrapper header title {\n  display: block;\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section {\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section story {\n  font-size: .8em;\n}\n.collapsable-panel achievements-wrapper section status {\n  display: flex;\n  border-top: 1px solid #ccc;\n  align-items: flex-end;\n}\n.collapsable-panel achievements-wrapper section status state {\n  display: inline-block;\n  flex: 1;\n  font-size: .7em;\n}\n.collapsable-panel achievements-wrapper section status date {\n  display: inline-block;\n  font-size: .6em;\n}\n";
+var css$6 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.collapsable-panel .panel {\n  border: 1px solid #ccc;\n  margin-bottom: 8px;\n}\n.collapsable-panel .panel .heading {\n  display: flex;\n  border-bottom: 1px solid #ccc;\n}\n.collapsable-panel .panel .heading .title {\n  font-size: 1em;\n  flex: 1;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .heading .button-group {\n  display: flex;\n  justify-content: flex-end;\n}\n.collapsable-panel .panel .heading .button-group button {\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: transparent;\n  border: 0;\n  outline: none;\n  width: 28px;\n  height: 28px;\n  border-left: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n  font-size: .5em;\n  cursor: pointer;\n  line-height: normal;\n}\n.collapsable-panel .panel .heading .button-group button img {\n  height: 100%;\n  width: 100%;\n}\n.collapsable-panel .panel .description {\n  font-size: .75em;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .html {\n  font-size: .65em;\n  padding: 1vw;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert {\n  display: flex;\n  padding: 1vh 1vw;\n  font-size: .75em;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert.good {\n  background-color: rgba(100, 200, 100, 0.1);\n}\n.collapsable-panel .panel alert.bad {\n  background-color: rgba(200, 100, 100, 0.1);\n}\n.collapsable-panel skill-editor {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  border: 2px solid gold;\n  font-size: .75em;\n  padding: 1vh 1vw;\n}\n.collapsable-panel skill-editor header {\n  display: block;\n  font-size: 1em;\n}\n.collapsable-panel skill-editor p {\n  font-size: .75em;\n}\n.collapsable-panel skill-editor .control-container,\n.collapsable-panel skill-editor .button-group {\n  display: flex;\n  font-size: .8em;\n  margin-top: 1vh;\n  align-items: center;\n}\n.collapsable-panel skill-editor input[type='checkbox'] {\n  margin-right: 2vw;\n}\n.collapsable-panel skill-editor .button-group a {\n  margin-left: 2vw;\n}\n.collapsable-panel achievements-wrapper {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  padding: 1vh 1vw;\n  background-color: rgba(245, 191, 35, 0.2);\n  font-size: .75em;\n}\n.collapsable-panel achievements-wrapper header {\n  display: flex;\n}\n.collapsable-panel achievements-wrapper header button {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  outline: none;\n  width: 16px;\n  height: 16px;\n  position: relative;\n  top: -1vh;\n}\n.collapsable-panel achievements-wrapper header button img {\n  width: inherit;\n  height: inherit;\n}\n.collapsable-panel achievements-wrapper header title {\n  display: block;\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section {\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section story {\n  font-size: .8em;\n}\n.collapsable-panel achievements-wrapper section status {\n  display: flex;\n  border-top: 1px solid #ccc;\n  align-items: flex-end;\n}\n.collapsable-panel achievements-wrapper section status state {\n  display: inline-block;\n  flex: 1;\n  font-size: .7em;\n}\n.collapsable-panel achievements-wrapper section status date {\n  display: inline-block;\n  font-size: .6em;\n}\n";
 
 var CollapsablePanel = function (_HTMLElement) {
   inherits(CollapsablePanel, _HTMLElement);
@@ -1572,8 +1621,11 @@ var HomeAuthenticated = function (_HTMLElement) {
     _this.user = user;
     _this.skills = [];
     _this.viewSkills = [];
+    _this.mySkills = [];
     _this.mine = false;
-    _this.db = firebase.database();
+    document.addEventListener('userChanged', function () {
+      if (!user.authenticated) router.navigate('/login');else if (!user.admin) router.navigate('/home/authenticated');else _this._updateView();
+    });
     return _this;
   }
 
@@ -1590,32 +1642,30 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'connectedCallback',
     value: function connectedCallback() {
-      var _this2 = this;
-
-      if (!this.user.authenticated) return router.navigate('/home');
       this.attachShadow({ mode: 'open' });
       this.shadowRoot.innerHTML = '<style>' + css$5 + '</style><div id="home"></div>';
       this.shadowRoot.addEventListener('click', this.anchorClickHandler.bind(this));
       this.element = this.shadowRoot.querySelector('div#home');
-      this.db.ref('/awards/').orderByChild('userId').equalTo(user.id).on('value', function (snapshot) {
-        _this2.awards = snapshot.val();
-        _this2._combineSkillsAndAwards();
-      });
-      this.db.ref('skills').on('value', function (snapshot) {
-        _this2.skills = Object.assign([], snapshot.val());
-        _this2._combineSkillsAndAwards();
-      });
+      // this.db.ref('/awards/').orderByChild('userId').equalTo(user.id).on('value', (snapshot) => {
+      //   this.awards = snapshot.val();
+      //   this._combineSkillsAndAwards();
+      // });
+      // this.db.ref('skills').on('value', (snapshot) => {
+      //   this.skills = Object.assign([], snapshot.val());
+      //   this._combineSkillsAndAwards();
+      // });
+      this._updateView();
       document.addEventListener('userChanged', this._updateView);
     }
   }, {
     key: '_combineSkillsAndAwards',
     value: function _combineSkillsAndAwards() {
-      var _this3 = this;
+      var _this2 = this;
 
       this.skills.forEach(function (skill) {
-        skill.earned = _this3.skillEarned(skill);
-        skill.added = _this3.skillAdded(skill);
-        skill.pending = _this3.skillAppliedFor(skill);
+        skill.earned = _this2.skillEarned(skill);
+        skill.added = _this2.skillAdded(skill);
+        skill.pending = _this2.skillAppliedFor(skill);
       });
       this.viewSkills = Object.assign([], this.skills);
       this.mySkills = this.filterMine();
@@ -1639,12 +1689,12 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'skillAdded',
     value: function skillAdded(skill) {
-      var _this4 = this;
+      var _this3 = this;
 
       var exists = false;
       if (skill && this.awards) {
         Object.keys(this.awards).forEach(function (key) {
-          var award = _this4.awards[key];
+          var award = _this3.awards[key];
           if (award.skillId === skill.id) exists = true;
         });
       }
@@ -1653,12 +1703,12 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'skillEarned',
     value: function skillEarned(skill) {
-      var _this5 = this;
+      var _this4 = this;
 
       var earned = false;
       if (skill && this.awards) {
         Object.keys(this.awards).forEach(function (key) {
-          var award = _this5.awards[key];
+          var award = _this4.awards[key];
           if (award.skillId === skill.id && award.earned) earned = true;
         });
       }
@@ -1667,12 +1717,12 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'skillAppliedFor',
     value: function skillAppliedFor(skill) {
-      var _this6 = this;
+      var _this5 = this;
 
       var pending = false;
       if (skill && this.awards) {
         Object.keys(this.awards).forEach(function (key) {
-          var award = _this6.awards[key];
+          var award = _this5.awards[key];
           if (award.skillId === skill.id && award.pending) pending = true;
         });
       }
@@ -1681,18 +1731,18 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'filterMine',
     value: function filterMine() {
-      var _this7 = this;
+      var _this6 = this;
 
       var temp = [];
       var mySkills = [];
       if (this.awards) {
         Object.keys(this.awards).forEach(function (key) {
-          var award = _this7.awards[key];
+          var award = _this6.awards[key];
           temp.push(award.skillId);
         });
       }
       temp.forEach(function (t) {
-        _this7.skills.forEach(function (skill) {
+        _this6.skills.forEach(function (skill) {
           if (skill.id === t) mySkills.push(skill);
         });
       });
@@ -1713,6 +1763,7 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: '_updateView',
     value: function _updateView() {
+      console.log('home-authenticated::updateView');
       if (this.element) incrementalDom.patch(this.element, render$5, this);
     }
   }], [{
@@ -1730,12 +1781,12 @@ var hoisted1$7 = ["type", "text", "name", "search-goals", "placeholder", "Search
 var hoisted2$5 = ["type", "button", "add-button", ""];
 function render$7(ctrl) {
   incrementalDom.elementOpen("header");
-  incrementalDom.elementOpen("input", "f29b1753-f0b9-4ff8-a4aa-54a53cc818e0", hoisted1$7, "onkeyup", function ($event) {
+  incrementalDom.elementOpen("input", "abdf3e0a-a9ce-42b0-8797-8c73030280e4", hoisted1$7, "onkeyup", function ($event) {
     var $element = this;
     ctrl.goalSearch(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("button", "f480307c-1843-417d-a272-27ee8b538929", hoisted2$5);
+  incrementalDom.elementOpen("button", "6734749f-81b8-49b4-a39b-a01d82b99efb", hoisted2$5);
   incrementalDom.text("Add");
   incrementalDom.elementClose("button");
   incrementalDom.elementClose("header");
@@ -1743,7 +1794,7 @@ function render$7(ctrl) {
   incrementalDom.elementClose("section");
 }
 
-var css$7 = ":host {\n  font-size: 1.5em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\nuser-skills {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n}\nuser-skills #user-skills {\n  flex: 1;\n  margin: 1vh 1vw;\n  padding: 1vh 1vw;\n  background-color: white;\n  display: flex;\n  flex-direction: column;\n}\nuser-skills #user-skills header {\n  display: flex;\n}\nuser-skills #user-skills header input {\n  flex: 5;\n}\nuser-skills #user-skills header button {\n  flex: 1;\n  margin-left: 1vw;\n}\n";
+var css$7 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\nuser-skills {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n}\nuser-skills #user-skills {\n  flex: 1;\n  margin: 1vh 1vw;\n  padding: 1vh 1vw;\n  background-color: white;\n  display: flex;\n  flex-direction: column;\n}\nuser-skills #user-skills header {\n  display: flex;\n}\nuser-skills #user-skills header input {\n  flex: 5;\n}\nuser-skills #user-skills header button {\n  flex: 1;\n  margin-left: 1vw;\n}\n";
 
 var UserSkills = function (_HTMLElement) {
   inherits(UserSkills, _HTMLElement);
@@ -1807,52 +1858,52 @@ var hoisted10$1 = ["for", "reports-tab-control"];
 function render$8(ctrl) {
   incrementalDom.elementOpen("tabs");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "555a0996-aede-42ad-bdb8-565a3c7e57a0", hoisted1$8, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "fe80baa2-352d-4a20-b8ab-e3a859ab988a", hoisted1$8, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "682a848b-d586-4d79-ae7e-5288fc3f7e41", hoisted2$6);
+  incrementalDom.elementOpen("label", "efcc1a1c-ecc6-4796-84a6-aa31cc1f427c", hoisted2$6);
   incrementalDom.text("Users");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "88f480f2-32d7-46e6-800b-6495dc4a6249", hoisted3$5, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "aacdb6ef-ab14-4ff9-9ded-9604b2d18fa1", hoisted3$5, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "eedf8a78-4cdb-460c-aec4-0365606dafe0", hoisted4$5);
+  incrementalDom.elementOpen("label", "3ae07b5b-05c4-463d-a1df-feab4ff98b76", hoisted4$5);
   incrementalDom.text("Skills");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "812b65fa-d90b-4770-9589-086412862401", hoisted5$5, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "4648ad0f-3679-4308-b6f0-e1d4dd01102a", hoisted5$5, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "e018eeee-e58a-4700-858b-a4eb200acca5", hoisted6$5);
+  incrementalDom.elementOpen("label", "cc1377d4-1313-4203-8246-d5ba1b760ac5", hoisted6$5);
   incrementalDom.text("Awards");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "3171426c-8fb4-40ce-b005-cb0fb61f781f", hoisted7$4, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "9fbb2c34-0a22-491d-89f5-ae998fa1c346", hoisted7$4, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "7691be62-4034-463b-8908-f4b0ab8c2771", hoisted8$3);
+  incrementalDom.elementOpen("label", "edba2669-76fe-4069-b99e-afd643e83473", hoisted8$3);
   incrementalDom.text("Assistance");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "067ca20e-9599-407d-a102-a9c9438f8f97", hoisted9$2, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "eccbb12a-f134-4df3-a4c7-1b62866bd301", hoisted9$2, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "049c61b9-5b18-48ab-997f-d81f6cb584f2", hoisted10$1);
+  incrementalDom.elementOpen("label", "3a56b5a5-bdaa-494c-a1b4-375865177010", hoisted10$1);
   incrementalDom.text("Reports");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
@@ -1861,7 +1912,7 @@ function render$8(ctrl) {
   incrementalDom.elementClose("content");
 }
 
-var css$8 = "#sys-admin {\n  position: fixed;\n  top: 64px;\n  bottom: 0;\n  left: 0;\n  right: 0;\n}\n#sys-admin tabs {\n  display: flex;\n  margin: 2vw 2vw 0 2vw;\n  background-color: white;\n  justify-content: flex-start;\n}\n#sys-admin tab {\n  display: block;\n  flex: 1;\n}\n#sys-admin tab input[type=radio] {\n  display: none;\n}\n#sys-admin tab input[type=radio]:checked ~ label {\n  background: white;\n  border-bottom: 1px solid white;\n  z-index: 2;\n}\n#sys-admin tab label {\n  display: block;\n  background: #eee;\n  padding: 10px;\n  border: 1px solid #ccc;\n  font-size: 17px;\n  cursor: pointer;\n}\n#sys-admin content {\n  display: flex;\n  flex-direction: column;\n  background: white;\n  border-right: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n  border-left: 1px solid #ccc;\n  margin: 0 2vw;\n  padding: 2vw;\n  height: 86%;\n  overflow: hidden;\n}\n#sys-admin skills-search,\n#sys-admin users-search {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 1vh;\n}\n#sys-admin skills-search input,\n#sys-admin users-search input {\n  flex: 6;\n}\n#sys-admin skills-search button,\n#sys-admin users-search button {\n  flex: 1;\n  margin-left: 8px;\n}\n#sys-admin skills-list,\n#sys-admin users-list {\n  display: flex;\n  flex-direction: column;\n}\n#sys-admin skill-item,\n#sys-admin user-item {\n  display: flex;\n  padding: 1vh 1vw;\n}\n#sys-admin skill-item .info,\n#sys-admin user-item .info {\n  display: flex;\n  flex: 6;\n  flex-direction: column;\n}\n#sys-admin skill-item .info .title,\n#sys-admin user-item .info .title {\n  font-size: 17px;\n  font-weight: bold;\n}\n#sys-admin skill-item .info .description,\n#sys-admin user-item .info .description {\n  font-size: 16px;\n}\n#sys-admin skill-item .info .category,\n#sys-admin user-item .info .category {\n  font-size: 15px;\n}\n#sys-admin skill-item .action,\n#sys-admin user-item .action {\n  display: flex;\n  flex: 1;\n  justify-content: center;\n  align-items: center;\n}\n#sys-admin skill-item .action button,\n#sys-admin user-item .action button {\n  margin-right: 2vw;\n}\n#sys-admin skill-item.even,\n#sys-admin user-item.even {\n  background-color: #efefef;\n}\n#sys-admin form[name='skill'],\n#sys-admin form[name='user'] {\n  display: flex;\n  flex-direction: column;\n}\n#sys-admin form[name='skill'] > *,\n#sys-admin form[name='user'] > * {\n  display: flex;\n  justify-content: space-between;\n}\n#sys-admin form[name='skill'] > * label,\n#sys-admin form[name='user'] > * label {\n  font-size: 18px;\n  flex: 1.25;\n}\n#sys-admin form[name='skill'] > * input,\n#sys-admin form[name='user'] > * input,\n#sys-admin form[name='skill'] > * select,\n#sys-admin form[name='user'] > * select {\n  flex: 3;\n  margin-bottom: 1vh;\n}\n#sys-admin form[name='skill'] skill-editor-instructions,\n#sys-admin form[name='user'] skill-editor-instructions {\n  display: flex;\n  flex-direction: column;\n}\n#sys-admin form[name='skill'] skill-editor-instructions label,\n#sys-admin form[name='user'] skill-editor-instructions label {\n  font-size: 18px;\n}\n#sys-admin form[name='skill'] skill-editor-instructions #skill-editor,\n#sys-admin form[name='user'] skill-editor-instructions #skill-editor {\n  height: 40vh;\n  margin-bottom: 1vh;\n}\n#sys-admin form[name='skill'] button[name='cancel'],\n#sys-admin form[name='user'] button[name='cancel'] {\n  margin: 0 1vw;\n}\n#sys-admin skill-editor-actions,\n#sys-admin user-editor-actions {\n  justify-content: flex-start !important;\n}\n";
+var css$8 = "h1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\nsys-admin {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\n#sys-admin {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n#sys-admin tabs {\n  display: flex;\n  margin: 2vw 2vw 0 2vw;\n  background-color: white;\n  justify-content: flex-start;\n}\n#sys-admin tab {\n  display: block;\n  flex: 1;\n}\n#sys-admin tab input[type=radio] {\n  display: none;\n}\n#sys-admin tab input[type=radio]:checked ~ label {\n  background: white;\n  border-bottom: 1px solid white;\n  z-index: 2;\n}\n#sys-admin tab label {\n  display: block;\n  background: #eee;\n  padding: 10px;\n  border: 1px solid #ccc;\n  font-size: 17px;\n  cursor: pointer;\n}\n#sys-admin content {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: white;\n  border-right: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n  border-left: 1px solid #ccc;\n  margin: 0 2vw 1vh 2vw;\n  padding: 2vw;\n  overflow: hidden;\n}\n";
 
 var css$9 = "";
 
@@ -1930,26 +1981,26 @@ var hoisted10$2 = ["name", "awards"];
 var hoisted11$1 = ["class", "row"];
 var hoisted12$1 = ["type", "button", "class", "primary", "name", "accept"];
 function render$10(ctrl) {
-  incrementalDom.elementOpen("section", "3f88b1ca-72e6-49b2-af4f-791780941db6", hoisted1$9);
-  incrementalDom.elementOpen("input", "448e9db8-e40f-40f0-aa57-29569b79171a", hoisted2$7);
+  incrementalDom.elementOpen("section", "f333c7a8-53b8-49b4-a98f-edd3041087fe", hoisted1$9);
+  incrementalDom.elementOpen("input", "a286e302-a0ac-4ec0-b9b9-97d4860a3917", hoisted2$7);
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("div", "e0af977f-be0b-4b90-a3fb-6e0afe6119c3", hoisted3$6);
-  incrementalDom.elementOpen("label", "19ac56bb-f142-4cd6-9b07-5a9134cdd6c0", hoisted4$6);
-  incrementalDom.elementOpen("input", "0068ec8c-1948-451b-bfbd-8f2b0b2b2606", hoisted5$6);
+  incrementalDom.elementOpen("div", "da8cff84-9620-4587-a42a-bd292a808aad", hoisted3$6);
+  incrementalDom.elementOpen("label", "25b8c216-7f9c-47fe-ae5a-912d8a5c75cb", hoisted4$6);
+  incrementalDom.elementOpen("input", "76334a62-1b64-469e-b0e0-dd1fa855ef74", hoisted5$6);
   incrementalDom.elementClose("input");
   incrementalDom.text(" \
             All \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "322e57a6-6ba0-4e60-88c6-e66826f4eed7", hoisted6$6);
-  incrementalDom.elementOpen("input", "01a04b1f-fe46-4b9e-a4de-62d1800990b9", hoisted7$5);
+  incrementalDom.elementOpen("label", "7682ff65-0388-4d6a-b037-163e06dfaa94", hoisted6$6);
+  incrementalDom.elementOpen("input", "1a27fc80-e7ea-4a33-b603-c8e9cb2671f5", hoisted7$5);
   incrementalDom.elementClose("input");
   incrementalDom.text(" \
             Pending \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "6c3ab7ea-d22b-444d-938c-40e1767bc153", hoisted8$4);
-  incrementalDom.elementOpen("input", "0d5ebe64-4684-4c50-9e91-9210f2f37345", hoisted9$3);
+  incrementalDom.elementOpen("label", "cd329217-36f4-47f4-9700-e910afee05ee", hoisted8$4);
+  incrementalDom.elementOpen("input", "7c170252-3069-4022-ba05-70344ea89d7e", hoisted9$3);
   incrementalDom.elementClose("input");
   incrementalDom.text(" \
             Earned \
@@ -1957,8 +2008,8 @@ function render$10(ctrl) {
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("section");
-  incrementalDom.elementOpen("section", "91bd4c70-8654-4ff3-87cc-69fc27647a05", hoisted10$2);
-  incrementalDom.elementOpen("div", "09d805f2-ef3f-4f01-9271-7a4f5cb0ff5c", hoisted11$1);
+  incrementalDom.elementOpen("section", "99c75e59-711e-4c51-821e-6eb348b98116", hoisted10$2);
+  incrementalDom.elementOpen("div", "93803a47-49e4-4da1-8709-0c409feda33d", hoisted11$1);
   incrementalDom.elementOpen("user");
   incrementalDom.elementOpen("name");
   incrementalDom.text("Name");
@@ -1995,7 +2046,7 @@ function render$10(ctrl) {
   incrementalDom.elementOpen("name");
   incrementalDom.elementClose("name");
   incrementalDom.elementOpen("value");
-  incrementalDom.elementOpen("button", "e8c9d336-218f-4491-9017-db3f0037bc3b", hoisted12$1);
+  incrementalDom.elementOpen("button", "56edd641-13d8-4715-813c-c6a9d091d031", hoisted12$1);
   incrementalDom.text("Accept");
   incrementalDom.elementClose("button");
   incrementalDom.elementClose("value");
@@ -2115,7 +2166,7 @@ var ReportsAdmin = function (_HTMLElement) {
 
 customElements.define('reports-admin', ReportsAdmin);
 
-var css$12 = ":host {\n  font-size: 1.5em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\n";
+var css$12 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\nskills-admin container {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nskills-admin container skills-search {\n  display: flex;\n  align-items: center;\n}\nskills-admin container skills-search input {\n  margin-right: 1vw;\n  flex: 1;\n}\nskills-admin container skills-list {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nskills-admin container form,\nskills-admin container skill-item {\n  flex: 1;\n}\nskills-admin container form {\n  display: flex;\n  flex-direction: column;\n}\nskills-admin container form skill-editor-title,\nskills-admin container form skill-editor-description,\nskills-admin container form skill-editor-multiplicity,\nskills-admin container form skill-editor-category {\n  display: flex;\n  margin-bottom: 1vh;\n}\nskills-admin container form skill-editor-title label,\nskills-admin container form skill-editor-description label,\nskills-admin container form skill-editor-multiplicity label,\nskills-admin container form skill-editor-category label {\n  flex: 1;\n}\nskills-admin container form skill-editor-title input,\nskills-admin container form skill-editor-description input,\nskills-admin container form skill-editor-multiplicity input,\nskills-admin container form skill-editor-category input,\nskills-admin container form skill-editor-title select,\nskills-admin container form skill-editor-description select,\nskills-admin container form skill-editor-multiplicity select,\nskills-admin container form skill-editor-category select {\n  flex: 4;\n}\nskills-admin container form #skill-editor {\n  min-height: 20vh;\n  margin-bottom: 2vh;\n}\nskills-admin container form skill-editor-actions button {\n  margin-right: 1vw;\n}\nskills-admin container skill-item {\n  display: flex;\n  align-items: center;\n}\nskills-admin container skill-item .info {\n  flex: 1;\n  margin-right: 1vw;\n}\n";
 
 var hoisted1$10 = ["type", "text", "name", "skillsearch", "placeholder", "Search ..."];
 var hoisted2$8 = ["type", "button", "name", "add"];
@@ -2142,12 +2193,12 @@ var __target$12;
 function render$12(ctrl) {
   if (!ctrl.skillEditor) {
     incrementalDom.elementOpen("skills-search");
-    incrementalDom.elementOpen("input", "73e7d9a8-9d09-4314-8f1a-633e7c02fe8a", hoisted1$10, "onkeyup", function ($event) {
+    incrementalDom.elementOpen("input", "56c9fb5b-2fa6-4039-95cf-7d2dc1a96cb1", hoisted1$10, "onkeyup", function ($event) {
       var $element = this;
       ctrl.filterSkills(this.value);
     });
     incrementalDom.elementClose("input");
-    incrementalDom.elementOpen("button", "c8b87ac2-c840-4418-9948-1c4ce3db44d2", hoisted2$8, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "59f26d49-49e8-4e76-b436-c3bbb9d8e01a", hoisted2$8, "onclick", function ($event) {
       var $element = this;
       ctrl.addSkill();
     });
@@ -2157,12 +2208,12 @@ function render$12(ctrl) {
   }
   incrementalDom.elementOpen("skills-list");
   if (ctrl.skillEditor) {
-    incrementalDom.elementOpen("form", "3f5fb995-837d-4946-a225-953c271efe1f", hoisted3$7);
+    incrementalDom.elementOpen("form", "335ac33b-9ebb-4c20-8213-e05f4a05c7ed", hoisted3$7);
     incrementalDom.elementOpen("skill-editor-title");
     incrementalDom.elementOpen("label");
     incrementalDom.text("Title:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "0af71126-1a67-458e-8dc1-72650614db4e", hoisted4$7, "name", ctrl.skill.title, "value", ctrl.skill.title, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "b62b25d5-cc8f-4f0d-b035-41d77381f202", hoisted4$7, "name", ctrl.skill.title, "value", ctrl.skill.title, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.title = this.value;
     });
@@ -2172,7 +2223,7 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Description:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "6bf5cac1-8f46-4ff4-bb29-60dc37abdda8", hoisted5$7, "name", ctrl.skill.description, "value", ctrl.skill.description, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "0ef44ce9-5d3d-4b41-9c26-a8162a8b6342", hoisted5$7, "name", ctrl.skill.description, "value", ctrl.skill.description, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.description = this.value;
     });
@@ -2182,23 +2233,23 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Category:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("select", "c50b72a0-41d4-4013-875f-9b70abb4bea3", hoisted6$7, "onchange", function ($event) {
+    incrementalDom.elementOpen("select", "d4d870cf-381e-46fc-afcd-2868ce201742", hoisted6$7, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.category = this.value;
     });
-    incrementalDom.elementOpen("option", "40f53d5d-1e84-4b9b-8bc3-ba38b2b22fb4", hoisted7$6);
+    incrementalDom.elementOpen("option", "da858350-0f8d-4385-aa7c-bdb5cf8c1d00", hoisted7$6);
     incrementalDom.text("Select");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "6a646220-9dcd-4c28-8916-879f9c4cdac3", hoisted8$5, "selected", ctrl.skill.category === 'booklet' ? true : null);
+    incrementalDom.elementOpen("option", "3aa0e37d-54d6-4251-be97-35e396eef437", hoisted8$5, "selected", ctrl.skill.category === 'booklet' ? true : null);
     incrementalDom.text("Booklet");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "67702a2b-5174-4ce0-895b-e32eb2f26525", hoisted9$4, "selected", ctrl.skill.category === 'find' ? true : null);
+    incrementalDom.elementOpen("option", "fdc27f3f-126b-4846-bdf7-1e0207a6a7ed", hoisted9$4, "selected", ctrl.skill.category === 'find' ? true : null);
     incrementalDom.text("Find");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "1147348a-4919-4aba-9e02-a163cf80f322", hoisted10$3, "selected", ctrl.skill.category === 'take' ? true : null);
+    incrementalDom.elementOpen("option", "a557c2af-e871-4ac0-b23f-a16e3e03db1b", hoisted10$3, "selected", ctrl.skill.category === 'take' ? true : null);
     incrementalDom.text("Take");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "449cedeb-d5b0-4c3a-8d1d-f44e62a10d50", hoisted11$2, "selected", ctrl.skill.category === 'indexing' ? true : null);
+    incrementalDom.elementOpen("option", "18df8690-af7f-4e09-aa60-244f893a3f82", hoisted11$2, "selected", ctrl.skill.category === 'indexing' ? true : null);
     incrementalDom.text("Indexing");
     incrementalDom.elementClose("option");
     incrementalDom.elementClose("select");
@@ -2207,7 +2258,7 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Allow Multiple:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "3b223f8c-fba8-45a0-a1e9-4bde8a754efd", hoisted12$2, "checked", ctrl.skill.multiple, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "43f92b40-86cf-49af-a094-0336372caa9c", hoisted12$2, "checked", ctrl.skill.multiple, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.multiple = this.checked;
     });
@@ -2217,17 +2268,17 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Instructions:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("div", "bc696bde-031a-4ce1-a9cb-9a17e9a471e7", hoisted13$1);
+    incrementalDom.elementOpen("div", "8eda9db8-5eba-41a9-afee-af3abc8d9dba", hoisted13$1);
     incrementalDom.elementClose("div");
     incrementalDom.elementClose("skill-editor-instructions");
     incrementalDom.elementOpen("skill-editor-actions");
-    incrementalDom.elementOpen("button", "8b531d80-7569-4e9d-85d5-53bc8785a418", hoisted14$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "71139c56-8536-46f6-a798-fe8a87ad7658", hoisted14$1, "onclick", function ($event) {
       var $element = this;
       ctrl.saveSkill();
     });
     incrementalDom.text("Save");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("button", "9dbee371-6d0e-4074-a87e-1f833d540961", hoisted15$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "6cb9ceb0-dc2d-4136-aec0-07bb21b498f1", hoisted15$1, "onclick", function ($event) {
       var $element = this;
       ctrl.cancelEdit();
     });
@@ -2241,18 +2292,18 @@ function render$12(ctrl) {
     if (__target$12) {
       (__target$12.forEach ? __target$12 : Object.keys(__target$12)).forEach(function ($value, $item, $target) {
         var skill = $value;
-        var $key = "20ab556f-1d50-4d05-9fac-c743f90d06dd_" + $item;
+        var $key = "f4eff75b-44be-45a2-895b-eda6cb520832_" + $item;
         incrementalDom.elementOpen("skill-item", $key, null, "class", $item % 2 ? 'odd' : 'even');
-        incrementalDom.elementOpen("div", "d164fee3-4bfb-42d7-98c4-4966a92fe06d_" + $key, hoisted16$1);
-        incrementalDom.elementOpen("div", "7bc613af-b397-4b42-b8be-bd3bf91fd582_" + $key, hoisted17$1);
+        incrementalDom.elementOpen("div", "044b679c-16d5-46ac-9ef1-b7bd88488d35_" + $key, hoisted16$1);
+        incrementalDom.elementOpen("div", "db8f77d3-4b22-4d9b-abcf-a8b49c3dbf4f_" + $key, hoisted17$1);
         incrementalDom.text("" + skill.title + "");
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "851571a2-7092-4a5e-afbc-8908d5ae1062_" + $key, hoisted18$1);
+        incrementalDom.elementOpen("div", "3eadc86e-7c6e-49da-abcb-84fd3884c90f_" + $key, hoisted18$1);
         incrementalDom.text("" + skill.description + "");
         incrementalDom.elementClose("div");
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "588990e9-3f20-4bd5-899a-c5c08bf02fd8_" + $key, hoisted19$1);
-        incrementalDom.elementOpen("button", "ebcdde3b-fca9-4404-af73-cbf43dbfb105_" + $key, hoisted20$1, "disabled", ctrl.skillFormValid, "onclick", function ($event) {
+        incrementalDom.elementOpen("div", "1ccf6ac9-b11f-4cbb-8cd2-f3c8f44dd7d7_" + $key, hoisted19$1);
+        incrementalDom.elementOpen("button", "3e4396d7-a147-4832-af81-d6bbb281c58d_" + $key, hoisted20$1, "disabled", ctrl.skillFormValid, "onclick", function ($event) {
           var $element = this;
           ctrl.editSkill($value);
         });
@@ -2271,18 +2322,15 @@ var SkillsAdmin = function (_HTMLElement) {
 
   function SkillsAdmin() {
     classCallCheck(this, SkillsAdmin);
-
-    var _this = possibleConstructorReturn(this, (SkillsAdmin.__proto__ || Object.getPrototypeOf(SkillsAdmin)).call(this));
-
-    _this.db = firebase.database();
-    document.addEventListener('userChanged', function (evt) {
-      var user$$1 = evt.detail;
-      if (!user$$1.admin) router.navigate('/home');
-    });
-    return _this;
+    return possibleConstructorReturn(this, (SkillsAdmin.__proto__ || Object.getPrototypeOf(SkillsAdmin)).call(this));
   }
 
   createClass(SkillsAdmin, [{
+    key: 'addSkill',
+    value: function addSkill() {
+      this.editSkill();
+    }
+  }, {
     key: 'attributeChangedCallback',
     value: function attributeChangedCallback(name, oVal, nVal) {
       if (nVal && nVal !== '' && nVal !== oVal) {
@@ -2294,7 +2342,7 @@ var SkillsAdmin = function (_HTMLElement) {
     value: function cancelEdit() {
       this.skill = null;
       this.skillEditor = false;
-      this.viewSkills = JSON.parse(JSON.stringify(this.skills));
+      this.viewSkills = skills.find();
       this._updateView();
     }
   }, {
@@ -2304,23 +2352,29 @@ var SkillsAdmin = function (_HTMLElement) {
 
       this.innerHTML = '<style>' + css$12 + '</style><container></container>';
       this.element = this.querySelector('container');
-      this.db.ref('/skills/').on('value', function (snapshot) {
-        _this2.skills = JSON.parse(JSON.stringify(snapshot.val()));
-        _this2.viewSkills = JSON.parse(JSON.stringify(snapshot.val()));
-        _this2._updateView();
-      });
+      if (skills && skills.find) {
+        this.viewSkills = skills.find();
+        this._updateView();
+      } else {
+        setTimeout(function () {
+          _this2.viewSkills = skills.find();
+          _this2._updateView();
+        }, 500);
+      }
     }
   }, {
     key: 'disconnectedCallback',
     value: function disconnectedCallback() {}
   }, {
     key: 'editSkill',
-    value: function editSkill(skill) {
+    value: function editSkill() {
+      var skill = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       this.skill = skill;
       this.skillEditor = true;
       this._updateView();
       this.quill = new Quill('#skill-editor', { theme: 'snow' });
-      this.quill.setContents(this.skill.delta);
+      if (this.skill.delta) this.quill.setContents(this.skill.delta);
     }
   }, {
     key: 'filterSkills',
@@ -2336,14 +2390,11 @@ var SkillsAdmin = function (_HTMLElement) {
   }, {
     key: 'saveSkill',
     value: function saveSkill() {
-      var _this3 = this;
-
       this.skill.delta = this.quill.getContents();
       this.skill.html = this.element.querySelector(".ql-editor").innerHTML;
       this.skill.achievements = this.skill.achievements || 0;
-      this.db.ref('/skills/' + this.skill.id).set(this.skill).then(function () {
-        return _this3.cancelEdit();
-      });
+      skills.insertOne(this.skill);
+      this.cancelEdit();
     }
   }, {
     key: '_updateView',
@@ -2361,7 +2412,7 @@ var SkillsAdmin = function (_HTMLElement) {
 
 customElements.define('skills-admin', SkillsAdmin);
 
-var css$13 = ":host {\n  font-size: 1.5em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\n:host {\n  font-size: 1em;\n}\nusers-search {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 1vh;\n}\nusers-search input {\n  flex: 6;\n}\nusers-search button {\n  flex: 1;\n  margin-left: 8px;\n}\nusers-list {\n  display: flex;\n  flex-direction: column;\n}\nuser-item {\n  display: flex;\n  padding: 1vh 1vw;\n}\nuser-item .info {\n  display: flex;\n  flex: 6;\n  flex-direction: column;\n}\nuser-item .info .title {\n  font-size: 17px;\n  font-weight: bold;\n}\nuser-item .info .description {\n  font-size: 16px;\n}\nuser-item .info .category {\n  font-size: 15px;\n}\nuser-item .action {\n  display: flex;\n  flex: 1;\n  justify-content: center;\n  align-items: center;\n}\nuser-item .action button {\n  margin-right: 2vw;\n}\nuser-item.even {\n  background-color: #efefef;\n}\nform[name='user'] {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] > * {\n  display: flex;\n  justify-content: space-between;\n}\nform[name='user'] > * label {\n  font-size: 18px;\n  flex: 1.25;\n}\nform[name='user'] > * input,\nform[name='user'] > * select {\n  flex: 3;\n  margin-bottom: 1vh;\n}\nform[name='user'] skill-editor-instructions {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] skill-editor-instructions label {\n  font-size: 18px;\n}\nform[name='user'] skill-editor-instructions #skill-editor {\n  height: 40vh;\n  margin-bottom: 1vh;\n}\nform[name='user'] button[name='cancel'] {\n  margin: 0 1vw;\n}\n.bold {\n  font-weight: bold;\n}\nuser-editor-actions {\n  justify-content: flex-start !important;\n}\n";
+var css$13 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\n:host {\n  font-size: 1em;\n}\nusers-search {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 1vh;\n}\nusers-search input {\n  flex: 6;\n}\nusers-search button {\n  flex: 1;\n  margin-left: 8px;\n}\nusers-list {\n  display: flex;\n  flex-direction: column;\n}\nuser-item {\n  display: flex;\n  padding: 1vh 1vw;\n}\nuser-item .info {\n  display: flex;\n  flex: 6;\n  flex-direction: column;\n}\nuser-item .info .title {\n  font-size: 17px;\n  font-weight: bold;\n}\nuser-item .info .description {\n  font-size: 16px;\n}\nuser-item .info .category {\n  font-size: 15px;\n}\nuser-item .action {\n  display: flex;\n  flex: 1;\n  justify-content: center;\n  align-items: center;\n}\nuser-item .action button {\n  margin-right: 2vw;\n}\nuser-item.even {\n  background-color: #efefef;\n}\nform[name='user'] {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] > * {\n  display: flex;\n  justify-content: space-between;\n}\nform[name='user'] > * label {\n  font-size: 18px;\n  flex: 1.25;\n}\nform[name='user'] > * input,\nform[name='user'] > * select {\n  flex: 3;\n  margin-bottom: 1vh;\n}\nform[name='user'] skill-editor-instructions {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] skill-editor-instructions label {\n  font-size: 18px;\n}\nform[name='user'] skill-editor-instructions #skill-editor {\n  height: 40vh;\n  margin-bottom: 1vh;\n}\nform[name='user'] button[name='cancel'] {\n  margin: 0 1vw;\n}\n.bold {\n  font-weight: bold;\n}\nuser-editor-actions {\n  justify-content: flex-start !important;\n}\n";
 
 var hoisted1$11 = ["type", "text", "name", "usersearch", "placeholder", "Search ..."];
 var hoisted2$9 = ["name", "user"];
@@ -2395,7 +2446,7 @@ var __target$13;
 function render$13(ctrl) {
   if (!ctrl.userEditor) {
     incrementalDom.elementOpen("users-search");
-    incrementalDom.elementOpen("input", "683745ec-9b12-4dad-9822-9f6bdeca9870", hoisted1$11, "onkeyup", function ($event) {
+    incrementalDom.elementOpen("input", "f98750b8-28aa-4294-b573-ce29f61e9202", hoisted1$11, "onkeyup", function ($event) {
       var $element = this;
       ctrl.filterUsers(this.value);
     });
@@ -2404,12 +2455,12 @@ function render$13(ctrl) {
   }
   incrementalDom.elementOpen("users-list");
   if (ctrl.userEditor) {
-    incrementalDom.elementOpen("form", "b21fcaeb-f0ea-4063-949e-9f3445786d1e", hoisted2$9);
+    incrementalDom.elementOpen("form", "3f4dc586-d550-458b-b381-78b4aca6ee5b", hoisted2$9);
     incrementalDom.elementOpen("user-editor-name");
     incrementalDom.elementOpen("label");
     incrementalDom.text("Certificate Name:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "854332e1-e714-4d7d-9e8e-c4ef27196f49", hoisted3$8, "value", ctrl.user.name, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "e9759bd9-0ddc-46e0-b2f1-538a971c4744", hoisted3$8, "value", ctrl.user.name, "onchange", function ($event) {
       var $element = this;
       ctrl.user.name = this.value;
     });
@@ -2419,7 +2470,7 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Display Name:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "771ff6a5-7a98-47fb-97c5-fa76a2f62c4a", hoisted4$8, "name", ctrl.user.displayName, "value", ctrl.user.displayName, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "d01e431c-d9a1-4d79-9e92-696764d441bc", hoisted4$8, "name", ctrl.user.displayName, "value", ctrl.user.displayName, "onchange", function ($event) {
       var $element = this;
       ctrl.user.displayName = this.value;
     });
@@ -2429,7 +2480,7 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Email:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "7a2da402-1389-4a42-ba1e-879dfb667134", hoisted5$8, "name", ctrl.user.email, "value", ctrl.user.email, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "29ff4eb1-3617-4615-9d56-346fdf3e485e", hoisted5$8, "name", ctrl.user.email, "value", ctrl.user.email, "onchange", function ($event) {
       var $element = this;
       ctrl.user.email = this.value;
     });
@@ -2439,41 +2490,41 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Organization:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("select", "d977f46c-e8db-4847-bff6-1d18a87803f2", hoisted6$8, "onchange", function ($event) {
+    incrementalDom.elementOpen("select", "29b04bb4-282c-42ed-9c0f-a710c2a9c488", hoisted6$8, "onchange", function ($event) {
       var $element = this;
       ctrl.user.group = this.value;
     });
-    incrementalDom.elementOpen("option", "de3d455c-9f84-4695-bcb5-32eb2001b5ee", hoisted7$7);
+    incrementalDom.elementOpen("option", "da7bcac7-72bc-4daf-aff5-9b3b47fb1958", hoisted7$7);
     incrementalDom.text("Select");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "fcfa4a06-e70a-47fe-8408-7db33bc1c9aa", hoisted8$6, "selected", ctrl.user.group === 'be' ? true : null);
+    incrementalDom.elementOpen("option", "4b54f468-c432-4447-a638-cc33e38773b2", hoisted8$6, "selected", ctrl.user.group === 'be' ? true : null);
     incrementalDom.text("Beehive");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "13895361-4cf3-4fa6-aca1-8b457c37b240", hoisted9$5, "selected", ctrl.user.group === 'dn' ? true : null);
+    incrementalDom.elementOpen("option", "f617ce10-9953-4163-b308-6b2bce21eeb9", hoisted9$5, "selected", ctrl.user.group === 'dn' ? true : null);
     incrementalDom.text("Deacon");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "815f4703-744c-41ae-932b-3730858b1997", hoisted10$4, "selected", ctrl.user.group === 'eq' ? true : null);
+    incrementalDom.elementOpen("option", "ec297919-b32c-4ba9-a2ff-2a958cf97fb9", hoisted10$4, "selected", ctrl.user.group === 'eq' ? true : null);
     incrementalDom.text("Elders");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "faf6aa82-241b-4c10-971f-6ecb55c58725", hoisted11$3, "selected", ctrl.user.group === 'hp' ? true : null);
+    incrementalDom.elementOpen("option", "32c1e012-456c-4986-8fd5-f464e90eb83b", hoisted11$3, "selected", ctrl.user.group === 'hp' ? true : null);
     incrementalDom.text("High Priest");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "caf5388e-95bf-4e3e-88c5-3d454f47b920", hoisted12$3, "selected", ctrl.user.group === 'll' ? true : null);
+    incrementalDom.elementOpen("option", "7296a767-cb43-48d1-ba0a-0ea936ca0751", hoisted12$3, "selected", ctrl.user.group === 'll' ? true : null);
     incrementalDom.text("Laurel");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "34c4041b-b5b8-447b-b0e0-f6f3b7fa1426", hoisted13$2, "selected", ctrl.user.group === 'mm' ? true : null);
+    incrementalDom.elementOpen("option", "23b4f0a2-e450-4556-90b2-f1d5fab3de74", hoisted13$2, "selected", ctrl.user.group === 'mm' ? true : null);
     incrementalDom.text("Miamaid");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "cdee8070-ad8a-4c5c-a57d-5923353d3d9c", hoisted14$2, "selected", ctrl.user.group === 'pr' ? true : null);
+    incrementalDom.elementOpen("option", "1e899a7c-2e84-4a35-9905-691b6cb8e99d", hoisted14$2, "selected", ctrl.user.group === 'pr' ? true : null);
     incrementalDom.text("Priest");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "b1d77e10-2b3b-49fd-b135-862e53fffe90", hoisted15$2, "selected", ctrl.user.group === 'py' ? true : null);
+    incrementalDom.elementOpen("option", "a8e2d03f-2ab4-4805-8eb5-4d0ce92a6f70", hoisted15$2, "selected", ctrl.user.group === 'py' ? true : null);
     incrementalDom.text("Primary");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "f0f012f9-054b-4a11-a896-44659785761c", hoisted16$2, "selected", ctrl.user.group === 'rs' ? true : null);
+    incrementalDom.elementOpen("option", "e867004f-8ee2-49d9-8fbd-a080ad40cf7f", hoisted16$2, "selected", ctrl.user.group === 'rs' ? true : null);
     incrementalDom.text("Relief Society");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "51935135-30e8-4833-b567-fb06478d88cd", hoisted17$2, "selected", ctrl.user.group === 'tr' ? true : null);
+    incrementalDom.elementOpen("option", "7775b8a4-477b-4f50-9c03-44996e1d2802", hoisted17$2, "selected", ctrl.user.group === 'tr' ? true : null);
     incrementalDom.text("Teacher");
     incrementalDom.elementClose("option");
     incrementalDom.elementClose("select");
@@ -2482,20 +2533,20 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Admin:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "7a22d075-0b86-4347-931e-bc5b5d2a9b57", hoisted18$2, "checked", ctrl.user.admin ? true : null, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "6d12c0ff-e7b4-49aa-b645-34c6db517ce8", hoisted18$2, "checked", ctrl.user.admin ? true : null, "onchange", function ($event) {
       var $element = this;
       ctrl.user.admin = this.checked;
     });
     incrementalDom.elementClose("input");
     incrementalDom.elementClose("user-admin");
     incrementalDom.elementOpen("user-editor-actions");
-    incrementalDom.elementOpen("button", "5c8188eb-4684-424e-b8e2-8e0761182ffb", hoisted19$2, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "bdeec6ee-2847-4e8d-a1dc-ab8aff0dcd5a", hoisted19$2, "onclick", function ($event) {
       var $element = this;
       ctrl.saveUser();
     });
     incrementalDom.text("Save");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("button", "61254a15-7ffe-4cdc-8a75-c3baf882294f", hoisted20$2, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "e35dd048-5936-41b4-8057-ac5287a41c52", hoisted20$2, "onclick", function ($event) {
       var $element = this;
       ctrl.cancelEdit();
     });
@@ -2509,28 +2560,28 @@ function render$13(ctrl) {
     if (__target$13) {
       (__target$13.forEach ? __target$13 : Object.keys(__target$13)).forEach(function ($value, $item, $target) {
         var user = $value;
-        var $key = "29a0b1cc-f175-4b8a-87e4-41f3384334b7_" + $item;
+        var $key = "e25e4518-f219-441b-a165-cb2f2e50b52e_" + $item;
         incrementalDom.elementOpen("user-item", $key, null, "class", $item % 2 ? 'odd' : 'even');
-        incrementalDom.elementOpen("div", "381e54d1-f0de-4132-bef8-daf7cc7fe2fa_" + $key, hoisted21$1);
+        incrementalDom.elementOpen("div", "c3514164-3e37-49cd-8615-f27f88d83642_" + $key, hoisted21$1);
         if (user.name) {
-          incrementalDom.elementOpen("div", "1d67c9f4-be6f-4598-b1ad-76c49b0377d6_" + $key, hoisted22$1);
+          incrementalDom.elementOpen("div", "23e17b6f-d148-4f76-bb3c-a24638be6b43_" + $key, hoisted22$1);
           incrementalDom.text("" + user.name + "");
           incrementalDom.elementClose("div");
         }
-        incrementalDom.elementOpen("div", "97bdc25c-1df0-4aa5-8bf6-4fa6eebc77f9_" + $key, hoisted23$1);
+        incrementalDom.elementOpen("div", "07fd5110-9bb3-47f5-bf90-41d23e3de088_" + $key, hoisted23$1);
         incrementalDom.text("" + user.displayName + "");
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "aba3cfe6-d7e4-438a-90f4-2a6732220f01_" + $key, hoisted24$1);
+        incrementalDom.elementOpen("div", "0b8c8c99-1f55-41ad-b443-08585338f86e_" + $key, hoisted24$1);
         incrementalDom.text("" + user.email + "");
         incrementalDom.elementClose("div");
         if (user.group) {
-          incrementalDom.elementOpen("div", "dd2d5f47-184a-470f-ba90-31f7a2f48f67_" + $key, hoisted25$1);
+          incrementalDom.elementOpen("div", "01e95cdc-3539-4ee1-94b3-fbe084c8970a_" + $key, hoisted25$1);
           incrementalDom.text("" + ctrl.getGroupName(user) + "");
           incrementalDom.elementClose("div");
         }
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "51162313-7c13-4dc2-bc45-8b34fb718cf6_" + $key, hoisted26$1);
-        incrementalDom.elementOpen("button", "4773eb5b-eed7-48bc-b002-4f91eb35799d_" + $key, hoisted27$1, "disabled", ctrl.userFormValid, "onclick", function ($event) {
+        incrementalDom.elementOpen("div", "b5c74b8c-01d1-44df-8c8f-2382e9d2e75a_" + $key, hoisted26$1);
+        incrementalDom.elementOpen("button", "263606d4-def3-426a-ac04-ace4927cb50c_" + $key, hoisted27$1, "disabled", ctrl.userFormValid, "onclick", function ($event) {
           var $element = this;
           ctrl.editUser($value);
         });
@@ -2557,11 +2608,7 @@ var UsersAdmin = function (_HTMLElement) {
     _this.element = _this.shadowRoot.querySelector('container');
     _this.user = user;
     _this.model = {};
-    _this.db = firebase.database();
-    document.addEventListener('userChanged', function (evt) {
-      var user$$1 = evt.detail;
-      if (!user$$1.admin) router.navigate('/home');
-    });
+    document.addEventListener('usersChanged', _this._updateView.bind(_this));
     return _this;
   }
 
@@ -2579,7 +2626,7 @@ var UsersAdmin = function (_HTMLElement) {
       this.user = null;
       this.userId = null;
       this.userEditor = false;
-      this.viewUsers = JSON.parse(JSON.stringify(this.users));
+      this.viewUsers = users.find();
       this._updateView();
     }
   }, {
@@ -2587,26 +2634,24 @@ var UsersAdmin = function (_HTMLElement) {
     value: function connectedCallback() {
       var _this2 = this;
 
-      this.db.ref('/users/').on('value', function (snapshot) {
-        var obj = JSON.parse(JSON.stringify(snapshot.val()));
-        var temp = [];
-        Object.keys(obj).forEach(function (key) {
-          var entry = obj[key];
-          entry.id = key;
-          temp.push(entry);
-        });
-        _this2.users = Object.assign([], temp);
-        _this2.viewUsers = Object.assign([], temp);
-        _this2._updateView();
-      });
+      if (users && users.find) {
+        this.users = this.viewUsers = users.find();
+        this._updateView();
+      } else {
+        setTimeout(function () {
+          _this2.viewUsers = users.find();
+          _this2._updateView();
+        }, 500);
+      }
+      this._updateView();
     }
   }, {
     key: 'disconnectedCallback',
     value: function disconnectedCallback() {}
   }, {
     key: 'editUser',
-    value: function editUser(user$$1) {
-      this.user = user$$1;
+    value: function editUser(_user) {
+      this.user = _user;
       this.userEditor = true;
       this._updateView();
     }
@@ -2615,18 +2660,18 @@ var UsersAdmin = function (_HTMLElement) {
     value: function filterUsers(val) {
       var str = val ? val.toLowerCase() : null;
 
-      this.viewUsers = this.users.filter(function (user$$1) {
-        return user$$1.displayName && user$$1.displayName.toLowerCase().indexOf(str) !== -1 || user$$1.name && user$$1.name.toLowerCase().indexOf(str) !== -1 || user$$1.group && user$$1.group.toLowerCase().indexOf(str) !== -1 || user$$1.email && user$$1.email.toLowerCase().indexOf(str) !== -1;
+      this.viewUsers = users.where(function (_user) {
+        return _user.displayName && _user.displayName.toLowerCase().indexOf(str) !== -1 || _user.name && _user.name.toLowerCase().indexOf(str) !== -1 || _user.group && _user.group.toLowerCase().indexOf(str) !== -1 || _user.email && _user.email.toLowerCase().indexOf(str) !== -1;
       });
 
-      if (!str || str === '') this.viewUsers = Object.assign([], this.users);
+      if (!str || str === '') this.viewUsers = users.find();
 
       this._updateView();
     }
   }, {
     key: 'getGroupName',
-    value: function getGroupName(user$$1) {
-      var group = user$$1.group;
+    value: function getGroupName(_user) {
+      var group = _user.group;
       var groupName = void 0;
       switch (group) {
         case 'be':
@@ -2657,18 +2702,16 @@ var UsersAdmin = function (_HTMLElement) {
   }, {
     key: 'saveUser',
     value: function saveUser() {
-      var _this3 = this;
-
-      var user$$1 = Object.assign({}, this.user);
-      var userId = user$$1.id;
-      delete user$$1.id;
-      this.db.ref('/users/' + userId).set(user$$1).then(function () {
-        return _this3.cancelEdit();
-      });
+      var _user = Object.assign({}, this.user);
+      delete _user.authenticated;
+      delete _user.initialized;
+      users.update(_user);
+      this.cancelEdit();
     }
   }, {
     key: '_updateView',
     value: function _updateView() {
+      console.log("_updateView", this.viewUsers);
       if (this.element) incrementalDom.patch(this.element, render$13, this);
     }
   }], [{
@@ -2690,9 +2733,9 @@ var SysAdmin = function (_HTMLElement) {
 
     var _this = possibleConstructorReturn(this, (SysAdmin.__proto__ || Object.getPrototypeOf(SysAdmin)).call(this));
 
-    document.addEventListener('userChanged', function (evt) {
-      var user$$1 = evt.detail;
-      if (!user$$1.admin) router.navigate('/home');
+    document.addEventListener('userChanged', function () {
+      console.log('SysAdmin::userChanged', user);
+      if (!user.authenticated) router.navigate('/login');else if (!user.admin) router.navigate('/home/authenticated');
     });
 
     router.add('/admin/users', function (req, evt, next) {
@@ -2731,6 +2774,7 @@ var SysAdmin = function (_HTMLElement) {
         var input = tab.querySelector('input');
         if (state.indexOf(input.value) !== -1) input.setAttribute('checked', true);
       });
+      // user.getUser();
       router.navigate(state);
     }
   }, {
@@ -2757,11 +2801,6 @@ var SysAdmin = function (_HTMLElement) {
 
 customElements.define('sys-admin', SysAdmin);
 
-function auth(req, event, next) {
-  req.user = user;
-  return next();
-}
-
 var router = new Router();
 
 var AppRouter = function (_HTMLElement) {
@@ -2769,56 +2808,59 @@ var AppRouter = function (_HTMLElement) {
 
   function AppRouter() {
     classCallCheck(this, AppRouter);
-
-    var _this = possibleConstructorReturn(this, (AppRouter.__proto__ || Object.getPrototypeOf(AppRouter)).call(this));
-
-    router.add('/', function (req, evt, next) {
-      router.navigate('/home');
-    });
-
-    router.add('/home', auth, function (req, evt, next) {
-      if (req.user.authenticated) router.navigate('/home/authenticated');else _this.innerHTML = '<home-view></home-view>';
-    });
-
-    router.add('/home/authenticated', auth, function (req, evt, next) {
-      _this.innerHTML = '<home-authenticated></home-authenticated>';
-    });
-
-    router.add('/login', function (req, evt, next) {
-      _this.innerHTML = '<login-view></login-view>';
-    });
-
-    router.add('/logout', auth, function (req, evt, next) {
-      req.user.logout();
-    });
-
-    router.add('/help', function (req, evt, next) {
-      router.navigate('/not-found');
-    });
-
-    router.add('/admin', function (req, evt, next) {
-      router.navigate('/admin/users');
-    });
-
-    router.add('/admin/*', auth, function (req, evt, next) {
-      if (req.user.initialized && !req.user.admin) router.navigate('/home');else {
-        var sysAdmin = /\<sys-admin\>/.test(_this.innerHTML);
-        if (!sysAdmin) _this.innerHTML = '<sys-admin></sys-admin>';
-      }
-    });
-
-    router.add('/not-found', function (req, evt, next) {
-      _this.innerHTML = '<not-found></not-found>';
-    });
-
-    router.add('/*', function (req, evt, next) {
-      if (!evt.parent()) router.navigate('/not-found');
-    });
-
-    return _this;
+    return possibleConstructorReturn(this, (AppRouter.__proto__ || Object.getPrototypeOf(AppRouter)).call(this));
   }
 
-  createClass(AppRouter, null, [{
+  createClass(AppRouter, [{
+    key: 'connectedCallback',
+    value: function connectedCallback() {
+      var _this2 = this;
+
+      router.add('/', function (req, evt, next) {
+        router.navigate('/login');
+      });
+
+      router.add('/home', function (req, evt, next) {
+        router.navigate('/home/authenticated');
+        // this.innerHTML = `<home-view></home-view>`;
+      });
+
+      router.add('/home/authenticated', function (req, evt, next) {
+        // if (!user.authenticated) router.navigate('/login');
+        _this2.innerHTML = '<home-authenticated></home-authenticated>';
+      });
+
+      router.add('/login', function (req, evt, next) {
+        _this2.innerHTML = '<login-view></login-view>';
+      });
+
+      router.add('/logout', function (req, evt, next) {
+        user.logout();
+        router.navigate('/login');
+      });
+
+      router.add('/help', function (req, evt, next) {
+        router.navigate('/not-found');
+      });
+
+      router.add('/admin', function (req, evt, next) {
+        router.navigate('/admin/users');
+      });
+
+      router.add('/admin/*', function (req, evt, next) {
+        var sysAdmin = /\<sys-admin\>/.test(_this2.innerHTML);
+        if (!sysAdmin) _this2.innerHTML = '<sys-admin></sys-admin>';
+      });
+
+      router.add('/not-found', function (req, evt, next) {
+        _this2.innerHTML = '<not-found></not-found>';
+      });
+
+      router.add('/*', function (req, evt, next) {
+        if (!evt.parent()) router.navigate('/not-found');
+      });
+    }
+  }], [{
     key: 'observedAttributes',
     get: function get$$1() {
       return [''];

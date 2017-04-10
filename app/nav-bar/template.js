@@ -1,6 +1,6 @@
 import {patch, elementOpen, elementClose, text, skip, currentElement} from "incremental-dom"
 
-var hoisted1 = ["id", "brand", "href", "/home"]
+var hoisted1 = ["id", "brand", "href", "/home/authenticated"]
 var hoisted2 = ["src", "/img/favicon.svg", "alt", ""]
 var hoisted3 = ["role", "navigation", "id", "navigation"]
 var hoisted4 = ["href", "/help"]
@@ -9,24 +9,24 @@ var hoisted6 = ["href", "/login"]
 var __target
 
 export function render (ctrl) {
-elementOpen("a", "184f2e88-5769-4ebf-99cb-7dc89b18b82a", hoisted1, "class", ctrl.stateContains('home'))
-  elementOpen("img", "f183d481-9c33-4abb-b673-5d1d08b2827d", hoisted2)
+elementOpen("a", "aac637e1-0ac0-4624-851b-68fa20ca3141", hoisted1, "class", ctrl.stateContains('home'))
+  elementOpen("img", "f31fcbbd-6e6f-4d37-8df2-47148eb8f686", hoisted2)
   elementClose("img")
   elementOpen("span")
     text("Home")
   elementClose("span")
 elementClose("a")
-elementOpen("nav", "30a24b8b-83a0-4741-8352-22c7c58e5950", hoisted3)
-  elementOpen("a", "0ed9e1f5-4b1b-4e18-a54e-a1102d31e3b5", hoisted4, "class", ctrl.stateContains('help'))
+elementOpen("nav", "b45ae2e8-e289-49bd-92c0-1b51e782b06a", hoisted3)
+  elementOpen("a", "c7353532-25c1-409c-9e7a-a6ec75613f40", hoisted4, "class", ctrl.stateContains('help'))
     text("Help")
   elementClose("a")
   if (ctrl.user.admin) {
-    elementOpen("a", "fa95b82b-ea83-412e-a031-c2e01cced340", hoisted5, "class", ctrl.stateContains('admin'))
+    elementOpen("a", "4cdc21b0-ecc1-4fed-b35b-9083272891d4", hoisted5, "class", ctrl.stateContains('admin'))
       text("Admin")
     elementClose("a")
   }
   if (!ctrl.user.authenticated) {
-    elementOpen("a", "fa51dc17-71e7-4859-a65a-864ca01f6541", hoisted6, "class", ctrl.stateContains('login'))
+    elementOpen("a", "0e37c93c-ccb1-4ab7-aaf2-379d9c29b261", hoisted6, "class", ctrl.stateContains('login'))
       text("Login")
     elementClose("a")
   }

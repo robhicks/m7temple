@@ -1,10 +1,11 @@
+const db = require('./db').db;
 const express = require("express");
+const join = require('path').join;
 const logger = require('morgan');
 const lrl = require('express-livereload');
 const path = require('path');
-const join = path.join;
 const users = require('./db').users;
-const db = require('./db').db;
+const updateDb = require('./db.js').updateDb;
 const util = require('util');
 
 module.exports.run = (worker) => {
@@ -16,7 +17,7 @@ module.exports.run = (worker) => {
   const scServer = worker.scServer;
 
   let outgoingDbChannel = scServer.exchange.subscribe('fromServerDbChannel'); // outbound
-  let incomingDbChannel = scServer.exchange.subscribe('toServerDbChannel'); // inbound
+  let updateDbChannel = scServer.exchange.subscribe('updateDbChannel'); // inbound
 
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'pug');
@@ -36,11 +37,8 @@ module.exports.run = (worker) => {
       // console.log("data", data)
       if (!data || !data.id || !data.email) respond('Authentication failed');
       else {
-        let user = users.findOne({email: data.email});
-        if (user) users.update(Object.assign(user, data));
-        else user = users.insertOne(data);
-        console.log("user", user);
-        socket.setAuthToken({email: user.email});
+        let user = users.findOne({email: data.email}) || users.insertOne(data);
+        socket.setAuthToken({user});
         respond();
       }
     });
@@ -48,20 +46,13 @@ module.exports.run = (worker) => {
     socket.on('loadDatabase', () => {
       socket.emit('loadDatabase', db.serialize());
     });
-    
   });
 
-  db.on('changes', () => {
-    let changes = db.serializeChanges();
-    console.log("server:::changes", changes)
-    if (changes) outgoingDbChannel.publish(changes, (err) => {
-      if (!err) db.clearChanges();
-    });
-  });
-
-  incomingDbChannel.watch((data) => {
+  updateDbChannel.watch((data) => {
     let changes = JSON.parse(data);
-    console.log("incomingDbChannel:::changes", changes)
-  })
+    // console.log("updateDbChannel:::changes", changes);
+    if (Array.isArray(changes)) updateDb(db, changes);
+    db.clearChanges();
+  });
 
 };
