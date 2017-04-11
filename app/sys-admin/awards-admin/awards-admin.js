@@ -2,7 +2,7 @@ import css from './awards-admin.less';
 import {render} from './template.js';
 import {patch} from 'incremental-dom';
 import isJson from './isJson.js';
-// import {firebase} from '../../db.js';
+import {awards} from '../../db.js';
 
 class AwardsAdmin extends HTMLElement {
   constructor() {
@@ -10,10 +10,8 @@ class AwardsAdmin extends HTMLElement {
     this.attachShadow({mode: 'open'});
     this.shadowRoot.innerHTML = `<style>${css}</style><container></container>`;
     this.element = this.shadowRoot.querySelector('container');
-    this.db = firebase.database();
-    this.awardsTable = this.db.ref('/awards');
-    this.usersTable = this.db.ref('/users');
-    this.skillsTable = this.db.ref('/skills')
+    this.dv = awards.addDynamicView('awards');
+    document.addEventListener('awardsChanged', this._updateView.bind(this));
   }
 
   attributeChangedCallback(name, oVal, nVal) {
@@ -23,14 +21,6 @@ class AwardsAdmin extends HTMLElement {
   }
 
   connectedCallback() {
-    this.awardsTable.on('value', (snapshot) => {
-      this.awards = [];
-      let awards = snapshot.val();
-      for (let key in awards) {
-        this.awards.push(Object.assign({id: key}, awards[key]));
-      }
-      console.log("this.awards", this.awards)
-    });
     this._updateView();
   }
 
@@ -38,9 +28,8 @@ class AwardsAdmin extends HTMLElement {
 
   }
 
-
-
   _updateView() {
+    this.awards = this.dv.data();
     if (this.element) patch(this.element, render, this);
   }
 

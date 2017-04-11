@@ -3,7 +3,6 @@ import {render} from './template.js';
 import css from './collapsable-panel.less';
 import {throttle} from '../utilities.js';
 import {user} from '../user.js';
-// import {firebase} from '../db.js';
 import {RbhModal} from '../rbh-modal/rbh-modal.js';
 
 class CollapsablePanel extends HTMLElement {
@@ -11,16 +10,7 @@ class CollapsablePanel extends HTMLElement {
     super();
     this.config = config;
     this.collapsed = true;
-    this.db = firebase.database();
     this.skills = [];
-    this.db.ref('/skills/').on('value', (snapshot) => {
-      this.skills = snapshot.val();
-      this._combineSkillsAndAwards();
-    });
-    this.db.ref('/awards/').orderByChild('userId').equalTo(user.id).on('value', (snapshot) => {
-      this.awards = snapshot.val();
-      this._combineSkillsAndAwards();
-    });
   }
 
   add(id, addAlert = true) {

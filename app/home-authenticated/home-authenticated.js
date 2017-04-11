@@ -4,16 +4,16 @@ import css from './home-authenticated.less';
 import {router} from '../app-router/app-router.js';
 import {user} from '../user.js';
 import CollapsablePanel from '../collapsable-panel/collapsable-panel.js';
-// import {firebase} from '../db.js';
+import {awards, skills} from '../db.js';
 
 class HomeAuthenticated extends HTMLElement {
   constructor() {
     super();
     this.user = user;
     this.skills = [];
-    this.viewSkills = [];
     this.mySkills = [];
     this.mine = false;
+    this.dv = skills.addDynamicView('skills');
     document.addEventListener('userChanged', () => {
       if (!user.authenticated) router.navigate('/login');
       else if (!user.admin) router.navigate('/home/authenticated');
@@ -36,16 +36,8 @@ class HomeAuthenticated extends HTMLElement {
     this.shadowRoot.innerHTML = `<style>${css}</style><div id="home"></div>`;
     this.shadowRoot.addEventListener('click', this.anchorClickHandler.bind(this));
     this.element = this.shadowRoot.querySelector('div#home');
-    // this.db.ref('/awards/').orderByChild('userId').equalTo(user.id).on('value', (snapshot) => {
-    //   this.awards = snapshot.val();
-    //   this._combineSkillsAndAwards();
-    // });
-    // this.db.ref('skills').on('value', (snapshot) => {
-    //   this.skills = Object.assign([], snapshot.val());
-    //   this._combineSkillsAndAwards();
-    // });
+    user.getUser();
     this._updateView();
-    document.addEventListener('userChanged', this._updateView);
   }
 
   _combineSkillsAndAwards() {
@@ -54,7 +46,7 @@ class HomeAuthenticated extends HTMLElement {
       skill.added = this.skillAdded(skill);
       skill.pending = this.skillAppliedFor(skill);
     });
-    this.viewSkills = Object.assign([], this.skills);
+    this.skills = Object.assign([], this.skills);
     this.mySkills = this.filterMine();
     // console.log("this.viewSkills", this.viewSkills)
     this._updateView();
@@ -66,9 +58,9 @@ class HomeAuthenticated extends HTMLElement {
 
   filterSkills(val) {
     let str = val ? val.toLowerCase() : null;
-    if (!str || str === '') this.viewSkills = JSON.parse(JSON.stringify(this.skills));
+    if (!str || str === '') this.skills = JSON.parse(JSON.stringify(this.skills));
     else {
-      this.viewSkills = this.skills.filter((skill) => skill.title.toLowerCase().indexOf(str) !== -1
+      this.skills = this.skills.filter((skill) => skill.title.toLowerCase().indexOf(str) !== -1
         || skill.description.toLowerCase().indexOf(str) !== -1
         || skill.category.toLowerCase().indexOf(str) !== -1);
     }
@@ -81,7 +73,7 @@ class HomeAuthenticated extends HTMLElement {
       Object.keys(this.awards).forEach((key) => {
         let award = this.awards[key];
         if (award.skillId === skill.id) exists = true;
-      })
+      });
     }
     return exists;
   }
@@ -138,6 +130,7 @@ class HomeAuthenticated extends HTMLElement {
 
   _updateView() {
     console.log('home-authenticated::updateView');
+    this.skills = this.dv.data();
     if (this.element) patch(this.element, render, this);
   }
 
