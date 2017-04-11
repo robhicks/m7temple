@@ -10,6 +10,8 @@ import {debounce} from '../../utilities.js';
 class SkillsAdmin extends HTMLElement {
   constructor() {
     super();
+    this.dv = skills.addDynamicView('skills');
+    document.addEventListener('skillsChanged', this._updateView.bind(this));
   }
 
   addSkill() {
@@ -25,22 +27,13 @@ class SkillsAdmin extends HTMLElement {
   cancelEdit() {
     this.skill = null;
     this.skillEditor = false;
-    this.viewSkills = skills.find();
     this._updateView();
   }
 
   connectedCallback() {
     this.innerHTML = `<style>${css}</style><container></container>`;
     this.element = this.querySelector('container');
-    if (skills && skills.find) {
-      this.viewSkills = skills.find();
-      this._updateView();
-    } else {
-      setTimeout(() => {
-        this.viewSkills = skills.find();
-        this._updateView();
-      }, 500);
-    }
+    this._updateView();
   }
 
   disconnectedCallback() {
@@ -57,24 +50,29 @@ class SkillsAdmin extends HTMLElement {
 
   filterSkills(val) {
     let str = val ? val.toLowerCase() : null;
-    if (!str || str === '') this.viewSkills = JSON.parse(JSON.stringify(this.skills));
-    else {
-      this.viewSkills = this.skills.filter((skill) => skill.title.toLowerCase().indexOf(str) !== -1
-        || skill.description.toLowerCase().indexOf(str) !== -1
-        || skill.category.toLowerCase().indexOf(str) !== -1);
+
+    this.dv.applyWhere((skill) => skill.title.toLowerCase().indexOf(str) !== -1
+      || skill.description.toLowerCase().indexOf(str) !== -1
+      || skill.category.toLowerCase().indexOf(str) !== -1);
+
+    if (!str || str === '') {
+      this.dv.removeFilters();
     }
     this._updateView();
   }
 
   saveSkill() {
+    let savedSkill = skills.findOne({id: this.skill.id});
     this.skill.delta = this.quill.getContents();
     this.skill.html = this.element.querySelector(".ql-editor").innerHTML;
     this.skill.achievements = this.skill.achievements || 0;
-    skills.insertOne(this.skill);
+    if (savedSkill) skills.update(Object.assign(savedSkill, this.skill));
+    else skills.insertOne(this.skill);
     this.cancelEdit();
   }
 
   _updateView() {
+    this.viewSkills = this.dv.data();
     if (this.element) patch(this.element, render, this);
   }
 

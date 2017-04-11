@@ -52,8 +52,10 @@ class SysAdmin extends HTMLElement {
       let input = tab.querySelector('input');
       if (state.indexOf(input.value) !== -1) input.setAttribute('checked', true);
     });
-    // user.getUser();
-    router.navigate(state);
+    setTimeout(() => {
+      user.getUser();
+      router.navigate(state);
+    }, 100);
   }
 
   disconnectedCallback() {

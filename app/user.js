@@ -39,8 +39,8 @@ user.authenticate = () => {
   return new Promise((resolve, reject) => {
     socket.emit('auth', user, (err) => {
       if (err) {
-        reject(err);
-        router.navigate('/login');
+        // reject(err);
+        // router.navigate('/login');
       } else {
         Object.assign(user, socket.authToken.user, {authenticated: true, admin: true});
         document.dispatchEvent(new CustomEvent('userChanged', {detail: user}));
@@ -63,7 +63,7 @@ user.logout = () => {
 user.getUser = () => {
   if (user.authenticated) return Promise.resolve(user);
   return user.authenticate();
-}
+};
 
 export {user};
 

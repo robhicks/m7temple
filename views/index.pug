@@ -2,6 +2,11 @@ doctype html
 html
   include partials/head.pug
   body
-    <app-router></app-router>
-    <nav-bar></nav-bar>
-  include partials/scripts
+    include partials/scripts
+    script.
+      window.addEventListener('WebComponentsReady', function() {
+        var r = document.createElement('app-router');
+        var n = document.createElement('nav-bar');
+        document.body.appendChild(r);
+        document.body.appendChild(n);
+      });

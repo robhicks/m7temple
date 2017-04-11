@@ -383,14 +383,14 @@ function render(ctrl) {
   incrementalDom.elementOpen("h3");
   incrementalDom.text("Access to this site requires user login");
   incrementalDom.elementClose("h3");
-  incrementalDom.elementOpen("a", "20831e97-b19d-4867-a42d-a9aed875363c", hoisted1);
+  incrementalDom.elementOpen("a", "8c0b9078-68bf-48ad-93ba-4c709bfac8af", hoisted1);
   incrementalDom.text("Please Login");
   incrementalDom.elementClose("a");
 }
 
-var css = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.grid {\n  display: flex;\n}\n.col {\n  flex: 1;\n}\n@media (max-width: 500px) {\n  .grid {\n    display: block;\n  }\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\nsection {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex: 1;\n}\nsection h1 {\n  text-align: center;\n  color: white;\n  font: bold 1.5em museo, sans-serif;\n}\nsection h3 {\n  font-size: 32px;\n  color: white;\n}\nsection a {\n  font-size: 1em !important;\n}\n";
+var css = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.grid {\n  display: flex;\n}\n.col {\n  flex: 1;\n}\n@media (max-width: 500px) {\n  .grid {\n    display: block;\n  }\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\nsection {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex: 1;\n}\nsection h1 {\n  text-align: center;\n  color: white;\n  font: bold 1.5em museo, sans-serif;\n}\nsection h3 {\n  font-size: 32px;\n  color: white;\n}\nsection a {\n  font-size: 1em !important;\n}\n";
 
-var css$1 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n:host {\n  display: block;\n  height: 100%;\n  width: 100%;\n}\n#modal-container {\n  height: 100%;\n  width: 100%;\n}\n#overlay {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: #2c2c2c;\n  opacity: 0.95;\n  transition: transform 0.3s, opacity 0.3s;\n  z-index: 9000;\n}\n#modal {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  width: 90%;\n  max-width: 600px;\n  z-index: 9001;\n}\n#content {\n  background: #ffffff;\n  opacity: 1;\n  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35), 0px 3px 2px 0px rgba(0, 0, 0, 0.18);\n  margin: 0 auto;\n  position: relative;\n}\n#header {\n  padding: 2vh 2vw 0 2vw;\n}\n#header h4 {\n  font-size: 1em;\n  padding: 0;\n  margin: 0;\n}\n#body {\n  padding: 2vh 2vw;\n  max-height: 90vh;\n  font-size: 0.8em;\n}\n#buttons {\n  padding: 2vh 2vw;\n}\n#buttons button {\n  margin-right: 8px;\n  font-size: .5em;\n}\n";
+var css$1 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n:host {\n  display: block;\n  height: 100%;\n  width: 100%;\n}\n#modal-container {\n  height: 100%;\n  width: 100%;\n}\n#overlay {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: #2c2c2c;\n  opacity: 0.95;\n  transition: transform 0.3s, opacity 0.3s;\n  z-index: 9000;\n}\n#modal {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  width: 90%;\n  max-width: 600px;\n  z-index: 9001;\n}\n#content {\n  background: #ffffff;\n  opacity: 1;\n  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35), 0px 3px 2px 0px rgba(0, 0, 0, 0.18);\n  margin: 0 auto;\n  position: relative;\n}\n#header {\n  padding: 2vh 2vw 0 2vw;\n}\n#header h4 {\n  font-size: 1em;\n  padding: 0;\n  margin: 0;\n}\n#body {\n  padding: 2vh 2vw;\n  max-height: 90vh;\n  font-size: 0.8em;\n}\n#buttons {\n  padding: 2vh 2vw;\n}\n#buttons button {\n  margin-right: 8px;\n  font-size: .5em;\n}\n";
 
 var hoisted1$1 = ["id", "overlay"];
 var hoisted2 = ["id", "modal"];
@@ -402,26 +402,26 @@ var hoisted7 = ["type", "button", "name", "primary", "class", "button primary"];
 var hoisted8 = ["type", "button", "name", "cancel", "class", "button minor"];
 function render$1(ctrl) {
   if (ctrl._show) {
-    incrementalDom.elementOpen("div", "a57422bf-e246-408a-953c-4456b71cf06a", hoisted1$1);
-    incrementalDom.elementOpen("div", "d46cdcfd-0df6-4e4d-90d5-294cbb68940c", hoisted2);
-    incrementalDom.elementOpen("div", "e3dc33c3-8bdf-4ddd-b07c-8a41731f08e8", hoisted3);
-    incrementalDom.elementOpen("div", "a01113b3-fc08-4beb-892f-a1bd33ddeeca", hoisted4);
+    incrementalDom.elementOpen("div", "0ecc2d7a-615c-4781-86ce-7628b969c8b4", hoisted1$1);
+    incrementalDom.elementOpen("div", "dd885f53-aa71-4a77-93fb-9180f5a8ba22", hoisted2);
+    incrementalDom.elementOpen("div", "283b5021-8bb4-4423-8c1b-dc2b286f7b65", hoisted3);
+    incrementalDom.elementOpen("div", "67b624ff-1c83-4901-8496-8b4ff614bdf5", hoisted4);
     incrementalDom.elementOpen("h4");
     incrementalDom.text("" + ctrl._heading + "");
     incrementalDom.elementClose("h4");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "5e94737a-30c3-4403-bd9e-27ebe520de32", hoisted5);
+    incrementalDom.elementOpen("div", "d25fb480-e516-4ca4-9cea-b2a5d5ba9f17", hoisted5);
     incrementalDom.text("" + ctrl._body + "");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "355201ed-419d-466a-8ee7-f1304e54972b", hoisted6);
-    incrementalDom.elementOpen("button", "4f1bc8aa-6b80-486d-b022-7e6a34e4a7dc", hoisted7, "onclick", function ($event) {
+    incrementalDom.elementOpen("div", "a009fa4f-db55-455a-896d-1f28c244fb3e", hoisted6);
+    incrementalDom.elementOpen("button", "bbc889ba-bc82-49f5-bb8a-46b35126add7", hoisted7, "onclick", function ($event) {
       var $element = this;
       ctrl._clickButton('primary');
     });
     incrementalDom.text("" + ctrl._primary + "");
     incrementalDom.elementClose("button");
     if (ctrl._cancel) {
-      incrementalDom.elementOpen("button", "dff0dc57-3a69-40c5-93cb-fa12fa073427", hoisted8, "onclick", function ($event) {
+      incrementalDom.elementOpen("button", "3bff6413-7277-42d5-802b-a501199334af", hoisted8, "onclick", function ($event) {
         var $element = this;
         ctrl._clickButton('cancel');
       });
@@ -623,16 +623,13 @@ var skills = db.getCollection('skills') || db.addCollection('skills');
 var users = db.getCollection('users') || db.addCollection('users');
 
 function changeHandler() {
-  user.getUser().then(function (_user) {
-    var changes = JSON.parse(db.serializeChanges()).filter(function (change) {
-      return change.operation !== 'I' && change.obj.email === _user.email;
-    });
-    // console.log("changes", changes);
-    if (changes) updateDbChannel.publish(JSON.stringify(changes), function (err) {
-      if (err) console.error("err", err);
-      if (!err) db.clearChanges();
-      db.clearChanges();
-    });
+  // console.log("changeHandler");
+  var changes = JSON.parse(db.serializeChanges());
+  // console.log("changes", changes);
+  if (changes) updateDbChannel.publish(JSON.stringify(changes), function (err) {
+    if (err) console.error("err", err);
+    if (!err) db.clearChanges();
+    db.clearChanges();
   });
 }
 
@@ -640,15 +637,26 @@ function updateDb(db, changes) {
   try {
     changes.forEach(function (change) {
       var coll = db.getCollection(change.name);
-      if (change.operation === 'I') coll.insertOne(change.obj);
+      var id = change.obj.$loki;
+      var doc = coll.get(id);
+      // console.log("doc", doc);
+      // console.log("change.obj", change.obj);
+      // console.log("coll.find()", coll.find())
+      if (change.operation === 'I' && !doc) {
+        delete change.obj.$loki;
+        delete change.obj.meta;
+        coll.insertOne(change.obj);
+      }
       if (change.operation === 'D') coll.findAndRemove({ $loki: change.obj.$loki });
       if (change.operation === 'U') {
-        var doc = coll.findOne({ $loki: change.obj.$loki });
-        // console.log("doc", doc)
-        // console.log("JSON.stringify(doc) !== JSON.stringify(change.obj))", JSON.stringify(doc) !== JSON.stringify(change.obj))
-        if (doc && JSON.stringify(doc) !== JSON.stringify(change.obj)) coll.update(change.obj);
+        var dt = JSON.parse(JSON.stringify(doc));
+        var ct = JSON.parse(JSON.stringify(change.obj));
+        delete dt.$loki;
+        delete ct.$loki;
+        delete dt.meta;
+        delete ct.meta;
+        if (JSON.stringify(dt) !== JSON.stringify(ct)) coll.update(change.obj);
       }
-      console.log('dispatching event: ', change.name + 'Changed');
       document.dispatchEvent(new CustomEvent(change.name + 'Changed'));
     });
   } catch (err) {
@@ -663,15 +671,15 @@ socket.on('connect', function (status) {
     awards = db.getCollection('awards');
     skills = db.getCollection('skills');
     users = db.getCollection('users');
-    awards.on(['add', 'update', 'delete'], changeHandler);
-    skills.on(['add', 'update', 'delete'], changeHandler);
-    users.on(['add', 'update', 'delete'], changeHandler);
+    awards.on(['insert', 'update', 'delete'], changeHandler);
+    skills.on(['insert', 'update', 'delete'], changeHandler);
+    users.on(['insert', 'update', 'delete'], changeHandler);
   });
 });
 
 updateDbChannel.watch(function (data) {
   var changes = JSON.parse(data);
-  // console.log("changes", changes)
+  console.log("updateDbChannel::changes", changes);
   if (Array.isArray(changes)) updateDb(db, changes);
   db.clearChanges();
 });
@@ -712,8 +720,8 @@ user.authenticate = function () {
   return new Promise(function (resolve, reject) {
     socket.emit('auth', user, function (err) {
       if (err) {
-        reject(err);
-        router.navigate('/login');
+        // reject(err);
+        // router.navigate('/login');
       } else {
         Object.assign(user, socket.authToken.user, { authenticated: true, admin: true });
         document.dispatchEvent(new CustomEvent('userChanged', { detail: user }));
@@ -810,42 +818,42 @@ function render$2(ctrl) {
   incrementalDom.elementOpen("h3");
   incrementalDom.text("Select a Provider");
   incrementalDom.elementClose("h3");
-  incrementalDom.elementOpen("div", "5d6f78da-ddbb-4a52-982e-6c3f45dd54dc", hoisted1$2);
-  incrementalDom.elementOpen("a", "5c38eee9-ccdf-47bc-9e58-652365c79173", hoisted2$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("div", "d34ccb46-38d1-4695-a6f1-a4945b4f5e3c", hoisted1$2);
+  incrementalDom.elementOpen("a", "be17dee9-6ac7-426c-a02e-59e41b4a31d0", hoisted2$1, "onclick", function ($event) {
     var $element = this;
     ctrl.hello('facebook').login();
   });
-  incrementalDom.elementOpen("img", "1aa8fd2f-d6bb-42e0-b428-bd08ab3ac0a3", hoisted3$1);
+  incrementalDom.elementOpen("img", "d989213c-d1e0-432e-a3eb-d997e1b0c534", hoisted3$1);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Facebook");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("a", "60a86cf9-dd18-4139-a794-00cf185cd085", hoisted4$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("a", "bf512fb5-c8d5-401e-a7d9-4f2a08b789f2", hoisted4$1, "onclick", function ($event) {
     var $element = this;
     ctrl.hello('github').login();
   });
-  incrementalDom.elementOpen("img", "4b0c5d0f-92c1-4991-b4b2-0909e0e67448", hoisted5$1);
+  incrementalDom.elementOpen("img", "117ee49b-1653-4777-930a-eab569774d0f", hoisted5$1);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Github");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("a", "aad8bbbe-a064-48b6-8a27-300a86b96d1d", hoisted6$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("a", "3305602c-e5f6-4507-aa8e-350b21a893f1", hoisted6$1, "onclick", function ($event) {
     var $element = this;
     ctrl.hello('google').login();
   });
-  incrementalDom.elementOpen("img", "e5643fe7-889d-4da7-98a5-c74d37bbe5c9", hoisted7$1);
+  incrementalDom.elementOpen("img", "7c7bac77-e2b2-49d2-9828-a07323380961", hoisted7$1);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Google");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("a", "f07287b5-69ed-44d8-ad44-5f756278fda4", hoisted8$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("a", "d58a79ce-c83b-4731-a46a-be3ec0b2f93d", hoisted8$1, "onclick", function ($event) {
     var $element = this;
     ctrl.hello('twitter').login();
   });
-  incrementalDom.elementOpen("img", "f5a46e1b-7e83-4af2-b1b6-b82abc1f8dbd", hoisted9);
+  incrementalDom.elementOpen("img", "57011cbc-f889-4ee3-b2d2-30a283b88779", hoisted9);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Twitter");
@@ -915,24 +923,24 @@ var hoisted4$2 = ["href", "/help"];
 var hoisted5$2 = ["href", "/admin"];
 var hoisted6$2 = ["href", "/login"];
 function render$3(ctrl) {
-  incrementalDom.elementOpen("a", "aac637e1-0ac0-4624-851b-68fa20ca3141", hoisted1$3, "class", ctrl.stateContains('home'));
-  incrementalDom.elementOpen("img", "f31fcbbd-6e6f-4d37-8df2-47148eb8f686", hoisted2$2);
+  incrementalDom.elementOpen("a", "6947d302-dd43-4ae1-bddd-cdce55256970", hoisted1$3, "class", ctrl.stateContains('home'));
+  incrementalDom.elementOpen("img", "5d480859-3255-416b-9f68-85da070e4e89", hoisted2$2);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Home");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("nav", "b45ae2e8-e289-49bd-92c0-1b51e782b06a", hoisted3$2);
-  incrementalDom.elementOpen("a", "c7353532-25c1-409c-9e7a-a6ec75613f40", hoisted4$2, "class", ctrl.stateContains('help'));
+  incrementalDom.elementOpen("nav", "a1b08c75-13ba-445e-b7f6-730a8da059de", hoisted3$2);
+  incrementalDom.elementOpen("a", "1ab882b6-0ad3-498a-9752-be6bcf081d4d", hoisted4$2, "class", ctrl.stateContains('help'));
   incrementalDom.text("Help");
   incrementalDom.elementClose("a");
   if (ctrl.user.admin) {
-    incrementalDom.elementOpen("a", "4cdc21b0-ecc1-4fed-b35b-9083272891d4", hoisted5$2, "class", ctrl.stateContains('admin'));
+    incrementalDom.elementOpen("a", "dfa07cfa-006c-4df4-975c-a8156f08a9a8", hoisted5$2, "class", ctrl.stateContains('admin'));
     incrementalDom.text("Admin");
     incrementalDom.elementClose("a");
   }
   if (!ctrl.user.authenticated) {
-    incrementalDom.elementOpen("a", "0e37c93c-ccb1-4ab7-aaf2-379d9c29b261", hoisted6$2, "class", ctrl.stateContains('login'));
+    incrementalDom.elementOpen("a", "3d48b93b-f0a2-4e22-a349-d79a22b2b550", hoisted6$2, "class", ctrl.stateContains('login'));
     incrementalDom.text("Login");
     incrementalDom.elementClose("a");
   }
@@ -1039,12 +1047,12 @@ function render$4(ctrl) {
   incrementalDom.elementOpen("h2");
   incrementalDom.text("Page Not Found");
   incrementalDom.elementClose("h2");
-  incrementalDom.elementOpen("a", "49f9bd14-6191-4161-a1cf-95a2462a57af", hoisted1$4);
+  incrementalDom.elementOpen("a", "fb8bc2d9-e36d-4a67-af3d-78d916558b26", hoisted1$4);
   incrementalDom.text("Home");
   incrementalDom.elementClose("a");
 }
 
-var css$4 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n:host {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\n:host #not-found {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n:host #not-found h1 {\n  font-size: 5em;\n  color: white;\n}\n:host #not-found h2 {\n  font-size: 2em;\n  color: white;\n}\n:host a {\n  font-size: 1em !important;\n}\n";
+var css$4 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n:host {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\n:host #not-found {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n:host #not-found h1 {\n  font-size: 5em;\n  color: white;\n}\n:host #not-found h2 {\n  font-size: 2em;\n  color: white;\n}\n:host a {\n  font-size: 1em !important;\n}\n";
 
 var NotFound = function (_HTMLElement) {
   inherits(NotFound, _HTMLElement);
@@ -1104,14 +1112,14 @@ var hoisted7$2 = ["shared", "", "collapsed", "true"];
 var __target$5;
 
 function render$5(ctrl) {
-  incrementalDom.elementOpen("section", "c11e30a1-054d-4227-bb7c-a5ff3b3d2887", hoisted1$5);
-  incrementalDom.elementOpen("input", "d44aa64a-b104-4904-b9de-7d01489667c3", hoisted2$3, "onkeyup", function ($event) {
+  incrementalDom.elementOpen("section", "1543798c-82ab-4a8a-b5cb-a478f37daef9", hoisted1$5);
+  incrementalDom.elementOpen("input", "aa2fc02e-a0f4-469f-8dd2-87230c90b0b7", hoisted2$3, "onkeyup", function ($event) {
     var $element = this;
     ctrl.filterSkills(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "24ab0df5-17db-4e69-9291-d4308940d29e", hoisted3$3);
-  incrementalDom.elementOpen("input", "5c47e919-9067-4a42-bb6b-9bcd37309778", hoisted4$3, "onchange", function ($event) {
+  incrementalDom.elementOpen("label", "b11ce62e-11d6-4455-b09a-2c729a541fd7", hoisted3$3);
+  incrementalDom.elementOpen("input", "e8cbba58-7b7e-42e6-aa2a-e031e65f4224", hoisted4$3, "onchange", function ($event) {
     var $element = this;
     ctrl.toggleMine();
   });
@@ -1121,14 +1129,14 @@ function render$5(ctrl) {
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("section");
-  incrementalDom.elementOpen("section", "68e6cc3e-9535-4260-88e4-a4eea54f35c8", hoisted5$3);
+  incrementalDom.elementOpen("section", "c9e741eb-a932-46b6-ad0e-2bc85411620b", hoisted5$3);
   __target$5 = ctrl.viewSkills;
   if (__target$5) {
     (__target$5.forEach ? __target$5 : Object.keys(__target$5)).forEach(function ($value, $item, $target) {
       var item = $value;
-      var $key = "f9814ed6-cdb4-427b-ada1-06f4b7d601fc_" + $item;
+      var $key = "b95c0510-336c-44a4-8697-55d8c9393504_" + $item;
       incrementalDom.elementOpen("div", $key, hoisted6$3);
-      incrementalDom.elementOpen("collapsable-panel", "f3299339-9f87-4001-bbea-903f3c279d41_" + $key, hoisted7$2, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements);
+      incrementalDom.elementOpen("collapsable-panel", "a32c6a97-5d7e-4ce1-a514-d161a302e13d_" + $key, hoisted7$2, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements);
       incrementalDom.elementClose("collapsable-panel");
       incrementalDom.elementClose("div");
     }, this);
@@ -1172,68 +1180,68 @@ var hoisted31 = ["class", "html"];
 var __target$6;
 
 function render$6(ctrl) {
-  incrementalDom.elementOpen("div", "cdbb1ef1-528c-43f7-9a30-3231c56506f9", hoisted1$6);
-  incrementalDom.elementOpen("div", "767b8866-9359-4b61-bbea-130aec934fd7", hoisted2$4);
-  incrementalDom.elementOpen("div", "fea12c46-9a1e-4b99-a072-985adb0617ee", hoisted3$4);
+  incrementalDom.elementOpen("div", "96962cd1-7726-4482-8615-5dddb4bec219", hoisted1$6);
+  incrementalDom.elementOpen("div", "df749cd2-3aea-4e3c-91ab-4af9e7f385df", hoisted2$4);
+  incrementalDom.elementOpen("div", "1c7ad476-1b77-4930-ae60-e520faafc838", hoisted3$4);
   incrementalDom.text("" + ctrl.heading + "");
   incrementalDom.elementClose("div");
-  incrementalDom.elementOpen("div", "60c8e086-cc48-4ce9-8b24-e3e55201a74a", hoisted4$4);
+  incrementalDom.elementOpen("div", "9db44553-01d2-44e3-a12b-cc4ad33b7d76", hoisted4$4);
   if (!ctrl.added && !ctrl.multiple) {
-    incrementalDom.elementOpen("button", "74b3596f-8cd7-41d7-83f9-2eb2fc54d611", hoisted5$4, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "c5910bf4-8108-404e-9705-095ac2a5ee56", hoisted5$4, "onclick", function ($event) {
       var $element = this;
       ctrl.add(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "bc8c806c-b3d1-4cef-ad26-17a5cee47dd0", hoisted6$4);
+    incrementalDom.elementOpen("img", "eace4596-0857-4832-bd2c-61f944ca4499", hoisted6$4);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (!ctrl.earned && !ctrl.multiple && !ctrl.pending) {
-    incrementalDom.elementOpen("button", "a9292b20-2503-4381-81b1-c1ac351c8bd8", hoisted7$3, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "4fc5adfd-5210-4856-8b9d-a654dffc0323", hoisted7$3, "onclick", function ($event) {
       var $element = this;
       ctrl.addAndShowAchievementEditor(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "d2fbbf62-ea4a-4cb9-88ef-e03688151c00", hoisted8$2);
+    incrementalDom.elementOpen("img", "fab8a341-840c-45e9-8f75-d484facbb84c", hoisted8$2);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (ctrl.earned) {
-    incrementalDom.elementOpen("button", "3c1aba02-8e62-4788-80b4-6227364ecca5", hoisted9$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "095fdc1f-88a7-41f8-abbc-0a59ca42ca6e", hoisted9$1, "onclick", function ($event) {
       var $element = this;
       ctrl.showAwards(ctrl.iid, 'earned');
     });
-    incrementalDom.elementOpen("img", "ae4302dc-957f-440c-9ea6-773b6150dad5", hoisted10);
+    incrementalDom.elementOpen("img", "63773bd4-9b09-4c99-8c50-5dadfd50a219", hoisted10);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (ctrl.pending) {
-    incrementalDom.elementOpen("button", "ec45c89c-7c69-43f1-a302-8d1749475f75", hoisted11, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "402f9785-a781-409b-a115-276b06036889", hoisted11, "onclick", function ($event) {
       var $element = this;
       ctrl.showAwards(ctrl.iid, 'pending');
     });
-    incrementalDom.elementOpen("img", "60a506d6-1935-43ce-9425-2a1546abcda4", hoisted12);
+    incrementalDom.elementOpen("img", "beee3b1d-e7b1-4d87-ad4c-29e491d1e3f7", hoisted12);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
-  incrementalDom.elementOpen("button", "e1d92340-7f5e-4e7b-8741-5f0c9d508f03", hoisted13, "onclick", function ($event) {
+  incrementalDom.elementOpen("button", "35091356-b449-4e61-bd7f-2d652a835bc1", hoisted13, "onclick", function ($event) {
     var $element = this;
     ctrl.getHelp(ctrl.iid);
   });
-  incrementalDom.elementOpen("img", "2e0e0658-db60-4760-9666-3bc4a9d1a5af", hoisted14);
+  incrementalDom.elementOpen("img", "2800671a-8040-4a65-948e-c4a962c26a9c", hoisted14);
   incrementalDom.elementClose("img");
   incrementalDom.elementClose("button");
   if (ctrl.added) {
-    incrementalDom.elementOpen("button", "a8f7f7ce-af82-4460-9507-f0808579c5a5", hoisted15, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "a1d25ff1-ddc6-4995-ac4b-7df7159f8de2", hoisted15, "onclick", function ($event) {
       var $element = this;
       ctrl.delete(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "9c6b21d3-4b50-4b14-94d7-040ed89a3c74", hoisted16);
+    incrementalDom.elementOpen("img", "403f3242-1e03-49ca-9df3-425f662f8f3e", hoisted16);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
-  incrementalDom.elementOpen("button", "efc976e3-4eb3-431d-838b-fe5724fd90cc", hoisted17);
+  incrementalDom.elementOpen("button", "d1f13a6c-07d0-42e6-bcf0-c574c470a733", hoisted17);
   incrementalDom.text("" + ctrl.achievements + "");
   incrementalDom.elementClose("button");
-  incrementalDom.elementOpen("button", "ed506dd2-6601-4c02-b69a-c4b90adfbd53", hoisted18, "onclick", function ($event) {
+  incrementalDom.elementOpen("button", "4ff879c7-b53f-49db-a83d-c4f3ac7203a9", hoisted18, "onclick", function ($event) {
     var $element = this;
     ctrl.toggle();
   });
@@ -1250,7 +1258,7 @@ function render$6(ctrl) {
   incrementalDom.elementClose("button");
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("div");
-  incrementalDom.elementOpen("div", "ed289025-178b-4961-9643-cc72f4fda219", hoisted19);
+  incrementalDom.elementOpen("div", "c30713f0-37e5-4e3a-8c5b-bc9136de1b2c", hoisted19);
   incrementalDom.text("" + ctrl.description + "");
   incrementalDom.elementClose("div");
   if (ctrl.showAchievements) {
@@ -1259,11 +1267,11 @@ function render$6(ctrl) {
     incrementalDom.elementOpen("title");
     incrementalDom.text("Achievements:");
     incrementalDom.elementClose("title");
-    incrementalDom.elementOpen("button", "3b8088f9-86c1-4340-ac0b-af431b5dce95", hoisted20, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "b4fcb8d7-8134-45f2-b05e-320810f65fbd", hoisted20, "onclick", function ($event) {
       var $element = this;
       ctrl.hideAchievements(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "4ea6ae2c-2c94-45f2-b977-7a3f6920301d", hoisted21);
+    incrementalDom.elementOpen("img", "1d07da6f-f844-495b-b277-308ad81f2d3e", hoisted21);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
     incrementalDom.elementClose("header");
@@ -1271,7 +1279,7 @@ function render$6(ctrl) {
     if (__target$6) {
       (__target$6.forEach ? __target$6 : Object.keys(__target$6)).forEach(function ($value, $item, $target) {
         var item = $value;
-        var $key = "563ee79c-d29f-4a0f-96a7-72915f7198de_" + $item;
+        var $key = "1a92bf6a-f53a-42eb-b6d8-e83c173002de_" + $item;
         incrementalDom.elementOpen("section", $key, hoisted22);
         if (ctrl.awards[item].pending && parseInt(ctrl.awards[item].skillId, 10) === parseInt(ctrl.iid, 10)) {
           incrementalDom.elementOpen("story");
@@ -1322,30 +1330,30 @@ function render$6(ctrl) {
               someone will review and approve it. Please share your experience, and sign up to help others. \
             ");
     incrementalDom.elementClose("p");
-    incrementalDom.elementOpen("textarea", "f615d21e-e104-4548-aa06-e30e4b2d5ea4", hoisted23);
+    incrementalDom.elementOpen("textarea", "86611ab5-f8a8-4a75-9f09-402ecb2695bd", hoisted23);
     incrementalDom.elementClose("textarea");
-    incrementalDom.elementOpen("div", "c39c5af0-440a-4954-8c43-9d5f10178065", hoisted24);
-    incrementalDom.elementOpen("input", "fd6dec73-45bd-4f5c-a590-810667c77fca", hoisted25);
+    incrementalDom.elementOpen("div", "7cf440ab-78d1-4cdf-ac4f-2189ed24fff9", hoisted24);
+    incrementalDom.elementOpen("input", "2368bff6-d27f-4253-8dd4-fb8db1c88348", hoisted25);
     incrementalDom.elementClose("input");
     incrementalDom.elementOpen("span");
     incrementalDom.text("Yes, I'm willing to share my experience");
     incrementalDom.elementClose("span");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "e518533d-a440-4529-80c3-fe785563c522", hoisted26);
-    incrementalDom.elementOpen("input", "f0b86cd3-925c-4ce0-ae31-d8d02f57ca55", hoisted27);
+    incrementalDom.elementOpen("div", "5407345a-09a8-427c-9b8a-1b4f06478470", hoisted26);
+    incrementalDom.elementOpen("input", "06315e3e-5b6c-4377-bcb7-48346a2046b4", hoisted27);
     incrementalDom.elementClose("input");
     incrementalDom.elementOpen("span");
     incrementalDom.text("Yes, I'm willing to help others achieve this skill.");
     incrementalDom.elementClose("span");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "7c144c56-6ef4-4b3e-b95a-68644b8923df", hoisted28);
-    incrementalDom.elementOpen("button", "82a4d9f6-8915-4971-8215-0b750af372d6", hoisted29, "onclick", function ($event) {
+    incrementalDom.elementOpen("div", "f01717df-2f1e-40ac-b05b-96aed09d491a", hoisted28);
+    incrementalDom.elementOpen("button", "01386d33-0017-47db-8fb9-257eb37d4916", hoisted29, "onclick", function ($event) {
       var $element = this;
       ctrl.applyForAchievment();
     });
     incrementalDom.text("Apply");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("a", "ffef2fc2-b462-4fd2-9a33-2662d295dce5", hoisted30, "onclick", function ($event) {
+    incrementalDom.elementOpen("a", "2587b524-afc7-4038-aca2-43f056af1221", hoisted30, "onclick", function ($event) {
       var $element = this;
       ctrl.hideSkillEditor();
     });
@@ -1355,7 +1363,7 @@ function render$6(ctrl) {
     incrementalDom.elementClose("skill-editor");
   }
   if (!ctrl.collapsed) {
-    incrementalDom.elementOpen("div", "3f94f44d-671a-4686-a3f6-e5ae1251172e", hoisted31);
+    incrementalDom.elementOpen("div", "1abdb67f-aefb-49e8-b8fb-38462ba64e75", hoisted31);
     if (ctrl.html && ctrl.html !== '') {
       var el = incrementalDom.currentElement();
       el.innerHTML = ctrl.html;
@@ -1366,7 +1374,7 @@ function render$6(ctrl) {
   incrementalDom.elementClose("div");
 }
 
-var css$6 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.collapsable-panel .panel {\n  border: 1px solid #ccc;\n  margin-bottom: 8px;\n}\n.collapsable-panel .panel .heading {\n  display: flex;\n  border-bottom: 1px solid #ccc;\n}\n.collapsable-panel .panel .heading .title {\n  font-size: 1em;\n  flex: 1;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .heading .button-group {\n  display: flex;\n  justify-content: flex-end;\n}\n.collapsable-panel .panel .heading .button-group button {\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: transparent;\n  border: 0;\n  outline: none;\n  width: 28px;\n  height: 28px;\n  border-left: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n  font-size: .5em;\n  cursor: pointer;\n  line-height: normal;\n}\n.collapsable-panel .panel .heading .button-group button img {\n  height: 100%;\n  width: 100%;\n}\n.collapsable-panel .panel .description {\n  font-size: .75em;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .html {\n  font-size: .65em;\n  padding: 1vw;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert {\n  display: flex;\n  padding: 1vh 1vw;\n  font-size: .75em;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert.good {\n  background-color: rgba(100, 200, 100, 0.1);\n}\n.collapsable-panel .panel alert.bad {\n  background-color: rgba(200, 100, 100, 0.1);\n}\n.collapsable-panel skill-editor {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  border: 2px solid gold;\n  font-size: .75em;\n  padding: 1vh 1vw;\n}\n.collapsable-panel skill-editor header {\n  display: block;\n  font-size: 1em;\n}\n.collapsable-panel skill-editor p {\n  font-size: .75em;\n}\n.collapsable-panel skill-editor .control-container,\n.collapsable-panel skill-editor .button-group {\n  display: flex;\n  font-size: .8em;\n  margin-top: 1vh;\n  align-items: center;\n}\n.collapsable-panel skill-editor input[type='checkbox'] {\n  margin-right: 2vw;\n}\n.collapsable-panel skill-editor .button-group a {\n  margin-left: 2vw;\n}\n.collapsable-panel achievements-wrapper {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  padding: 1vh 1vw;\n  background-color: rgba(245, 191, 35, 0.2);\n  font-size: .75em;\n}\n.collapsable-panel achievements-wrapper header {\n  display: flex;\n}\n.collapsable-panel achievements-wrapper header button {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  outline: none;\n  width: 16px;\n  height: 16px;\n  position: relative;\n  top: -1vh;\n}\n.collapsable-panel achievements-wrapper header button img {\n  width: inherit;\n  height: inherit;\n}\n.collapsable-panel achievements-wrapper header title {\n  display: block;\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section {\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section story {\n  font-size: .8em;\n}\n.collapsable-panel achievements-wrapper section status {\n  display: flex;\n  border-top: 1px solid #ccc;\n  align-items: flex-end;\n}\n.collapsable-panel achievements-wrapper section status state {\n  display: inline-block;\n  flex: 1;\n  font-size: .7em;\n}\n.collapsable-panel achievements-wrapper section status date {\n  display: inline-block;\n  font-size: .6em;\n}\n";
+var css$6 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n.collapsable-panel .panel {\n  border: 1px solid #ccc;\n  margin-bottom: 8px;\n}\n.collapsable-panel .panel .heading {\n  display: flex;\n  border-bottom: 1px solid #ccc;\n}\n.collapsable-panel .panel .heading .title {\n  font-size: 1em;\n  flex: 1;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .heading .button-group {\n  display: flex;\n  justify-content: flex-end;\n}\n.collapsable-panel .panel .heading .button-group button {\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: transparent;\n  border: 0;\n  outline: none;\n  width: 28px;\n  height: 28px;\n  border-left: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n  font-size: .5em;\n  cursor: pointer;\n  line-height: normal;\n}\n.collapsable-panel .panel .heading .button-group button img {\n  height: 100%;\n  width: 100%;\n}\n.collapsable-panel .panel .description {\n  font-size: .75em;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .html {\n  font-size: .65em;\n  padding: 1vw;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert {\n  display: flex;\n  padding: 1vh 1vw;\n  font-size: .75em;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert.good {\n  background-color: rgba(100, 200, 100, 0.1);\n}\n.collapsable-panel .panel alert.bad {\n  background-color: rgba(200, 100, 100, 0.1);\n}\n.collapsable-panel skill-editor {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  border: 2px solid gold;\n  font-size: .75em;\n  padding: 1vh 1vw;\n}\n.collapsable-panel skill-editor header {\n  display: block;\n  font-size: 1em;\n}\n.collapsable-panel skill-editor p {\n  font-size: .75em;\n}\n.collapsable-panel skill-editor .control-container,\n.collapsable-panel skill-editor .button-group {\n  display: flex;\n  font-size: .8em;\n  margin-top: 1vh;\n  align-items: center;\n}\n.collapsable-panel skill-editor input[type='checkbox'] {\n  margin-right: 2vw;\n}\n.collapsable-panel skill-editor .button-group a {\n  margin-left: 2vw;\n}\n.collapsable-panel achievements-wrapper {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  padding: 1vh 1vw;\n  background-color: rgba(245, 191, 35, 0.2);\n  font-size: .75em;\n}\n.collapsable-panel achievements-wrapper header {\n  display: flex;\n}\n.collapsable-panel achievements-wrapper header button {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  outline: none;\n  width: 16px;\n  height: 16px;\n  position: relative;\n  top: -1vh;\n}\n.collapsable-panel achievements-wrapper header button img {\n  width: inherit;\n  height: inherit;\n}\n.collapsable-panel achievements-wrapper header title {\n  display: block;\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section {\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section story {\n  font-size: .8em;\n}\n.collapsable-panel achievements-wrapper section status {\n  display: flex;\n  border-top: 1px solid #ccc;\n  align-items: flex-end;\n}\n.collapsable-panel achievements-wrapper section status state {\n  display: inline-block;\n  flex: 1;\n  font-size: .7em;\n}\n.collapsable-panel achievements-wrapper section status date {\n  display: inline-block;\n  font-size: .6em;\n}\n";
 
 var CollapsablePanel = function (_HTMLElement) {
   inherits(CollapsablePanel, _HTMLElement);
@@ -1781,12 +1789,12 @@ var hoisted1$7 = ["type", "text", "name", "search-goals", "placeholder", "Search
 var hoisted2$5 = ["type", "button", "add-button", ""];
 function render$7(ctrl) {
   incrementalDom.elementOpen("header");
-  incrementalDom.elementOpen("input", "abdf3e0a-a9ce-42b0-8797-8c73030280e4", hoisted1$7, "onkeyup", function ($event) {
+  incrementalDom.elementOpen("input", "41fe6c6e-446e-4efd-acbe-058b10fe01f5", hoisted1$7, "onkeyup", function ($event) {
     var $element = this;
     ctrl.goalSearch(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("button", "6734749f-81b8-49b4-a39b-a01d82b99efb", hoisted2$5);
+  incrementalDom.elementOpen("button", "429f1afc-5b00-411e-97af-fc25708e541f", hoisted2$5);
   incrementalDom.text("Add");
   incrementalDom.elementClose("button");
   incrementalDom.elementClose("header");
@@ -1794,7 +1802,7 @@ function render$7(ctrl) {
   incrementalDom.elementClose("section");
 }
 
-var css$7 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\nuser-skills {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n}\nuser-skills #user-skills {\n  flex: 1;\n  margin: 1vh 1vw;\n  padding: 1vh 1vw;\n  background-color: white;\n  display: flex;\n  flex-direction: column;\n}\nuser-skills #user-skills header {\n  display: flex;\n}\nuser-skills #user-skills header input {\n  flex: 5;\n}\nuser-skills #user-skills header button {\n  flex: 1;\n  margin-left: 1vw;\n}\n";
+var css$7 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\nuser-skills {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n}\nuser-skills #user-skills {\n  flex: 1;\n  margin: 1vh 1vw;\n  padding: 1vh 1vw;\n  background-color: white;\n  display: flex;\n  flex-direction: column;\n}\nuser-skills #user-skills header {\n  display: flex;\n}\nuser-skills #user-skills header input {\n  flex: 5;\n}\nuser-skills #user-skills header button {\n  flex: 1;\n  margin-left: 1vw;\n}\n";
 
 var UserSkills = function (_HTMLElement) {
   inherits(UserSkills, _HTMLElement);
@@ -1858,52 +1866,52 @@ var hoisted10$1 = ["for", "reports-tab-control"];
 function render$8(ctrl) {
   incrementalDom.elementOpen("tabs");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "fe80baa2-352d-4a20-b8ab-e3a859ab988a", hoisted1$8, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "0eafbe67-7322-4428-beaf-1456c7c5bcd3", hoisted1$8, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "efcc1a1c-ecc6-4796-84a6-aa31cc1f427c", hoisted2$6);
+  incrementalDom.elementOpen("label", "c12f8cf3-6fed-4dde-a549-d7f73be36d6e", hoisted2$6);
   incrementalDom.text("Users");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "aacdb6ef-ab14-4ff9-9ded-9604b2d18fa1", hoisted3$5, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "c8544be6-2fb1-4dd5-8c1e-bd6ecdde4f36", hoisted3$5, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "3ae07b5b-05c4-463d-a1df-feab4ff98b76", hoisted4$5);
+  incrementalDom.elementOpen("label", "5a8792ce-0096-4884-8097-a90ad98a6970", hoisted4$5);
   incrementalDom.text("Skills");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "4648ad0f-3679-4308-b6f0-e1d4dd01102a", hoisted5$5, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "951cc541-cbfd-40b2-ab20-c770e5a2255b", hoisted5$5, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "cc1377d4-1313-4203-8246-d5ba1b760ac5", hoisted6$5);
+  incrementalDom.elementOpen("label", "84c441bd-d1d3-4235-90bd-dd3831c88f82", hoisted6$5);
   incrementalDom.text("Awards");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "9fbb2c34-0a22-491d-89f5-ae998fa1c346", hoisted7$4, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "68d1d180-2115-4571-ad8b-21ea36b40892", hoisted7$4, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "edba2669-76fe-4069-b99e-afd643e83473", hoisted8$3);
+  incrementalDom.elementOpen("label", "311cab8e-313f-416f-ace3-ac10832c91b2", hoisted8$3);
   incrementalDom.text("Assistance");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "eccbb12a-f134-4df3-a4c7-1b62866bd301", hoisted9$2, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "410c5fd8-732b-49d9-95a4-beba0286e5c4", hoisted9$2, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "3a56b5a5-bdaa-494c-a1b4-375865177010", hoisted10$1);
+  incrementalDom.elementOpen("label", "a9d4e915-be1e-4b19-a772-241681fddcef", hoisted10$1);
   incrementalDom.text("Reports");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
@@ -1966,7 +1974,7 @@ var AssistanceAdmin = function (_HTMLElement) {
 
 customElements.define('assistance-admin', AssistanceAdmin);
 
-var css$10 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n}\nsection[name='header'] {\n  display: flex;\n  flex-direction: column;\n}\nsection[name='header'] input[name=\"search\"] {\n  height: 38px;\n  font-size: 1em;\n  padding-left: 1vw;\n}\nsection[name='header'] #filter {\n  display: flex;\n  align-items: center;\n  height: 38px;\n  border: 1px solid #ccc;\n  border-top: 0;\n}\nsection[name='header'] #filter label {\n  flex: 1;\n  padding-left: 1vw;\n}\nsection[name='awards'] {\n  flex: 1;\n  overflow-x: hidden;\n  overflow-y: auto;\n  margin-top: 1vh;\n  border: 1px solid #ccc;\n  display: flex;\n  flex-direction: column;\n  padding: 1vw 1vh;\n}\nsection[name='awards'] .row {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  font-size: .9em;\n}\nsection[name='awards'] .row user,\nsection[name='awards'] .row skill,\nsection[name='awards'] .row date,\nsection[name='awards'] .row story,\nsection[name='awards'] .row actions {\n  display: flex;\n  height: 28px;\n  width: 100%;\n  align-items: center;\n}\nsection[name='awards'] .row user name,\nsection[name='awards'] .row skill name,\nsection[name='awards'] .row date name,\nsection[name='awards'] .row story name,\nsection[name='awards'] .row actions name {\n  flex: 1;\n  font-weight: bold;\n}\nsection[name='awards'] .row user value,\nsection[name='awards'] .row skill value,\nsection[name='awards'] .row date value,\nsection[name='awards'] .row story value,\nsection[name='awards'] .row actions value {\n  display: inline-block;\n  flex: 4;\n}\nsection[name='awards'] .row story value {\n  border: 1px solid #ccc;\n  padding: 1vh 1vw;\n}\nsection[name='awards'] .row actions {\n  height: 48px;\n}\nsection[name='awards'] .row actions value {\n  padding: 0;\n}\nsection[name='awards'] .row actions value button {\n  margin-top: 2vh;\n}\n";
+var css$10 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n}\nsection[name='header'] {\n  display: flex;\n  flex-direction: column;\n}\nsection[name='header'] input[name=\"search\"] {\n  height: 38px;\n  font-size: 1em;\n  padding-left: 1vw;\n}\nsection[name='header'] #filter {\n  display: flex;\n  align-items: center;\n  height: 38px;\n  border: 1px solid #ccc;\n  border-top: 0;\n}\nsection[name='header'] #filter label {\n  flex: 1;\n  padding-left: 1vw;\n}\nsection[name='awards'] {\n  flex: 1;\n  overflow-x: hidden;\n  overflow-y: auto;\n  margin-top: 1vh;\n  border: 1px solid #ccc;\n  display: flex;\n  flex-direction: column;\n  padding: 1vw 1vh;\n}\nsection[name='awards'] .row {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  font-size: .9em;\n}\nsection[name='awards'] .row user,\nsection[name='awards'] .row skill,\nsection[name='awards'] .row date,\nsection[name='awards'] .row story,\nsection[name='awards'] .row actions {\n  display: flex;\n  height: 28px;\n  width: 100%;\n  align-items: center;\n}\nsection[name='awards'] .row user name,\nsection[name='awards'] .row skill name,\nsection[name='awards'] .row date name,\nsection[name='awards'] .row story name,\nsection[name='awards'] .row actions name {\n  flex: 1;\n  font-weight: bold;\n}\nsection[name='awards'] .row user value,\nsection[name='awards'] .row skill value,\nsection[name='awards'] .row date value,\nsection[name='awards'] .row story value,\nsection[name='awards'] .row actions value {\n  display: inline-block;\n  flex: 4;\n}\nsection[name='awards'] .row story value {\n  border: 1px solid #ccc;\n  padding: 1vh 1vw;\n}\nsection[name='awards'] .row actions {\n  height: 48px;\n}\nsection[name='awards'] .row actions value {\n  padding: 0;\n}\nsection[name='awards'] .row actions value button {\n  margin-top: 2vh;\n}\n";
 
 var hoisted1$9 = ["name", "header"];
 var hoisted2$7 = ["type", "text", "name", "search", "value", "", "placeholder", "Search ..."];
@@ -1981,26 +1989,26 @@ var hoisted10$2 = ["name", "awards"];
 var hoisted11$1 = ["class", "row"];
 var hoisted12$1 = ["type", "button", "class", "primary", "name", "accept"];
 function render$10(ctrl) {
-  incrementalDom.elementOpen("section", "f333c7a8-53b8-49b4-a98f-edd3041087fe", hoisted1$9);
-  incrementalDom.elementOpen("input", "a286e302-a0ac-4ec0-b9b9-97d4860a3917", hoisted2$7);
+  incrementalDom.elementOpen("section", "cf061897-0cc8-423f-9144-d499ffabc6c4", hoisted1$9);
+  incrementalDom.elementOpen("input", "e07eb196-21a1-4fba-9d9e-522985783bd5", hoisted2$7);
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("div", "da8cff84-9620-4587-a42a-bd292a808aad", hoisted3$6);
-  incrementalDom.elementOpen("label", "25b8c216-7f9c-47fe-ae5a-912d8a5c75cb", hoisted4$6);
-  incrementalDom.elementOpen("input", "76334a62-1b64-469e-b0e0-dd1fa855ef74", hoisted5$6);
+  incrementalDom.elementOpen("div", "61e75f7b-94e7-413a-b3e8-05edd5e40edb", hoisted3$6);
+  incrementalDom.elementOpen("label", "7f0a0646-4c9d-4c25-9fc9-cda308d44a2b", hoisted4$6);
+  incrementalDom.elementOpen("input", "8b0e4666-6eb5-4936-b998-9811a994f598", hoisted5$6);
   incrementalDom.elementClose("input");
   incrementalDom.text(" \
             All \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "7682ff65-0388-4d6a-b037-163e06dfaa94", hoisted6$6);
-  incrementalDom.elementOpen("input", "1a27fc80-e7ea-4a33-b603-c8e9cb2671f5", hoisted7$5);
+  incrementalDom.elementOpen("label", "f12308fe-910a-44f8-955e-2f4a043f2c82", hoisted6$6);
+  incrementalDom.elementOpen("input", "b0d20d54-dc5b-46f6-a37d-4a671e210265", hoisted7$5);
   incrementalDom.elementClose("input");
   incrementalDom.text(" \
             Pending \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "cd329217-36f4-47f4-9700-e910afee05ee", hoisted8$4);
-  incrementalDom.elementOpen("input", "7c170252-3069-4022-ba05-70344ea89d7e", hoisted9$3);
+  incrementalDom.elementOpen("label", "08cb67b2-c367-4ba1-91bd-3f4939d7e7c7", hoisted8$4);
+  incrementalDom.elementOpen("input", "8176252e-1978-49ea-9ed6-8f2139b53850", hoisted9$3);
   incrementalDom.elementClose("input");
   incrementalDom.text(" \
             Earned \
@@ -2008,8 +2016,8 @@ function render$10(ctrl) {
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("section");
-  incrementalDom.elementOpen("section", "99c75e59-711e-4c51-821e-6eb348b98116", hoisted10$2);
-  incrementalDom.elementOpen("div", "93803a47-49e4-4da1-8709-0c409feda33d", hoisted11$1);
+  incrementalDom.elementOpen("section", "cbb08dab-79c0-4a4f-9c39-e224dc612c85", hoisted10$2);
+  incrementalDom.elementOpen("div", "1a9ba011-6c86-4466-9d17-7f01f4051ecb", hoisted11$1);
   incrementalDom.elementOpen("user");
   incrementalDom.elementOpen("name");
   incrementalDom.text("Name");
@@ -2046,7 +2054,7 @@ function render$10(ctrl) {
   incrementalDom.elementOpen("name");
   incrementalDom.elementClose("name");
   incrementalDom.elementOpen("value");
-  incrementalDom.elementOpen("button", "56edd641-13d8-4715-813c-c6a9d091d031", hoisted12$1);
+  incrementalDom.elementOpen("button", "0696403e-d3e2-4f25-92b4-b5497bbd6dcc", hoisted12$1);
   incrementalDom.text("Accept");
   incrementalDom.elementClose("button");
   incrementalDom.elementClose("value");
@@ -2166,7 +2174,7 @@ var ReportsAdmin = function (_HTMLElement) {
 
 customElements.define('reports-admin', ReportsAdmin);
 
-var css$12 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\nskills-admin container {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nskills-admin container skills-search {\n  display: flex;\n  align-items: center;\n}\nskills-admin container skills-search input {\n  margin-right: 1vw;\n  flex: 1;\n}\nskills-admin container skills-list {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nskills-admin container form,\nskills-admin container skill-item {\n  flex: 1;\n}\nskills-admin container form {\n  display: flex;\n  flex-direction: column;\n}\nskills-admin container form skill-editor-title,\nskills-admin container form skill-editor-description,\nskills-admin container form skill-editor-multiplicity,\nskills-admin container form skill-editor-category {\n  display: flex;\n  margin-bottom: 1vh;\n}\nskills-admin container form skill-editor-title label,\nskills-admin container form skill-editor-description label,\nskills-admin container form skill-editor-multiplicity label,\nskills-admin container form skill-editor-category label {\n  flex: 1;\n}\nskills-admin container form skill-editor-title input,\nskills-admin container form skill-editor-description input,\nskills-admin container form skill-editor-multiplicity input,\nskills-admin container form skill-editor-category input,\nskills-admin container form skill-editor-title select,\nskills-admin container form skill-editor-description select,\nskills-admin container form skill-editor-multiplicity select,\nskills-admin container form skill-editor-category select {\n  flex: 4;\n}\nskills-admin container form #skill-editor {\n  min-height: 20vh;\n  margin-bottom: 2vh;\n}\nskills-admin container form skill-editor-actions button {\n  margin-right: 1vw;\n}\nskills-admin container skill-item {\n  display: flex;\n  align-items: center;\n}\nskills-admin container skill-item .info {\n  flex: 1;\n  margin-right: 1vw;\n}\n";
+var css$12 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\nskills-admin container {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nskills-admin container skills-search {\n  display: flex;\n  align-items: center;\n}\nskills-admin container skills-search input {\n  margin-right: 1vw;\n  flex: 1;\n}\nskills-admin container skills-list {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nskills-admin container form,\nskills-admin container skill-item {\n  flex: 1;\n}\nskills-admin container form {\n  display: flex;\n  flex-direction: column;\n}\nskills-admin container form skill-editor-title,\nskills-admin container form skill-editor-description,\nskills-admin container form skill-editor-multiplicity,\nskills-admin container form skill-editor-category {\n  display: flex;\n  margin-bottom: 1vh;\n}\nskills-admin container form skill-editor-title label,\nskills-admin container form skill-editor-description label,\nskills-admin container form skill-editor-multiplicity label,\nskills-admin container form skill-editor-category label {\n  flex: 1;\n}\nskills-admin container form skill-editor-title input,\nskills-admin container form skill-editor-description input,\nskills-admin container form skill-editor-multiplicity input,\nskills-admin container form skill-editor-category input,\nskills-admin container form skill-editor-title select,\nskills-admin container form skill-editor-description select,\nskills-admin container form skill-editor-multiplicity select,\nskills-admin container form skill-editor-category select {\n  flex: 4;\n}\nskills-admin container form #skill-editor {\n  min-height: 20vh;\n  margin-bottom: 2vh;\n}\nskills-admin container form skill-editor-actions button {\n  margin-right: 1vw;\n}\nskills-admin container skill-item {\n  display: flex;\n  align-items: center;\n  border: 1px solid #ccc;\n  padding: 1vh 1vw;\n  margin-top: 1vh;\n}\nskills-admin container skill-item.even {\n  background-color: rgba(244, 244, 244, 0.5);\n}\nskills-admin container skill-item .info {\n  flex: 1;\n}\n";
 
 var hoisted1$10 = ["type", "text", "name", "skillsearch", "placeholder", "Search ..."];
 var hoisted2$8 = ["type", "button", "name", "add"];
@@ -2182,23 +2190,24 @@ var hoisted11$2 = ["value", "indexing"];
 var hoisted12$2 = ["type", "checkbox"];
 var hoisted13$1 = ["id", "skill-editor"];
 var hoisted14$1 = ["type", "button", "name", "save", "class", "primary"];
-var hoisted15$1 = ["type", "button", "name", "cancel"];
-var hoisted16$1 = ["class", "info"];
-var hoisted17$1 = ["class", "title"];
-var hoisted18$1 = ["class", "description"];
-var hoisted19$1 = ["class", "action"];
-var hoisted20$1 = ["type", "button"];
+var hoisted15$1 = ["type", "button", "name", "delete", "class", "danger"];
+var hoisted16$1 = ["type", "button", "name", "cancel"];
+var hoisted17$1 = ["class", "info"];
+var hoisted18$1 = ["class", "title"];
+var hoisted19$1 = ["class", "description"];
+var hoisted20$1 = ["class", "action"];
+var hoisted21$1 = ["type", "button"];
 var __target$12;
 
 function render$12(ctrl) {
   if (!ctrl.skillEditor) {
     incrementalDom.elementOpen("skills-search");
-    incrementalDom.elementOpen("input", "56c9fb5b-2fa6-4039-95cf-7d2dc1a96cb1", hoisted1$10, "onkeyup", function ($event) {
+    incrementalDom.elementOpen("input", "9a7aaa78-ebd4-4b25-b45b-13e45994d25c", hoisted1$10, "onkeyup", function ($event) {
       var $element = this;
       ctrl.filterSkills(this.value);
     });
     incrementalDom.elementClose("input");
-    incrementalDom.elementOpen("button", "59f26d49-49e8-4e76-b436-c3bbb9d8e01a", hoisted2$8, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "e6da0652-77dd-46ef-b110-9bffba3e836f", hoisted2$8, "onclick", function ($event) {
       var $element = this;
       ctrl.addSkill();
     });
@@ -2208,12 +2217,12 @@ function render$12(ctrl) {
   }
   incrementalDom.elementOpen("skills-list");
   if (ctrl.skillEditor) {
-    incrementalDom.elementOpen("form", "335ac33b-9ebb-4c20-8213-e05f4a05c7ed", hoisted3$7);
+    incrementalDom.elementOpen("form", "882dfa36-7261-4ec1-8f0e-32af963426a8", hoisted3$7);
     incrementalDom.elementOpen("skill-editor-title");
     incrementalDom.elementOpen("label");
     incrementalDom.text("Title:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "b62b25d5-cc8f-4f0d-b035-41d77381f202", hoisted4$7, "name", ctrl.skill.title, "value", ctrl.skill.title, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "5fc708ff-14e4-4dfc-9ed4-675e3d4b2a9a", hoisted4$7, "name", ctrl.skill.title, "value", ctrl.skill.title, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.title = this.value;
     });
@@ -2223,7 +2232,7 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Description:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "0ef44ce9-5d3d-4b41-9c26-a8162a8b6342", hoisted5$7, "name", ctrl.skill.description, "value", ctrl.skill.description, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "6670c7eb-a1f2-4ff7-88ea-67885b178399", hoisted5$7, "name", ctrl.skill.description, "value", ctrl.skill.description, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.description = this.value;
     });
@@ -2233,23 +2242,23 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Category:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("select", "d4d870cf-381e-46fc-afcd-2868ce201742", hoisted6$7, "onchange", function ($event) {
+    incrementalDom.elementOpen("select", "dcac89aa-a061-4412-bd86-ca8c3a65e1f9", hoisted6$7, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.category = this.value;
     });
-    incrementalDom.elementOpen("option", "da858350-0f8d-4385-aa7c-bdb5cf8c1d00", hoisted7$6);
+    incrementalDom.elementOpen("option", "0b495d4b-3322-4db8-aa7d-508897c8cca9", hoisted7$6);
     incrementalDom.text("Select");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "3aa0e37d-54d6-4251-be97-35e396eef437", hoisted8$5, "selected", ctrl.skill.category === 'booklet' ? true : null);
+    incrementalDom.elementOpen("option", "13dcebf1-1112-4398-968e-1252e6f49c39", hoisted8$5, "selected", ctrl.skill.category === 'booklet' ? true : null);
     incrementalDom.text("Booklet");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "fdc27f3f-126b-4846-bdf7-1e0207a6a7ed", hoisted9$4, "selected", ctrl.skill.category === 'find' ? true : null);
+    incrementalDom.elementOpen("option", "1e23a182-0d5a-4efa-bd3a-c93816a83584", hoisted9$4, "selected", ctrl.skill.category === 'find' ? true : null);
     incrementalDom.text("Find");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "a557c2af-e871-4ac0-b23f-a16e3e03db1b", hoisted10$3, "selected", ctrl.skill.category === 'take' ? true : null);
+    incrementalDom.elementOpen("option", "87467b92-4d13-4b38-80fc-7fdc0bf2b052", hoisted10$3, "selected", ctrl.skill.category === 'take' ? true : null);
     incrementalDom.text("Take");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "18df8690-af7f-4e09-aa60-244f893a3f82", hoisted11$2, "selected", ctrl.skill.category === 'indexing' ? true : null);
+    incrementalDom.elementOpen("option", "cca783cc-97f5-4e55-a410-87fc6e819207", hoisted11$2, "selected", ctrl.skill.category === 'indexing' ? true : null);
     incrementalDom.text("Indexing");
     incrementalDom.elementClose("option");
     incrementalDom.elementClose("select");
@@ -2258,7 +2267,7 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Allow Multiple:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "43f92b40-86cf-49af-a094-0336372caa9c", hoisted12$2, "checked", ctrl.skill.multiple, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "18aaa209-343f-42ab-b998-f77f07d5eb9b", hoisted12$2, "checked", ctrl.skill.multiple, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.multiple = this.checked;
     });
@@ -2268,17 +2277,23 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Instructions:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("div", "8eda9db8-5eba-41a9-afee-af3abc8d9dba", hoisted13$1);
+    incrementalDom.elementOpen("div", "a31a38ad-1781-426c-b17f-c9b6c90adb09", hoisted13$1);
     incrementalDom.elementClose("div");
     incrementalDom.elementClose("skill-editor-instructions");
     incrementalDom.elementOpen("skill-editor-actions");
-    incrementalDom.elementOpen("button", "71139c56-8536-46f6-a798-fe8a87ad7658", hoisted14$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "d5ed0e2f-f649-4779-ba63-40119323a398", hoisted14$1, "onclick", function ($event) {
       var $element = this;
       ctrl.saveSkill();
     });
     incrementalDom.text("Save");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("button", "6cb9ceb0-dc2d-4136-aec0-07bb21b498f1", hoisted15$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "41751e44-116d-4675-bca6-149033ea493b", hoisted15$1, "onclick", function ($event) {
+      var $element = this;
+      ctrl.deleteSkill();
+    });
+    incrementalDom.text("Delete");
+    incrementalDom.elementClose("button");
+    incrementalDom.elementOpen("button", "868e6412-3231-46c7-830e-799642320bc5", hoisted16$1, "onclick", function ($event) {
       var $element = this;
       ctrl.cancelEdit();
     });
@@ -2292,18 +2307,18 @@ function render$12(ctrl) {
     if (__target$12) {
       (__target$12.forEach ? __target$12 : Object.keys(__target$12)).forEach(function ($value, $item, $target) {
         var skill = $value;
-        var $key = "f4eff75b-44be-45a2-895b-eda6cb520832_" + $item;
+        var $key = "8aec26a4-127f-4f1b-adf0-c0ff3d962b8c_" + $item;
         incrementalDom.elementOpen("skill-item", $key, null, "class", $item % 2 ? 'odd' : 'even');
-        incrementalDom.elementOpen("div", "044b679c-16d5-46ac-9ef1-b7bd88488d35_" + $key, hoisted16$1);
-        incrementalDom.elementOpen("div", "db8f77d3-4b22-4d9b-abcf-a8b49c3dbf4f_" + $key, hoisted17$1);
+        incrementalDom.elementOpen("div", "c1db80d0-1c00-4580-9a68-11c5974fd62c_" + $key, hoisted17$1);
+        incrementalDom.elementOpen("div", "4e797c36-fcfa-4477-86a3-7ee7af86de99_" + $key, hoisted18$1);
         incrementalDom.text("" + skill.title + "");
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "3eadc86e-7c6e-49da-abcb-84fd3884c90f_" + $key, hoisted18$1);
+        incrementalDom.elementOpen("div", "f4495789-d64a-4a10-90b5-ad5a6c9b3abb_" + $key, hoisted19$1);
         incrementalDom.text("" + skill.description + "");
         incrementalDom.elementClose("div");
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "1ccf6ac9-b11f-4cbb-8cd2-f3c8f44dd7d7_" + $key, hoisted19$1);
-        incrementalDom.elementOpen("button", "3e4396d7-a147-4832-af81-d6bbb281c58d_" + $key, hoisted20$1, "disabled", ctrl.skillFormValid, "onclick", function ($event) {
+        incrementalDom.elementOpen("div", "3010a8bf-7664-4fd2-acba-0a7a1f5b96d1_" + $key, hoisted20$1);
+        incrementalDom.elementOpen("button", "1a91652e-f3d1-421c-8c11-c9490c333c70_" + $key, hoisted21$1, "disabled", ctrl.skillFormValid, "onclick", function ($event) {
           var $element = this;
           ctrl.editSkill($value);
         });
@@ -2322,7 +2337,12 @@ var SkillsAdmin = function (_HTMLElement) {
 
   function SkillsAdmin() {
     classCallCheck(this, SkillsAdmin);
-    return possibleConstructorReturn(this, (SkillsAdmin.__proto__ || Object.getPrototypeOf(SkillsAdmin)).call(this));
+
+    var _this = possibleConstructorReturn(this, (SkillsAdmin.__proto__ || Object.getPrototypeOf(SkillsAdmin)).call(this));
+
+    _this.dv = skills.addDynamicView('skills');
+    document.addEventListener('skillsChanged', _this._updateView.bind(_this));
+    return _this;
   }
 
   createClass(SkillsAdmin, [{
@@ -2342,25 +2362,14 @@ var SkillsAdmin = function (_HTMLElement) {
     value: function cancelEdit() {
       this.skill = null;
       this.skillEditor = false;
-      this.viewSkills = skills.find();
       this._updateView();
     }
   }, {
     key: 'connectedCallback',
     value: function connectedCallback() {
-      var _this2 = this;
-
       this.innerHTML = '<style>' + css$12 + '</style><container></container>';
       this.element = this.querySelector('container');
-      if (skills && skills.find) {
-        this.viewSkills = skills.find();
-        this._updateView();
-      } else {
-        setTimeout(function () {
-          _this2.viewSkills = skills.find();
-          _this2._updateView();
-        }, 500);
-      }
+      this._updateView();
     }
   }, {
     key: 'disconnectedCallback',
@@ -2380,25 +2389,30 @@ var SkillsAdmin = function (_HTMLElement) {
     key: 'filterSkills',
     value: function filterSkills(val) {
       var str = val ? val.toLowerCase() : null;
-      if (!str || str === '') this.viewSkills = JSON.parse(JSON.stringify(this.skills));else {
-        this.viewSkills = this.skills.filter(function (skill) {
-          return skill.title.toLowerCase().indexOf(str) !== -1 || skill.description.toLowerCase().indexOf(str) !== -1 || skill.category.toLowerCase().indexOf(str) !== -1;
-        });
+
+      this.dv.applyWhere(function (skill) {
+        return skill.title.toLowerCase().indexOf(str) !== -1 || skill.description.toLowerCase().indexOf(str) !== -1 || skill.category.toLowerCase().indexOf(str) !== -1;
+      });
+
+      if (!str || str === '') {
+        this.dv.removeFilters();
       }
       this._updateView();
     }
   }, {
     key: 'saveSkill',
     value: function saveSkill() {
+      var savedSkill = skills.findOne({ id: this.skill.id });
       this.skill.delta = this.quill.getContents();
       this.skill.html = this.element.querySelector(".ql-editor").innerHTML;
       this.skill.achievements = this.skill.achievements || 0;
-      skills.insertOne(this.skill);
+      if (savedSkill) skills.update(Object.assign(savedSkill, this.skill));else skills.insertOne(this.skill);
       this.cancelEdit();
     }
   }, {
     key: '_updateView',
     value: function _updateView() {
+      this.viewSkills = this.dv.data();
       if (this.element) incrementalDom.patch(this.element, render$12, this);
     }
   }], [{
@@ -2412,7 +2426,7 @@ var SkillsAdmin = function (_HTMLElement) {
 
 customElements.define('skills-admin', SkillsAdmin);
 
-var css$13 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\n:host {\n  font-size: 1em;\n}\nusers-search {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 1vh;\n}\nusers-search input {\n  flex: 6;\n}\nusers-search button {\n  flex: 1;\n  margin-left: 8px;\n}\nusers-list {\n  display: flex;\n  flex-direction: column;\n}\nuser-item {\n  display: flex;\n  padding: 1vh 1vw;\n}\nuser-item .info {\n  display: flex;\n  flex: 6;\n  flex-direction: column;\n}\nuser-item .info .title {\n  font-size: 17px;\n  font-weight: bold;\n}\nuser-item .info .description {\n  font-size: 16px;\n}\nuser-item .info .category {\n  font-size: 15px;\n}\nuser-item .action {\n  display: flex;\n  flex: 1;\n  justify-content: center;\n  align-items: center;\n}\nuser-item .action button {\n  margin-right: 2vw;\n}\nuser-item.even {\n  background-color: #efefef;\n}\nform[name='user'] {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] > * {\n  display: flex;\n  justify-content: space-between;\n}\nform[name='user'] > * label {\n  font-size: 18px;\n  flex: 1.25;\n}\nform[name='user'] > * input,\nform[name='user'] > * select {\n  flex: 3;\n  margin-bottom: 1vh;\n}\nform[name='user'] skill-editor-instructions {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] skill-editor-instructions label {\n  font-size: 18px;\n}\nform[name='user'] skill-editor-instructions #skill-editor {\n  height: 40vh;\n  margin-bottom: 1vh;\n}\nform[name='user'] button[name='cancel'] {\n  margin: 0 1vw;\n}\n.bold {\n  font-weight: bold;\n}\nuser-editor-actions {\n  justify-content: flex-start !important;\n}\n";
+var css$13 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\n:host {\n  font-size: 1em;\n}\nusers-search {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 1vh;\n}\nusers-search input {\n  flex: 6;\n}\nusers-search button {\n  flex: 1;\n  margin-left: 8px;\n}\nusers-list {\n  display: flex;\n  flex-direction: column;\n}\nuser-item {\n  display: flex;\n  padding: 1vh 1vw;\n}\nuser-item .info {\n  display: flex;\n  flex: 6;\n  flex-direction: column;\n}\nuser-item .info .title {\n  font-size: 17px;\n  font-weight: bold;\n}\nuser-item .info .description {\n  font-size: 16px;\n}\nuser-item .info .category {\n  font-size: 15px;\n}\nuser-item .action {\n  display: flex;\n  flex: 1;\n  justify-content: center;\n  align-items: center;\n}\nuser-item .action button {\n  margin-right: 2vw;\n}\nuser-item.even {\n  background-color: #efefef;\n}\nform[name='user'] {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] > * {\n  display: flex;\n  justify-content: space-between;\n}\nform[name='user'] > * label {\n  font-size: 18px;\n  flex: 1.25;\n}\nform[name='user'] > * input,\nform[name='user'] > * select {\n  flex: 3;\n  margin-bottom: 1vh;\n}\nform[name='user'] skill-editor-instructions {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] skill-editor-instructions label {\n  font-size: 18px;\n}\nform[name='user'] skill-editor-instructions #skill-editor {\n  height: 40vh;\n  margin-bottom: 1vh;\n}\nform[name='user'] button[name='cancel'] {\n  margin: 0 1vw;\n}\n.bold {\n  font-weight: bold;\n}\nuser-editor-actions {\n  justify-content: flex-start !important;\n}\n";
 
 var hoisted1$11 = ["type", "text", "name", "usersearch", "placeholder", "Search ..."];
 var hoisted2$9 = ["name", "user"];
@@ -2434,7 +2448,7 @@ var hoisted17$2 = ["value", "tr"];
 var hoisted18$2 = ["type", "checkbox"];
 var hoisted19$2 = ["type", "button", "name", "save", "class", "primary"];
 var hoisted20$2 = ["type", "button", "name", "cancel"];
-var hoisted21$1 = ["class", "info"];
+var hoisted21$2 = ["class", "info"];
 var hoisted22$1 = ["class", "name bold"];
 var hoisted23$1 = ["class", "display-name bold"];
 var hoisted24$1 = ["class", "email"];
@@ -2446,7 +2460,7 @@ var __target$13;
 function render$13(ctrl) {
   if (!ctrl.userEditor) {
     incrementalDom.elementOpen("users-search");
-    incrementalDom.elementOpen("input", "f98750b8-28aa-4294-b573-ce29f61e9202", hoisted1$11, "onkeyup", function ($event) {
+    incrementalDom.elementOpen("input", "de81e119-43d5-4b97-9e2d-0b0029496457", hoisted1$11, "onkeyup", function ($event) {
       var $element = this;
       ctrl.filterUsers(this.value);
     });
@@ -2455,12 +2469,12 @@ function render$13(ctrl) {
   }
   incrementalDom.elementOpen("users-list");
   if (ctrl.userEditor) {
-    incrementalDom.elementOpen("form", "3f4dc586-d550-458b-b381-78b4aca6ee5b", hoisted2$9);
+    incrementalDom.elementOpen("form", "1896400a-644a-4631-a952-60eed06969ba", hoisted2$9);
     incrementalDom.elementOpen("user-editor-name");
     incrementalDom.elementOpen("label");
     incrementalDom.text("Certificate Name:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "e9759bd9-0ddc-46e0-b2f1-538a971c4744", hoisted3$8, "value", ctrl.user.name, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "1252a339-0737-4016-82bb-b3fbda8f633c", hoisted3$8, "value", ctrl.user.name, "onchange", function ($event) {
       var $element = this;
       ctrl.user.name = this.value;
     });
@@ -2470,7 +2484,7 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Display Name:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "d01e431c-d9a1-4d79-9e92-696764d441bc", hoisted4$8, "name", ctrl.user.displayName, "value", ctrl.user.displayName, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "86bf60f4-75a8-407e-970c-e246ca19fefc", hoisted4$8, "name", ctrl.user.displayName, "value", ctrl.user.displayName, "onchange", function ($event) {
       var $element = this;
       ctrl.user.displayName = this.value;
     });
@@ -2480,7 +2494,7 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Email:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "29ff4eb1-3617-4615-9d56-346fdf3e485e", hoisted5$8, "name", ctrl.user.email, "value", ctrl.user.email, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "fc088ca6-47a7-43cc-9e34-1e90ff94ad5c", hoisted5$8, "name", ctrl.user.email, "value", ctrl.user.email, "onchange", function ($event) {
       var $element = this;
       ctrl.user.email = this.value;
     });
@@ -2490,41 +2504,41 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Organization:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("select", "29b04bb4-282c-42ed-9c0f-a710c2a9c488", hoisted6$8, "onchange", function ($event) {
+    incrementalDom.elementOpen("select", "08cc3d71-5818-4e72-8a89-401f9e271136", hoisted6$8, "onchange", function ($event) {
       var $element = this;
       ctrl.user.group = this.value;
     });
-    incrementalDom.elementOpen("option", "da7bcac7-72bc-4daf-aff5-9b3b47fb1958", hoisted7$7);
+    incrementalDom.elementOpen("option", "f0b4087d-e2d7-4717-b3ff-a2f828a11e0b", hoisted7$7);
     incrementalDom.text("Select");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "4b54f468-c432-4447-a638-cc33e38773b2", hoisted8$6, "selected", ctrl.user.group === 'be' ? true : null);
+    incrementalDom.elementOpen("option", "1165d08b-75e0-433e-9ee0-c8d46eebcb03", hoisted8$6, "selected", ctrl.user.group === 'be' ? true : null);
     incrementalDom.text("Beehive");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "f617ce10-9953-4163-b308-6b2bce21eeb9", hoisted9$5, "selected", ctrl.user.group === 'dn' ? true : null);
+    incrementalDom.elementOpen("option", "41ad15c1-4efd-4dda-9b42-3a18afff709f", hoisted9$5, "selected", ctrl.user.group === 'dn' ? true : null);
     incrementalDom.text("Deacon");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "ec297919-b32c-4ba9-a2ff-2a958cf97fb9", hoisted10$4, "selected", ctrl.user.group === 'eq' ? true : null);
+    incrementalDom.elementOpen("option", "55fa5542-d7e6-405b-b5a2-d1914f3ab6be", hoisted10$4, "selected", ctrl.user.group === 'eq' ? true : null);
     incrementalDom.text("Elders");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "32c1e012-456c-4986-8fd5-f464e90eb83b", hoisted11$3, "selected", ctrl.user.group === 'hp' ? true : null);
+    incrementalDom.elementOpen("option", "9f49a8e9-1d7b-4b8a-ad8c-c53347a71c64", hoisted11$3, "selected", ctrl.user.group === 'hp' ? true : null);
     incrementalDom.text("High Priest");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "7296a767-cb43-48d1-ba0a-0ea936ca0751", hoisted12$3, "selected", ctrl.user.group === 'll' ? true : null);
+    incrementalDom.elementOpen("option", "680230d4-7c98-4105-a405-779fbd55a9d1", hoisted12$3, "selected", ctrl.user.group === 'll' ? true : null);
     incrementalDom.text("Laurel");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "23b4f0a2-e450-4556-90b2-f1d5fab3de74", hoisted13$2, "selected", ctrl.user.group === 'mm' ? true : null);
+    incrementalDom.elementOpen("option", "12c07142-11e5-407e-ad90-d0ba93fd1e3a", hoisted13$2, "selected", ctrl.user.group === 'mm' ? true : null);
     incrementalDom.text("Miamaid");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "1e899a7c-2e84-4a35-9905-691b6cb8e99d", hoisted14$2, "selected", ctrl.user.group === 'pr' ? true : null);
+    incrementalDom.elementOpen("option", "2406246e-9271-4f40-8d51-25ae3149a0cb", hoisted14$2, "selected", ctrl.user.group === 'pr' ? true : null);
     incrementalDom.text("Priest");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "a8e2d03f-2ab4-4805-8eb5-4d0ce92a6f70", hoisted15$2, "selected", ctrl.user.group === 'py' ? true : null);
+    incrementalDom.elementOpen("option", "ccb8a5a2-83ba-4066-9616-b83522d42b26", hoisted15$2, "selected", ctrl.user.group === 'py' ? true : null);
     incrementalDom.text("Primary");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "e867004f-8ee2-49d9-8fbd-a080ad40cf7f", hoisted16$2, "selected", ctrl.user.group === 'rs' ? true : null);
+    incrementalDom.elementOpen("option", "855fee63-1427-4b5e-a809-0c76b374d608", hoisted16$2, "selected", ctrl.user.group === 'rs' ? true : null);
     incrementalDom.text("Relief Society");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "7775b8a4-477b-4f50-9c03-44996e1d2802", hoisted17$2, "selected", ctrl.user.group === 'tr' ? true : null);
+    incrementalDom.elementOpen("option", "8a144b46-fb62-46b6-b84e-2d98b7d8382c", hoisted17$2, "selected", ctrl.user.group === 'tr' ? true : null);
     incrementalDom.text("Teacher");
     incrementalDom.elementClose("option");
     incrementalDom.elementClose("select");
@@ -2533,20 +2547,20 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Admin:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "6d12c0ff-e7b4-49aa-b645-34c6db517ce8", hoisted18$2, "checked", ctrl.user.admin ? true : null, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "d50cb9d3-484c-41c9-a91a-adf2d504c41e", hoisted18$2, "checked", ctrl.user.admin ? true : null, "onchange", function ($event) {
       var $element = this;
       ctrl.user.admin = this.checked;
     });
     incrementalDom.elementClose("input");
     incrementalDom.elementClose("user-admin");
     incrementalDom.elementOpen("user-editor-actions");
-    incrementalDom.elementOpen("button", "bdeec6ee-2847-4e8d-a1dc-ab8aff0dcd5a", hoisted19$2, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "4a6cec6d-6bd7-4fa8-bc43-9c83fac4ab56", hoisted19$2, "onclick", function ($event) {
       var $element = this;
       ctrl.saveUser();
     });
     incrementalDom.text("Save");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("button", "e35dd048-5936-41b4-8057-ac5287a41c52", hoisted20$2, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "1ad5caa6-21df-48f0-b073-43235baa165a", hoisted20$2, "onclick", function ($event) {
       var $element = this;
       ctrl.cancelEdit();
     });
@@ -2560,28 +2574,28 @@ function render$13(ctrl) {
     if (__target$13) {
       (__target$13.forEach ? __target$13 : Object.keys(__target$13)).forEach(function ($value, $item, $target) {
         var user = $value;
-        var $key = "e25e4518-f219-441b-a165-cb2f2e50b52e_" + $item;
+        var $key = "bdffcb55-f875-4f01-8b5d-1e2471395905_" + $item;
         incrementalDom.elementOpen("user-item", $key, null, "class", $item % 2 ? 'odd' : 'even');
-        incrementalDom.elementOpen("div", "c3514164-3e37-49cd-8615-f27f88d83642_" + $key, hoisted21$1);
+        incrementalDom.elementOpen("div", "ae6d894e-0457-4340-bab9-072a5801b20c_" + $key, hoisted21$2);
         if (user.name) {
-          incrementalDom.elementOpen("div", "23e17b6f-d148-4f76-bb3c-a24638be6b43_" + $key, hoisted22$1);
+          incrementalDom.elementOpen("div", "aeeb913d-9dff-469c-9f15-aa6dc2ecf3c7_" + $key, hoisted22$1);
           incrementalDom.text("" + user.name + "");
           incrementalDom.elementClose("div");
         }
-        incrementalDom.elementOpen("div", "07fd5110-9bb3-47f5-bf90-41d23e3de088_" + $key, hoisted23$1);
+        incrementalDom.elementOpen("div", "9a271615-0ce8-43d6-8280-d2ae456241b1_" + $key, hoisted23$1);
         incrementalDom.text("" + user.displayName + "");
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "0b8c8c99-1f55-41ad-b443-08585338f86e_" + $key, hoisted24$1);
+        incrementalDom.elementOpen("div", "626b1ef0-3ab2-4f55-89e3-2ca6c3a2463f_" + $key, hoisted24$1);
         incrementalDom.text("" + user.email + "");
         incrementalDom.elementClose("div");
         if (user.group) {
-          incrementalDom.elementOpen("div", "01e95cdc-3539-4ee1-94b3-fbe084c8970a_" + $key, hoisted25$1);
+          incrementalDom.elementOpen("div", "927a0fed-8a9c-43af-800a-7745b0ce32c6_" + $key, hoisted25$1);
           incrementalDom.text("" + ctrl.getGroupName(user) + "");
           incrementalDom.elementClose("div");
         }
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "b5c74b8c-01d1-44df-8c8f-2382e9d2e75a_" + $key, hoisted26$1);
-        incrementalDom.elementOpen("button", "263606d4-def3-426a-ac04-ace4927cb50c_" + $key, hoisted27$1, "disabled", ctrl.userFormValid, "onclick", function ($event) {
+        incrementalDom.elementOpen("div", "4d06b55f-8e76-4afe-a447-32d3d2f50a57_" + $key, hoisted26$1);
+        incrementalDom.elementOpen("button", "8ae04bf8-91bd-4929-972f-c1a7fe8d1f5f_" + $key, hoisted27$1, "disabled", ctrl.userFormValid, "onclick", function ($event) {
           var $element = this;
           ctrl.editUser($value);
         });
@@ -2766,8 +2780,10 @@ var SysAdmin = function (_HTMLElement) {
         var input = tab.querySelector('input');
         if (state.indexOf(input.value) !== -1) input.setAttribute('checked', true);
       });
-      // user.getUser();
-      router.navigate(state);
+      setTimeout(function () {
+        user.getUser();
+        router.navigate(state);
+      }, 100);
     }
   }, {
     key: 'disconnectedCallback',

@@ -17,15 +17,13 @@ let skills = db.getCollection('skills') || db.addCollection('skills');
 let users = db.getCollection('users') || db.addCollection('users');
 
 function changeHandler() {
-  user.getUser().then((_user) => {
-    let changes = JSON.parse(db.serializeChanges())
-      .filter((change) => change.operation !== 'I' && change.obj.email === _user.email);
-    // console.log("changes", changes);
-    if (changes) updateDbChannel.publish(JSON.stringify(changes), (err) => {
-      if (err) console.error("err", err);
-      if (!err) db.clearChanges();
-      db.clearChanges();
-    });
+  // console.log("changeHandler");
+  let changes = JSON.parse(db.serializeChanges());
+  // console.log("changes", changes);
+  if (changes) updateDbChannel.publish(JSON.stringify(changes), (err) => {
+    if (err) console.error("err", err);
+    if (!err) db.clearChanges();
+    db.clearChanges();
   });
 }
 
@@ -33,15 +31,26 @@ function updateDb(db, changes) {
   try {
     changes.forEach((change) => {
       let coll = db.getCollection(change.name);
-      if (change.operation === 'I') coll.insertOne(change.obj);
+      let id = change.obj.$loki;
+      let doc = coll.get(id);
+      // console.log("doc", doc);
+      // console.log("change.obj", change.obj);
+      // console.log("coll.find()", coll.find())
+      if (change.operation === 'I' && !doc) {
+        delete change.obj.$loki;
+        delete change.obj.meta;
+        coll.insertOne(change.obj);
+      }
       if (change.operation === 'D') coll.findAndRemove({$loki: change.obj.$loki});
       if (change.operation === 'U') {
-        let doc = coll.findOne({$loki: change.obj.$loki});
-        // console.log("doc", doc)
-        // console.log("JSON.stringify(doc) !== JSON.stringify(change.obj))", JSON.stringify(doc) !== JSON.stringify(change.obj))
-        if (doc && JSON.stringify(doc) !== JSON.stringify(change.obj)) coll.update(change.obj);
+        let dt = JSON.parse(JSON.stringify(doc));
+        let ct = JSON.parse(JSON.stringify(change.obj));
+        delete dt.$loki;
+        delete ct.$loki;
+        delete dt.meta;
+        delete ct.meta;
+        if (JSON.stringify(dt) !== JSON.stringify(ct)) coll.update(change.obj);
       }
-      console.log('dispatching event: ', change.name + 'Changed');
       document.dispatchEvent(new CustomEvent(change.name + 'Changed'));
     });
   } catch (err) {
@@ -56,15 +65,15 @@ socket.on('connect', function (status) {
     awards = db.getCollection('awards');
     skills = db.getCollection('skills');
     users = db.getCollection('users');
-    awards.on(['add', 'update', 'delete'], changeHandler);
-    skills.on(['add', 'update', 'delete'], changeHandler);
-    users.on(['add', 'update', 'delete'], changeHandler);
+    awards.on(['insert', 'update', 'delete'], changeHandler);
+    skills.on(['insert', 'update', 'delete'], changeHandler);
+    users.on(['insert', 'update', 'delete'], changeHandler);
   });
 });
 
 updateDbChannel.watch((data) => {
   let changes = JSON.parse(data);
-  // console.log("changes", changes)
+  console.log("updateDbChannel::changes", changes)
   if (Array.isArray(changes)) updateDb(db, changes);
   db.clearChanges();
 });

@@ -9,24 +9,24 @@ var hoisted6 = ["href", "/login"]
 var __target
 
 export function render (ctrl) {
-elementOpen("a", "aac637e1-0ac0-4624-851b-68fa20ca3141", hoisted1, "class", ctrl.stateContains('home'))
-  elementOpen("img", "f31fcbbd-6e6f-4d37-8df2-47148eb8f686", hoisted2)
+elementOpen("a", "6947d302-dd43-4ae1-bddd-cdce55256970", hoisted1, "class", ctrl.stateContains('home'))
+  elementOpen("img", "5d480859-3255-416b-9f68-85da070e4e89", hoisted2)
   elementClose("img")
   elementOpen("span")
     text("Home")
   elementClose("span")
 elementClose("a")
-elementOpen("nav", "b45ae2e8-e289-49bd-92c0-1b51e782b06a", hoisted3)
-  elementOpen("a", "c7353532-25c1-409c-9e7a-a6ec75613f40", hoisted4, "class", ctrl.stateContains('help'))
+elementOpen("nav", "a1b08c75-13ba-445e-b7f6-730a8da059de", hoisted3)
+  elementOpen("a", "1ab882b6-0ad3-498a-9752-be6bcf081d4d", hoisted4, "class", ctrl.stateContains('help'))
     text("Help")
   elementClose("a")
   if (ctrl.user.admin) {
-    elementOpen("a", "4cdc21b0-ecc1-4fed-b35b-9083272891d4", hoisted5, "class", ctrl.stateContains('admin'))
+    elementOpen("a", "dfa07cfa-006c-4df4-975c-a8156f08a9a8", hoisted5, "class", ctrl.stateContains('admin'))
       text("Admin")
     elementClose("a")
   }
   if (!ctrl.user.authenticated) {
-    elementOpen("a", "0e37c93c-ccb1-4ab7-aaf2-379d9c29b261", hoisted6, "class", ctrl.stateContains('login'))
+    elementOpen("a", "3d48b93b-f0a2-4e22-a349-d79a22b2b550", hoisted6, "class", ctrl.stateContains('login'))
       text("Login")
     elementClose("a")
   }
