@@ -13,7 +13,8 @@ class HomeAuthenticated extends HTMLElement {
     this.skills = [];
     this.mySkills = [];
     this.mine = false;
-    this.dv = skills.addDynamicView('skills');
+    this.adv = skills.addDynamicView('awards');
+    this.sdv = skills.addDynamicView('skills');
     document.addEventListener('userChanged', () => {
       if (!user.authenticated) router.navigate('/login');
       else if (!user.admin) router.navigate('/home/authenticated');
@@ -36,8 +37,10 @@ class HomeAuthenticated extends HTMLElement {
     this.shadowRoot.innerHTML = `<style>${css}</style><div id="home"></div>`;
     this.shadowRoot.addEventListener('click', this.anchorClickHandler.bind(this));
     this.element = this.shadowRoot.querySelector('div#home');
-    user.getUser();
-    this._updateView();
+    setTimeout(() => {
+      user.getUser();
+      this._updateView();
+    }, 200);
   }
 
   _combineSkillsAndAwards() {
@@ -130,7 +133,8 @@ class HomeAuthenticated extends HTMLElement {
 
   _updateView() {
     console.log('home-authenticated::updateView');
-    this.skills = this.dv.data();
+    this.awards = this.adv.data();
+    this.skills = this.sdv.data();
     if (this.element) patch(this.element, render, this);
   }
 

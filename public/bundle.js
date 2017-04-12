@@ -1621,7 +1621,8 @@ var HomeAuthenticated = function (_HTMLElement) {
     _this.skills = [];
     _this.mySkills = [];
     _this.mine = false;
-    _this.dv = skills.addDynamicView('skills');
+    _this.adv = skills.addDynamicView('awards');
+    _this.sdv = skills.addDynamicView('skills');
     document.addEventListener('userChanged', function () {
       if (!user.authenticated) router.navigate('/login');else if (!user.admin) router.navigate('/home/authenticated');else _this._updateView();
     });
@@ -1641,22 +1642,26 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'connectedCallback',
     value: function connectedCallback() {
+      var _this2 = this;
+
       this.attachShadow({ mode: 'open' });
       this.shadowRoot.innerHTML = '<style>' + css$5 + '</style><div id="home"></div>';
       this.shadowRoot.addEventListener('click', this.anchorClickHandler.bind(this));
       this.element = this.shadowRoot.querySelector('div#home');
-      user.getUser();
-      this._updateView();
+      setTimeout(function () {
+        user.getUser();
+        _this2._updateView();
+      }, 200);
     }
   }, {
     key: '_combineSkillsAndAwards',
     value: function _combineSkillsAndAwards() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.skills.forEach(function (skill) {
-        skill.earned = _this2.skillEarned(skill);
-        skill.added = _this2.skillAdded(skill);
-        skill.pending = _this2.skillAppliedFor(skill);
+        skill.earned = _this3.skillEarned(skill);
+        skill.added = _this3.skillAdded(skill);
+        skill.pending = _this3.skillAppliedFor(skill);
       });
       this.skills = Object.assign([], this.skills);
       this.mySkills = this.filterMine();
@@ -1680,12 +1685,12 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'skillAdded',
     value: function skillAdded(skill) {
-      var _this3 = this;
+      var _this4 = this;
 
       var exists = false;
       if (skill && this.awards) {
         Object.keys(this.awards).forEach(function (key) {
-          var award = _this3.awards[key];
+          var award = _this4.awards[key];
           if (award.skillId === skill.id) exists = true;
         });
       }
@@ -1694,12 +1699,12 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'skillEarned',
     value: function skillEarned(skill) {
-      var _this4 = this;
+      var _this5 = this;
 
       var earned = false;
       if (skill && this.awards) {
         Object.keys(this.awards).forEach(function (key) {
-          var award = _this4.awards[key];
+          var award = _this5.awards[key];
           if (award.skillId === skill.id && award.earned) earned = true;
         });
       }
@@ -1708,12 +1713,12 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'skillAppliedFor',
     value: function skillAppliedFor(skill) {
-      var _this5 = this;
+      var _this6 = this;
 
       var pending = false;
       if (skill && this.awards) {
         Object.keys(this.awards).forEach(function (key) {
-          var award = _this5.awards[key];
+          var award = _this6.awards[key];
           if (award.skillId === skill.id && award.pending) pending = true;
         });
       }
@@ -1722,18 +1727,18 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'filterMine',
     value: function filterMine() {
-      var _this6 = this;
+      var _this7 = this;
 
       var temp = [];
       var mySkills = [];
       if (this.awards) {
         Object.keys(this.awards).forEach(function (key) {
-          var award = _this6.awards[key];
+          var award = _this7.awards[key];
           temp.push(award.skillId);
         });
       }
       temp.forEach(function (t) {
-        _this6.skills.forEach(function (skill) {
+        _this7.skills.forEach(function (skill) {
           if (skill.id === t) mySkills.push(skill);
         });
       });
@@ -1755,7 +1760,8 @@ var HomeAuthenticated = function (_HTMLElement) {
     key: '_updateView',
     value: function _updateView() {
       console.log('home-authenticated::updateView');
-      this.skills = this.dv.data();
+      this.awards = this.adv.data();
+      this.skills = this.sdv.data();
       if (this.element) incrementalDom.patch(this.element, render$5, this);
     }
   }], [{
