@@ -5,7 +5,7 @@ const resolve = require('rollup-plugin-node-resolve');
 const root = process.cwd();
 
 module.exports = {
-	entry: join(root, 'app', 'app-router', 'app-router.js'),
+	entry: join(root, 'app', 'app.js'),
 	external: ['incremental-dom'],
 	globals: {
 		'incremental-dom': 'IncrementalDOM'

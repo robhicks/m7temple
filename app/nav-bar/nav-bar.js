@@ -11,7 +11,7 @@ class NavBar extends HTMLElement {
     this.state = 'home';
     this.user = user;
 
-    document.addEventListener('userChanged', () => {
+    document.addEventListener('userLoadedFromDb', () => {
       this.updateView();
     });
   }

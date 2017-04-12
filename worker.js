@@ -34,7 +34,7 @@ module.exports.run = (worker) => {
 
   scServer.on('connection', (socket) => {
     socket.on('auth', (data, respond) => {
-      // console.log("data", data)
+      console.log("data", !data || !data.id || !data.email)
       if (!data || !data.id || !data.email) respond('Authentication failed');
       else {
         let user = users.findOne({email: data.email}) || users.insertOne(data);

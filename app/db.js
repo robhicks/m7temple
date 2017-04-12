@@ -1,8 +1,7 @@
-import {router} from './app-router/app-router.js';
-import {user} from './user.js';
 const socket = socketCluster.connect();
 
-const updateDbChannel = socket.subscribe('updateDbChannel');
+import {router} from './app-router/app-router.js';
+import {user} from './user.js';
 
 const idbAdapter = new LokiIndexedAdapter('loki');
 const db = new loki('m7temple.db', {
@@ -15,6 +14,8 @@ const db = new loki('m7temple.db', {
 let awards = db.getCollection('awards') || db.addCollection('awards');
 let skills = db.getCollection('skills') || db.addCollection('skills');
 let users = db.getCollection('users') || db.addCollection('users');
+
+let updateDbChannel;
 
 function changeHandler() {
   // console.log("changeHandler");
@@ -59,24 +60,33 @@ function updateDb(db, changes) {
 }
 
 socket.on('connect', function (status) {
-  socket.emit('loadDatabase');
-  socket.on('loadDatabase', (data) => {
-    db.loadJSON(data);
-    awards = db.getCollection('awards');
-    skills = db.getCollection('skills');
-    users = db.getCollection('users');
-    awards.on(['insert', 'update', 'delete'], changeHandler);
-    skills.on(['insert', 'update', 'delete'], changeHandler);
-    users.on(['insert', 'update', 'delete'], changeHandler);
-  });
+  // console.log("status", status)
+  // console.log(socket.authToken);
+  if (status.isAuthenticated) {
+    let currentUser = socket.authToken.user;
+    updateDbChannel = socket.subscribe('updateDbChannel');
+
+    socket.emit('loadDatabase');
+
+    socket.on('loadDatabase', (data) => {
+      db.loadJSON(data);
+      awards = db.getCollection('awards');
+      skills = db.getCollection('skills');
+      users = db.getCollection('users');
+      awards.on(['insert', 'update', 'delete'], changeHandler);
+      skills.on(['insert', 'update', 'delete'], changeHandler);
+      users.on(['insert', 'update', 'delete'], changeHandler);
+      let dbUser = users.findOne({id: currentUser.id});
+      document.dispatchEvent(new CustomEvent('databaseLoaded', {detail: dbUser}));
+    });
+
+    updateDbChannel.watch((data) => {
+      let changes = JSON.parse(data);
+      console.log("updateDbChannel::changes", changes);
+      if (Array.isArray(changes)) updateDb(db, changes);
+      db.clearChanges();
+    });
+  }
 });
 
-updateDbChannel.watch((data) => {
-  let changes = JSON.parse(data);
-  console.log("updateDbChannel::changes", changes)
-  if (Array.isArray(changes)) updateDb(db, changes);
-  db.clearChanges();
-});
-
-
-export {awards, skills, socket, users};
+export {awards, skills, users};

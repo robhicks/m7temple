@@ -15,11 +15,7 @@ class HomeAuthenticated extends HTMLElement {
     this.mine = false;
     this.adv = skills.addDynamicView('awards');
     this.sdv = skills.addDynamicView('skills');
-    document.addEventListener('userChanged', () => {
-      if (!user.authenticated) router.navigate('/login');
-      else if (!user.admin) router.navigate('/home/authenticated');
-      else this._updateView();
-    });
+    document.addEventListener('userUnauthenticated', () => {router.navigate('/login');});
   }
 
   anchorClickHandler(evt) {
@@ -37,10 +33,7 @@ class HomeAuthenticated extends HTMLElement {
     this.shadowRoot.innerHTML = `<style>${css}</style><div id="home"></div>`;
     this.shadowRoot.addEventListener('click', this.anchorClickHandler.bind(this));
     this.element = this.shadowRoot.querySelector('div#home');
-    setTimeout(() => {
-      user.getUser();
-      this._updateView();
-    }, 200);
+    this._updateView();
   }
 
   _combineSkillsAndAwards() {
@@ -132,7 +125,6 @@ class HomeAuthenticated extends HTMLElement {
   }
 
   _updateView() {
-    console.log('home-authenticated::updateView');
     this.awards = this.adv.data();
     this.skills = this.sdv.data();
     if (this.element) patch(this.element, render, this);

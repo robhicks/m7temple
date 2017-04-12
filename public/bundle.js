@@ -1,4 +1,4 @@
-(function (exports,incrementalDom) {
+(function (incrementalDom) {
 'use strict';
 
 var CallStack = function CallStack(router, extendObj) {
@@ -606,83 +606,9 @@ var RbhModal = function (_HTMLElement) {
 
 customElements.define('rbh-modal', RbhModal);
 
-var socket = socketCluster.connect();
-
-var updateDbChannel = socket.subscribe('updateDbChannel');
-
-var idbAdapter = new LokiIndexedAdapter('loki');
-var db = new loki('m7temple.db', {
-  autosave: true,
-  autosaveInterval: 10000, // 10 seconds
-  adapter: idbAdapter,
-  disableChangesApi: false
-});
-
-var awards = db.getCollection('awards') || db.addCollection('awards');
-var skills = db.getCollection('skills') || db.addCollection('skills');
-var users = db.getCollection('users') || db.addCollection('users');
-
-function changeHandler() {
-  // console.log("changeHandler");
-  var changes = JSON.parse(db.serializeChanges());
-  // console.log("changes", changes);
-  if (changes) updateDbChannel.publish(JSON.stringify(changes), function (err) {
-    if (err) console.error("err", err);
-    if (!err) db.clearChanges();
-    db.clearChanges();
-  });
-}
-
-function updateDb(db, changes) {
-  try {
-    changes.forEach(function (change) {
-      var coll = db.getCollection(change.name);
-      var id = change.obj.$loki;
-      var doc = coll.get(id);
-      // console.log("doc", doc);
-      // console.log("change.obj", change.obj);
-      // console.log("coll.find()", coll.find())
-      if (change.operation === 'I' && !doc) {
-        delete change.obj.$loki;
-        delete change.obj.meta;
-        coll.insertOne(change.obj);
-      }
-      if (change.operation === 'D') coll.findAndRemove({ $loki: change.obj.$loki });
-      if (change.operation === 'U') {
-        var dt = JSON.parse(JSON.stringify(doc));
-        var ct = JSON.parse(JSON.stringify(change.obj));
-        delete dt.$loki;
-        delete ct.$loki;
-        delete dt.meta;
-        delete ct.meta;
-        if (JSON.stringify(dt) !== JSON.stringify(ct)) coll.update(change.obj);
-      }
-      document.dispatchEvent(new CustomEvent(change.name + 'Changed'));
-    });
-  } catch (err) {
-    console.error("err", err);
-  }
-}
-
-socket.on('connect', function (status) {
-  socket.emit('loadDatabase');
-  socket.on('loadDatabase', function (data) {
-    db.loadJSON(data);
-    awards = db.getCollection('awards');
-    skills = db.getCollection('skills');
-    users = db.getCollection('users');
-    awards.on(['insert', 'update', 'delete'], changeHandler);
-    skills.on(['insert', 'update', 'delete'], changeHandler);
-    users.on(['insert', 'update', 'delete'], changeHandler);
-  });
-});
-
-updateDbChannel.watch(function (data) {
-  var changes = JSON.parse(data);
-  console.log("updateDbChannel::changes", changes);
-  if (Array.isArray(changes)) updateDb(db, changes);
-  db.clearChanges();
-});
+var socket$1 = socketCluster.connect();
+var userAuthenticated = new CustomEvent('userAuthenticated');
+var userUnauthenticated = new CustomEvent('userUnauthenticated');
 
 var user = {
   authenticated: false,
@@ -703,7 +629,7 @@ hello.on('auth.login', function (auth) {
   // console.log("auth", auth)
   hello(auth.network).api('me').then(function (r) {
     Object.assign(user, r);
-    user.authenticate();
+    socket$1.emit('auth', user);
   }, function (err) {
     var modal = new RbhModal();
     modal.heading = 'Authentication Provider Error';
@@ -716,38 +642,33 @@ hello.on('auth.login', function (auth) {
   });
 });
 
-user.authenticate = function () {
-  return new Promise(function (resolve, reject) {
-    socket.emit('auth', user, function (err) {
-      if (err) {
-        // reject(err);
-        // router.navigate('/login');
-      } else {
-        Object.assign(user, socket.authToken.user, { authenticated: true, admin: true });
-        document.dispatchEvent(new CustomEvent('userChanged', { detail: user }));
-        resolve(user);
-        // console.log("socket.authToken", socket.authToken)
-        // console.log("router.desiredRoute", router.desiredRoute)
-        if (router.state.value === '/login') router.navigate('/home/authenticated');
-      }
-    });
-  });
-};
+socket$1.on('authStateChange', function (status) {
+  console.log("status", status);
+  if (status.newState === 'authenticated') {
+    Object.assign(user, status.authToken.user, { authenticated: true });
+    console.log("router.state", router.state);
+    if (router.state.value === '/login') router.navigate('/home/authenticated');else document.dispatchEvent(userAuthenticated);
+  }
+  if (status.newState === 'unauthenticated') {
+    user.authenticated = false;
+    document.dispatchEvent(userUnauthenticated);
+    router.navigate('/login');
+  }
+});
+
+document.addEventListener('databaseLoaded', function (evt) {
+  var usr = evt.detail;
+  delete usr.$loki;
+  delete usr.meta;
+  Object.assign(user, usr);
+  document.dispatchEvent(new CustomEvent('userLoadedFromDb'));
+});
 
 user.logout = function () {
   hello.logout();
-  user = { authenticated: false };
-  document.dispatchEvent(new CustomEvent('userChanged', { detail: user }));
+  Object.assign(user, { authenticated: false });
+  socket$1.deauthenticate();
 };
-
-user.getUser = function () {
-  if (user.authenticated) return Promise.resolve(user);
-  return user.authenticate();
-};
-
-
-
-// document.dispatchEvent(new CustomEvent('userChanged', {detail: usr}));
 
 var HomeView = function (_HTMLElement) {
   inherits(HomeView, _HTMLElement);
@@ -968,7 +889,7 @@ var NavBar = function (_HTMLElement) {
     _this.state = 'home';
     _this.user = user;
 
-    document.addEventListener('userChanged', function () {
+    document.addEventListener('userLoadedFromDb', function () {
       _this.updateView();
     });
     return _this;
@@ -1623,8 +1544,8 @@ var HomeAuthenticated = function (_HTMLElement) {
     _this.mine = false;
     _this.adv = skills.addDynamicView('awards');
     _this.sdv = skills.addDynamicView('skills');
-    document.addEventListener('userChanged', function () {
-      if (!user.authenticated) router.navigate('/login');else if (!user.admin) router.navigate('/home/authenticated');else _this._updateView();
+    document.addEventListener('userUnauthenticated', function () {
+      router.navigate('/login');
     });
     return _this;
   }
@@ -1642,26 +1563,21 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'connectedCallback',
     value: function connectedCallback() {
-      var _this2 = this;
-
       this.attachShadow({ mode: 'open' });
       this.shadowRoot.innerHTML = '<style>' + css$5 + '</style><div id="home"></div>';
       this.shadowRoot.addEventListener('click', this.anchorClickHandler.bind(this));
       this.element = this.shadowRoot.querySelector('div#home');
-      setTimeout(function () {
-        user.getUser();
-        _this2._updateView();
-      }, 200);
+      this._updateView();
     }
   }, {
     key: '_combineSkillsAndAwards',
     value: function _combineSkillsAndAwards() {
-      var _this3 = this;
+      var _this2 = this;
 
       this.skills.forEach(function (skill) {
-        skill.earned = _this3.skillEarned(skill);
-        skill.added = _this3.skillAdded(skill);
-        skill.pending = _this3.skillAppliedFor(skill);
+        skill.earned = _this2.skillEarned(skill);
+        skill.added = _this2.skillAdded(skill);
+        skill.pending = _this2.skillAppliedFor(skill);
       });
       this.skills = Object.assign([], this.skills);
       this.mySkills = this.filterMine();
@@ -1685,12 +1601,12 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'skillAdded',
     value: function skillAdded(skill) {
-      var _this4 = this;
+      var _this3 = this;
 
       var exists = false;
       if (skill && this.awards) {
         Object.keys(this.awards).forEach(function (key) {
-          var award = _this4.awards[key];
+          var award = _this3.awards[key];
           if (award.skillId === skill.id) exists = true;
         });
       }
@@ -1699,12 +1615,12 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'skillEarned',
     value: function skillEarned(skill) {
-      var _this5 = this;
+      var _this4 = this;
 
       var earned = false;
       if (skill && this.awards) {
         Object.keys(this.awards).forEach(function (key) {
-          var award = _this5.awards[key];
+          var award = _this4.awards[key];
           if (award.skillId === skill.id && award.earned) earned = true;
         });
       }
@@ -1713,12 +1629,12 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'skillAppliedFor',
     value: function skillAppliedFor(skill) {
-      var _this6 = this;
+      var _this5 = this;
 
       var pending = false;
       if (skill && this.awards) {
         Object.keys(this.awards).forEach(function (key) {
-          var award = _this6.awards[key];
+          var award = _this5.awards[key];
           if (award.skillId === skill.id && award.pending) pending = true;
         });
       }
@@ -1727,18 +1643,18 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: 'filterMine',
     value: function filterMine() {
-      var _this7 = this;
+      var _this6 = this;
 
       var temp = [];
       var mySkills = [];
       if (this.awards) {
         Object.keys(this.awards).forEach(function (key) {
-          var award = _this7.awards[key];
+          var award = _this6.awards[key];
           temp.push(award.skillId);
         });
       }
       temp.forEach(function (t) {
-        _this7.skills.forEach(function (skill) {
+        _this6.skills.forEach(function (skill) {
           if (skill.id === t) mySkills.push(skill);
         });
       });
@@ -1759,7 +1675,6 @@ var HomeAuthenticated = function (_HTMLElement) {
   }, {
     key: '_updateView',
     value: function _updateView() {
-      console.log('home-authenticated::updateView');
       this.awards = this.adv.data();
       this.skills = this.sdv.data();
       if (this.element) incrementalDom.patch(this.element, render$5, this);
@@ -2734,10 +2649,8 @@ var SysAdmin = function (_HTMLElement) {
 
     var _this = possibleConstructorReturn(this, (SysAdmin.__proto__ || Object.getPrototypeOf(SysAdmin)).call(this));
 
-    document.addEventListener('userChanged', function () {
-      console.log('SysAdmin::userChanged', user);
-      if (!user.authenticated) router.navigate('/login');else if (!user.admin) router.navigate('/home/authenticated');
-    });
+    document.addEventListener('userLoadedFromDb', _this._userChanged.bind(_this));
+    document.addEventListener('userUnauthenticated', _this._userChanged.bind(_this));
 
     router.add('/admin/users', function (req, evt, next) {
       if (_this.content) _this.content.innerHTML = '<users-admin></users-admin>';
@@ -2776,7 +2689,6 @@ var SysAdmin = function (_HTMLElement) {
         if (state.indexOf(input.value) !== -1) input.setAttribute('checked', true);
       });
       setTimeout(function () {
-        user.getUser();
         router.navigate(state);
       }, 100);
     }
@@ -2792,6 +2704,11 @@ var SysAdmin = function (_HTMLElement) {
     key: 'updateView',
     value: function updateView() {
       if (this.element) incrementalDom.patch(this.element, render$8, this);
+    }
+  }, {
+    key: '_userChanged',
+    value: function _userChanged() {
+      if (!user.authenticated) router.navigate('/login');else if (!user.admin) router.navigate('/home/authenticated');
     }
   }], [{
     key: 'observedAttributes',
@@ -2825,12 +2742,12 @@ var AppRouter = function (_HTMLElement) {
 
       router.add('/home', function (req, evt, next) {
         router.navigate('/home/authenticated');
-        // this.innerHTML = `<home-view></home-view>`;
       });
 
       router.add('/home/authenticated', function (req, evt, next) {
-        // if (!user.authenticated) router.navigate('/login');
-        _this2.innerHTML = '<home-authenticated></home-authenticated>';
+        setTimeout(function () {
+          _this2.innerHTML = '<home-authenticated></home-authenticated>';
+        }, 200);
       });
 
       router.add('/login', function (req, evt, next) {
@@ -2874,7 +2791,92 @@ var AppRouter = function (_HTMLElement) {
 
 customElements.define('app-router', AppRouter);
 
-exports.AppRouter = AppRouter;
-exports.router = router;
+var socket = socketCluster.connect();
 
-}((this.M7Temple = this.M7Temple || {}),IncrementalDOM));
+var idbAdapter = new LokiIndexedAdapter('loki');
+var db = new loki('m7temple.db', {
+  autosave: true,
+  autosaveInterval: 10000, // 10 seconds
+  adapter: idbAdapter,
+  disableChangesApi: false
+});
+
+var awards = db.getCollection('awards') || db.addCollection('awards');
+var skills = db.getCollection('skills') || db.addCollection('skills');
+var users = db.getCollection('users') || db.addCollection('users');
+
+var updateDbChannel = void 0;
+
+function changeHandler() {
+  // console.log("changeHandler");
+  var changes = JSON.parse(db.serializeChanges());
+  // console.log("changes", changes);
+  if (changes) updateDbChannel.publish(JSON.stringify(changes), function (err) {
+    if (err) console.error("err", err);
+    if (!err) db.clearChanges();
+    db.clearChanges();
+  });
+}
+
+function updateDb(db, changes) {
+  try {
+    changes.forEach(function (change) {
+      var coll = db.getCollection(change.name);
+      var id = change.obj.$loki;
+      var doc = coll.get(id);
+      // console.log("doc", doc);
+      // console.log("change.obj", change.obj);
+      // console.log("coll.find()", coll.find())
+      if (change.operation === 'I' && !doc) {
+        delete change.obj.$loki;
+        delete change.obj.meta;
+        coll.insertOne(change.obj);
+      }
+      if (change.operation === 'D') coll.findAndRemove({ $loki: change.obj.$loki });
+      if (change.operation === 'U') {
+        var dt = JSON.parse(JSON.stringify(doc));
+        var ct = JSON.parse(JSON.stringify(change.obj));
+        delete dt.$loki;
+        delete ct.$loki;
+        delete dt.meta;
+        delete ct.meta;
+        if (JSON.stringify(dt) !== JSON.stringify(ct)) coll.update(change.obj);
+      }
+      document.dispatchEvent(new CustomEvent(change.name + 'Changed'));
+    });
+  } catch (err) {
+    console.error("err", err);
+  }
+}
+
+socket.on('connect', function (status) {
+  // console.log("status", status)
+  // console.log(socket.authToken);
+  if (status.isAuthenticated) {
+    var currentUser = socket.authToken.user;
+    updateDbChannel = socket.subscribe('updateDbChannel');
+
+    socket.emit('loadDatabase');
+
+    socket.on('loadDatabase', function (data) {
+      db.loadJSON(data);
+      awards = db.getCollection('awards');
+      skills = db.getCollection('skills');
+      users = db.getCollection('users');
+      awards.on(['insert', 'update', 'delete'], changeHandler);
+      skills.on(['insert', 'update', 'delete'], changeHandler);
+      users.on(['insert', 'update', 'delete'], changeHandler);
+      var dbUser = users.findOne({ id: currentUser.id });
+      document.dispatchEvent(new CustomEvent('databaseLoaded', { detail: dbUser }));
+    });
+
+    updateDbChannel.watch(function (data) {
+      var changes = JSON.parse(data);
+      console.log("updateDbChannel::changes", changes);
+      if (Array.isArray(changes)) updateDb(db, changes);
+      db.clearChanges();
+    });
+  }
+});
+
+}(IncrementalDOM));

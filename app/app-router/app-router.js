@@ -23,12 +23,12 @@ class AppRouter extends HTMLElement {
 
     router.add('/home', (req, evt, next) => {
       router.navigate('/home/authenticated');
-      // this.innerHTML = `<home-view></home-view>`;
     });
 
     router.add('/home/authenticated', (req, evt, next) => {
-      // if (!user.authenticated) router.navigate('/login');
-      this.innerHTML = `<home-authenticated></home-authenticated>`;
+      setTimeout(() => {
+        this.innerHTML = `<home-authenticated></home-authenticated>`;
+      }, 200);
     });
 
     router.add('/login', (req, evt, next) => {

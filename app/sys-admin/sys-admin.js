@@ -12,11 +12,8 @@ import './users-admin/users-admin.js';
 class SysAdmin extends HTMLElement {
   constructor() {
     super();
-    document.addEventListener('userChanged', () => {
-      console.log('SysAdmin::userChanged', user);
-      if (!user.authenticated) router.navigate('/login');
-      else if (!user.admin) router.navigate('/home/authenticated');
-    });
+    document.addEventListener('userLoadedFromDb', this._userChanged.bind(this));
+    document.addEventListener('userUnauthenticated', this._userChanged.bind(this));
 
     router.add('/admin/users', (req, evt, next) => {
       if (this.content) this.content.innerHTML = `<users-admin></users-admin>`;
@@ -53,7 +50,6 @@ class SysAdmin extends HTMLElement {
       if (state.indexOf(input.value) !== -1) input.setAttribute('checked', true);
     });
     setTimeout(() => {
-      user.getUser();
       router.navigate(state);
     }, 100);
   }
@@ -68,6 +64,11 @@ class SysAdmin extends HTMLElement {
 
   updateView() {
     if (this.element) patch(this.element, render, this);
+  }
+
+  _userChanged() {
+    if (!user.authenticated) router.navigate('/login');
+    else if (!user.admin) router.navigate('/home/authenticated');
   }
 
   static get observedAttributes() {

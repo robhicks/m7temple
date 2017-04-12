@@ -1,6 +1,9 @@
+const socket = socketCluster.connect();
 import {router} from './app-router/app-router.js';
 import {RbhModal} from './rbh-modal/rbh-modal.js';
-import {socket} from './db.js';
+
+const userAuthenticated = new CustomEvent('userAuthenticated');
+const userUnauthenticated = new CustomEvent('userUnauthenticated');
 
 let user = {
   authenticated: false,
@@ -22,7 +25,7 @@ hello.on('auth.login', (auth) => {
   hello(auth.network).api('me')
   .then((r) => {
     Object.assign(user, r);
-    user.authenticate();
+    socket.emit('auth', user);
   }, (err) => {
     let modal = new RbhModal();
     modal.heading = 'Authentication Provider Error';
@@ -35,37 +38,33 @@ hello.on('auth.login', (auth) => {
   });
 });
 
-user.authenticate = () => {
-  return new Promise((resolve, reject) => {
-    socket.emit('auth', user, (err) => {
-      if (err) {
-        // reject(err);
-        // router.navigate('/login');
-      } else {
-        Object.assign(user, socket.authToken.user, {authenticated: true, admin: true});
-        document.dispatchEvent(new CustomEvent('userChanged', {detail: user}));
-        resolve(user);
-        // console.log("socket.authToken", socket.authToken)
-        // console.log("router.desiredRoute", router.desiredRoute)
-        if (router.state.value === '/login') router.navigate('/home/authenticated');
-      }
-    });
-  });
-};
+socket.on('authStateChange', (status) => {
+  console.log("status", status)
+  if (status.newState === 'authenticated') {
+    Object.assign(user, status.authToken.user, {authenticated: true});
+    console.log("router.state", router.state)
+    if (router.state.value === '/login') router.navigate('/home/authenticated');
+    else document.dispatchEvent(userAuthenticated);
+  }
+  if (status.newState === 'unauthenticated') {
+    user.authenticated = false;
+    document.dispatchEvent(userUnauthenticated);
+    router.navigate('/login');
+  }
+});
 
+document.addEventListener('databaseLoaded', (evt) => {
+  let usr = evt.detail;
+  delete usr.$loki;
+  delete usr.meta;
+  Object.assign(user, usr);
+  document.dispatchEvent(new CustomEvent('userLoadedFromDb'));
+});
 
 user.logout = () => {
   hello.logout();
-  user = { authenticated: false };
-  document.dispatchEvent(new CustomEvent('userChanged', {detail: user}));
-};
-
-user.getUser = () => {
-  if (user.authenticated) return Promise.resolve(user);
-  return user.authenticate();
+  Object.assign(user, { authenticated: false });
+  socket.deauthenticate();
 };
 
 export {user};
-
-
-// document.dispatchEvent(new CustomEvent('userChanged', {detail: usr}));
