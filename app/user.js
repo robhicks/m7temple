@@ -1,6 +1,7 @@
 const socket = socketCluster.connect();
 import {router} from './app-router/app-router.js';
 import {RbhModal} from './rbh-modal/rbh-modal.js';
+import {users} from './db.js';
 
 const userAuthenticated = new CustomEvent('userAuthenticated');
 const userUnauthenticated = new CustomEvent('userUnauthenticated');
@@ -39,12 +40,13 @@ hello.on('auth.login', (auth) => {
 });
 
 socket.on('authStateChange', (status) => {
-  console.log("status", status)
   if (status.newState === 'authenticated') {
-    Object.assign(user, status.authToken.user, {authenticated: true});
-    console.log("router.state", router.state)
-    if (router.state.value === '/login') router.navigate('/home/authenticated');
-    else document.dispatchEvent(userAuthenticated);
+    let usr = users && users.find ? users.findOne({id: status.authToken.user.id}) : {};
+    Object.assign(user, status.authToken.user, usr, {authenticated: true});
+    if (router.state.value === '/login') {
+      router.navigate('/home/authenticated');
+      document.dispatchEvent(userAuthenticated);
+    } else document.dispatchEvent(userAuthenticated);
   }
   if (status.newState === 'unauthenticated') {
     user.authenticated = false;
@@ -63,7 +65,7 @@ document.addEventListener('databaseLoaded', (evt) => {
 
 user.logout = () => {
   hello.logout();
-  Object.assign(user, { authenticated: false });
+  Object.assign(user, { authenticated: false, admin: false });
   socket.deauthenticate();
 };
 

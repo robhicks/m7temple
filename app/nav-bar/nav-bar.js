@@ -11,9 +11,10 @@ class NavBar extends HTMLElement {
     this.state = 'home';
     this.user = user;
 
-    document.addEventListener('userLoadedFromDb', () => {
-      this.updateView();
-    });
+    document.addEventListener('userLoadedFromDb', this.updateView.bind(this));
+    document.addEventListener('userAuthenticated', this.updateView.bind(this));
+    document.addEventListener('userUnauthenticated', this.updateView.bind(this));
+    document.addEventListener('userLoadedFromDb', this.updateView.bind(this));
   }
 
   attributeChangedCallback(name, oVal, nVal) {
@@ -51,9 +52,7 @@ class NavBar extends HTMLElement {
   }
 
   updateView() {
-    // console.log('navbar::updateView');
     if (this.element) {
-      this.user = user;
       patch(this.element, render, this);
       setTimeout(() => {
         router.addComponentAnchorEventListeners(this.element);
