@@ -13,9 +13,11 @@ class HomeAuthenticated extends HTMLElement {
     this.skills = [];
     this.mySkills = [];
     this.mine = false;
-    this.adv = skills.addDynamicView('awards');
+    this.adv = awards.addDynamicView('awards');
     this.sdv = skills.addDynamicView('skills');
     document.addEventListener('userUnauthenticated', () => {router.navigate('/login');});
+    document.addEventListener('awardsChanged', this._updateView.bind(this));
+    document.addEventListener('skillsChanged', this._updateView.bind(this));
   }
 
   anchorClickHandler(evt) {
@@ -33,19 +35,23 @@ class HomeAuthenticated extends HTMLElement {
     this.shadowRoot.innerHTML = `<style>${css}</style><div id="home"></div>`;
     this.shadowRoot.addEventListener('click', this.anchorClickHandler.bind(this));
     this.element = this.shadowRoot.querySelector('div#home');
+
     this._updateView();
   }
 
-  _combineSkillsAndAwards() {
-    this.skills.forEach((skill) => {
-      skill.earned = this.skillEarned(skill);
-      skill.added = this.skillAdded(skill);
-      skill.pending = this.skillAppliedFor(skill);
-    });
-    this.skills = Object.assign([], this.skills);
-    this.mySkills = this.filterMine();
-    // console.log("this.viewSkills", this.viewSkills)
-    this._updateView();
+  _combineSkillsAndAwards(_awards = [], _skills = []) {
+    return _skills.map((skill) => ({
+      id: skill.id,
+      title: skill.title,
+      description: skill.description,
+      multiple: !!skill.multiple,
+      achievements: skill.achievements,
+      html: skill.html,
+      added: !!_awards.find((awrd) => awrd.skillId === skill.id && awrd.userId === this.user.id && awrd.type === 'added'),
+      earned: !!_awards.find((awrd) => awrd.skillId === skill.id && awrd.userId === this.user.id && awrd.type === 'earned'),
+      pending: !!_awards.find((awrd) => awrd.skillId === skill.id && awrd.userId === this.user.id && awrd.type === 'pending'),
+      shared: !!_awards.find((awrd) => awrd.skillId === skill.id && awrd.userId === this.user.id && awrd.share)
+    }));
   }
 
   disconnectedCallback() {
@@ -63,54 +69,8 @@ class HomeAuthenticated extends HTMLElement {
     this._updateView();
   }
 
-  skillAdded(skill) {
-    let exists = false;
-    if (skill && this.awards) {
-      Object.keys(this.awards).forEach((key) => {
-        let award = this.awards[key];
-        if (award.skillId === skill.id) exists = true;
-      });
-    }
-    return exists;
-  }
-
-  skillEarned(skill) {
-    let earned = false;
-    if (skill && this.awards) {
-      Object.keys(this.awards).forEach((key) => {
-        let award = this.awards[key];
-        if (award.skillId === skill.id && award.earned) earned = true;
-      })
-    }
-    return earned;
-  }
-
-  skillAppliedFor(skill) {
-    let pending = false;
-    if (skill && this.awards) {
-      Object.keys(this.awards).forEach((key) => {
-        let award = this.awards[key];
-        if (award.skillId === skill.id && award.pending) pending = true;
-      })
-    }
-    return pending;
-  }
-
   filterMine() {
-    let temp = [];
-    let mySkills = [];
-    if (this.awards) {
-      Object.keys(this.awards).forEach((key) => {
-        let award = this.awards[key];
-        temp.push(award.skillId);
-      });
-    }
-    temp.forEach((t) => {
-      this.skills.forEach((skill) => {
-        if (skill.id === t) mySkills.push(skill);
-      })
-    });
-    return mySkills;
+    return this.skills.filter((skill) => skill.added || skill.earned || skill.pending);
   }
 
   toggleMine() {
@@ -125,8 +85,10 @@ class HomeAuthenticated extends HTMLElement {
   }
 
   _updateView() {
-    this.awards = this.adv.data();
-    this.skills = this.sdv.data();
+    let _awards = this.adv.data();
+    let _skills = this.sdv.data();
+    this.skills = this._combineSkillsAndAwards(_awards, _skills);
+    this.mySkills = this.filterMine(this.skills);
     if (this.element) patch(this.element, render, this);
   }
 

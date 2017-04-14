@@ -34,10 +34,19 @@ module.exports.run = (worker) => {
 
   scServer.on('connection', (socket) => {
     socket.on('auth', (data, respond) => {
-      console.log("data", !data || !data.id || !data.email)
+      // console.log("data", data)
       if (!data || !data.id || !data.email) respond('Authentication failed');
       else {
-        let user = users.findOne({email: data.email}) || users.insertOne(data);
+        let rec = {
+          displayName: data.displayName,
+          email: data.email,
+          firstName: data.first_name,
+          lastName: data.last_name,
+          name: data.name,
+          id: data.id
+        };
+        let user = users.findOne({email: data.email}) || users.insertOne(rec);
+        // console.log("user", user);
         socket.setAuthToken({user});
         respond();
       }
@@ -45,6 +54,11 @@ module.exports.run = (worker) => {
 
     socket.on('loadDatabase', () => {
       socket.emit('loadDatabase', db.serialize());
+    });
+
+    socket.on('logout', (data) => {
+      // console.log("data", data)
+      socket.deauthenticate();
     });
   });
 

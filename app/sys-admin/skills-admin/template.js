@@ -26,11 +26,11 @@ var __target
 export function render (ctrl) {
 if (!ctrl.skillEditor) {
   elementOpen("skills-search")
-    elementOpen("input", "26e2b7a2-f242-4553-8dcb-ae8797366da6", hoisted1, "onkeyup", function ($event) {
+    elementOpen("input", "613788ad-730e-4423-9f71-047f50a53e06", hoisted1, "onkeyup", function ($event) {
       var $element = this;
     ctrl.filterSkills(this.value)})
     elementClose("input")
-    elementOpen("button", "63cd5415-74ae-456b-9f4f-e2e048a645a5", hoisted2, "onclick", function ($event) {
+    elementOpen("button", "30803433-0de5-4dad-9eee-37375d5ab96b", hoisted2, "onclick", function ($event) {
       var $element = this;
     ctrl.addSkill()})
       text("Add")
@@ -39,12 +39,12 @@ if (!ctrl.skillEditor) {
 }
 elementOpen("skills-list")
   if (ctrl.skillEditor) {
-    elementOpen("form", "963dcaba-ac88-41f6-9897-cb5fff195f04", hoisted3)
+    elementOpen("form", "54933358-eb26-40d9-8bf5-88c412e1202d", hoisted3)
       elementOpen("skill-editor-title")
         elementOpen("label")
           text("Title:")
         elementClose("label")
-        elementOpen("input", "4f3fbd9c-4c2a-4be4-9fd5-2f3dae196eff", hoisted4, "name", ctrl.skill.title, "value", ctrl.skill.title, "onchange", function ($event) {
+        elementOpen("input", "61cf5eab-2ef6-47d3-bbab-ca9eb93f0809", hoisted4, "name", ctrl.skill.title, "value", ctrl.skill.title, "onchange", function ($event) {
           var $element = this;
         ctrl.skill.title = this.value})
         elementClose("input")
@@ -53,7 +53,7 @@ elementOpen("skills-list")
         elementOpen("label")
           text("Description:")
         elementClose("label")
-        elementOpen("input", "76d75002-9b11-4aa5-8407-520dca8d9bc2", hoisted5, "name", ctrl.skill.description, "value", ctrl.skill.description, "onchange", function ($event) {
+        elementOpen("input", "3fa228d6-82e5-47e9-9d92-560ec42ee849", hoisted5, "name", ctrl.skill.description, "value", ctrl.skill.description, "onchange", function ($event) {
           var $element = this;
         ctrl.skill.description = this.value})
         elementClose("input")
@@ -62,22 +62,22 @@ elementOpen("skills-list")
         elementOpen("label")
           text("Category:")
         elementClose("label")
-        elementOpen("select", "3cf0084a-7e12-4f47-86fd-d729e17b8f1a", hoisted6, "onchange", function ($event) {
+        elementOpen("select", "c8c9b7b6-cb95-45f7-ae73-10a5f3f752b8", hoisted6, "onchange", function ($event) {
           var $element = this;
         ctrl.skill.category = this.value})
-          elementOpen("option", "dd656db1-1c4b-45ec-af96-a168d9939aeb", hoisted7)
+          elementOpen("option", "f84b2acd-2985-4a70-9088-845ce9ac8317", hoisted7)
             text("Select")
           elementClose("option")
-          elementOpen("option", "aa67f194-4e9c-4bcb-a052-f4ab7a430607", hoisted8, "selected", ctrl.skill.category ==='booklet' ? true : null)
+          elementOpen("option", "7320ac80-a8c2-44b7-b4ae-6b7a0237c5a5", hoisted8, "selected", ctrl.skill.category ==='booklet' ? true : null)
             text("Booklet")
           elementClose("option")
-          elementOpen("option", "f12b4272-a072-4698-91ba-5d64a3ac4023", hoisted9, "selected", ctrl.skill.category ==='find' ? true : null)
+          elementOpen("option", "03e440e2-7518-4a2b-9d29-b93662345d9d", hoisted9, "selected", ctrl.skill.category ==='find' ? true : null)
             text("Find")
           elementClose("option")
-          elementOpen("option", "c806d5d4-3a46-4e93-b789-cf4ff60c0e30", hoisted10, "selected", ctrl.skill.category ==='take' ? true : null)
+          elementOpen("option", "5a1a93a5-f888-40a9-b162-ff0c7c5b228a", hoisted10, "selected", ctrl.skill.category ==='take' ? true : null)
             text("Take")
           elementClose("option")
-          elementOpen("option", "6ded6fed-d9e6-4d7b-b14e-a3613e1b40a8", hoisted11, "selected", ctrl.skill.category ==='indexing' ? true : null)
+          elementOpen("option", "1bcf429b-dc1e-4d2e-a81b-efbdc6b9fc68", hoisted11, "selected", ctrl.skill.category ==='indexing' ? true : null)
             text("Indexing")
           elementClose("option")
         elementClose("select")
@@ -86,7 +86,7 @@ elementOpen("skills-list")
         elementOpen("label")
           text("Allow Multiple:")
         elementClose("label")
-        elementOpen("input", "52d23bbf-2373-44d6-ab9e-ae1358c18102", hoisted12, "checked", ctrl.skill.multiple, "onchange", function ($event) {
+        elementOpen("input", "fa387dd4-d53b-4fe6-91c4-a160a75e0b44", hoisted12, "checked", ctrl.skill.multiple, "onchange", function ($event) {
           var $element = this;
         ctrl.skill.multiple = this.checked})
         elementClose("input")
@@ -95,21 +95,21 @@ elementOpen("skills-list")
         elementOpen("label")
           text("Instructions:")
         elementClose("label")
-        elementOpen("div", "c995c2a4-6714-4b78-a57d-5744bebd09fe", hoisted13)
+        elementOpen("div", "cb7d7067-782c-48d6-af22-a4c3c96d64b0", hoisted13)
         elementClose("div")
       elementClose("skill-editor-instructions")
       elementOpen("skill-editor-actions")
-        elementOpen("button", "b5034ccd-8a60-4234-82c1-ea7b69e0cc65", hoisted14, "onclick", function ($event) {
+        elementOpen("button", "0ef21818-762e-418d-9bc0-635130f0411f", hoisted14, "onclick", function ($event) {
           var $element = this;
         ctrl.saveSkill()})
           text("Save")
         elementClose("button")
-        elementOpen("button", "ed2d52f2-78af-4416-bf37-bb494b778789", hoisted15, "onclick", function ($event) {
+        elementOpen("button", "22434bc1-1e16-4ee1-8908-250b1a180061", hoisted15, "onclick", function ($event) {
           var $element = this;
         ctrl.deleteSkill()})
           text("Delete")
         elementClose("button")
-        elementOpen("button", "e02e4ef4-d3da-4629-816e-412b2a8d50c1", hoisted16, "onclick", function ($event) {
+        elementOpen("button", "c0a649d7-7a73-4443-a865-5839df31d7fd", hoisted16, "onclick", function ($event) {
           var $element = this;
         ctrl.cancelEdit()})
           text("Cancel")
@@ -122,18 +122,18 @@ elementOpen("skills-list")
     if (__target) {
       ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
         var skill = $value
-        var $key = "9e963216-b569-435b-97d7-9fdcda4f8436_" + $item
+        var $key = "5ffbf731-2a27-4335-afb5-e586539fea68_" + $item
         elementOpen("skill-item", $key, null, "class", $item % 2 ? 'odd' : 'even')
-          elementOpen("div", "0baa36ba-8aff-4e4c-9a87-23035e2edf69_" + $key, hoisted17)
-            elementOpen("div", "bcec1acf-14f2-4da2-9b68-66ead20af739_" + $key, hoisted18)
+          elementOpen("div", "729df325-5664-4940-b907-a11fcfe8830b_" + $key, hoisted17)
+            elementOpen("div", "fbb1d318-1d5f-4747-ad8e-0e25c4ed5ed4_" + $key, hoisted18)
               text("" + (skill.title) + "")
             elementClose("div")
-            elementOpen("div", "200fb1cf-7613-424e-872b-21f8e9497bae_" + $key, hoisted19)
+            elementOpen("div", "26c183f4-3f30-47d2-86b9-7a7068044cae_" + $key, hoisted19)
               text("" + (skill.description) + "")
             elementClose("div")
           elementClose("div")
-          elementOpen("div", "7ab56de4-84f4-4ff1-8163-1d080f90fd41_" + $key, hoisted20)
-            elementOpen("button", "ba6cb8da-2545-43f2-853d-49a951035dfa_" + $key, hoisted21, "disabled", ctrl.skillFormValid, "onclick", function ($event) {
+          elementOpen("div", "3348bd96-e97a-41d6-ad51-9d97ce7054f5_" + $key, hoisted20)
+            elementOpen("button", "47e8a71d-1529-4a41-a033-697fdd4ea238_" + $key, hoisted21, "disabled", ctrl.skillFormValid, "onclick", function ($event) {
               var $element = this;
             ctrl.editSkill($value)})
               text("Edit")

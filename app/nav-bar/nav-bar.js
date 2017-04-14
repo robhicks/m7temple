@@ -15,6 +15,7 @@ class NavBar extends HTMLElement {
     document.addEventListener('userAuthenticated', this.updateView.bind(this));
     document.addEventListener('userUnauthenticated', this.updateView.bind(this));
     document.addEventListener('userLoadedFromDb', this.updateView.bind(this));
+    router.on('navigate', this.updateView.bind(this));
   }
 
   attributeChangedCallback(name, oVal, nVal) {

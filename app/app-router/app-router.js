@@ -8,6 +8,7 @@ import '../user-skills/component.js';
 import '../sys-admin/sys-admin.js';
 import {user} from "../user.js";
 
+const socket = socketCluster.connect();
 const router = new Router();
 
 class AppRouter extends HTMLElement {
@@ -26,9 +27,12 @@ class AppRouter extends HTMLElement {
     });
 
     router.add('/home/authenticated', (req, evt, next) => {
-      setTimeout(() => {
-        this.innerHTML = `<home-authenticated></home-authenticated>`;
-      }, 200);
+      if (socket.authState !== 'authenticated') router.navigate('/login');
+      else {
+        setTimeout(() => {
+          this.innerHTML = `<home-authenticated></home-authenticated>`;
+        }, 200);
+      }
     });
 
     router.add('/login', (req, evt, next) => {
@@ -49,12 +53,17 @@ class AppRouter extends HTMLElement {
     });
 
     router.add('/admin/*', (req, evt, next) => {
+      console.log('/admin/*');
       let sysAdmin = (/\<sys-admin\>/).test(this.innerHTML);
       if (!sysAdmin) this.innerHTML = `<sys-admin></sys-admin>`;
     });
 
     router.add('/not-found', (req, evt, next) => {
       this.innerHTML = `<not-found></not-found>`;
+    });
+
+    router.add('/oauth2callback', (req, evt, next) => {
+      next();
     });
 
     router.add('/*', (req, evt, next) => {

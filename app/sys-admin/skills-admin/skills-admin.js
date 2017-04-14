@@ -5,7 +5,7 @@ import isJson from './isJson.js';
 import {router} from '../../app-router/app-router.js';
 import {user} from '../../user.js';
 import {skills} from '../../db.js';
-import {debounce} from '../../utilities.js';
+import {uuid} from '../../utilities.js';
 
 class SkillsAdmin extends HTMLElement {
   constructor() {
@@ -42,10 +42,12 @@ class SkillsAdmin extends HTMLElement {
 
   editSkill(skill = {}) {
     this.skill = skill;
+    this.skill.id = skill.id || uuid();
     this.skillEditor = true;
     this._updateView();
     this.quill = new Quill('#skill-editor', {theme: 'snow'});
     if (this.skill.delta) this.quill.setContents(this.skill.delta);
+    console.log("this.skill", this.skill)
   }
 
   filterSkills(val) {
@@ -62,7 +64,9 @@ class SkillsAdmin extends HTMLElement {
   }
 
   saveSkill() {
+    console.log("this.skill.id", this.skill.id)
     let savedSkill = skills.findOne({id: this.skill.id});
+    console.log("savedSkill", savedSkill)
     this.skill.delta = this.quill.getContents();
     this.skill.html = this.element.querySelector(".ql-editor").innerHTML;
     this.skill.achievements = this.skill.achievements || 0;

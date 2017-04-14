@@ -25,8 +25,8 @@ hello.on('auth.login', (auth) => {
   // console.log("auth", auth)
   hello(auth.network).api('me')
   .then((r) => {
-    Object.assign(user, r);
-    socket.emit('auth', user);
+    // console.log("r", r);
+    if (socket.authState !== 'authenticated') socket.emit('auth', r);
   }, (err) => {
     let modal = new RbhModal();
     modal.heading = 'Authentication Provider Error';
@@ -40,8 +40,10 @@ hello.on('auth.login', (auth) => {
 });
 
 socket.on('authStateChange', (status) => {
+  // console.log("status", status)
   if (status.newState === 'authenticated') {
-    let usr = users && users.find ? users.findOne({id: status.authToken.user.id}) : {};
+    let usr = users.findOne({id: status.authToken.user.id}) || {};
+    // console.log("usr", usr)
     Object.assign(user, status.authToken.user, usr, {authenticated: true});
     if (router.state.value === '/login') {
       router.navigate('/home/authenticated');
@@ -57,16 +59,18 @@ socket.on('authStateChange', (status) => {
 
 document.addEventListener('databaseLoaded', (evt) => {
   let usr = evt.detail;
-  delete usr.$loki;
-  delete usr.meta;
-  Object.assign(user, usr);
+  if (usr) {
+    delete usr.$loki;
+    delete usr.meta;
+    Object.assign(user, usr);
+  }
   document.dispatchEvent(new CustomEvent('userLoadedFromDb'));
 });
 
 user.logout = () => {
   hello.logout();
   Object.assign(user, { authenticated: false, admin: false });
-  socket.deauthenticate();
+  socket.emit('logout', user);
 };
 
 export {user};

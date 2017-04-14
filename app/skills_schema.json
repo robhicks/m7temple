@@ -1,0 +1,11 @@
+[
+  {
+    "id": "String",
+    "title": "String",
+    "description": "String",
+    "category": "String",
+    "multiple": "Boolean",
+    "html": "String",
+    "achievements": "Number"
+  }
+]
