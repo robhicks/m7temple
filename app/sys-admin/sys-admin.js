@@ -69,7 +69,6 @@ class SysAdmin extends HTMLElement {
 
   _userChanged() {
     if (!user.authenticated) router.navigate('/login');
-    else if (!user.admin) router.navigate('/home/authenticated');
   }
 
   static get observedAttributes() {

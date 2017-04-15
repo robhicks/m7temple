@@ -27,6 +27,7 @@ hello.on('auth.login', (auth) => {
   .then((r) => {
     // console.log("r", r);
     if (socket.authState !== 'authenticated') socket.emit('auth', r);
+    if ((/.+\/login/).test(window.location.href)) router.navigate('/home/authenticated');
   }, (err) => {
     let modal = new RbhModal();
     modal.heading = 'Authentication Provider Error';
@@ -34,7 +35,7 @@ hello.on('auth.login', (auth) => {
     modal.primary = 'OK';
     document.addEventListener('rbhModalButtonClick', (evt) => {
       modal.remove();
-      router.navigate('/login');
+      // router.navigate('/login');
     });
   });
 });
@@ -45,15 +46,13 @@ socket.on('authStateChange', (status) => {
     let usr = users.findOne({id: status.authToken.user.id}) || {};
     // console.log("usr", usr)
     Object.assign(user, status.authToken.user, usr, {authenticated: true});
-    if (router.state.value === '/login') {
-      router.navigate('/home/authenticated');
-      document.dispatchEvent(userAuthenticated);
-    } else document.dispatchEvent(userAuthenticated);
+    document.dispatchEvent(userAuthenticated);
+    if ((/.+\/login/).test(window.location.href)) router.navigate('/home/authenticated');
   }
   if (status.newState === 'unauthenticated') {
     user.authenticated = false;
     document.dispatchEvent(userUnauthenticated);
-    router.navigate('/login');
+    // router.navigate('/login');
   }
 });
 

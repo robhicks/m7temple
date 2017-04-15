@@ -1,11 +1,11 @@
-<a id="brand" href="/home/authenticated" class="{ctrl.stateContains('home')}">
+<a id="brand" onclick="{ctrl.go('/home/authenticated')}" class="{ctrl.stateContains('home')}">
   <img src="/img/favicon.svg" alt="">
   <span>Home</span>
 </a>
 <nav role="navigation" id="navigation">
   <!-- <a if="ctrl.user.authenticated" onclick="{ctrl.go('/skills')}" class="{ctrl.state === 'skills' ? 'active': ''}">Achievments</a> -->
-  <a href="/help" class="{ctrl.stateContains('help')}">Help</a>
-  <a if="ctrl.user.admin" href="/admin" class="{ctrl.stateContains('admin')}">Admin</a>
-  <a if="!ctrl.user.authenticated" href="/login" class="{ctrl.stateContains('login')}">Login</a>
+  <a onclick="{ctrl.go('/help')}" class="{ctrl.stateContains('help')}">Help</a>
+  <a if="ctrl.user.admin" onclick="{ctrl.go('/admin/users')}" class="{ctrl.stateContains('admin')}">Admin</a>
+  <a if="!ctrl.user.authenticated" onclick="{ctrl.go('/login')}" class="{ctrl.stateContains('login')}">Login</a>
   <a if="ctrl.user.authenticated" onclick="{ctrl.go('/logout')}" class="{ctrl.stateContains('logout')}">Logout</a>
 </nav>

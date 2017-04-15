@@ -34,31 +34,23 @@ class NavBar extends HTMLElement {
     this.attachShadow({mode: 'open'});
     this.shadowRoot.innerHTML = `<style>${css}</style><div id="navbar"></div>`;
     this.element = this.shadowRoot.querySelector('div#navbar');
-    setTimeout(() => {
-      this.updateView();
-    }, 10);
+    this.updateView();
   }
 
   disconnectedCallback() {
     this.shadowRoot.removeEventListener('click', this.anchorClickHandler.bind(this));
   }
 
-  go(path) {
-    router.navigate(path);
+  go(route) {
+    router.navigate(route);
   }
 
   stateContains(val) {
-    if (router && router.state.value.indexOf(val) !== -1) return 'active';
-    return '';
+    return window.location.href.indexOf(val) !== -1 ? 'active': '';
   }
 
   updateView() {
-    if (this.element) {
-      patch(this.element, render, this);
-      setTimeout(() => {
-        router.addComponentAnchorEventListeners(this.element);
-      }, 10);
-    }
+    if (this.element) patch(this.element, render, this);
   }
 
   static get observedAttributes() {
