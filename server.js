@@ -5,7 +5,7 @@ const util = require('util');
 const socketCluster = new SocketCluster({
   workers: Number(argv.w) || 1,
   brokers: Number(argv.b) || 1,
-  port: Number(argv.p) || 5000,
+  port: Number(argv.p) || process.env.PORT,
   authKey: 'todo',
   appName: argv.n || null,
   workerController: __dirname + '/worker.js',
