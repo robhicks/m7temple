@@ -11,7 +11,7 @@ module.exports.run = (worker) => {
   console.info('   >> Worker PID:', process.pid);
 
   const app = express();
-  if (process.env.NODE_ENV !== 'prod') {
+  if (process.env.TARGET_ENV !== 'prod') {
     const lrl = require('express-livereload');
     lrl(app, {watchDir: join(process.cwd(), 'public')});
   }
