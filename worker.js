@@ -2,7 +2,6 @@ const db = require('./db').db;
 const express = require("express");
 const join = require('path').join;
 const logger = require('morgan');
-const lrl = require('express-livereload');
 const path = require('path');
 const users = require('./db').users;
 const updateDb = require('./db.js').updateDb;
@@ -12,7 +11,10 @@ module.exports.run = (worker) => {
   console.info('   >> Worker PID:', process.pid);
 
   const app = express();
-  if (process.env.NODE_ENV !== 'prod') lrl(app, {watchDir: join(process.cwd(), 'public')});
+  if (process.env.NODE_ENV !== 'prod') {
+    const lrl = require('express-livereload');
+    lrl(app, {watchDir: join(process.cwd(), 'public')});
+  }
   const httpServer = worker.httpServer;
   const scServer = worker.scServer;
 
