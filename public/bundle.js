@@ -2607,7 +2607,6 @@ var SysAdmin = function (_HTMLElement) {
     document.addEventListener('userUnauthenticated', _this._userChanged.bind(_this));
 
     router.add('/admin/users', function (req, evt, next) {
-      console.log('/admin/users');
       if (_this.content) _this.content.innerHTML = '<users-admin></users-admin>';
     });
     router.add('/admin/skills', function (req, evt, next) {
@@ -2701,11 +2700,9 @@ var AppRouter = function (_HTMLElement) {
       });
 
       router.add('/home/authenticated', function (req, evt, next) {
-        if (socket$1.authState !== 'authenticated') router.navigate('/login');else {
-          setTimeout(function () {
-            _this2.innerHTML = '<home-authenticated></home-authenticated>';
-          }, 200);
-        }
+        setTimeout(function () {
+          if (socket$1.authState !== 'authenticated') router.navigate('/login');else _this2.innerHTML = '<home-authenticated></home-authenticated>';
+        }, 200);
       });
 
       router.add('/login', function (req, evt, next) {
@@ -2726,7 +2723,6 @@ var AppRouter = function (_HTMLElement) {
       });
 
       router.add('/admin/*', function (req, evt, next) {
-        console.log('/admin/*');
         var sysAdmin = /\<sys-admin\>/.test(_this2.innerHTML);
         if (!sysAdmin) _this2.innerHTML = '<sys-admin></sys-admin>';
       });

@@ -16,7 +16,6 @@ class SysAdmin extends HTMLElement {
     document.addEventListener('userUnauthenticated', this._userChanged.bind(this));
 
     router.add('/admin/users', (req, evt, next) => {
-      console.log('/admin/users');
       if (this.content) this.content.innerHTML = `<users-admin></users-admin>`;
     });
     router.add('/admin/skills', (req, evt, next) => {

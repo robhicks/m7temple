@@ -27,12 +27,10 @@ class AppRouter extends HTMLElement {
     });
 
     router.add('/home/authenticated', (req, evt, next) => {
-      if (socket.authState !== 'authenticated') router.navigate('/login');
-      else {
-        setTimeout(() => {
-          this.innerHTML = `<home-authenticated></home-authenticated>`;
-        }, 200);
-      }
+      setTimeout(() => {
+        if (socket.authState !== 'authenticated') router.navigate('/login');
+        else this.innerHTML = `<home-authenticated></home-authenticated>`;
+      }, 200);
     });
 
     router.add('/login', (req, evt, next) => {
@@ -53,7 +51,6 @@ class AppRouter extends HTMLElement {
     });
 
     router.add('/admin/*', (req, evt, next) => {
-      console.log('/admin/*');
       let sysAdmin = (/\<sys-admin\>/).test(this.innerHTML);
       if (!sysAdmin) this.innerHTML = `<sys-admin></sys-admin>`;
     });
