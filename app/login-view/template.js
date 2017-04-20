@@ -9,6 +9,7 @@ var hoisted6 = ["class", "provider"]
 var hoisted7 = ["src", "/img/google.svg", "alt", ""]
 var hoisted8 = ["class", "provider"]
 var hoisted9 = ["src", "/img/twitter.svg", "alt", ""]
+var hoisted10 = ["class", "privacy", "href", "/privacy-policy"]
 var __target
 
 export function render (ctrl) {
@@ -18,41 +19,46 @@ elementClose("h1")
 elementOpen("h3")
   text("Select a Provider")
 elementClose("h3")
-elementOpen("div", "500ed9ef-f9fc-41ab-9bb8-7303f4248fbd", hoisted1)
-  elementOpen("a", "e34ebe47-f132-4490-98b6-42a2b0aa4f89", hoisted2, "onclick", function ($event) {
+elementOpen("div", "5101d9a8-41c3-4efa-94ac-bcbef28085d3", hoisted1)
+  elementOpen("a", "5d15ead1-1b30-4230-becc-5cfbaf783ae3", hoisted2, "onclick", function ($event) {
     var $element = this;
   ctrl.hello('facebook').login()})
-    elementOpen("img", "d3b4cd8c-b568-4fb3-9390-a3b246f9bc05", hoisted3)
+    elementOpen("img", "0f718a1a-24b6-409d-850f-109bca0364c4", hoisted3)
     elementClose("img")
     elementOpen("span")
       text("Facebook")
     elementClose("span")
   elementClose("a")
-  elementOpen("a", "1d809b1b-3138-47d9-90f1-7fdaf64f7d63", hoisted4, "onclick", function ($event) {
+  elementOpen("a", "5119b063-40cf-417c-97ee-f1262646e2e3", hoisted4, "onclick", function ($event) {
     var $element = this;
   ctrl.hello('github').login()})
-    elementOpen("img", "9cddb19c-7a7b-45fb-9859-356276c0073b", hoisted5)
+    elementOpen("img", "8503791f-8bae-4798-8a4b-26d85fb10b99", hoisted5)
     elementClose("img")
     elementOpen("span")
       text("Github")
     elementClose("span")
   elementClose("a")
-  elementOpen("a", "59cc8fbb-dc06-4f60-8ea3-e46c9387ebc1", hoisted6, "onclick", function ($event) {
+  elementOpen("a", "e6e260eb-e564-42a6-93d3-b60623c29a64", hoisted6, "onclick", function ($event) {
     var $element = this;
   ctrl.hello('google').login()})
-    elementOpen("img", "fa1e464c-1bd9-4f18-bab6-7ce88e2defa4", hoisted7)
+    elementOpen("img", "b4c3cf0d-023e-4bdd-b6f1-e814be83634d", hoisted7)
     elementClose("img")
     elementOpen("span")
       text("Google")
     elementClose("span")
   elementClose("a")
-  elementOpen("a", "a5b4ae2a-688e-4bc8-a083-ab414d13aada", hoisted8, "onclick", function ($event) {
+  elementOpen("a", "9bc5e4a9-2195-4787-89c0-8fa2f845a4cf", hoisted8, "onclick", function ($event) {
     var $element = this;
   ctrl.hello('twitter').login()})
-    elementOpen("img", "193b5254-14d9-4897-9fba-e95b43762867", hoisted9)
+    elementOpen("img", "a344de1a-0088-4320-a9c8-19a12afaae2f", hoisted9)
     elementClose("img")
     elementOpen("span")
       text("Twitter")
+    elementClose("span")
+  elementClose("a")
+  elementOpen("a", "7adcb38a-f4aa-402e-ab82-1e8bd5ebf443", hoisted10)
+    elementOpen("span")
+      text("Privacy Policy")
     elementClose("span")
   elementClose("a")
 elementClose("div")

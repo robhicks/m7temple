@@ -5,6 +5,8 @@ import '../not-found/not-found.js';
 import '../home-authenticated/home-authenticated.js';
 import '../user-skills/component.js';
 import '../sys-admin/sys-admin.js';
+import '../p-policy/p-policy.js';
+
 import {db} from "../db.js";
 import {user} from "../user.js";
 
@@ -62,6 +64,10 @@ class AppRouter extends HTMLElement {
 
     router.add('/oauth2callback', (req, evt, next) => {
       next();
+    });
+
+    router.add('/privacy-policy', (req, evt, next) => {
+      this.innerHTML = `<p-policy></p-policy`;
     });
 
     router.add('/*', (req, evt, next) => {
