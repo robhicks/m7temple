@@ -7,14 +7,14 @@
 </section>
 
 <section id="skills">
-  <div class="item" each="item in ctrl.skills">
+  <div class="item" each="item in ctrl.viewSkills">
     <collapsable-panel
     class="{$item % 2 ? 'odd' : 'even'}"
     earned="{item.earned}"
     pending="{item.pending}"
     added="{item.added}"
     heading="{item.title}"
-    iid="{item.id}" 
+    iid="{item.id}"
     description="{item.description}"
     html="{item.html}"
     shared

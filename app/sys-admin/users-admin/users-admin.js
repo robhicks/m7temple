@@ -5,7 +5,7 @@ import isJson from './isJson.js';
 import {router} from '../../app-router/app-router.js';
 import {user} from '../../user.js';
 import {debounce} from '../../utilities.js';
-import {users} from '../../db.js';
+import {db} from '../../db.js';
 
 class UsersAdmin extends HTMLElement {
   constructor() {
@@ -15,7 +15,7 @@ class UsersAdmin extends HTMLElement {
     this.element = this.shadowRoot.querySelector('container');
     this.user = user;
     this.model = {};
-    this.dv = users.addDynamicView('users');
+
     document.addEventListener('usersChanged', this._updateView.bind(this));
   }
 
@@ -35,6 +35,9 @@ class UsersAdmin extends HTMLElement {
   }
 
   connectedCallback() {
+    this.uColl = db.getCollection('users');
+    this.uColl.setChangesApi(true);
+    this.dv = this.uColl.addDynamicView('users');
     this._updateView();
   }
 
@@ -87,7 +90,7 @@ class UsersAdmin extends HTMLElement {
     let _user = Object.assign({}, this.user);
     delete _user.authenticated;
     delete _user.initialized;
-    users.update(_user);
+    this.uColl.update(_user);
     this.cancelEdit();
   }
 

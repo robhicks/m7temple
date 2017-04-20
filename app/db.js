@@ -3,24 +3,15 @@ const socket = socketCluster.connect();
 import {router} from './app-router/app-router.js';
 import {user} from './user.js';
 
-const idbAdapter = new LokiIndexedAdapter('loki');
-const db = new loki('m7temple.db', {
-  autosave: true,
-  autosaveInterval: 10000, // 10 seconds
-  adapter: idbAdapter,
-  disableChangesApi: false
-});
-
-let awards = db.getCollection('awards') || db.addCollection('awards');
-let skills = db.getCollection('skills') || db.addCollection('skills');
-let users = db.getCollection('users') || db.addCollection('users');
+// const idbAdapter = new LokiIndexedAdapter('loki');
+const db = new loki('m7temple.db', {autosave: true});
 
 let updateDbChannel;
 
 function changeHandler() {
-  // console.log("changeHandler");
+  console.log("changeHandler");
   let changes = JSON.parse(db.serializeChanges());
-  // console.log("changes", changes);
+  console.log('changeHandler:changes', changes);
   if (changes) updateDbChannel.publish(JSON.stringify(changes), (err) => {
     if (err) console.error("err", err);
     if (!err) db.clearChanges();
@@ -29,6 +20,7 @@ function changeHandler() {
 }
 
 function updateDb(db, changes) {
+  console.log("changes", changes)
   try {
     changes.forEach((change) => {
       let coll = db.getCollection(change.name);
@@ -59,26 +51,30 @@ function updateDb(db, changes) {
   }
 }
 
+db.loadDb = (req, evt, next) => {
+  if (db.loaded) return next();
+  // console.log('getting db');
+  socket.emit('loadDatabase');
+
+  socket.on('loadDatabase', (data) => {
+    db.loadJSON(data, {disableChangesApi: false});
+    let awards = db.getCollection('awards');
+    let skills = db.getCollection('skills');
+    let users = db.getCollection('users');
+    awards.on(['insert', 'update', 'delete'], changeHandler);
+    skills.on(['insert', 'update', 'delete'], changeHandler);
+    users.on(['insert', 'update', 'delete'], changeHandler);
+    db.loaded = true;
+    // console.log('database loaded');
+    next();
+  });
+};
+
 socket.on('connect', function (status) {
   // console.log("status", status)
   // console.log(socket.authToken);
   if (status.isAuthenticated) {
-    let currentUser = socket.authToken.user;
     updateDbChannel = socket.subscribe('updateDbChannel');
-
-    socket.emit('loadDatabase');
-
-    socket.on('loadDatabase', (data) => {
-      db.loadJSON(data);
-      awards = db.getCollection('awards');
-      skills = db.getCollection('skills');
-      users = db.getCollection('users');
-      awards.on(['insert', 'update', 'delete'], changeHandler);
-      skills.on(['insert', 'update', 'delete'], changeHandler);
-      users.on(['insert', 'update', 'delete'], changeHandler);
-      let dbUser = users.findOne({id: currentUser.id});
-      document.dispatchEvent(new CustomEvent('databaseLoaded', {detail: dbUser}));
-    });
 
     updateDbChannel.watch((data) => {
       let changes = JSON.parse(data);
@@ -87,6 +83,7 @@ socket.on('connect', function (status) {
       db.clearChanges();
     });
   }
+
 });
 
-export {awards, skills, users};
+export {db};

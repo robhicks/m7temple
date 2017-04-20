@@ -3,9 +3,9 @@ const express = require("express");
 const join = require('path').join;
 const logger = require('morgan');
 const path = require('path');
-const users = require('./db').users;
 const updateDb = require('./db.js').updateDb;
 const util = require('util');
+const getUsers = require('./db').getUsers;
 
 module.exports.run = (worker) => {
   console.info('   >> Worker PID:', process.pid);
@@ -29,12 +29,19 @@ module.exports.run = (worker) => {
   app.use(express.static('node_modules'));
 
   app.get('*', (req, res, next) => {
-    res.render('index');
+    res.render('index', {env: {
+      TARGET_ENV: process.env.TARGET_ENV,
+      FACEBOOK_KEY: process.env.FACEBOOK_KEY,
+      GITHUB_KEY: process.env.GITHUB_KEY,
+      GOOGLE_KEY: process.env.GOOGLE_KEY,
+      TWITTER_KEY: process.env.TWITTER_KEY
+    }});
   });
 
   httpServer.on('request', app);
 
   scServer.on('connection', (socket) => {
+    // console.log("socket.authToken", socket.authToken)
     socket.on('auth', (data, respond) => {
       // console.log("data", data)
       if (!data || !data.id || !data.email) respond('Authentication failed');
@@ -47,12 +54,19 @@ module.exports.run = (worker) => {
           name: data.name,
           id: data.id
         };
-        let user = users.findOne({email: data.email}) || users.insertOne(rec);
-        // console.log("user", user);
-        socket.setAuthToken({user});
-        respond();
+        getUsers().then((users) => {
+          console.log("users", users)
+          let user = users.findOne({email: data.email}) || users.insertOne(rec);
+          socket.setAuthToken({user});
+          respond();
+        });
       }
     });
+
+    socket.on('getUser', () => {
+      let usr = users.findOne({email: socket.user.email});
+
+    })
 
     socket.on('loadDatabase', () => {
       socket.emit('loadDatabase', db.serialize());

@@ -2,7 +2,7 @@ import css from './awards-admin.less';
 import {render} from './template.js';
 import {patch} from 'incremental-dom';
 import isJson from './isJson.js';
-import {awards} from '../../db.js';
+import {db} from '../../db.js';
 
 class AwardsAdmin extends HTMLElement {
   constructor() {
@@ -10,7 +10,7 @@ class AwardsAdmin extends HTMLElement {
     this.attachShadow({mode: 'open'});
     this.shadowRoot.innerHTML = `<style>${css}</style><container></container>`;
     this.element = this.shadowRoot.querySelector('container');
-    this.dv = awards.addDynamicView('awards');
+
     document.addEventListener('awardsChanged', this._updateView.bind(this));
   }
 
@@ -21,6 +21,8 @@ class AwardsAdmin extends HTMLElement {
   }
 
   connectedCallback() {
+    this.aColl = db.getCollection('awards');
+    this.dv = this.aColl.addDynamicView('awards');
     this._updateView();
   }
 

@@ -1,11 +1,12 @@
 [
   {
-    "id": "String",
-    "skillId": "String",
-    "userId": "String",
-    "type": "String: added, pending or earned",
     "date": "Date",
+    "help": "Boolean",
+    "id": "String",
     "share": "Boolean",
-    "help": "Boolean"
+    "story": "String",
+    "skillId": "String",
+    "type": "String: added, pending or earned",
+    "userId": "String"
   }
 ]

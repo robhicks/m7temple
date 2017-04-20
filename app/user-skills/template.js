@@ -6,11 +6,11 @@ var __target
 
 export function render (ctrl) {
 elementOpen("header")
-  elementOpen("input", "66c3a43f-f7c7-47fe-bd62-1cbc6c53f579", hoisted1, "onkeyup", function ($event) {
+  elementOpen("input", "60a5c9bb-d319-4dcd-8c60-c5a559069dff", hoisted1, "onkeyup", function ($event) {
     var $element = this;
   ctrl.goalSearch(this.value)})
   elementClose("input")
-  elementOpen("button", "b56c31e3-5d37-46b8-8d6a-d88f100385ad", hoisted2)
+  elementOpen("button", "31c8e856-8f1c-4aaf-b246-fc691fd766f2", hoisted2)
     text("Add")
   elementClose("button")
 elementClose("header")

@@ -10,7 +10,7 @@ elementClose("h1")
 elementOpen("h3")
   text("Access to this site requires user login")
 elementClose("h3")
-elementOpen("a", "06506715-7986-4d32-949b-5c1677c52629", hoisted1)
+elementOpen("a", "8bd21a53-6aeb-4e7e-a3d3-1383f59939d7", hoisted1)
   text("Please Login")
 elementClose("a")
 }

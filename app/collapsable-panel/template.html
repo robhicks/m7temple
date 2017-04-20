@@ -2,7 +2,7 @@
   <div class="heading">
     <div class="title">{ctrl.heading}</div>
     <div class="button-group">
-      <button if="!ctrl.added && !ctrl.multiple" type="button" name="add" onclick="{ctrl.add(ctrl.iid)}">
+      <button if="!ctrl.added && !ctrl.earned && !ctrl.pending && !ctrl.multiple" type="button" name="add" onclick="{ctrl.add(ctrl.iid)}">
         <img src="/img/add.svg" alt="">
       </button>
       <button if="!ctrl.earned && !ctrl.multiple && !ctrl.pending" type="button" name="apply" onclick="{ctrl.addAndShowAchievementEditor(ctrl.iid)}">
@@ -17,7 +17,7 @@
       <button type="button" name="add" onclick="{ctrl.getHelp(ctrl.iid)}">
         <img src="/img/help.svg" alt="">
       </button>
-      <button if="ctrl.added" type="button" name="delete" onclick="{ctrl.delete(ctrl.iid)}">
+      <button if="ctrl.added || ctrl.pending || ctrl.earned" type="button" name="delete" onclick="{ctrl.delete(ctrl.iid)}">
         <img src="/img/delete.svg" alt="">
       </button>
       <button class="achievements">{ctrl.achievements}</button>

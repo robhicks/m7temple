@@ -4,13 +4,12 @@ import {patch} from 'incremental-dom';
 import isJson from './isJson.js';
 import {router} from '../../app-router/app-router.js';
 import {user} from '../../user.js';
-import {skills} from '../../db.js';
+import {db} from '../../db.js';
 import {uuid} from '../../utilities.js';
 
 class SkillsAdmin extends HTMLElement {
   constructor() {
     super();
-    this.dv = skills.addDynamicView('skills');
     document.addEventListener('skillsChanged', this._updateView.bind(this));
   }
 
@@ -31,9 +30,17 @@ class SkillsAdmin extends HTMLElement {
   }
 
   connectedCallback() {
+    this.sColl = db.getCollection('skills');
+    this.sColl.setChangesApi(true);
+    this.dv = this.sColl.addDynamicView('skills');
     this.innerHTML = `<style>${css}</style><container></container>`;
     this.element = this.querySelector('container');
     this._updateView();
+  }
+
+  deleteSkill() {
+    this.sColl.findAndRemove({id: this.skill.id});
+    this.cancelEdit();
   }
 
   disconnectedCallback() {
@@ -47,7 +54,7 @@ class SkillsAdmin extends HTMLElement {
     this._updateView();
     this.quill = new Quill('#skill-editor', {theme: 'snow'});
     if (this.skill.delta) this.quill.setContents(this.skill.delta);
-    console.log("this.skill", this.skill)
+    // console.log("this.skill", this.skill)
   }
 
   filterSkills(val) {
@@ -64,14 +71,14 @@ class SkillsAdmin extends HTMLElement {
   }
 
   saveSkill() {
-    console.log("this.skill.id", this.skill.id)
-    let savedSkill = skills.findOne({id: this.skill.id});
-    console.log("savedSkill", savedSkill)
+    // console.log("this.skill.id", this.skill.id)
+    let savedSkill = this.sColl.findOne({id: this.skill.id});
+    // console.log("savedSkill", savedSkill)
     this.skill.delta = this.quill.getContents();
     this.skill.html = this.element.querySelector(".ql-editor").innerHTML;
     this.skill.achievements = this.skill.achievements || 0;
-    if (savedSkill) skills.update(Object.assign(savedSkill, this.skill));
-    else skills.insertOne(this.skill);
+    if (savedSkill) this.sColl.update(Object.assign(savedSkill, this.skill));
+    else this.sColl.insertOne(this.skill);
     this.cancelEdit();
   }
 

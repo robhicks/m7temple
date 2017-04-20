@@ -3,7 +3,6 @@ head
   meta(name="viewport" content="width=device-width, initial-scale=1")
   <title>Manila 7th Ward Temple & Family History Skills</title>
   link(rel="image/png" href="favicon.png" media="screen" title="no title")
-  link(href="//fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet" type="text/css")
   link(href="/quill/dist/quill.snow.css" rel="stylesheet")
   link(rel="icon", type="image/png" href="/img/favicon.png")
   != LRScript
@@ -25,5 +24,7 @@ head
       flex-direction: column;
       flex: 1;
     }
+  script.
+    window.SERVER_ENV = !{JSON.stringify(env)};
     
   

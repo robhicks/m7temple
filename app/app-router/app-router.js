@@ -1,4 +1,3 @@
-import Router from 'esnext-router';
 import '../home-view/home-view.js';
 import '../login-view/component.js';
 import '../nav-bar/nav-bar.js';
@@ -6,10 +5,11 @@ import '../not-found/not-found.js';
 import '../home-authenticated/home-authenticated.js';
 import '../user-skills/component.js';
 import '../sys-admin/sys-admin.js';
+import {db} from "../db.js";
 import {user} from "../user.js";
 
 const socket = socketCluster.connect();
-const router = new Router();
+const router = new Grapnel({pushState: true});
 
 class AppRouter extends HTMLElement {
   constructor() {
@@ -26,7 +26,7 @@ class AppRouter extends HTMLElement {
       router.navigate('/home/authenticated');
     });
 
-    router.add('/home/authenticated', (req, evt, next) => {
+    router.add('/home/authenticated', db.loadDb, (req, evt, next) => {
       setTimeout(() => {
         if (socket.authState !== 'authenticated') router.navigate('/login');
         else this.innerHTML = `<home-authenticated></home-authenticated>`;
@@ -34,6 +34,7 @@ class AppRouter extends HTMLElement {
     });
 
     router.add('/login', (req, evt, next) => {
+      console.log('/login');
       this.innerHTML = `<login-view></login-view>`;
     });
 
@@ -50,7 +51,7 @@ class AppRouter extends HTMLElement {
       router.navigate('/admin/users');
     });
 
-    router.add('/admin/*', (req, evt, next) => {
+    router.add('/admin/*', db.loadDb, (req, evt, next) => {
       let sysAdmin = (/\<sys-admin\>/).test(this.innerHTML);
       if (!sysAdmin) this.innerHTML = `<sys-admin></sys-admin>`;
     });

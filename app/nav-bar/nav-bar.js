@@ -15,7 +15,6 @@ class NavBar extends HTMLElement {
     document.addEventListener('userAuthenticated', this.updateView.bind(this));
     document.addEventListener('userUnauthenticated', this.updateView.bind(this));
     document.addEventListener('userLoadedFromDb', this.updateView.bind(this));
-    router.on('navigate', this.updateView.bind(this));
   }
 
   attributeChangedCallback(name, oVal, nVal) {
@@ -42,7 +41,9 @@ class NavBar extends HTMLElement {
   }
 
   go(route) {
+    // console.log("route", route)
     router.navigate(route);
+    this.updateView();
   }
 
   stateContains(val) {
@@ -50,6 +51,7 @@ class NavBar extends HTMLElement {
   }
 
   updateView() {
+    // console.log("this.user", this.user)
     if (this.element) patch(this.element, render, this);
   }
 
