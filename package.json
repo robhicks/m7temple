@@ -14,6 +14,7 @@
     "hellojs": "^1.14.1",
     "incremental-dom": "^0.5.1",
     "ioredis": "^2.5.0",
+    "loki-redis-adapter": "git+https://github.com/robhicks/loki-redis-adapter.git",
     "lokijs": "^1.4.3",
     "morgan": "^1.8.1",
     "page": "^1.7.1",
