@@ -2,7 +2,7 @@
   "name": "m7h",
   "version": "1.0.0",
   "scripts": {
-    "dev": "rollup -cw & gulp"
+    "dev": "rollup -cw & gulp & nf start -j Procfile-dev"
   },
   "dependencies": {
     "esnext-router": "https://github.com/robhicks/esnext-router",
@@ -35,6 +35,7 @@
     "express-livereload": "0.0.24",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-better-rollup": "^1.1.1",
+    "gulp-cached": "^1.1.1",
     "gulp-hub": "fs-webdev/gulp-hub#registry-init",
     "karma": "^0.13.22",
     "karma-chai": "^0.1.0",

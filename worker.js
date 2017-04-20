@@ -55,7 +55,7 @@ module.exports.run = (worker) => {
           id: data.id
         };
         getUsers().then((users) => {
-          console.log("users", users)
+          // console.log("users", users)
           let user = users.findOne({email: data.email}) || users.insertOne(rec);
           socket.setAuthToken({user});
           respond();

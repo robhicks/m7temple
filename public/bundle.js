@@ -9,7 +9,7 @@ function render(ctrl) {
   incrementalDom.elementOpen("h3");
   incrementalDom.text("Access to this site requires user login");
   incrementalDom.elementClose("h3");
-  incrementalDom.elementOpen("a", "7cff5208-83a3-436e-b7e7-dbfc0fd9e83c", hoisted1);
+  incrementalDom.elementOpen("a", "f9102e66-9045-4a44-93e3-9837b35d44a2", hoisted1);
   incrementalDom.text("Please Login");
   incrementalDom.elementClose("a");
 }
@@ -28,26 +28,26 @@ var hoisted7 = ["type", "button", "name", "primary", "class", "button primary"];
 var hoisted8 = ["type", "button", "name", "cancel", "class", "button minor"];
 function render$1(ctrl) {
   if (ctrl._show) {
-    incrementalDom.elementOpen("div", "35374f46-65bc-42eb-83e9-8e0e66e15c89", hoisted1$1);
-    incrementalDom.elementOpen("div", "c323ed56-13f2-44d5-a938-fd4f583d2dcf", hoisted2);
-    incrementalDom.elementOpen("div", "8e7a3061-4930-42a3-ae1c-545561b9ceca", hoisted3);
-    incrementalDom.elementOpen("div", "234e1a3c-fbd3-412c-a142-8503e1a3f3f5", hoisted4);
+    incrementalDom.elementOpen("div", "80dbdea7-21e4-494a-bf5d-fcd3a45f0f29", hoisted1$1);
+    incrementalDom.elementOpen("div", "ce836fb7-3c64-4bbb-8b96-3a4f061b253f", hoisted2);
+    incrementalDom.elementOpen("div", "b3041b32-e139-464e-941d-833bece7ce14", hoisted3);
+    incrementalDom.elementOpen("div", "66016700-ed17-415c-8a68-a03937392957", hoisted4);
     incrementalDom.elementOpen("h4");
     incrementalDom.text("" + ctrl._heading + "");
     incrementalDom.elementClose("h4");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "27b0a494-3463-4468-afa6-42160c86a36a", hoisted5);
+    incrementalDom.elementOpen("div", "7aecfbb0-cf81-4e7f-bf41-06827bfa59aa", hoisted5);
     incrementalDom.text("" + ctrl._body + "");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "8b2bbca9-8a68-40c5-8cec-c34ae6a1ee75", hoisted6);
-    incrementalDom.elementOpen("button", "394671bb-f486-43e8-82d5-02e64c0f8c38", hoisted7, "onclick", function ($event) {
+    incrementalDom.elementOpen("div", "72e83d24-491a-4527-8150-af5f3e4c7267", hoisted6);
+    incrementalDom.elementOpen("button", "a0d73a33-1e16-49e2-9fe6-97c4d954d1cd", hoisted7, "onclick", function ($event) {
       var $element = this;
       ctrl._clickButton('primary');
     });
     incrementalDom.text("" + ctrl._primary + "");
     incrementalDom.elementClose("button");
     if (ctrl._cancel) {
-      incrementalDom.elementOpen("button", "2acab51e-5d17-4d4f-a729-1311dfaff3d3", hoisted8, "onclick", function ($event) {
+      incrementalDom.elementOpen("button", "60b7e0fa-40f6-4ac9-bfe0-ce0b28f1d60c", hoisted8, "onclick", function ($event) {
         var $element = this;
         ctrl._clickButton('cancel');
       });
@@ -364,51 +364,49 @@ function render$2(ctrl) {
   incrementalDom.elementOpen("h3");
   incrementalDom.text("Select a Provider");
   incrementalDom.elementClose("h3");
-  incrementalDom.elementOpen("div", "5101d9a8-41c3-4efa-94ac-bcbef28085d3", hoisted1$2);
-  incrementalDom.elementOpen("a", "5d15ead1-1b30-4230-becc-5cfbaf783ae3", hoisted2$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("div", "f97162ed-e3df-434f-970d-26d8a7cfd176", hoisted1$2);
+  incrementalDom.elementOpen("a", "02bc560d-71d8-46df-b453-d1d10c8791a5", hoisted2$1, "onclick", function ($event) {
     var $element = this;
     ctrl.hello('facebook').login();
   });
-  incrementalDom.elementOpen("img", "0f718a1a-24b6-409d-850f-109bca0364c4", hoisted3$1);
+  incrementalDom.elementOpen("img", "3aa7886b-be03-4820-a614-93029b3c883a", hoisted3$1);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Facebook");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("a", "5119b063-40cf-417c-97ee-f1262646e2e3", hoisted4$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("a", "a57ea1ec-6222-4e7d-b6d3-f293e997f908", hoisted4$1, "onclick", function ($event) {
     var $element = this;
     ctrl.hello('github').login();
   });
-  incrementalDom.elementOpen("img", "8503791f-8bae-4798-8a4b-26d85fb10b99", hoisted5$1);
+  incrementalDom.elementOpen("img", "91f71377-7648-47e2-bce6-4adbf228e409", hoisted5$1);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Github");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("a", "e6e260eb-e564-42a6-93d3-b60623c29a64", hoisted6$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("a", "7bef5d28-7d0d-4887-b873-02b27ada6ecd", hoisted6$1, "onclick", function ($event) {
     var $element = this;
     ctrl.hello('google').login();
   });
-  incrementalDom.elementOpen("img", "b4c3cf0d-023e-4bdd-b6f1-e814be83634d", hoisted7$1);
+  incrementalDom.elementOpen("img", "d87b5323-8f82-4774-a0e2-18d15920fec8", hoisted7$1);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Google");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("a", "9bc5e4a9-2195-4787-89c0-8fa2f845a4cf", hoisted8$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("a", "87231390-2076-4686-9aef-f4b3fe993878", hoisted8$1, "onclick", function ($event) {
     var $element = this;
     ctrl.hello('twitter').login();
   });
-  incrementalDom.elementOpen("img", "a344de1a-0088-4320-a9c8-19a12afaae2f", hoisted9);
+  incrementalDom.elementOpen("img", "9761d253-232d-487a-b532-4e8e7d90b4b3", hoisted9);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Twitter");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("a", "7adcb38a-f4aa-402e-ab82-1e8bd5ebf443", hoisted10);
-  incrementalDom.elementOpen("span");
+  incrementalDom.elementOpen("a", "30366938-8a3d-4ceb-bdc9-23abdea7283b", hoisted10);
   incrementalDom.text("Privacy Policy");
-  incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
   incrementalDom.elementClose("div");
 }
@@ -462,17 +460,17 @@ var hoisted1$3 = ["id", "brand"];
 var hoisted2$2 = ["src", "/img/favicon.svg", "alt", ""];
 var hoisted3$2 = ["role", "navigation", "id", "navigation"];
 function render$3(ctrl) {
-  incrementalDom.elementOpen("a", "d37018e4-c3b1-4705-82b7-bef14ae925a4", hoisted1$3, "onclick", function ($event) {
+  incrementalDom.elementOpen("a", "a3135243-f0ae-471e-9dc2-329671e33985", hoisted1$3, "onclick", function ($event) {
     var $element = this;
     ctrl.go('/home/authenticated');
   }, "class", ctrl.stateContains('home'));
-  incrementalDom.elementOpen("img", "5adb5c01-5656-4009-a36e-0788a80b6ca0", hoisted2$2);
+  incrementalDom.elementOpen("img", "7cea25fb-e276-4444-b77e-992b8fed5211", hoisted2$2);
   incrementalDom.elementClose("img");
   incrementalDom.elementOpen("span");
   incrementalDom.text("Home");
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("a");
-  incrementalDom.elementOpen("nav", "dd162d87-7eb9-48d1-83eb-1ecc14975a9c", hoisted3$2);
+  incrementalDom.elementOpen("nav", "6689de88-7731-4e4f-ab52-b95e2d34463f", hoisted3$2);
   incrementalDom.elementOpen("a", null, null, "onclick", function ($event) {
     var $element = this;
     ctrl.go('/help');
@@ -598,7 +596,7 @@ function render$4(ctrl) {
   incrementalDom.elementOpen("h2");
   incrementalDom.text("Page Not Found");
   incrementalDom.elementClose("h2");
-  incrementalDom.elementOpen("a", "6f58f1de-12fc-4a2f-9c46-f7d5964482cd", hoisted1$4);
+  incrementalDom.elementOpen("a", "6a356f04-3fd9-4285-a66d-0f96d50222fa", hoisted1$4);
   incrementalDom.text("Home");
   incrementalDom.elementClose("a");
 }
@@ -663,14 +661,14 @@ var hoisted7$2 = ["shared", "", "collapsed", "true"];
 var __target$5;
 
 function render$5(ctrl) {
-  incrementalDom.elementOpen("section", "bc577a41-5d69-4142-83cb-5aefcbaba458", hoisted1$5);
-  incrementalDom.elementOpen("input", "b0d9ae4d-4fde-423d-ac72-676431647633", hoisted2$3, "onkeyup", function ($event) {
+  incrementalDom.elementOpen("section", "9e393178-4527-4bd7-908b-5dd1df882a3d", hoisted1$5);
+  incrementalDom.elementOpen("input", "549fd8fa-fa8b-477d-954b-af8a64b87739", hoisted2$3, "onkeyup", function ($event) {
     var $element = this;
     ctrl.filterSkills(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "e0d6b166-38bd-45a0-bd79-c49658dcb348", hoisted3$3);
-  incrementalDom.elementOpen("input", "588119b2-c041-4871-abf8-62b0f3d00098", hoisted4$2, "onchange", function ($event) {
+  incrementalDom.elementOpen("label", "3a944d0b-35ca-43a9-bcc4-a88798b04b39", hoisted3$3);
+  incrementalDom.elementOpen("input", "96eeb153-1de9-4aa4-8729-76115d0545c8", hoisted4$2, "onchange", function ($event) {
     var $element = this;
     ctrl.toggleMine();
   });
@@ -680,14 +678,14 @@ function render$5(ctrl) {
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("section");
-  incrementalDom.elementOpen("section", "5ae147dc-5a05-419a-867b-726001b9411d", hoisted5$2);
+  incrementalDom.elementOpen("section", "f17d2897-4059-4b57-ba0b-df5c2878ea99", hoisted5$2);
   __target$5 = ctrl.viewSkills;
   if (__target$5) {
     (__target$5.forEach ? __target$5 : Object.keys(__target$5)).forEach(function ($value, $item, $target) {
       var item = $value;
-      var $key = "cbcec7e2-b1bd-4ee8-b181-ca58a5b99f38_" + $item;
+      var $key = "7b9c3c46-a85a-4076-bdb0-b02e1c507ffe_" + $item;
       incrementalDom.elementOpen("div", $key, hoisted6$2);
-      incrementalDom.elementOpen("collapsable-panel", "46e1b6fa-4e9c-4a36-8c8d-ed8e4564ea91_" + $key, hoisted7$2, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements);
+      incrementalDom.elementOpen("collapsable-panel", "1a16fbe8-2c61-4ff1-aab7-311677303a7a_" + $key, hoisted7$2, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements);
       incrementalDom.elementClose("collapsable-panel");
       incrementalDom.elementClose("div");
     }, this);
@@ -731,68 +729,68 @@ var hoisted31 = ["class", "html"];
 var __target$6;
 
 function render$6(ctrl) {
-  incrementalDom.elementOpen("div", "d3aebfec-26eb-4c5c-bc04-28fe0446a7ee", hoisted1$6);
-  incrementalDom.elementOpen("div", "b5eeb55b-f86f-4166-a6cd-358f72571ad0", hoisted2$4);
-  incrementalDom.elementOpen("div", "11a7167f-6df6-4ea0-bc9c-d2a5095e4cb7", hoisted3$4);
+  incrementalDom.elementOpen("div", "acfde1a1-8c07-46fd-9666-36e7e7d8daa8", hoisted1$6);
+  incrementalDom.elementOpen("div", "054e9228-aa27-439b-aeb3-7c9ceb3cdc71", hoisted2$4);
+  incrementalDom.elementOpen("div", "2f680d40-6407-4b7d-b83d-637a95b80261", hoisted3$4);
   incrementalDom.text("" + ctrl.heading + "");
   incrementalDom.elementClose("div");
-  incrementalDom.elementOpen("div", "c45b3229-588b-4cf1-ba08-393c18775f68", hoisted4$3);
+  incrementalDom.elementOpen("div", "c58c0617-9312-4338-81b2-cb9c2a9fb22d", hoisted4$3);
   if (!ctrl.added && !ctrl.earned && !ctrl.pending && !ctrl.multiple) {
-    incrementalDom.elementOpen("button", "6584b636-e0bd-4ea5-9093-47a0347ead28", hoisted5$3, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "c89eb81a-f4b1-44c1-8485-a89d2775ebbb", hoisted5$3, "onclick", function ($event) {
       var $element = this;
       ctrl.add(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "dae3b034-6478-452e-a0ba-38ac87dc6a27", hoisted6$3);
+    incrementalDom.elementOpen("img", "d7aa05e6-5988-4092-bf92-7fd1c0ad8792", hoisted6$3);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (!ctrl.earned && !ctrl.multiple && !ctrl.pending) {
-    incrementalDom.elementOpen("button", "0d65267a-9db9-4bc3-9b41-2271a1136662", hoisted7$3, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "77c0c866-ddc8-42a7-8020-40f1f0f371d6", hoisted7$3, "onclick", function ($event) {
       var $element = this;
       ctrl.addAndShowAchievementEditor(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "f944854c-6127-4d4a-a0a0-f57358d708ec", hoisted8$2);
+    incrementalDom.elementOpen("img", "f624f804-5abd-455d-841b-fdd8da3cbecd", hoisted8$2);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (ctrl.earned) {
-    incrementalDom.elementOpen("button", "7fa97037-ba59-4eec-8f59-992e8c03644d", hoisted9$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "b77167cf-ca81-47dc-a2a4-06b94016910a", hoisted9$1, "onclick", function ($event) {
       var $element = this;
       ctrl.showAwards(ctrl.iid, 'earned');
     });
-    incrementalDom.elementOpen("img", "f76c6c3e-315e-415d-945a-4c40f51b0642", hoisted10$1);
+    incrementalDom.elementOpen("img", "16158cbd-b159-44cb-a727-4bb50868f644", hoisted10$1);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (ctrl.pending) {
-    incrementalDom.elementOpen("button", "ac26889d-f409-4330-bbae-c4dfc094e21b", hoisted11, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "37c563fd-7464-4aec-8f50-e1b148a5b3ae", hoisted11, "onclick", function ($event) {
       var $element = this;
       ctrl.showAwards(ctrl.iid, 'pending');
     });
-    incrementalDom.elementOpen("img", "57a2b093-3ff7-474c-a3c6-3bcb36f9fa57", hoisted12);
+    incrementalDom.elementOpen("img", "5652d873-c82e-4c00-868f-62b845b90b5b", hoisted12);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
-  incrementalDom.elementOpen("button", "b4b4e3db-0138-4d22-b40e-b670e10cbb36", hoisted13, "onclick", function ($event) {
+  incrementalDom.elementOpen("button", "e9d54a76-7579-47c2-a918-ac8c1365427f", hoisted13, "onclick", function ($event) {
     var $element = this;
     ctrl.getHelp(ctrl.iid);
   });
-  incrementalDom.elementOpen("img", "cd034885-2bce-411b-974d-c1d9a6f4b5f9", hoisted14);
+  incrementalDom.elementOpen("img", "52d7b5c3-f06b-4d4b-9365-2e7d7127a6d3", hoisted14);
   incrementalDom.elementClose("img");
   incrementalDom.elementClose("button");
   if (ctrl.added || ctrl.pending || ctrl.earned) {
-    incrementalDom.elementOpen("button", "257c73f3-c660-4a78-8ed3-dcb03a4af02c", hoisted15, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "154800a5-d960-48f9-8cdb-4a58f4d182c0", hoisted15, "onclick", function ($event) {
       var $element = this;
       ctrl.delete(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "9658a567-b007-4956-9938-3ce5e19c9472", hoisted16);
+    incrementalDom.elementOpen("img", "ae2a4bb3-2441-4cb1-ad49-3788648e60f4", hoisted16);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
-  incrementalDom.elementOpen("button", "12f97875-c0b4-4ebc-bdbf-238cbf4b7a67", hoisted17);
+  incrementalDom.elementOpen("button", "b4578257-2a1f-4e9a-87b6-fbe928804dcf", hoisted17);
   incrementalDom.text("" + ctrl.achievements + "");
   incrementalDom.elementClose("button");
-  incrementalDom.elementOpen("button", "a9585bdd-c4f4-4d94-b912-d0b0c62ccd59", hoisted18, "onclick", function ($event) {
+  incrementalDom.elementOpen("button", "d7b3eb11-5b4e-41e1-92f6-70dc28c565b0", hoisted18, "onclick", function ($event) {
     var $element = this;
     ctrl.toggle();
   });
@@ -809,7 +807,7 @@ function render$6(ctrl) {
   incrementalDom.elementClose("button");
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("div");
-  incrementalDom.elementOpen("div", "fcdebcee-a00a-4683-abb8-8658cb730635", hoisted19);
+  incrementalDom.elementOpen("div", "cdcc1ba4-0e6c-46f0-8350-96e3f9466c53", hoisted19);
   incrementalDom.text("" + ctrl.description + "");
   incrementalDom.elementClose("div");
   if (ctrl.showAchievements) {
@@ -818,11 +816,11 @@ function render$6(ctrl) {
     incrementalDom.elementOpen("title");
     incrementalDom.text("Achievements:");
     incrementalDom.elementClose("title");
-    incrementalDom.elementOpen("button", "6ce264fe-f8ea-436b-8c42-2214deb7aa95", hoisted20, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "d6a23e3c-d02b-48bf-b756-768d438bb015", hoisted20, "onclick", function ($event) {
       var $element = this;
       ctrl.hideAchievements(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "b16e92c9-7aee-4cd2-9624-36eac518a404", hoisted21);
+    incrementalDom.elementOpen("img", "e0ef86b5-37c9-4e35-a482-6eff98e9c78a", hoisted21);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
     incrementalDom.elementClose("header");
@@ -830,7 +828,7 @@ function render$6(ctrl) {
     if (__target$6) {
       (__target$6.forEach ? __target$6 : Object.keys(__target$6)).forEach(function ($value, $item, $target) {
         var item = $value;
-        var $key = "44dc7775-6c5e-4930-940f-611c8940d808_" + $item;
+        var $key = "e6f949ad-2834-43ac-8e97-2ffb56303b29_" + $item;
         incrementalDom.elementOpen("section", $key, hoisted22);
         if (ctrl.awards[item].pending && parseInt(ctrl.awards[item].skillId, 10) === parseInt(ctrl.iid, 10)) {
           incrementalDom.elementOpen("story");
@@ -881,30 +879,30 @@ function render$6(ctrl) {
               someone will review and approve it. Please share your experience, and sign up to help others. \
             ");
     incrementalDom.elementClose("p");
-    incrementalDom.elementOpen("textarea", "152959f4-6555-4cce-8b6a-8d0d65dbb091", hoisted23);
+    incrementalDom.elementOpen("textarea", "4b7182e4-17a1-49bd-957b-8f7bd4f2ae90", hoisted23);
     incrementalDom.elementClose("textarea");
-    incrementalDom.elementOpen("div", "9bc599b5-3831-479c-885b-ef13dc699320", hoisted24);
-    incrementalDom.elementOpen("input", "57f9393c-b1b8-4f8e-b30b-6c38f8335188", hoisted25);
+    incrementalDom.elementOpen("div", "b5b3060a-e8c5-4da0-b2f3-676651b2f3bc", hoisted24);
+    incrementalDom.elementOpen("input", "cf025985-9e90-4236-9dad-805cc5992001", hoisted25);
     incrementalDom.elementClose("input");
     incrementalDom.elementOpen("span");
     incrementalDom.text("Yes, I'm willing to share my experience");
     incrementalDom.elementClose("span");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "69485070-576e-488b-b5a1-8f7ee419239f", hoisted26);
-    incrementalDom.elementOpen("input", "046f3c9f-c2bd-43ee-9da3-42a6a582196f", hoisted27);
+    incrementalDom.elementOpen("div", "6f8ae287-ea8c-40c7-be38-f87e56e255e5", hoisted26);
+    incrementalDom.elementOpen("input", "ab1185e2-c4d1-4cf5-9048-97e8055e0366", hoisted27);
     incrementalDom.elementClose("input");
     incrementalDom.elementOpen("span");
     incrementalDom.text("Yes, I'm willing to help others achieve this skill.");
     incrementalDom.elementClose("span");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "89083e0a-f8c3-4e22-957e-92643749368f", hoisted28);
-    incrementalDom.elementOpen("button", "027cf1a0-8b9b-454d-818f-bb6c0df39d95", hoisted29, "onclick", function ($event) {
+    incrementalDom.elementOpen("div", "380707d6-8348-4286-9990-3c3e975bd06a", hoisted28);
+    incrementalDom.elementOpen("button", "2f6d612e-1b9c-4d20-9fa4-7007885316e0", hoisted29, "onclick", function ($event) {
       var $element = this;
       ctrl.applyForAchievment();
     });
     incrementalDom.text("Apply");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("a", "023564e1-7457-4ec3-884d-50328d912467", hoisted30, "onclick", function ($event) {
+    incrementalDom.elementOpen("a", "e5db90cf-dcbc-4b5f-b44c-b920a53fae83", hoisted30, "onclick", function ($event) {
       var $element = this;
       ctrl.hideSkillEditor();
     });
@@ -914,7 +912,7 @@ function render$6(ctrl) {
     incrementalDom.elementClose("skill-editor");
   }
   if (!ctrl.collapsed) {
-    incrementalDom.elementOpen("div", "5547ac2f-850a-460c-afd9-2cfff2f845b7", hoisted31);
+    incrementalDom.elementOpen("div", "61458610-a5ce-4f95-9d31-cca27efb29eb", hoisted31);
     if (ctrl.html && ctrl.html !== '') {
       var el = incrementalDom.currentElement();
       el.innerHTML = ctrl.html;
@@ -1249,12 +1247,12 @@ var hoisted1$7 = ["type", "text", "name", "search-goals", "placeholder", "Search
 var hoisted2$5 = ["type", "button", "add-button", ""];
 function render$7(ctrl) {
   incrementalDom.elementOpen("header");
-  incrementalDom.elementOpen("input", "b9b28265-0174-44b8-9406-2dd47440c66b", hoisted1$7, "onkeyup", function ($event) {
+  incrementalDom.elementOpen("input", "762dd913-2490-4f35-92b4-09cca704ad8d", hoisted1$7, "onkeyup", function ($event) {
     var $element = this;
     ctrl.goalSearch(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("button", "b9ed71f7-9d9f-4cf2-b9c5-e30267c5c355", hoisted2$5);
+  incrementalDom.elementOpen("button", "2cd645fa-e2fb-4e03-87a7-765d931ef2e0", hoisted2$5);
   incrementalDom.text("Add");
   incrementalDom.elementClose("button");
   incrementalDom.elementClose("header");
@@ -1326,52 +1324,52 @@ var hoisted10$2 = ["for", "reports-tab-control"];
 function render$8(ctrl) {
   incrementalDom.elementOpen("tabs");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "86463111-21f1-4e4d-8484-692459ac5c8e", hoisted1$8, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "795d922e-a278-427b-8c73-a730a60d41c5", hoisted1$8, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "eab1aa3f-6a9a-4fcc-ad3d-2a15f62d01fe", hoisted2$6);
+  incrementalDom.elementOpen("label", "208c7ebb-ed8f-4015-b668-9faafd3cbe39", hoisted2$6);
   incrementalDom.text("Users");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "7a76244d-c539-45c7-847f-51218f18e95b", hoisted3$5, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "5b94393f-494c-4593-b8e8-22adc44392eb", hoisted3$5, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "f78931c1-fc99-4e67-8c88-2a49bdc02dbb", hoisted4$4);
+  incrementalDom.elementOpen("label", "835fe465-0bdd-4d5b-85f5-75cac008eb5d", hoisted4$4);
   incrementalDom.text("Skills");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "cf3879ea-c942-406f-a173-47aada7d5b8d", hoisted5$4, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "a824cdbd-7e59-49e2-9163-b9c8c1f82f7c", hoisted5$4, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "c184543a-e906-4b55-8e3b-8f392acde0e7", hoisted6$4);
+  incrementalDom.elementOpen("label", "1533da24-5b38-4efd-96ef-c3fef0b7de63", hoisted6$4);
   incrementalDom.text("Awards");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "bf015779-539d-4df3-b959-32647df9f05d", hoisted7$4, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "700312fe-bff2-47e9-85d3-79b3281652af", hoisted7$4, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "44a4cb5e-2802-4b4d-a942-5892085d1b7f", hoisted8$3);
+  incrementalDom.elementOpen("label", "12060036-1871-4be5-a8d9-54d1b1886276", hoisted8$3);
   incrementalDom.text("Assistance");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
   incrementalDom.elementOpen("tab");
-  incrementalDom.elementOpen("input", "c180948e-237b-4a7a-84d9-4e8ea40a264e", hoisted9$2, "onclick", function ($event) {
+  incrementalDom.elementOpen("input", "668d08b4-208c-4d4d-95b8-79ac13e2d419", hoisted9$2, "onclick", function ($event) {
     var $element = this;
     ctrl.selectTab(this.value);
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("label", "554fb3c0-bdbe-4afb-b6ea-bd49ac8d3679", hoisted10$2);
+  incrementalDom.elementOpen("label", "c37bebf5-5929-497a-9865-9a83d20883f5", hoisted10$2);
   incrementalDom.text("Reports");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("tab");
@@ -1449,26 +1447,26 @@ var hoisted10$3 = ["name", "awards"];
 var hoisted11$1 = ["class", "row"];
 var hoisted12$1 = ["type", "button", "class", "primary", "name", "accept"];
 function render$10(ctrl) {
-  incrementalDom.elementOpen("section", "c85c7ab2-29ce-4209-a600-d1969e623d1a", hoisted1$9);
-  incrementalDom.elementOpen("input", "da1fc9a4-2113-472a-8524-dcf60f79c442", hoisted2$7);
+  incrementalDom.elementOpen("section", "9007ce48-b211-4563-a5c4-d7b2ae644ede", hoisted1$9);
+  incrementalDom.elementOpen("input", "587ed0f2-92c3-47d6-8b97-77edcea896b8", hoisted2$7);
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("div", "af79dc8d-7f52-41c2-8619-a541d213ac94", hoisted3$6);
-  incrementalDom.elementOpen("label", "86539eed-05f9-4555-973b-db471aba5668", hoisted4$5);
-  incrementalDom.elementOpen("input", "5ccdbde1-37b8-459b-8c0f-adeee032e9e5", hoisted5$5);
+  incrementalDom.elementOpen("div", "78aa0b4c-4879-4779-bdee-01eeaa605ea9", hoisted3$6);
+  incrementalDom.elementOpen("label", "b4abbd81-14b9-490e-9c0d-ff20546ff7bb", hoisted4$5);
+  incrementalDom.elementOpen("input", "0f15b56b-2c67-4135-8954-1e30f6873091", hoisted5$5);
   incrementalDom.elementClose("input");
   incrementalDom.text(" \
             All \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "f57c9d4a-3e82-4b56-9d06-9c77fc9ee24f", hoisted6$5);
-  incrementalDom.elementOpen("input", "a4319220-1883-4ad7-a50c-657165a0731d", hoisted7$5);
+  incrementalDom.elementOpen("label", "9a1ad9d0-6db6-483c-b7ea-3a00d05260ac", hoisted6$5);
+  incrementalDom.elementOpen("input", "e84f945e-eef5-4112-a98e-8d1671cb6b52", hoisted7$5);
   incrementalDom.elementClose("input");
   incrementalDom.text(" \
             Pending \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "7ddcc065-9506-4b45-ba11-ef67f49d18cc", hoisted8$4);
-  incrementalDom.elementOpen("input", "9ef12d61-6a7d-4810-9367-4fe37f1f732b", hoisted9$3);
+  incrementalDom.elementOpen("label", "a3674765-569c-4e03-b85d-a5c4cf147f03", hoisted8$4);
+  incrementalDom.elementOpen("input", "a29e0ba4-f9db-463c-b981-d41b3ae18678", hoisted9$3);
   incrementalDom.elementClose("input");
   incrementalDom.text(" \
             Earned \
@@ -1476,8 +1474,8 @@ function render$10(ctrl) {
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("section");
-  incrementalDom.elementOpen("section", "6cfb2b29-1837-4386-92c3-838b155eebe4", hoisted10$3);
-  incrementalDom.elementOpen("div", "ad3f9837-5622-4da0-b1a9-c224f7c20353", hoisted11$1);
+  incrementalDom.elementOpen("section", "341402ec-d02d-43e4-98bc-ebe845fde60d", hoisted10$3);
+  incrementalDom.elementOpen("div", "2a7959ac-9531-4296-a6fd-7159c6217c7a", hoisted11$1);
   incrementalDom.elementOpen("user");
   incrementalDom.elementOpen("name");
   incrementalDom.text("Name");
@@ -1530,7 +1528,7 @@ function render$10(ctrl) {
   incrementalDom.elementOpen("name");
   incrementalDom.elementClose("name");
   incrementalDom.elementOpen("value");
-  incrementalDom.elementOpen("button", "9585c624-b205-406a-bc7b-c9c53837afeb", hoisted12$1);
+  incrementalDom.elementOpen("button", "b06416bb-da41-4379-bd94-920894d8b8e1", hoisted12$1);
   incrementalDom.text("Accept");
   incrementalDom.elementClose("button");
   incrementalDom.elementClose("value");
@@ -1669,12 +1667,12 @@ var __target$12;
 function render$12(ctrl) {
   if (!ctrl.skillEditor) {
     incrementalDom.elementOpen("skills-search");
-    incrementalDom.elementOpen("input", "a32e1a04-42d8-4218-808f-72999f47259e", hoisted1$10, "onkeyup", function ($event) {
+    incrementalDom.elementOpen("input", "7c1c3520-ed90-4341-a43b-000d216e1006", hoisted1$10, "onkeyup", function ($event) {
       var $element = this;
       ctrl.filterSkills(this.value);
     });
     incrementalDom.elementClose("input");
-    incrementalDom.elementOpen("button", "903f4c03-6a66-40ee-a698-4a44392457aa", hoisted2$8, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "619cdd7d-36c7-4e92-b7ec-9434c4be1916", hoisted2$8, "onclick", function ($event) {
       var $element = this;
       ctrl.addSkill();
     });
@@ -1684,12 +1682,12 @@ function render$12(ctrl) {
   }
   incrementalDom.elementOpen("skills-list");
   if (ctrl.skillEditor) {
-    incrementalDom.elementOpen("form", "32836eb5-5535-40d6-8a35-b81affb08dd8", hoisted3$7);
+    incrementalDom.elementOpen("form", "48944d0f-236c-4e51-ae05-d975301f4d50", hoisted3$7);
     incrementalDom.elementOpen("skill-editor-title");
     incrementalDom.elementOpen("label");
     incrementalDom.text("Title:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "1384c61a-82fe-4a8f-9ac1-38b2faf7f660", hoisted4$6, "name", ctrl.skill.title, "value", ctrl.skill.title, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "4a5b8409-c013-4c7a-a210-7d5737237b54", hoisted4$6, "name", ctrl.skill.title, "value", ctrl.skill.title, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.title = this.value;
     });
@@ -1699,7 +1697,7 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Description:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "24a8dc06-2255-4196-9e6f-f5380e47d536", hoisted5$6, "name", ctrl.skill.description, "value", ctrl.skill.description, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "51c226c7-c9f4-47f5-875a-e7ef981bbf46", hoisted5$6, "name", ctrl.skill.description, "value", ctrl.skill.description, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.description = this.value;
     });
@@ -1709,23 +1707,23 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Category:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("select", "d445ff28-2d80-4809-b1a4-b7936d28141c", hoisted6$6, "onchange", function ($event) {
+    incrementalDom.elementOpen("select", "683ddef8-0138-4f59-92dd-653ac6553357", hoisted6$6, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.category = this.value;
     });
-    incrementalDom.elementOpen("option", "40046fa7-7506-4bb4-b892-64b681d39451", hoisted7$6);
+    incrementalDom.elementOpen("option", "5a75d750-e963-4115-8da6-1712f3519ca0", hoisted7$6);
     incrementalDom.text("Select");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "7eb12a42-a38f-425f-a643-7b4abf8207dc", hoisted8$5, "selected", ctrl.skill.category === 'booklet' ? true : null);
+    incrementalDom.elementOpen("option", "7d6e00c9-b877-465e-bbe7-23e86d5b829b", hoisted8$5, "selected", ctrl.skill.category === 'booklet' ? true : null);
     incrementalDom.text("Booklet");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "002d43f4-778b-4fcf-b391-aa900ca7b4f0", hoisted9$4, "selected", ctrl.skill.category === 'find' ? true : null);
+    incrementalDom.elementOpen("option", "2fbd3b57-c7a8-4797-85e7-90f45d836e0a", hoisted9$4, "selected", ctrl.skill.category === 'find' ? true : null);
     incrementalDom.text("Find");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "1ae1e085-84fa-491f-a9b5-54cb892a7eb3", hoisted10$4, "selected", ctrl.skill.category === 'take' ? true : null);
+    incrementalDom.elementOpen("option", "3fa155bd-d8e6-4c43-bea7-4bde6da4d47b", hoisted10$4, "selected", ctrl.skill.category === 'take' ? true : null);
     incrementalDom.text("Take");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "03cc8b01-d3aa-4ab4-a3ed-aa7007cf3990", hoisted11$2, "selected", ctrl.skill.category === 'indexing' ? true : null);
+    incrementalDom.elementOpen("option", "c1b9aef5-0d97-4b36-aa25-3f081f91ae1f", hoisted11$2, "selected", ctrl.skill.category === 'indexing' ? true : null);
     incrementalDom.text("Indexing");
     incrementalDom.elementClose("option");
     incrementalDom.elementClose("select");
@@ -1734,7 +1732,7 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Allow Multiple:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "c2d3ebf3-d9e3-4376-aa48-9cf5ce7fdfb8", hoisted12$2, "checked", ctrl.skill.multiple, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "541fc7ae-0213-4561-a3fb-aa31ba72c644", hoisted12$2, "checked", ctrl.skill.multiple, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.multiple = this.checked;
     });
@@ -1744,23 +1742,23 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Instructions:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("div", "e6f4fb2a-8f74-4ad6-aa3d-883fcb281998", hoisted13$1);
+    incrementalDom.elementOpen("div", "866f5945-5b72-48ea-a5b2-8a11e9312755", hoisted13$1);
     incrementalDom.elementClose("div");
     incrementalDom.elementClose("skill-editor-instructions");
     incrementalDom.elementOpen("skill-editor-actions");
-    incrementalDom.elementOpen("button", "8f92e615-9dde-420d-a340-67eb6eabf13d", hoisted14$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "06b62c0f-2163-453d-8496-915fcb466c90", hoisted14$1, "onclick", function ($event) {
       var $element = this;
       ctrl.saveSkill();
     });
     incrementalDom.text("Save");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("button", "d276c7f1-47c2-4923-9b0b-e97285ee66ea", hoisted15$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "845661bb-64e7-45dd-bc29-dfbc5bafcefe", hoisted15$1, "onclick", function ($event) {
       var $element = this;
       ctrl.deleteSkill();
     });
     incrementalDom.text("Delete");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("button", "ee23076d-cd45-45f2-bb56-ce07bbd5744b", hoisted16$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "389f7195-22c9-492b-82c5-d5c47a16d96f", hoisted16$1, "onclick", function ($event) {
       var $element = this;
       ctrl.cancelEdit();
     });
@@ -1774,18 +1772,18 @@ function render$12(ctrl) {
     if (__target$12) {
       (__target$12.forEach ? __target$12 : Object.keys(__target$12)).forEach(function ($value, $item, $target) {
         var skill = $value;
-        var $key = "6ef008c2-02ab-4744-8e7f-ebce4856ca14_" + $item;
+        var $key = "8e9ede05-063b-4bc4-92e1-ea42ee5af8ff_" + $item;
         incrementalDom.elementOpen("skill-item", $key, null, "class", $item % 2 ? 'odd' : 'even');
-        incrementalDom.elementOpen("div", "f02e3027-03d5-4a25-9898-6ad05978ba89_" + $key, hoisted17$1);
-        incrementalDom.elementOpen("div", "bbd382ee-3a7c-4c81-b880-7e68993903f2_" + $key, hoisted18$1);
+        incrementalDom.elementOpen("div", "9d5b4ea6-5544-4e67-a723-114a6bc00902_" + $key, hoisted17$1);
+        incrementalDom.elementOpen("div", "170af646-d36b-43ac-86b0-563facfde90e_" + $key, hoisted18$1);
         incrementalDom.text("" + skill.title + "");
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "49ec5a32-95c9-465f-9a87-fd11b6f59ee8_" + $key, hoisted19$1);
+        incrementalDom.elementOpen("div", "22cf7a0c-49b3-4a7a-aa55-1d8041d9822c_" + $key, hoisted19$1);
         incrementalDom.text("" + skill.description + "");
         incrementalDom.elementClose("div");
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "63c5e971-9e54-43fb-b219-7b72f907f735_" + $key, hoisted20$1);
-        incrementalDom.elementOpen("button", "47953fe6-d6d7-43ff-b395-323e0761a942_" + $key, hoisted21$1, "disabled", ctrl.skillFormValid, "onclick", function ($event) {
+        incrementalDom.elementOpen("div", "fcb74e3f-9dbc-43c5-bb3c-e889494a9f03_" + $key, hoisted20$1);
+        incrementalDom.elementOpen("button", "03dfe7d0-a900-414e-a55d-c3344fecbec6_" + $key, hoisted21$1, "disabled", ctrl.skillFormValid, "onclick", function ($event) {
           var $element = this;
           ctrl.editSkill($value);
         });
@@ -1939,7 +1937,7 @@ var __target$13;
 function render$13(ctrl) {
   if (!ctrl.userEditor) {
     incrementalDom.elementOpen("users-search");
-    incrementalDom.elementOpen("input", "2456a32a-5554-4b88-a264-d0e6474e7d86", hoisted1$11, "onkeyup", function ($event) {
+    incrementalDom.elementOpen("input", "328b3186-a70e-401b-9b01-f1204d5c317b", hoisted1$11, "onkeyup", function ($event) {
       var $element = this;
       ctrl.filterUsers(this.value);
     });
@@ -1948,12 +1946,12 @@ function render$13(ctrl) {
   }
   incrementalDom.elementOpen("users-list");
   if (ctrl.userEditor) {
-    incrementalDom.elementOpen("form", "17f59b12-628f-4db1-ab68-3104c63ad2c5", hoisted2$9);
+    incrementalDom.elementOpen("form", "43249d78-4975-4ae3-8b74-ace77bff0d1f", hoisted2$9);
     incrementalDom.elementOpen("user-editor-name");
     incrementalDom.elementOpen("label");
     incrementalDom.text("Certificate Name:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "49658b7c-45ca-4502-980e-2096e26cfc43", hoisted3$8, "value", ctrl.user.name, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "a6174123-52e3-4abb-aa45-22e05bcf4ad0", hoisted3$8, "value", ctrl.user.name, "onchange", function ($event) {
       var $element = this;
       ctrl.user.name = this.value;
     });
@@ -1963,7 +1961,7 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Display Name:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "f3c3c1d9-0707-4ca4-8283-d7ada576b821", hoisted4$7, "name", ctrl.user.displayName, "value", ctrl.user.displayName, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "5ffd35ea-e21a-4e40-a4d9-5efd38f28224", hoisted4$7, "name", ctrl.user.displayName, "value", ctrl.user.displayName, "onchange", function ($event) {
       var $element = this;
       ctrl.user.displayName = this.value;
     });
@@ -1973,7 +1971,7 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Email:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "5f69dc09-6661-4b94-b20b-d5e76750d167", hoisted5$7, "name", ctrl.user.email, "value", ctrl.user.email, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "9971d6ca-f2b8-48dc-a00d-55f8447ddf1a", hoisted5$7, "name", ctrl.user.email, "value", ctrl.user.email, "onchange", function ($event) {
       var $element = this;
       ctrl.user.email = this.value;
     });
@@ -1983,41 +1981,41 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Organization:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("select", "2a0bf223-d9b2-4a43-b808-06f9fc8c2fca", hoisted6$7, "onchange", function ($event) {
+    incrementalDom.elementOpen("select", "80012308-f80d-4178-a250-292436719b4a", hoisted6$7, "onchange", function ($event) {
       var $element = this;
       ctrl.user.group = this.value;
     });
-    incrementalDom.elementOpen("option", "0f5048cc-d6ed-4447-ae78-ae798aab584f", hoisted7$7);
+    incrementalDom.elementOpen("option", "cb5035e8-d6ef-4801-acd8-dd7e5e260a2f", hoisted7$7);
     incrementalDom.text("Select");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "16db1126-4acd-402d-b713-c58496f09bee", hoisted8$6, "selected", ctrl.user.group === 'be' ? true : null);
+    incrementalDom.elementOpen("option", "b9a20da1-ea4f-4cf3-9f56-c897448bf1a3", hoisted8$6, "selected", ctrl.user.group === 'be' ? true : null);
     incrementalDom.text("Beehive");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "6a17710e-8744-4802-a6b1-9ac39c1d7ab6", hoisted9$5, "selected", ctrl.user.group === 'dn' ? true : null);
+    incrementalDom.elementOpen("option", "141dbeb2-0afc-4531-a039-afce557dcfe3", hoisted9$5, "selected", ctrl.user.group === 'dn' ? true : null);
     incrementalDom.text("Deacon");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "4b9cf8b8-37e1-469e-8bb9-4ead87eebe6a", hoisted10$5, "selected", ctrl.user.group === 'eq' ? true : null);
+    incrementalDom.elementOpen("option", "cfb3d432-384d-47a4-bb46-5a47367f45b4", hoisted10$5, "selected", ctrl.user.group === 'eq' ? true : null);
     incrementalDom.text("Elders");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "071098e4-7708-47ca-9e6b-302a00f3e42a", hoisted11$3, "selected", ctrl.user.group === 'hp' ? true : null);
+    incrementalDom.elementOpen("option", "d435ca8a-06ae-4a9b-ad53-caefd1c27a9a", hoisted11$3, "selected", ctrl.user.group === 'hp' ? true : null);
     incrementalDom.text("High Priest");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "6957e4a8-017d-44d4-adbb-37d8ab678b35", hoisted12$3, "selected", ctrl.user.group === 'll' ? true : null);
+    incrementalDom.elementOpen("option", "73ff9dc1-baaf-46fe-ada4-324ec1d4b3ce", hoisted12$3, "selected", ctrl.user.group === 'll' ? true : null);
     incrementalDom.text("Laurel");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "d19896af-a040-4c39-b97b-395fc07a5b63", hoisted13$2, "selected", ctrl.user.group === 'mm' ? true : null);
+    incrementalDom.elementOpen("option", "76e9c2cf-fa25-4472-8637-82365081c0c2", hoisted13$2, "selected", ctrl.user.group === 'mm' ? true : null);
     incrementalDom.text("Miamaid");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "1faede9e-ebc4-48c8-b8f2-d0b8be220b61", hoisted14$2, "selected", ctrl.user.group === 'pr' ? true : null);
+    incrementalDom.elementOpen("option", "845c8a80-5758-46d8-a41b-b8f4ea5dbdf4", hoisted14$2, "selected", ctrl.user.group === 'pr' ? true : null);
     incrementalDom.text("Priest");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "3e2683e2-bc30-4cd5-8164-937e39ec3656", hoisted15$2, "selected", ctrl.user.group === 'py' ? true : null);
+    incrementalDom.elementOpen("option", "d1a99581-8a9e-49b5-8d49-a69c6718c42c", hoisted15$2, "selected", ctrl.user.group === 'py' ? true : null);
     incrementalDom.text("Primary");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "79e06be7-5b5b-4a33-8a41-3f54ad93180d", hoisted16$2, "selected", ctrl.user.group === 'rs' ? true : null);
+    incrementalDom.elementOpen("option", "895c68c0-8fdc-4ed6-9559-6918f1cb0e8b", hoisted16$2, "selected", ctrl.user.group === 'rs' ? true : null);
     incrementalDom.text("Relief Society");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "a4312d7f-4f82-492a-adb9-3213d605e7bc", hoisted17$2, "selected", ctrl.user.group === 'tr' ? true : null);
+    incrementalDom.elementOpen("option", "548550a1-68bc-4bed-b4a9-cfd446a7ea6f", hoisted17$2, "selected", ctrl.user.group === 'tr' ? true : null);
     incrementalDom.text("Teacher");
     incrementalDom.elementClose("option");
     incrementalDom.elementClose("select");
@@ -2026,20 +2024,20 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Admin:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "7f4805bc-00ad-4464-b605-a5442322ff67", hoisted18$2, "checked", ctrl.user.admin ? true : null, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "be38dea3-897e-4b31-b002-b7681f0a63fe", hoisted18$2, "checked", ctrl.user.admin ? true : null, "onchange", function ($event) {
       var $element = this;
       ctrl.user.admin = this.checked;
     });
     incrementalDom.elementClose("input");
     incrementalDom.elementClose("user-admin");
     incrementalDom.elementOpen("user-editor-actions");
-    incrementalDom.elementOpen("button", "b869e7d2-a8e5-484b-9947-be63f803e2f3", hoisted19$2, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "f1e69f2b-d4b5-4043-8675-1e4d29fa42af", hoisted19$2, "onclick", function ($event) {
       var $element = this;
       ctrl.saveUser();
     });
     incrementalDom.text("Save");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("button", "12ce0951-5471-4b23-b0d2-442070ed5f56", hoisted20$2, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "f8f525af-b34c-4f6e-8f6c-9bc143b415be", hoisted20$2, "onclick", function ($event) {
       var $element = this;
       ctrl.cancelEdit();
     });
@@ -2053,28 +2051,28 @@ function render$13(ctrl) {
     if (__target$13) {
       (__target$13.forEach ? __target$13 : Object.keys(__target$13)).forEach(function ($value, $item, $target) {
         var user = $value;
-        var $key = "4db2212a-3932-46e9-a25a-82e30eb6fc97_" + $item;
+        var $key = "02deef85-4417-4585-8086-7ee243794073_" + $item;
         incrementalDom.elementOpen("user-item", $key, null, "class", $item % 2 ? 'odd' : 'even');
-        incrementalDom.elementOpen("div", "d111faa0-8b2c-4fbd-b950-cef7226aa1d4_" + $key, hoisted21$2);
+        incrementalDom.elementOpen("div", "b5ca7a56-0b38-4304-83c1-e2da47546c20_" + $key, hoisted21$2);
         if (user.name) {
-          incrementalDom.elementOpen("div", "9f03fd55-c4a5-48e7-b937-c74a9b66709a_" + $key, hoisted22$1);
+          incrementalDom.elementOpen("div", "e9952a52-e183-4c0e-823c-3029b9767d75_" + $key, hoisted22$1);
           incrementalDom.text("" + user.name + "");
           incrementalDom.elementClose("div");
         }
-        incrementalDom.elementOpen("div", "60382e92-9240-4e4a-873c-bf468bd081a7_" + $key, hoisted23$1);
+        incrementalDom.elementOpen("div", "6063d6f1-e11c-4d5a-9233-e79b0d10fa82_" + $key, hoisted23$1);
         incrementalDom.text("" + user.displayName + "");
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "10689367-7467-419f-98d0-c86435a2a4b1_" + $key, hoisted24$1);
+        incrementalDom.elementOpen("div", "06cea023-7fd5-41a3-b090-4734714d0a55_" + $key, hoisted24$1);
         incrementalDom.text("" + user.email + "");
         incrementalDom.elementClose("div");
         if (user.group) {
-          incrementalDom.elementOpen("div", "8711fa9a-e20e-4dd7-9802-ab98b1fa422d_" + $key, hoisted25$1);
+          incrementalDom.elementOpen("div", "032bb449-f409-41af-bd8d-3b2a33acf1ca_" + $key, hoisted25$1);
           incrementalDom.text("" + ctrl.getGroupName(user) + "");
           incrementalDom.elementClose("div");
         }
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "075ff71e-dbdc-4ed7-8531-b79128e219be_" + $key, hoisted26$1);
-        incrementalDom.elementOpen("button", "3a4c3d1e-96f3-4b2b-a7c8-5d4b295da0f0_" + $key, hoisted27$1, "disabled", ctrl.userFormValid, "onclick", function ($event) {
+        incrementalDom.elementOpen("div", "228a3306-ee55-4132-8904-f3e3348164cd_" + $key, hoisted26$1);
+        incrementalDom.elementOpen("button", "d0f2be69-9693-432b-a490-072525cf9120_" + $key, hoisted27$1, "disabled", ctrl.userFormValid, "onclick", function ($event) {
           var $element = this;
           ctrl.editUser($value);
         });
@@ -2320,14 +2318,14 @@ function render$14(ctrl) {
   	2. Use License \
   ");
   incrementalDom.elementClose("h3");
-  incrementalDom.elementOpen("ol", "2bc4381e-3c4f-499e-80fe-3dde7ccdc518", hoisted1$12);
+  incrementalDom.elementOpen("ol", "4fe76b5a-d3c9-46cf-92ff-a165b6d656cc", hoisted1$12);
   incrementalDom.elementOpen("li");
   incrementalDom.text(" \
         Permission is granted to temporarily download one copy of the materials (information or software) on Manila 7th Ward's web site for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this \
         license you may not: \
      \
         ");
-  incrementalDom.elementOpen("ol", "2d6dbc0f-46c2-4649-bdc4-e7fbce8b1227", hoisted2$10);
+  incrementalDom.elementOpen("ol", "514b3443-ee30-48d0-a15d-d60c8cd3dacb", hoisted2$10);
   incrementalDom.elementOpen("li");
   incrementalDom.text("modify or copy the materials;");
   incrementalDom.elementClose("li");
@@ -2357,7 +2355,7 @@ function render$14(ctrl) {
   	3. Disclaimer \
   ");
   incrementalDom.elementClose("h3");
-  incrementalDom.elementOpen("ol", "6cf6faf4-1f1c-4cfd-b915-7838af7db1ab", hoisted3$9);
+  incrementalDom.elementOpen("ol", "dedb22e1-7cb9-4aaf-98ca-ac10dc73cfcb", hoisted3$9);
   incrementalDom.elementOpen("li");
   incrementalDom.text(" \
         The materials on Manila 7th Ward's web site are provided 'as is'. Manila 7th Ward makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, \

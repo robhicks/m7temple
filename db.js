@@ -29,7 +29,7 @@ db.on('loaded', () => {
 });
 
 function updateDb(db, changes) {
-  console.log("changes", changes)
+  // console.log("changes", changes)
   try {
     changes.forEach((change) => {
       let coll = db.getCollection(change.name);
