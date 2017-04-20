@@ -2606,6 +2606,7 @@ customElements.define('app-router', AppRouter);
 
 var socket = socketCluster.connect();
 
+// const idbAdapter = new LokiIndexedAdapter('loki');
 var db = new loki('m7temple.db', { autosave: true });
 
 var updateDbChannel = void 0;
