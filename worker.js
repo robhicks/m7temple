@@ -34,7 +34,8 @@ module.exports.run = (worker) => {
       FACEBOOK_KEY: process.env.FACEBOOK_KEY,
       GITHUB_KEY: process.env.GITHUB_KEY,
       GOOGLE_KEY: process.env.GOOGLE_KEY,
-      TWITTER_KEY: process.env.TWITTER_KEY
+      TWITTER_KEY: process.env.TWITTER_KEY,
+      REDIRECT_URL: process.env.REDIRECT_URL
     }});
   });
 

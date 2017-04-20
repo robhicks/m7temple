@@ -16,7 +16,7 @@ hello.init({
   google: window.SERVER_ENV.GOOGLE_KEY,
   twitter: window.SERVER_ENV.TWITTER_KEY
 }, {
-  redirect_uri: 'http://localhost:5000/oauth2callback',
+  redirect_uri: window.SERVER_ENV.REDIRECT_URL,
   scope: 'email'
 });
 
