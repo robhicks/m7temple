@@ -44,7 +44,7 @@ class SkillsAdmin extends HTMLElement {
   }
 
   disconnectedCallback() {
-
+    if (this.dv) this.dv.removeFilters();
   }
 
   editSkill(skill = {}) {
@@ -60,9 +60,14 @@ class SkillsAdmin extends HTMLElement {
   filterSkills(val) {
     let str = val ? val.toLowerCase() : null;
 
-    this.dv.applyWhere((skill) => skill.title.toLowerCase().indexOf(str) !== -1
-      || skill.description.toLowerCase().indexOf(str) !== -1
-      || skill.category.toLowerCase().indexOf(str) !== -1);
+    // console.log("str", str)
+    this.dv.removeFilters();
+
+    this.dv.applyWhere((skill) => {
+      if (skill.title && skill.title.toLowerCase().indexOf(str) !== -1) return true;
+      if (skill.description && skill.description.toLowerCase().indexOf(str) !== -1) return true;
+      if (skill.category && skill.category.toLowerCase().indexOf(str) !== -1) return true;
+    });
 
     if (!str || str === '') {
       this.dv.removeFilters();
@@ -83,6 +88,7 @@ class SkillsAdmin extends HTMLElement {
   }
 
   _updateView() {
+    console.log('skills-admin:_updateView');
     this.viewSkills = this.dv.data();
     if (this.element) patch(this.element, render, this);
   }

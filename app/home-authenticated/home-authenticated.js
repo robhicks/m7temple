@@ -63,16 +63,20 @@ class HomeAuthenticated extends HTMLElement {
   }
 
   disconnectedCallback() {
-
+    this.adv.removeFilters();
+    this.sdv.removeFilters();
   }
 
   filterSkills(val) {
     let str = val ? val.toLowerCase() : null;
-    if (!str || str === '') this.skills = JSON.parse(JSON.stringify(this.skills));
-    else {
-      this.skills = this.skills.filter((skill) => skill.title.toLowerCase().indexOf(str) !== -1
-        || skill.description.toLowerCase().indexOf(str) !== -1
-        || skill.category.toLowerCase().indexOf(str) !== -1);
+    // console.log("str", str);
+    this.sdv.removeFilters();
+    if (str) {
+      this.sdv.applyWhere((skill) => {
+        if (skill.title && skill.title.toLowerCase().indexOf(str) !== -1) return true;
+        if (skill.description && skill.description.toLowerCase().indexOf(str) !== -1) return true;
+        if (skill.category && skill.category.toLowerCase().indexOf(str) !== -1) return true;
+      });
     }
     this._updateView();
   }
