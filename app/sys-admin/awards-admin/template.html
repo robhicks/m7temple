@@ -1,50 +1,52 @@
 <section name="header">
-  <input type="text" name="search" value="" placeholder="Search ...">
+  <input type="text" name="search" value="" placeholder="Search ..." onkeyup="{ctrl.filterAwards(this.value)}">
   <div id="filter">
     <label for="">
-      <input type="radio" name="awardsFilter" value="">
+      <input type="radio" name="awardsType" value="added" checked onchange="{ctrl.filterByType(this.value)}">
       All
     </label>
     <label for="">
-      <input type="radio" name="awardsFilter" value="" checked>
+      <input type="radio" name="awardsType" value="pending" onchange="{ctrl.filterByType(this.value)}">
       Pending
     </label>
     <label for="">
-      <input type="radio" name="awardsFilter" value="">
+      <input type="radio" name="awardsType" value="earned" onchange="{ctrl.filterByType(this.value)}">
       Earned
     </label>
   </div>
 </section>
-<section name="awards">
-  <div class="row">
+<section name="awards" if="ctrl.awards.length > 0">
+  <div class="row" each="award in ctrl.awards">
     <user>
       <name>Name</name>
-      <value>Rob Hicks</value>
+      <value>{award.user.displayName}</value>
     </user>
     <skill>
       <name>Skill</name>
-      <value>My Family</value>
+      <value>{award.skill.title}</value>
     </skill>
     <date>
       <name>Date</name>
-      <value>March 31</value>
+      <value>{award.date}</value>
     </date>
     <help>
       <name>Will Help</name>
-      <value>Yes</value>
+      <value if="award.help">Yes</value>
+      <value if="!award.help">No</value>
     </help>
     <share>
       <name>Will Share</name>
-      <value>Yes</value>
+      <value if="award.share">Yes</value>
+      <value if="!award.share">No</value>
     </share>
     <story>
       <name>Story</name>
-      <value>My Story</value>
+      <value>{award.story}</value>
     </story>
     <actions>
       <name></name>
       <value>
-        <button type="button" class="primary" name="accept">Accept</button>
+        <button if="award.pending" type="button" class="primary" name="accept">Accept</button>
       </value>
     </actions>
   </div>

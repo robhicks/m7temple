@@ -1445,35 +1445,49 @@ var hoisted1$9 = ["name", "header"];
 var hoisted2$7 = ["type", "text", "name", "search", "value", "", "placeholder", "Search ..."];
 var hoisted3$6 = ["id", "filter"];
 var hoisted4$5 = ["for", ""];
-var hoisted5$5 = ["type", "radio", "name", "awardsFilter", "value", ""];
+var hoisted5$5 = ["type", "radio", "name", "awardsType", "value", "added", "checked", ""];
 var hoisted6$5 = ["for", ""];
-var hoisted7$5 = ["type", "radio", "name", "awardsFilter", "value", "", "checked", ""];
+var hoisted7$5 = ["type", "radio", "name", "awardsType", "value", "pending"];
 var hoisted8$4 = ["for", ""];
-var hoisted9$3 = ["type", "radio", "name", "awardsFilter", "value", ""];
+var hoisted9$3 = ["type", "radio", "name", "awardsType", "value", "earned"];
 var hoisted10$3 = ["name", "awards"];
 var hoisted11$1 = ["class", "row"];
 var hoisted12$1 = ["type", "button", "class", "primary", "name", "accept"];
+var __target$10;
+
 function render$10(ctrl) {
-  incrementalDom.elementOpen("section", "45bce13a-66bc-4c35-94e5-fc14b230298f", hoisted1$9);
-  incrementalDom.elementOpen("input", "fa117762-fc36-4dff-be66-d3c2b8aa5b6a", hoisted2$7);
+  incrementalDom.elementOpen("section", "8317c5d8-bacf-4450-b64d-0e608cf322c9", hoisted1$9);
+  incrementalDom.elementOpen("input", "494f20fb-5303-4f1d-bcee-06c248bc4fc2", hoisted2$7, "onkeyup", function ($event) {
+    var $element = this;
+    ctrl.filterAwards(this.value);
+  });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("div", "de5a7f4e-ff1f-494e-b0c1-c174f02c5436", hoisted3$6);
-  incrementalDom.elementOpen("label", "750598ed-ba2d-412c-9d16-6be5b4d0cce4", hoisted4$5);
-  incrementalDom.elementOpen("input", "09ce9cab-1502-40c3-bfe5-77a263036ac2", hoisted5$5);
+  incrementalDom.elementOpen("div", "f533c30d-5078-4dd8-a98d-0e0dd7f0583f", hoisted3$6);
+  incrementalDom.elementOpen("label", "0475c524-7d92-4823-b46e-4bbed690332d", hoisted4$5);
+  incrementalDom.elementOpen("input", "2c7b1c07-12a2-4c98-aee8-0a00e4bc86e8", hoisted5$5, "onchange", function ($event) {
+    var $element = this;
+    ctrl.filterByType(this.value);
+  });
   incrementalDom.elementClose("input");
   incrementalDom.text(" \
             All \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "462f0c04-c58f-4f54-86e7-1ac653658491", hoisted6$5);
-  incrementalDom.elementOpen("input", "8c613e8e-8fc3-4ab8-9e46-d7d9bd1fcb67", hoisted7$5);
+  incrementalDom.elementOpen("label", "00bb2ba0-71a6-4127-aec8-ba6f67f413b7", hoisted6$5);
+  incrementalDom.elementOpen("input", "32df4fe5-2d17-4a29-936d-0a49b2965ad0", hoisted7$5, "onchange", function ($event) {
+    var $element = this;
+    ctrl.filterByType(this.value);
+  });
   incrementalDom.elementClose("input");
   incrementalDom.text(" \
             Pending \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "ea9b2a6e-dd24-4af3-9b56-8bb822cbef15", hoisted8$4);
-  incrementalDom.elementOpen("input", "28ae8d3f-b299-4546-8bc5-06982d6f7c08", hoisted9$3);
+  incrementalDom.elementOpen("label", "9590e092-3f9c-4d51-82a3-3f1bf2dab105", hoisted8$4);
+  incrementalDom.elementOpen("input", "c81df26c-d05a-414d-892c-2b9a4e9bb61a", hoisted9$3, "onchange", function ($event) {
+    var $element = this;
+    ctrl.filterByType(this.value);
+  });
   incrementalDom.elementClose("input");
   incrementalDom.text(" \
             Earned \
@@ -1481,67 +1495,92 @@ function render$10(ctrl) {
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("section");
-  incrementalDom.elementOpen("section", "5f3977fa-ba97-41dc-9aa1-0c59702d499c", hoisted10$3);
-  incrementalDom.elementOpen("div", "d59cafa6-be08-4323-b2fa-9eb67a430567", hoisted11$1);
-  incrementalDom.elementOpen("user");
-  incrementalDom.elementOpen("name");
-  incrementalDom.text("Name");
-  incrementalDom.elementClose("name");
-  incrementalDom.elementOpen("value");
-  incrementalDom.text("Rob Hicks");
-  incrementalDom.elementClose("value");
-  incrementalDom.elementClose("user");
-  incrementalDom.elementOpen("skill");
-  incrementalDom.elementOpen("name");
-  incrementalDom.text("Skill");
-  incrementalDom.elementClose("name");
-  incrementalDom.elementOpen("value");
-  incrementalDom.text("My Family");
-  incrementalDom.elementClose("value");
-  incrementalDom.elementClose("skill");
-  incrementalDom.elementOpen("date");
-  incrementalDom.elementOpen("name");
-  incrementalDom.text("Date");
-  incrementalDom.elementClose("name");
-  incrementalDom.elementOpen("value");
-  incrementalDom.text("March 31");
-  incrementalDom.elementClose("value");
-  incrementalDom.elementClose("date");
-  incrementalDom.elementOpen("help");
-  incrementalDom.elementOpen("name");
-  incrementalDom.text("Will Help");
-  incrementalDom.elementClose("name");
-  incrementalDom.elementOpen("value");
-  incrementalDom.text("Yes");
-  incrementalDom.elementClose("value");
-  incrementalDom.elementClose("help");
-  incrementalDom.elementOpen("share");
-  incrementalDom.elementOpen("name");
-  incrementalDom.text("Will Share");
-  incrementalDom.elementClose("name");
-  incrementalDom.elementOpen("value");
-  incrementalDom.text("Yes");
-  incrementalDom.elementClose("value");
-  incrementalDom.elementClose("share");
-  incrementalDom.elementOpen("story");
-  incrementalDom.elementOpen("name");
-  incrementalDom.text("Story");
-  incrementalDom.elementClose("name");
-  incrementalDom.elementOpen("value");
-  incrementalDom.text("My Story");
-  incrementalDom.elementClose("value");
-  incrementalDom.elementClose("story");
-  incrementalDom.elementOpen("actions");
-  incrementalDom.elementOpen("name");
-  incrementalDom.elementClose("name");
-  incrementalDom.elementOpen("value");
-  incrementalDom.elementOpen("button", "bc904cfc-5c75-45b3-a9bf-ff865d42cf0f", hoisted12$1);
-  incrementalDom.text("Accept");
-  incrementalDom.elementClose("button");
-  incrementalDom.elementClose("value");
-  incrementalDom.elementClose("actions");
-  incrementalDom.elementClose("div");
-  incrementalDom.elementClose("section");
+  if (ctrl.awards.length > 0) {
+    incrementalDom.elementOpen("section", "5a997f40-be01-4448-aef2-d105b7fb037b", hoisted10$3);
+    __target$10 = ctrl.awards;
+    if (__target$10) {
+      (__target$10.forEach ? __target$10 : Object.keys(__target$10)).forEach(function ($value, $item, $target) {
+        var award = $value;
+        var $key = "2241aad7-1460-43b7-8597-a6d9e2e02abd_" + $item;
+        incrementalDom.elementOpen("div", $key, hoisted11$1);
+        incrementalDom.elementOpen("user");
+        incrementalDom.elementOpen("name");
+        incrementalDom.text("Name");
+        incrementalDom.elementClose("name");
+        incrementalDom.elementOpen("value");
+        incrementalDom.text("" + award.user.displayName + "");
+        incrementalDom.elementClose("value");
+        incrementalDom.elementClose("user");
+        incrementalDom.elementOpen("skill");
+        incrementalDom.elementOpen("name");
+        incrementalDom.text("Skill");
+        incrementalDom.elementClose("name");
+        incrementalDom.elementOpen("value");
+        incrementalDom.text("" + award.skill.title + "");
+        incrementalDom.elementClose("value");
+        incrementalDom.elementClose("skill");
+        incrementalDom.elementOpen("date");
+        incrementalDom.elementOpen("name");
+        incrementalDom.text("Date");
+        incrementalDom.elementClose("name");
+        incrementalDom.elementOpen("value");
+        incrementalDom.text("" + award.date + "");
+        incrementalDom.elementClose("value");
+        incrementalDom.elementClose("date");
+        incrementalDom.elementOpen("help");
+        incrementalDom.elementOpen("name");
+        incrementalDom.text("Will Help");
+        incrementalDom.elementClose("name");
+        if (award.help) {
+          incrementalDom.elementOpen("value");
+          incrementalDom.text("Yes");
+          incrementalDom.elementClose("value");
+        }
+        if (!award.help) {
+          incrementalDom.elementOpen("value");
+          incrementalDom.text("No");
+          incrementalDom.elementClose("value");
+        }
+        incrementalDom.elementClose("help");
+        incrementalDom.elementOpen("share");
+        incrementalDom.elementOpen("name");
+        incrementalDom.text("Will Share");
+        incrementalDom.elementClose("name");
+        if (award.share) {
+          incrementalDom.elementOpen("value");
+          incrementalDom.text("Yes");
+          incrementalDom.elementClose("value");
+        }
+        if (!award.share) {
+          incrementalDom.elementOpen("value");
+          incrementalDom.text("No");
+          incrementalDom.elementClose("value");
+        }
+        incrementalDom.elementClose("share");
+        incrementalDom.elementOpen("story");
+        incrementalDom.elementOpen("name");
+        incrementalDom.text("Story");
+        incrementalDom.elementClose("name");
+        incrementalDom.elementOpen("value");
+        incrementalDom.text("" + award.story + "");
+        incrementalDom.elementClose("value");
+        incrementalDom.elementClose("story");
+        incrementalDom.elementOpen("actions");
+        incrementalDom.elementOpen("name");
+        incrementalDom.elementClose("name");
+        incrementalDom.elementOpen("value");
+        if (award.pending) {
+          incrementalDom.elementOpen("button", "8b6d9f01-7edc-4202-9332-8a3256bcf146_" + $key, hoisted12$1);
+          incrementalDom.text("Accept");
+          incrementalDom.elementClose("button");
+        }
+        incrementalDom.elementClose("value");
+        incrementalDom.elementClose("actions");
+        incrementalDom.elementClose("div");
+      }, this);
+    }
+    incrementalDom.elementClose("section");
+  }
 }
 
 var AwardsAdmin = function (_HTMLElement) {
@@ -1557,6 +1596,8 @@ var AwardsAdmin = function (_HTMLElement) {
     _this.element = _this.shadowRoot.querySelector('container');
 
     document.addEventListener('awardsChanged', _this._updateView.bind(_this));
+    document.addEventListener('skillsChanged', _this._updateView.bind(_this));
+    document.addEventListener('usersChanged', _this._updateView.bind(_this));
     return _this;
   }
 
@@ -1568,19 +1609,63 @@ var AwardsAdmin = function (_HTMLElement) {
       }
     }
   }, {
+    key: '_joinData',
+    value: function _joinData() {
+      var awards = this.adv.data();
+      var skills = this.sdv.data();
+      var users = this.udv.data();
+      awards.forEach(function (award) {
+        award.skill = skills.find(function (skill) {
+          return skill.id === award.skillId;
+        });
+        award.user = users.find(function (user) {
+          return user.id === award.userId;
+        });
+      });
+      return awards;
+    }
+  }, {
     key: 'connectedCallback',
     value: function connectedCallback() {
       this.aColl = db.getCollection('awards');
-      this.dv = this.aColl.addDynamicView('awards');
+      this.sColl = db.getCollection('skills');
+      this.uColl = db.getCollection('users');
+
+      this.adv = this.aColl.addDynamicView('awards');
+      this.sdv = this.aColl.addDynamicView('skills');
+      this.udv = this.aColl.addDynamicView('users');
+
       this._updateView();
     }
   }, {
     key: 'disconnectedCallback',
-    value: function disconnectedCallback() {}
+    value: function disconnectedCallback() {
+      this.adv.removeFilters();
+    }
+  }, {
+    key: 'filterAwards',
+    value: function filterAwards(val) {
+      var str = val ? val.toLowerCase() : null;
+      this.adv.removeFilters();
+
+      if (str) {
+        this.adv.applyWhere(function (award) {});
+      }
+      this._updateView();
+    }
+  }, {
+    key: 'filterByType',
+    value: function filterByType(type) {
+      this.adv.removeFilters();
+      this.adv.applyWhere(function (award) {
+        return award.type === type;
+      });
+      this._updateView();
+    }
   }, {
     key: '_updateView',
     value: function _updateView() {
-      this.awards = this.dv.data();
+      this.awards = this._joinData();
       if (this.element) incrementalDom.patch(this.element, render$10, this);
     }
   }], [{

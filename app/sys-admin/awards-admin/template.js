@@ -4,37 +4,45 @@ var hoisted1 = ["name", "header"]
 var hoisted2 = ["type", "text", "name", "search", "value", "", "placeholder", "Search ..."]
 var hoisted3 = ["id", "filter"]
 var hoisted4 = ["for", ""]
-var hoisted5 = ["type", "radio", "name", "awardsFilter", "value", ""]
+var hoisted5 = ["type", "radio", "name", "awardsType", "value", "added", "checked", ""]
 var hoisted6 = ["for", ""]
-var hoisted7 = ["type", "radio", "name", "awardsFilter", "value", "", "checked", ""]
+var hoisted7 = ["type", "radio", "name", "awardsType", "value", "pending"]
 var hoisted8 = ["for", ""]
-var hoisted9 = ["type", "radio", "name", "awardsFilter", "value", ""]
+var hoisted9 = ["type", "radio", "name", "awardsType", "value", "earned"]
 var hoisted10 = ["name", "awards"]
 var hoisted11 = ["class", "row"]
 var hoisted12 = ["type", "button", "class", "primary", "name", "accept"]
 var __target
 
 export function render (ctrl) {
-elementOpen("section", "45bce13a-66bc-4c35-94e5-fc14b230298f", hoisted1)
-  elementOpen("input", "fa117762-fc36-4dff-be66-d3c2b8aa5b6a", hoisted2)
+elementOpen("section", "8317c5d8-bacf-4450-b64d-0e608cf322c9", hoisted1)
+  elementOpen("input", "494f20fb-5303-4f1d-bcee-06c248bc4fc2", hoisted2, "onkeyup", function ($event) {
+    var $element = this;
+  ctrl.filterAwards(this.value)})
   elementClose("input")
-  elementOpen("div", "de5a7f4e-ff1f-494e-b0c1-c174f02c5436", hoisted3)
-    elementOpen("label", "750598ed-ba2d-412c-9d16-6be5b4d0cce4", hoisted4)
-      elementOpen("input", "09ce9cab-1502-40c3-bfe5-77a263036ac2", hoisted5)
+  elementOpen("div", "f533c30d-5078-4dd8-a98d-0e0dd7f0583f", hoisted3)
+    elementOpen("label", "0475c524-7d92-4823-b46e-4bbed690332d", hoisted4)
+      elementOpen("input", "2c7b1c07-12a2-4c98-aee8-0a00e4bc86e8", hoisted5, "onchange", function ($event) {
+        var $element = this;
+      ctrl.filterByType(this.value)})
       elementClose("input")
       text(" \
             All \
           ")
     elementClose("label")
-    elementOpen("label", "462f0c04-c58f-4f54-86e7-1ac653658491", hoisted6)
-      elementOpen("input", "8c613e8e-8fc3-4ab8-9e46-d7d9bd1fcb67", hoisted7)
+    elementOpen("label", "00bb2ba0-71a6-4127-aec8-ba6f67f413b7", hoisted6)
+      elementOpen("input", "32df4fe5-2d17-4a29-936d-0a49b2965ad0", hoisted7, "onchange", function ($event) {
+        var $element = this;
+      ctrl.filterByType(this.value)})
       elementClose("input")
       text(" \
             Pending \
           ")
     elementClose("label")
-    elementOpen("label", "ea9b2a6e-dd24-4af3-9b56-8bb822cbef15", hoisted8)
-      elementOpen("input", "28ae8d3f-b299-4546-8bc5-06982d6f7c08", hoisted9)
+    elementOpen("label", "9590e092-3f9c-4d51-82a3-3f1bf2dab105", hoisted8)
+      elementOpen("input", "c81df26c-d05a-414d-892c-2b9a4e9bb61a", hoisted9, "onchange", function ($event) {
+        var $element = this;
+      ctrl.filterByType(this.value)})
       elementClose("input")
       text(" \
             Earned \
@@ -42,65 +50,90 @@ elementOpen("section", "45bce13a-66bc-4c35-94e5-fc14b230298f", hoisted1)
     elementClose("label")
   elementClose("div")
 elementClose("section")
-elementOpen("section", "5f3977fa-ba97-41dc-9aa1-0c59702d499c", hoisted10)
-  elementOpen("div", "d59cafa6-be08-4323-b2fa-9eb67a430567", hoisted11)
-    elementOpen("user")
-      elementOpen("name")
-        text("Name")
-      elementClose("name")
-      elementOpen("value")
-        text("Rob Hicks")
-      elementClose("value")
-    elementClose("user")
-    elementOpen("skill")
-      elementOpen("name")
-        text("Skill")
-      elementClose("name")
-      elementOpen("value")
-        text("My Family")
-      elementClose("value")
-    elementClose("skill")
-    elementOpen("date")
-      elementOpen("name")
-        text("Date")
-      elementClose("name")
-      elementOpen("value")
-        text("March 31")
-      elementClose("value")
-    elementClose("date")
-    elementOpen("help")
-      elementOpen("name")
-        text("Will Help")
-      elementClose("name")
-      elementOpen("value")
-        text("Yes")
-      elementClose("value")
-    elementClose("help")
-    elementOpen("share")
-      elementOpen("name")
-        text("Will Share")
-      elementClose("name")
-      elementOpen("value")
-        text("Yes")
-      elementClose("value")
-    elementClose("share")
-    elementOpen("story")
-      elementOpen("name")
-        text("Story")
-      elementClose("name")
-      elementOpen("value")
-        text("My Story")
-      elementClose("value")
-    elementClose("story")
-    elementOpen("actions")
-      elementOpen("name")
-      elementClose("name")
-      elementOpen("value")
-        elementOpen("button", "bc904cfc-5c75-45b3-a9bf-ff865d42cf0f", hoisted12)
-          text("Accept")
-        elementClose("button")
-      elementClose("value")
-    elementClose("actions")
-  elementClose("div")
-elementClose("section")
+if (ctrl.awards.length > 0) {
+  elementOpen("section", "5a997f40-be01-4448-aef2-d105b7fb037b", hoisted10)
+    __target = ctrl.awards
+    if (__target) {
+      ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
+        var award = $value
+        var $key = "2241aad7-1460-43b7-8597-a6d9e2e02abd_" + $item
+        elementOpen("div", $key, hoisted11)
+          elementOpen("user")
+            elementOpen("name")
+              text("Name")
+            elementClose("name")
+            elementOpen("value")
+              text("" + (award.user.displayName) + "")
+            elementClose("value")
+          elementClose("user")
+          elementOpen("skill")
+            elementOpen("name")
+              text("Skill")
+            elementClose("name")
+            elementOpen("value")
+              text("" + (award.skill.title) + "")
+            elementClose("value")
+          elementClose("skill")
+          elementOpen("date")
+            elementOpen("name")
+              text("Date")
+            elementClose("name")
+            elementOpen("value")
+              text("" + (award.date) + "")
+            elementClose("value")
+          elementClose("date")
+          elementOpen("help")
+            elementOpen("name")
+              text("Will Help")
+            elementClose("name")
+            if (award.help) {
+              elementOpen("value")
+                text("Yes")
+              elementClose("value")
+            }
+            if (!award.help) {
+              elementOpen("value")
+                text("No")
+              elementClose("value")
+            }
+          elementClose("help")
+          elementOpen("share")
+            elementOpen("name")
+              text("Will Share")
+            elementClose("name")
+            if (award.share) {
+              elementOpen("value")
+                text("Yes")
+              elementClose("value")
+            }
+            if (!award.share) {
+              elementOpen("value")
+                text("No")
+              elementClose("value")
+            }
+          elementClose("share")
+          elementOpen("story")
+            elementOpen("name")
+              text("Story")
+            elementClose("name")
+            elementOpen("value")
+              text("" + (award.story) + "")
+            elementClose("value")
+          elementClose("story")
+          elementOpen("actions")
+            elementOpen("name")
+            elementClose("name")
+            elementOpen("value")
+              if (award.pending) {
+                elementOpen("button", "8b6d9f01-7edc-4202-9332-8a3256bcf146_" + $key, hoisted12)
+                  text("Accept")
+                elementClose("button")
+              }
+            elementClose("value")
+          elementClose("actions")
+        elementClose("div")
+      }, this)
+    }
+  elementClose("section")
+}
 }
