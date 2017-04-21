@@ -6,13 +6,13 @@ import {user} from './user.js';
 // const idbAdapter = new LokiIndexedAdapter('loki');
 const db = new loki('m7temple.db', {autosave: true});
 
-let updateDbChannel;
+let updateDbChannel = socket.subscribe('updateDbChannel');
 
 function changeHandler() {
   console.log("changeHandler");
   let changes = JSON.parse(db.serializeChanges());
   console.log('changeHandler:changes', changes);
-  if (changes) updateDbChannel.publish(JSON.stringify(changes), (err) => {
+  if (changes && socket.authState === 'authenticated') updateDbChannel.publish(JSON.stringify(changes), (err) => {
     if (err) console.error("err", err);
     if (!err) db.clearChanges();
     db.clearChanges();
@@ -70,20 +70,12 @@ db.loadDb = (req, evt, next) => {
   });
 };
 
-socket.on('connect', function (status) {
-  // console.log("status", status)
-  // console.log(socket.authToken);
-  if (status.isAuthenticated) {
-    updateDbChannel = socket.subscribe('updateDbChannel');
-
-    updateDbChannel.watch((data) => {
-      let changes = JSON.parse(data);
-      console.log("updateDbChannel::changes", changes);
-      if (Array.isArray(changes)) updateDb(db, changes);
-      db.clearChanges();
-    });
-  }
-
+updateDbChannel.watch((data) => {
+  let changes = JSON.parse(data);
+  // console.log("socket", socket)
+  // console.log("updateDbChannel::changes", changes);
+  if (socket.authState === 'authenticated' && Array.isArray(changes)) updateDb(db, changes);
+  db.clearChanges();
 });
 
 export {db};
