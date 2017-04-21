@@ -7,11 +7,12 @@ import {user} from './user.js';
 const db = new loki('m7temple.db', {autosave: true});
 
 let updateDbChannel = socket.subscribe('updateDbChannel');
+let userAddedChannel = socket.subscribe('userAddedChannel');
 
 function changeHandler() {
-  console.log("changeHandler");
+  // console.log("changeHandler");
   let changes = JSON.parse(db.serializeChanges());
-  console.log('changeHandler:changes', changes);
+  // console.log('changeHandler:changes', changes);
   if (changes && socket.authState === 'authenticated') updateDbChannel.publish(JSON.stringify(changes), (err) => {
     if (err) console.error("err", err);
     if (!err) db.clearChanges();
@@ -20,7 +21,7 @@ function changeHandler() {
 }
 
 function updateDb(db, changes) {
-  console.log("changes", changes)
+  // console.log("updateDb:changes", changes)
   try {
     changes.forEach((change) => {
       let coll = db.getCollection(change.name);
@@ -69,6 +70,20 @@ db.loadDb = (req, evt, next) => {
     next();
   });
 };
+
+
+userAddedChannel.watch((data) => {
+  // console.log("data", data);
+  let users = db.getCollection('users');
+  users.setChangesApi(false);
+  let usr = users.findOne({email: data.email});
+  if (!usr) {
+    delete data.$loki;
+    delete data.meta;
+    users.insertOne(data);
+    document.dispatchEvent(new CustomEvent('usersChanged'));
+  }
+});
 
 updateDbChannel.watch((data) => {
   let changes = JSON.parse(data);

@@ -19,44 +19,44 @@ elementClose("h1")
 elementOpen("h3")
   text("Select a Provider")
 elementClose("h3")
-elementOpen("div", "a3db392d-3ef3-44be-825a-963185d009d8", hoisted1)
-  elementOpen("a", "0a45256f-5d79-437c-b11d-9359e4cc5c47", hoisted2, "onclick", function ($event) {
+elementOpen("div", "543c9504-0eae-430e-9a02-62811d045b5d", hoisted1)
+  elementOpen("a", "7b325aab-fc96-4eb8-9502-b7e94c5ec5e1", hoisted2, "onclick", function ($event) {
     var $element = this;
   ctrl.hello('facebook').login()})
-    elementOpen("img", "4b35e983-2d22-49c5-9bb4-d7d287fa706a", hoisted3)
+    elementOpen("img", "f0cb7f7d-f976-4ded-9a6d-b74f82a2bc19", hoisted3)
     elementClose("img")
     elementOpen("span")
       text("Facebook")
     elementClose("span")
   elementClose("a")
-  elementOpen("a", "d639c6e2-c087-4323-ad73-8952eac81c0b", hoisted4, "onclick", function ($event) {
+  elementOpen("a", "15c8644d-9ca4-43b7-89d8-e5e88d70c20d", hoisted4, "onclick", function ($event) {
     var $element = this;
   ctrl.hello('github').login()})
-    elementOpen("img", "40d9165d-c6da-4c41-bc5c-092bb0ba8ae4", hoisted5)
+    elementOpen("img", "344cbe95-0aba-4943-af9c-207a5ce12c07", hoisted5)
     elementClose("img")
     elementOpen("span")
       text("Github")
     elementClose("span")
   elementClose("a")
-  elementOpen("a", "6146b13d-eafe-4f06-bc0c-2e7981d95895", hoisted6, "onclick", function ($event) {
+  elementOpen("a", "d31452d5-ce6f-4930-b473-29b61520413e", hoisted6, "onclick", function ($event) {
     var $element = this;
   ctrl.hello('google').login()})
-    elementOpen("img", "02c2b5cc-e973-4c5e-bb5d-823820af82ee", hoisted7)
+    elementOpen("img", "b2cf1914-3e73-486d-b67e-554dd585581d", hoisted7)
     elementClose("img")
     elementOpen("span")
       text("Google")
     elementClose("span")
   elementClose("a")
-  elementOpen("a", "ea732d56-c104-41ef-8f71-a5d0cc3e2727", hoisted8, "onclick", function ($event) {
+  elementOpen("a", "de7d8c32-fc9f-4281-8fdc-7a62cfca6807", hoisted8, "onclick", function ($event) {
     var $element = this;
   ctrl.hello('twitter').login()})
-    elementOpen("img", "0b083008-8b8d-4b05-9415-f32e98fa8f0e", hoisted9)
+    elementOpen("img", "901fabcf-75d0-45f0-a9d9-90d69debaf4a", hoisted9)
     elementClose("img")
     elementOpen("span")
       text("Twitter")
     elementClose("span")
   elementClose("a")
-  elementOpen("a", "cece925c-06bf-420d-aa26-f665b68d6951", hoisted10)
+  elementOpen("a", "ab9681d3-c1ff-495a-9f1c-e2465b1d2c4d", hoisted10)
     text("Privacy Policy")
   elementClose("a")
 elementClose("div")

@@ -18,8 +18,8 @@ module.exports.run = (worker) => {
   const httpServer = worker.httpServer;
   const scServer = worker.scServer;
 
-  let outgoingDbChannel = scServer.exchange.subscribe('fromServerDbChannel'); // outbound
   let updateDbChannel = scServer.exchange.subscribe('updateDbChannel'); // inbound
+  let userAddedChannel = scServer.exchange.subscribe('userAddedChannel'); // outbound
 
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'pug');
@@ -57,17 +57,17 @@ module.exports.run = (worker) => {
         };
         getUsers().then((users) => {
           // console.log("users", users)
-          let user = users.findOne({email: data.email}) || users.insertOne(rec);
+          let user = users.findOne({email: data.email});
+          if (!user) {
+            console.log('adding user and publishing change');
+             user = users.insertOne(rec);
+             if (user) userAddedChannel.publish(user);
+          }
           socket.setAuthToken({user});
           respond();
         });
       }
     });
-
-    socket.on('getUser', () => {
-      let usr = users.findOne({email: socket.user.email});
-
-    })
 
     socket.on('loadDatabase', () => {
       socket.emit('loadDatabase', db.serialize());
@@ -81,7 +81,7 @@ module.exports.run = (worker) => {
 
   updateDbChannel.watch((data) => {
     let changes = JSON.parse(data);
-    // console.log("updateDbChannel:::changes", changes);
+    console.log("updateDbChannel:::changes", changes);
     if (Array.isArray(changes)) updateDb(db, changes);
     db.clearChanges();
   });

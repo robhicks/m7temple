@@ -24,7 +24,7 @@ hello.on('auth.login', (auth) => {
   // console.log("auth", auth)
   hello(auth.network).api('me')
   .then((r) => {
-    console.log("r", r);
+    // console.log("hellojs:auth.login user", r);
     if (socket.authState !== 'authenticated') socket.emit('auth', r);
     if ((/.+\/login/).test(window.location.href)) router.navigate('/home/authenticated');
   }, (err) => {

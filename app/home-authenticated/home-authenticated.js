@@ -43,7 +43,7 @@ class HomeAuthenticated extends HTMLElement {
   }
 
   _combineSkillsAndAwards(_awards = [], _skills = []) {
-    console.log("_awards", _awards)
+    // console.log("_awards", _awards)
     return _skills.map((skill) => {
       let award = _awards.find((awrd) => awrd.skillId === skill.id && awrd.userId === this.user.id);
       return {
@@ -92,7 +92,7 @@ class HomeAuthenticated extends HTMLElement {
     this.skills = this._combineSkillsAndAwards(_awards, _skills);
     this.mySkills = this.filterMine(this.skills);
     this.viewSkills = this.mine ? this.mySkills : this.skills;
-    console.log("this.viewSkills", this.viewSkills)
+    // console.log("this.viewSkills", this.viewSkills)
     if (this.element) patch(this.element, render, this);
   }
 

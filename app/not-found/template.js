@@ -10,7 +10,7 @@ elementClose("h1")
 elementOpen("h2")
   text("Page Not Found")
 elementClose("h2")
-elementOpen("a", "6fff2893-b4fe-4b98-8638-637d44ed8c28", hoisted1)
+elementOpen("a", "5de23fd9-f924-4cdc-9e20-b9704332556c", hoisted1)
   text("Home")
 elementClose("a")
 }
