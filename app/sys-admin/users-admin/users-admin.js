@@ -42,7 +42,7 @@ class UsersAdmin extends HTMLElement {
   }
 
   disconnectedCallback() {
-
+    this.dv.removeFilters();
   }
 
   editUser(_user) {
@@ -53,15 +53,14 @@ class UsersAdmin extends HTMLElement {
 
   filterUsers(val) {
     let str = val ? val.toLowerCase() : null;
+    this.dv.removeFilters();
 
-    this.dv.applyWhere((_user) =>
-      _user.displayName && _user.displayName.toLowerCase().indexOf(str) !== -1
-      || _user.name && _user.name.toLowerCase().indexOf(str) !== -1
-      || _user.group && _user.group.toLowerCase().indexOf(str) !== -1
-      || _user.email && _user.email.toLowerCase().indexOf(str) !== -1);
-
-    if (!str || str === '') {
-      this.dv.removeFilters();
+    if (str) {
+      this.dv.applyWhere((_user) =>
+        _user.displayName && _user.displayName.toLowerCase().indexOf(str) !== -1
+        || typeof _user.name === 'string' && _user.name.toLowerCase().indexOf(str) !== -1
+        || _user.group && _user.group.toLowerCase().indexOf(str) !== -1
+        || _user.email && _user.email.toLowerCase().indexOf(str) !== -1);
     }
 
     this._updateView();

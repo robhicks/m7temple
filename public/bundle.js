@@ -2146,7 +2146,9 @@ var UsersAdmin = function (_HTMLElement) {
     }
   }, {
     key: 'disconnectedCallback',
-    value: function disconnectedCallback() {}
+    value: function disconnectedCallback() {
+      this.dv.removeFilters();
+    }
   }, {
     key: 'editUser',
     value: function editUser(_user) {
@@ -2158,13 +2160,12 @@ var UsersAdmin = function (_HTMLElement) {
     key: 'filterUsers',
     value: function filterUsers(val) {
       var str = val ? val.toLowerCase() : null;
+      this.dv.removeFilters();
 
-      this.dv.applyWhere(function (_user) {
-        return _user.displayName && _user.displayName.toLowerCase().indexOf(str) !== -1 || _user.name && _user.name.toLowerCase().indexOf(str) !== -1 || _user.group && _user.group.toLowerCase().indexOf(str) !== -1 || _user.email && _user.email.toLowerCase().indexOf(str) !== -1;
-      });
-
-      if (!str || str === '') {
-        this.dv.removeFilters();
+      if (str) {
+        this.dv.applyWhere(function (_user) {
+          return _user.displayName && _user.displayName.toLowerCase().indexOf(str) !== -1 || typeof _user.name === 'string' && _user.name.toLowerCase().indexOf(str) !== -1 || _user.group && _user.group.toLowerCase().indexOf(str) !== -1 || _user.email && _user.email.toLowerCase().indexOf(str) !== -1;
+        });
       }
 
       this._updateView();
