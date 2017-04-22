@@ -25,6 +25,7 @@ hello.on('auth.login', (auth) => {
   hello(auth.network).api('me')
   .then((r) => {
     // console.log("hellojs:auth.login user", r);
+    // console.log("socket.authState", socket.authState)
     if (socket.authState !== 'authenticated') socket.emit('auth', r);
     if ((/.+\/login/).test(window.location.href)) router.navigate('/home/authenticated');
   }, (err) => {
@@ -48,7 +49,6 @@ socket.on('authStateChange', (status) => {
   // console.log("status", status)
   // console.log("socket", socket)
   if (status.newState === 'authenticated') {
-    // console.log("usr", usr)
     Object.assign(user, status.authToken.user, {authenticated: true});
     document.dispatchEvent(userAuthenticated);
     if ((/.+\/login/).test(window.location.href)) router.navigate('/home/authenticated');

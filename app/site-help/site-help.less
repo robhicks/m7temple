@@ -3,11 +3,24 @@
 @import '../css/wc/typography.less';
 @import '../css/wc/r-grid.less';
 
-:host, container {
+:host {
   display: flex;
   flex-direction: column;
   flex: 1;
   padding: 2vh 2vw;
+  container {
+    display: block;
+    overflow-y: auto;
+    flex: 1;
+  }
+  h1 {
+    font-size: 1.75em;
+    font-weight: 400;
+    margin-bottom: 1vh;
+  }
+  p {
+    line-height: 1.4;
+  }
 }
 
 general {
@@ -21,10 +34,29 @@ general {
     background-color: rgba(255, 255, 255, .7);
     color: #333;
     padding: 1vh 1vw;
-    h1 {
-      font-size: 1.75em;
-      font-weight: 400;
-      margin-bottom: 1vh;
-    }
+  }
+}
+
+working-on-skills {
+  display: block;
+  background-color: @site-background;
+  padding: 2vh 2vw;
+  margin-top: 1vh;
+  flex: 1;
+  h2 {
+    font-size: 1.5em !important;
+    font-weight: 300;
+    margin: 0;
+    padding: .5vw;
+    background-color: @orange;
+    color: white;
+  }
+  #skill-buttons {
+    margin: 1vh 1vw;
+    border: 1px solid #ccc;
+  }
+  #add-button {
+    height: 16px;
+    width: 16px;
   }
 }

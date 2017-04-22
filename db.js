@@ -53,8 +53,9 @@ function updateDb(db, changes) {
 }
 
 function getUsers() {
-  console.log("users", users)
-  return Promise.resolve(users);
+  // console.log("users", users);
+  let _users = db.getCollection('users');
+  return Promise.resolve(_users);
 }
 
 // module.exports.awards = awards;

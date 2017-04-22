@@ -11,9 +11,6 @@ class CollapsablePanel extends HTMLElement {
     super();
     this.config = config;
     this.collapsed = true;
-
-    document.addEventListener('awardsChanged', this._updateView.bind(this));
-    document.addEventListener('skillsChanged', this._updateView.bind(this));
   }
 
   add(skillId, addAlert = true, type = 'added', share = false, help = false) {
@@ -97,6 +94,9 @@ class CollapsablePanel extends HTMLElement {
     this.tColl.setChangesApi(true);
     this.adv = this.aColl.addDynamicView('awards');
     this.sdv = this.sColl.addDynamicView('skills');
+
+    document.addEventListener('awardsChanged', this._updateView.bind(this));
+    document.addEventListener('skillsChanged', this._updateView.bind(this));
     this._updateView();
   }
 

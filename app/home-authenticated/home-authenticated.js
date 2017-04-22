@@ -13,10 +13,6 @@ class HomeAuthenticated extends HTMLElement {
     this.skills = [];
     this.mySkills = [];
     this.mine = false;
-
-    document.addEventListener('userUnauthenticated', () => {router.navigate('/login');});
-    document.addEventListener('awardsChanged', this._updateView.bind(this));
-    document.addEventListener('skillsChanged', this._updateView.bind(this));
   }
 
   anchorClickHandler(evt) {
@@ -36,8 +32,16 @@ class HomeAuthenticated extends HTMLElement {
     this.element = this.shadowRoot.querySelector('div#home');
     this.aColl = db.getCollection('awards');
     this.sColl = db.getCollection('skills');
+
+    this.aColl.setChangesApi(true);
+    this.sColl.setChangesApi(true);
+
     this.adv = this.aColl.addDynamicView('awards');
     this.sdv = this.sColl.addDynamicView('skills');
+
+    document.addEventListener('userUnauthenticated', () => {router.navigate('/login');});
+    document.addEventListener('awardsChanged', this._updateView.bind(this));
+    document.addEventListener('skillsChanged', this._updateView.bind(this));
 
     this._updateView();
   }

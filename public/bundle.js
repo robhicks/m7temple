@@ -255,6 +255,7 @@ hello.on('auth.login', function (auth) {
   // console.log("auth", auth)
   hello(auth.network).api('me').then(function (r) {
     // console.log("hellojs:auth.login user", r);
+    // console.log("socket.authState", socket.authState)
     if (socket$2.authState !== 'authenticated') socket$2.emit('auth', r);
     if (/.+\/login/.test(window.location.href)) router.navigate('/home/authenticated');
   }, function (err) {
@@ -277,7 +278,6 @@ socket$2.on('authStateChange', function (status) {
   // console.log("status", status)
   // console.log("socket", socket)
   if (status.newState === 'authenticated') {
-    // console.log("usr", usr)
     Object.assign(user, status.authToken.user, { authenticated: true });
     document.dispatchEvent(userAuthenticated);
     if (/.+\/login/.test(window.location.href)) router.navigate('/home/authenticated');
@@ -936,9 +936,6 @@ var CollapsablePanel = function (_HTMLElement) {
 
     _this.config = config;
     _this.collapsed = true;
-
-    document.addEventListener('awardsChanged', _this._updateView.bind(_this));
-    document.addEventListener('skillsChanged', _this._updateView.bind(_this));
     return _this;
   }
 
@@ -1039,6 +1036,9 @@ var CollapsablePanel = function (_HTMLElement) {
       this.tColl.setChangesApi(true);
       this.adv = this.aColl.addDynamicView('awards');
       this.sdv = this.sColl.addDynamicView('skills');
+
+      document.addEventListener('awardsChanged', this._updateView.bind(this));
+      document.addEventListener('skillsChanged', this._updateView.bind(this));
       this._updateView();
     }
   }, {
@@ -1153,12 +1153,6 @@ var HomeAuthenticated = function (_HTMLElement) {
     _this.skills = [];
     _this.mySkills = [];
     _this.mine = false;
-
-    document.addEventListener('userUnauthenticated', function () {
-      router.navigate('/login');
-    });
-    document.addEventListener('awardsChanged', _this._updateView.bind(_this));
-    document.addEventListener('skillsChanged', _this._updateView.bind(_this));
     return _this;
   }
 
@@ -1181,8 +1175,18 @@ var HomeAuthenticated = function (_HTMLElement) {
       this.element = this.shadowRoot.querySelector('div#home');
       this.aColl = db.getCollection('awards');
       this.sColl = db.getCollection('skills');
+
+      this.aColl.setChangesApi(true);
+      this.sColl.setChangesApi(true);
+
       this.adv = this.aColl.addDynamicView('awards');
       this.sdv = this.sColl.addDynamicView('skills');
+
+      document.addEventListener('userUnauthenticated', function () {
+        router.navigate('/login');
+      });
+      document.addEventListener('awardsChanged', this._updateView.bind(this));
+      document.addEventListener('skillsChanged', this._updateView.bind(this));
 
       this._updateView();
     }
@@ -2864,8 +2868,10 @@ var PPolicy = function (_HTMLElement) {
 
 customElements.define('p-policy', PPolicy);
 
-var css$15 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.grid {\n  display: flex;\n}\n.col {\n  flex: 1;\n}\n@media (max-width: 500px) {\n  .grid {\n    display: block;\n  }\n}\n:host,\ncontainer {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding: 2vh 2vw;\n}\ngeneral {\n  display: flex;\n  flex-direction: column;\n  background-color: #ffffff;\n  background-image: url('/img/mt-timp-temple.jpg');\n  background-size: cover;\n}\ngeneral general-overlay {\n  margin: 6vh 6vw;\n  background-color: rgba(255, 255, 255, 0.7);\n  color: #333;\n  padding: 1vh 1vw;\n}\ngeneral general-overlay h1 {\n  font-size: 1.75em;\n  font-weight: 400;\n  margin-bottom: 1vh;\n}\n";
+var css$15 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.grid {\n  display: flex;\n}\n.col {\n  flex: 1;\n}\n@media (max-width: 500px) {\n  .grid {\n    display: block;\n  }\n}\n:host {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding: 2vh 2vw;\n}\n:host container {\n  display: block;\n  overflow-y: auto;\n  flex: 1;\n}\n:host h1 {\n  font-size: 1.75em;\n  font-weight: 400;\n  margin-bottom: 1vh;\n}\n:host p {\n  line-height: 1.4;\n}\ngeneral {\n  display: flex;\n  flex-direction: column;\n  background-color: #ffffff;\n  background-image: url('/img/mt-timp-temple.jpg');\n  background-size: cover;\n}\ngeneral general-overlay {\n  margin: 6vh 6vw;\n  background-color: rgba(255, 255, 255, 0.7);\n  color: #333;\n  padding: 1vh 1vw;\n}\nworking-on-skills {\n  display: block;\n  background-color: #ffffff;\n  padding: 2vh 2vw;\n  margin-top: 1vh;\n  flex: 1;\n}\nworking-on-skills h2 {\n  font-size: 1.5em !important;\n  font-weight: 300;\n  margin: 0;\n  padding: .5vw;\n  background-color: #f26100;\n  color: white;\n}\nworking-on-skills #skill-buttons {\n  margin: 1vh 1vw;\n  border: 1px solid #ccc;\n}\nworking-on-skills #add-button {\n  height: 16px;\n  width: 16px;\n}\n";
 
+var hoisted1$14 = ["id", "skill-buttons", "src", "/img/skill-buttons.png", "alt", ""];
+var hoisted2$12 = ["id", "add-button", "src", "/img/add.svg", "alt", ""];
 function render$15(ctrl) {
   incrementalDom.elementOpen("general");
   incrementalDom.elementOpen("general-overlay");
@@ -2891,6 +2897,64 @@ function render$15(ctrl) {
   incrementalDom.elementClose("general-overlay");
   incrementalDom.elementClose("general");
   incrementalDom.elementOpen("working-on-skills");
+  incrementalDom.elementOpen("h1");
+  incrementalDom.text("Working on Skills");
+  incrementalDom.elementClose("h1");
+  incrementalDom.elementOpen("p");
+  incrementalDom.text(" \
+        Skills are worked on from the home view. In fact everything can be done from the home view. Here \
+        are the things you can do with skills: \
+        ");
+  incrementalDom.elementOpen("ul");
+  incrementalDom.elementOpen("li");
+  incrementalDom.text("Get information and instructions on how to complete them.");
+  incrementalDom.elementClose("li");
+  incrementalDom.elementOpen("li");
+  incrementalDom.text("Add skills to work on. This will allow to select the skills you want to focus on.");
+  incrementalDom.elementClose("li");
+  incrementalDom.elementOpen("li");
+  incrementalDom.text(" \
+                Get help with completing the skill. When you request help, you will be contacted by \
+                someone who has already completed the skill, or by a ward temple and family history \
+                consultant. \
+              ");
+  incrementalDom.elementClose("li");
+  incrementalDom.elementOpen("li");
+  incrementalDom.text(" \
+                Share your experience and expertise with others by applying for a certificate of \
+                completion. Of course, if you don't want to share your experience or don't feel comfortable \
+                with others, you don't have to, although you can still receive recognition for having \
+                completed a skill. \
+              ");
+  incrementalDom.elementClose("li");
+  incrementalDom.elementClose("ul");
+  incrementalDom.elementClose("p");
+  incrementalDom.elementOpen("p");
+  incrementalDom.text(" \
+        Most actions involving skills are available through the skills button bar, highlighted with a green \
+        rectangle. We'll explain below what the buttons are for and what they do. \
+        ");
+  incrementalDom.elementOpen("img", "6653b151-bca7-4414-9ca1-76c3a1a27edb", hoisted1$14);
+  incrementalDom.elementClose("img");
+  incrementalDom.elementClose("p");
+  incrementalDom.elementOpen("h2");
+  incrementalDom.text("Adding a Skill");
+  incrementalDom.elementClose("h2");
+  incrementalDom.elementOpen("p");
+  incrementalDom.text(" \
+        Add a skill by clicking on the green add button: ");
+  incrementalDom.elementOpen("img", "f24a4f41-052e-4200-9f60-7172d8f9be0e", hoisted2$12);
+  incrementalDom.elementClose("img");
+  incrementalDom.elementClose("p");
+  incrementalDom.elementOpen("h2");
+  incrementalDom.text("Getting Help for a Skill");
+  incrementalDom.elementClose("h2");
+  incrementalDom.elementOpen("h2");
+  incrementalDom.text("Getting Recognition for Completing a Skill");
+  incrementalDom.elementClose("h2");
+  incrementalDom.elementOpen("h2");
+  incrementalDom.text("Seeing Only My Skills");
+  incrementalDom.elementClose("h2");
   incrementalDom.elementClose("working-on-skills");
 }
 
