@@ -1650,6 +1650,7 @@ var AwardsAdmin = function (_HTMLElement) {
     value: function filterAwards() {
       var _this2 = this;
 
+      // console.log("this.search", this.search)
       this.adv.removeFilters();
       var re = this.search.text && this.search.text !== '' ? new RegExp(this.search.text) : null;
 
@@ -1660,6 +1661,10 @@ var AwardsAdmin = function (_HTMLElement) {
       } else if (!!re) {
         this.adv.applyWhere(function (award) {
           return award.skill && award.skill.title && re.test(award.skill.title) || award.skill && award.skill.description && re.test(award.skill.description) || award.user && award.user.displayName && re.test(award.user.displayName) || award.user && award.user.firstName && re.test(award.user.firstName) || award.user && award.user.lastName && re.test(award.user.lastName) || award.user && award.user.email && re.test(award.user.email);
+        });
+      } else if (this.search.type !== '') {
+        this.adv.applyWhere(function (award) {
+          return award.type === _this2.search.type;
         });
       }
       this._updateView();
