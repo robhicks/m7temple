@@ -16,17 +16,18 @@ const db = new Loki('m7temple.db', {
 
 function loadHandler() {
   if (!db.getCollection('awards')) db.addCollection('awards');
+  if (!db.getCollection('tickets')) db.addCollection('tickets');
   if (!db.getCollection('skills')) db.addCollection('skills');
   if (!db.getCollection('users')) db.addCollection('users');
 }
 
 let awards = {}, skills = {}, users = {};
 
-db.on('loaded', () => {
-  users = db.getCollection('users');
-  skills = db.getCollection('skills');
-  awards = db.getCollection('awards');
-});
+// db.on('loaded', () => {
+//   awards = db.getCollection('awards');
+//   skills = db.getCollection('skills');
+//   users = db.getCollection('users');
+// });
 
 function updateDb(db, changes) {
   // console.log("changes", changes)

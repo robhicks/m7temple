@@ -2,6 +2,7 @@ import css from './assistance-admin.less';
 import {render} from './template.js';
 import {patch} from 'incremental-dom';
 import isJson from './isJson.js';
+import {db} from '../../db.js';
 
 class AssistanceAdmin extends HTMLElement {
   constructor() {
@@ -9,6 +10,23 @@ class AssistanceAdmin extends HTMLElement {
     this.attachShadow({mode: 'open'});
     this.shadowRoot.innerHTML = `<style>${css}</style><container></container>`;
     this.element = this.shadowRoot.querySelector('container');
+    this.search = {};
+
+    this._joinData = () => {
+      let tickets = this.tdv.data();
+      let skills = this.sdv.data();
+      let users = this.udv.data();
+      tickets.forEach((ticket) => {
+        ticket.skill = skills.find((skill) => skill.id === ticket.skillId);
+        ticket.user = users.find((user) => user.id === ticket.userId);
+      });
+      return tickets;
+    };
+
+    this._updateView = () => {
+      this.tickets = this._joinData();
+      if (this.element) patch(this.element, render, this);
+    };
   }
 
   attributeChangedCallback(name, oVal, nVal) {
@@ -17,18 +35,79 @@ class AssistanceAdmin extends HTMLElement {
     }
   }
 
+  close(ticket) {
+    ticket.type = 'closed';
+    this.tColl.update(ticket);
+    this._updateView();
+  }
+
   connectedCallback() {
+    this.sColl = db.getCollection('skills');
+    this.tColl = db.getCollection('tickets');
+    this.uColl = db.getCollection('users');
+
+    this.tColl.setChangesApi(true);
+
+    this.sdv = this.sColl.addDynamicView('skills');
+    this.tdv = this.tColl.addDynamicView('tickets');
+    this.udv = this.uColl.addDynamicView('users');
+
+    document.addEventListener('ticketsChanged', this._updateView.bind(this));
+    document.addEventListener('skillsChanged', this._updateView.bind(this));
+    document.addEventListener('usersChanged', this._updateView.bind(this));
+
+    this._updateView();
+  }
+
+  delete(ticket) {
+    this.tColl.remove(ticket);
     this._updateView();
   }
 
   disconnectedCallback() {
-
+    this.sdv.removeFilters();
+    this.tdv.removeFilters();
+    this.udv.removeFilters();
+    document.removeEventListener('ticketsChanged', this._updateView.bind(this));
+    document.removeEventListener('skillsChanged', this._updateView.bind(this));
+    document.removeEventListener('usersChanged', this._updateView.bind(this));
   }
 
+  filterTickets() {
+    // console.log("this.search", this.search)
+    this.tdv.removeFilters();
+    let re = this.search.text && this.search.text !== '' ? new RegExp(this.search.text) : null;
 
+    if (!!(this.search.type && this.search.type !== '' && re)) {
+      this.tdv.applyWhere((ticket) => {
+        return ticket.type === this.search.type && ticket.skill && ticket.skill.title && re.test(ticket.skill.title)
+          || ticket.type === this.search.type && ticket.skill && ticket.skill.description && re.test(ticket.skill.description)
+          || ticket.type === this.search.type && ticket.user && ticket.user.displayName && re.test(ticket.user.displayName)
+          || ticket.type === this.search.type && ticket.user && ticket.user.firstName && re.test(ticket.user.firstName)
+          || ticket.type === this.search.type && ticket.user && ticket.user.lastName && re.test(ticket.user.lastName)
+          || ticket.type === this.search.type && ticket.user && ticket.user.email && re.test(ticket.user.email);
+      });
+    } else if (!!re) {
+      this.tdv.applyWhere((ticket) => {
+        return ticket.skill && ticket.skill.title && re.test(ticket.skill.title)
+          || ticket.skill && ticket.skill.description && re.test(ticket.skill.description)
+          || ticket.user && ticket.user.displayName && re.test(ticket.user.displayName)
+          || ticket.user && ticket.user.firstName && re.test(ticket.user.firstName)
+          || ticket.user && ticket.user.lastName && re.test(ticket.user.lastName)
+          || ticket.user && ticket.user.email && re.test(ticket.user.email);
+      });
+    } else if (this.search.type !== '') {
+      this.tdv.applyWhere((ticket) => {
+        return ticket.type === this.search.type;
+      });
+    }
+    this._updateView();
+  }
 
-  _updateView() {
-    if (this.element) patch(this.element, render, this);
+  open(ticket) {
+    ticket.type = 'open';
+    this.tColl.update(ticket);
+    this._updateView();
   }
 
   static get observedAttributes() {

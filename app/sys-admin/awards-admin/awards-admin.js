@@ -48,6 +48,11 @@ class AwardsAdmin extends HTMLElement {
 
   disconnectedCallback() {
     this.adv.removeFilters();
+    this.sdv.removeFilters();
+    this.udv.removeFilters();
+    document.removeEventListener('awardsChanged', this._updateView.bind(this));
+    document.removeEventListener('skillsChanged', this._updateView.bind(this));
+    document.removeEventListener('usersChanged', this._updateView.bind(this));
   }
 
   filterAwards() {

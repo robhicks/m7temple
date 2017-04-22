@@ -14,7 +14,7 @@
       <button if="ctrl.pending" type="button" name="pending" onclick="{ctrl.showAwards(ctrl.iid, 'pending')}">
         <img src="/img/skill-pending.svg" alt="">
       </button>
-      <button type="button" name="add" onclick="{ctrl.getHelp(ctrl.iid)}">
+      <button type="button" name="add" onclick="{ctrl.addTicket(ctrl.iid)}">
         <img src="/img/help.svg" alt="">
       </button>
       <button if="ctrl.added || ctrl.pending || ctrl.earned" type="button" name="delete" onclick="{ctrl.delete(ctrl.iid)}">

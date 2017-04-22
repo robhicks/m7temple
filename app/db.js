@@ -61,9 +61,11 @@ db.loadDb = (req, evt, next) => {
     db.loadJSON(data, {disableChangesApi: false});
     let awards = db.getCollection('awards');
     let skills = db.getCollection('skills');
+    let tickets = db.getCollection('tickets');
     let users = db.getCollection('users');
     awards.on(['insert', 'update', 'delete'], changeHandler);
     skills.on(['insert', 'update', 'delete'], changeHandler);
+    tickets.on(['insert', 'update', 'delete'], changeHandler);
     users.on(['insert', 'update', 'delete'], changeHandler);
     db.loaded = true;
     // console.log('database loaded');

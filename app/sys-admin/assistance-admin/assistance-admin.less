@@ -1,1 +1,73 @@
-:host {}
+@import '../../css/variables.less';
+@import '../../css/wc/buttons.less';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+section[name='header'] {
+  display: flex;
+  flex-direction: column;
+  input[name="search"] {
+    height: 38px;
+    font-size: 1em;
+    padding-left: 1vw;
+  }
+  #filter {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    border: 1px solid #ccc;
+    border-top: 0;
+    label {
+      flex: 1;
+      padding-left: 1vw;
+    }
+  }
+}
+
+section[name='tickets'] {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-top: 1vh;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 1vw 1vh;
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: .9em;
+    padding: 1vh 1vw;
+    &.odd {
+      background-color: @odd-background;
+    }
+    user, skill, date, help, share, story, actions {
+      display: flex;
+      height: 28px;
+      width: 100%;
+      align-items: center;
+      name {
+        flex: 1;
+        font-weight: bold;
+      }
+      value {
+        display: inline-block;
+        flex: 4;
+      }
+    }
+    actions {
+      height: 48px;
+      value {
+        padding: 0;
+        button {
+          margin-top: 2vh;
+          margin-right: 1vw;
+        }
+      }
+    }
+  }
+}

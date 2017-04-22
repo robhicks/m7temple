@@ -91,8 +91,10 @@ class CollapsablePanel extends HTMLElement {
     this.element = this.shadowRoot.querySelector('.collapsable-panel');
     this.aColl = db.getCollection('awards');
     this.sColl = db.getCollection('skills');
+    this.tColl = db.getCollection('tickets');
     this.aColl.setChangesApi(true);
     this.sColl.setChangesApi(true);
+    this.tColl.setChangesApi(true);
     this.adv = this.aColl.addDynamicView('awards');
     this.sdv = this.sColl.addDynamicView('skills');
     this._updateView();
@@ -128,7 +130,24 @@ class CollapsablePanel extends HTMLElement {
   }
 
   disconnectedCallback() {
+    this.aColl.removeDynamicView('awards');
+    this.sColl.removeDynamicView('skills');
+    document.removeEventListener('awardsChanged', this._updateView.bind(this));
+    document.removeEventListener('skillsChanged', this._updateView.bind(this));
+  }
 
+  addTicket(skillId) {
+    let ticket = this.tColl.findOne({skillId, userId: user.id});
+    if (ticket) this.addAlert('You have already requested help with this skill. Someone will be contacting you shortly.', 'bad');
+    else {
+      this.tColl.insertOne({
+        skillId,
+        userId: user.id,
+        date: new Date().toISOString(),
+        type: 'open'
+      });
+      this.addAlert('Your reqeust for help has been logged. You will be contacted shortly.', 'good');
+    }
   }
 
   hideAchievements(skillId) {

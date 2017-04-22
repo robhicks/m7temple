@@ -1,1 +1,41 @@
-Help
+<section name="header">
+  <input type="text" name="search" value="" placeholder="Search ..." onkeyup="{ctrl.search.text = this.value; ctrl.filterTickets()}">
+  <div id="filter">
+    <label for="">
+      <input type="radio" name="ticketsType" value="" checked onchange="{ctrl.search.type = this.value; ctrl.filterTickets()}">
+      All
+    </label>
+    <label for="">
+      <input type="radio" name="ticketsType" value="open" onchange="{ctrl.search.type = this.value; ctrl.filterTickets()}">
+      Open
+    </label>
+    <label for="">
+      <input type="radio" name="ticketsType" value="closed" onchange="{ctrl.search.type = this.value; ctrl.filterTickets()}">
+      Closed
+    </label>
+  </div>
+</section>
+<section name="tickets" if="ctrl.tickets.length > 0">
+  <div each="ticket in ctrl.tickets" class="{ $item % 2 ? 'row odd' : 'row even' }">
+    <user>
+      <name>Name</name>
+      <value>{ticket.user.displayName}</value>
+    </user>
+    <skill>
+      <name>Skill</name>
+      <value>{ticket.skill.title}</value>
+    </skill>
+    <date>
+      <name>Date</name>
+      <value>{new Date(ticket.date).toLocaleDateString()}</value>
+    </date>
+    <actions>
+      <name></name>
+      <value>
+        <button if="ticket.type === 'open' || ticket.type === ''" type="button" class="primary" name="close" onclick="{ctrl.close(ticket)}">Close</button>
+        <button if="ticket.type === 'closed'" type="button" class="primary" name="reopen" onclick="{ctrl.open(ticket)}">Open</button>
+        <button type="button" class="danger" name="delete" onclick="{ctrl.delete(ticket)}">Delete</button>
+      </value>
+    </actions>
+  </div>
+</section>

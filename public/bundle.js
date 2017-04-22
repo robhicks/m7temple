@@ -729,68 +729,68 @@ var hoisted31 = ["class", "html"];
 var __target$6;
 
 function render$6(ctrl) {
-  incrementalDom.elementOpen("div", "95ed77f7-812e-4ad0-b7cb-fecaf7a9089a", hoisted1$6);
-  incrementalDom.elementOpen("div", "fc014f4d-1b46-452f-908b-b2bc9c286585", hoisted2$4);
-  incrementalDom.elementOpen("div", "912eff6b-c55b-4475-96b4-d5f2abd1359e", hoisted3$4);
+  incrementalDom.elementOpen("div", "dbcf2c3c-554b-4440-b150-42faa2e21983", hoisted1$6);
+  incrementalDom.elementOpen("div", "27b34735-d021-402f-95e9-06c086cf6a41", hoisted2$4);
+  incrementalDom.elementOpen("div", "1617414b-f9e0-43a4-8aab-b408d586e084", hoisted3$4);
   incrementalDom.text("" + ctrl.heading + "");
   incrementalDom.elementClose("div");
-  incrementalDom.elementOpen("div", "8fefdb64-1586-4ace-ab3a-ea9c6a03f2b2", hoisted4$3);
+  incrementalDom.elementOpen("div", "0483ef05-7226-4aac-976e-9bbbd7964142", hoisted4$3);
   if (!ctrl.added && !ctrl.earned && !ctrl.pending && !ctrl.multiple) {
-    incrementalDom.elementOpen("button", "c0d9283b-5adf-4b79-9b49-0bbe3fa77eb3", hoisted5$3, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "1a3929c0-8058-4457-8640-89d6eedcf929", hoisted5$3, "onclick", function ($event) {
       var $element = this;
       ctrl.add(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "406ac9d5-6036-4a5e-a4d1-17597bbfb39c", hoisted6$3);
+    incrementalDom.elementOpen("img", "c367dbcf-9fb8-4090-a153-0d0b2fa31a98", hoisted6$3);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (!ctrl.earned && !ctrl.multiple && !ctrl.pending) {
-    incrementalDom.elementOpen("button", "df5816a6-8cf1-4964-9ff2-b92c85ab464b", hoisted7$3, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "0bd7e1a6-8888-4147-87c6-3dc1af34112a", hoisted7$3, "onclick", function ($event) {
       var $element = this;
       ctrl.addAndShowAchievementEditor(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "4b009bbe-1bd6-4891-b459-e586af766218", hoisted8$2);
+    incrementalDom.elementOpen("img", "83b91bba-ea3d-4fff-92c9-82443b6b7084", hoisted8$2);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (ctrl.earned) {
-    incrementalDom.elementOpen("button", "ba870c06-3494-443a-81e2-9768c2451cbe", hoisted9$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "2e8793ad-b553-4343-aff5-cf0cfa91891f", hoisted9$1, "onclick", function ($event) {
       var $element = this;
       ctrl.showAwards(ctrl.iid, 'earned');
     });
-    incrementalDom.elementOpen("img", "7d5d8858-4a63-4fc6-a5b8-946b926b2df8", hoisted10$1);
+    incrementalDom.elementOpen("img", "01304fee-9ea8-4f0c-934b-63cc2e222516", hoisted10$1);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (ctrl.pending) {
-    incrementalDom.elementOpen("button", "da94c38a-da8f-434e-bba5-a6adf4e0cf92", hoisted11, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "30f4ce1d-f38e-429f-b1e3-6e78b21e5634", hoisted11, "onclick", function ($event) {
       var $element = this;
       ctrl.showAwards(ctrl.iid, 'pending');
     });
-    incrementalDom.elementOpen("img", "edc86c0d-cf5f-432a-b415-88bccc5d3813", hoisted12);
+    incrementalDom.elementOpen("img", "b634c4c4-3a31-4b17-a9ac-a2f2688c8a2c", hoisted12);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
-  incrementalDom.elementOpen("button", "d039d207-c95b-4e0e-a0e8-05b3b5433dc5", hoisted13, "onclick", function ($event) {
+  incrementalDom.elementOpen("button", "6492cd6c-30a7-4654-90fd-7ac9e0c4d109", hoisted13, "onclick", function ($event) {
     var $element = this;
-    ctrl.getHelp(ctrl.iid);
+    ctrl.addTicket(ctrl.iid);
   });
-  incrementalDom.elementOpen("img", "f37d1af7-a1e5-4a64-88c2-298cdfdd4cbd", hoisted14);
+  incrementalDom.elementOpen("img", "5ecd751d-9101-47d9-890c-c1f0d571570b", hoisted14);
   incrementalDom.elementClose("img");
   incrementalDom.elementClose("button");
   if (ctrl.added || ctrl.pending || ctrl.earned) {
-    incrementalDom.elementOpen("button", "ae1bc044-f27c-4532-b15f-74b83a0a6d58", hoisted15, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "94915fa1-ca10-42a8-aae1-f22dc269f4a3", hoisted15, "onclick", function ($event) {
       var $element = this;
       ctrl.delete(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "06577b08-ace8-4e86-bb95-b5f6dca5eb8d", hoisted16);
+    incrementalDom.elementOpen("img", "ba5db283-b3db-454c-850c-e4c603096dc6", hoisted16);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
-  incrementalDom.elementOpen("button", "0c29444c-7008-4299-983c-6457e93c55ae", hoisted17);
+  incrementalDom.elementOpen("button", "0d0dbf12-efda-46c6-8921-ead7f5609e8a", hoisted17);
   incrementalDom.text("" + ctrl.achievements + "");
   incrementalDom.elementClose("button");
-  incrementalDom.elementOpen("button", "b8ac1e6a-ce4f-4d50-864d-a32af6d45cbb", hoisted18, "onclick", function ($event) {
+  incrementalDom.elementOpen("button", "fd2431df-d8bf-4f7d-a421-1adbe231b141", hoisted18, "onclick", function ($event) {
     var $element = this;
     ctrl.toggle();
   });
@@ -807,7 +807,7 @@ function render$6(ctrl) {
   incrementalDom.elementClose("button");
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("div");
-  incrementalDom.elementOpen("div", "de0e2b37-12ce-4b7a-876f-1780ed1dcb87", hoisted19);
+  incrementalDom.elementOpen("div", "9d93d708-bfc6-4cf0-bc88-9bb81f5387c4", hoisted19);
   incrementalDom.text("" + ctrl.description + "");
   incrementalDom.elementClose("div");
   if (ctrl.showAchievements) {
@@ -816,11 +816,11 @@ function render$6(ctrl) {
     incrementalDom.elementOpen("title");
     incrementalDom.text("Achievements:");
     incrementalDom.elementClose("title");
-    incrementalDom.elementOpen("button", "5d0edf7d-bf00-4efc-bee5-ebd7cf079240", hoisted20, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "dd8c8473-6e16-48ac-9a69-70d633edffc3", hoisted20, "onclick", function ($event) {
       var $element = this;
       ctrl.hideAchievements(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "d6db42b9-bbaa-4850-8d11-59f6af5e8465", hoisted21);
+    incrementalDom.elementOpen("img", "c3ab1f5e-591d-42cc-9779-12452e6926e8", hoisted21);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
     incrementalDom.elementClose("header");
@@ -828,7 +828,7 @@ function render$6(ctrl) {
     if (__target$6) {
       (__target$6.forEach ? __target$6 : Object.keys(__target$6)).forEach(function ($value, $item, $target) {
         var item = $value;
-        var $key = "dc5577c6-ba94-4306-bfe9-36d6786812d1_" + $item;
+        var $key = "0a789124-3086-43a3-95cc-6a4799589bf5_" + $item;
         incrementalDom.elementOpen("section", $key, hoisted22);
         if (ctrl.awards[item].pending && parseInt(ctrl.awards[item].skillId, 10) === parseInt(ctrl.iid, 10)) {
           incrementalDom.elementOpen("story");
@@ -879,30 +879,30 @@ function render$6(ctrl) {
               someone will review and approve it. Please share your experience, and sign up to help others. \
             ");
     incrementalDom.elementClose("p");
-    incrementalDom.elementOpen("textarea", "ffd32d08-3036-4f1b-a0b8-edc323dc29fc", hoisted23);
+    incrementalDom.elementOpen("textarea", "1fc72f2f-66fd-4a1c-a65d-6490b2771c89", hoisted23);
     incrementalDom.elementClose("textarea");
-    incrementalDom.elementOpen("div", "a1558717-8723-4033-8986-18cb22b8d597", hoisted24);
-    incrementalDom.elementOpen("input", "f9fda98c-a4a9-4186-a2e1-255a17e597ab", hoisted25);
+    incrementalDom.elementOpen("div", "09da832f-631b-41db-9af4-48ffbfe55191", hoisted24);
+    incrementalDom.elementOpen("input", "69bd777f-a6e3-4c9e-a81d-b985d8468dac", hoisted25);
     incrementalDom.elementClose("input");
     incrementalDom.elementOpen("span");
     incrementalDom.text("Yes, I'm willing to share my experience");
     incrementalDom.elementClose("span");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "59327ff3-9ae1-4089-89b8-4b255a383a4b", hoisted26);
-    incrementalDom.elementOpen("input", "3a3c89c6-9210-4db2-909d-b266ae9135e4", hoisted27);
+    incrementalDom.elementOpen("div", "3d803adb-e078-4701-9761-308da5feae4e", hoisted26);
+    incrementalDom.elementOpen("input", "13d64e9a-d688-42be-8f79-dced37209f42", hoisted27);
     incrementalDom.elementClose("input");
     incrementalDom.elementOpen("span");
     incrementalDom.text("Yes, I'm willing to help others achieve this skill.");
     incrementalDom.elementClose("span");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "7e1e17ad-93a0-4477-aa01-af91461dd44a", hoisted28);
-    incrementalDom.elementOpen("button", "69a778d2-8d90-4ff5-aa52-bc49a04e22ad", hoisted29, "onclick", function ($event) {
+    incrementalDom.elementOpen("div", "4c86c1e0-afc6-4096-908c-b95fa0733808", hoisted28);
+    incrementalDom.elementOpen("button", "fa12143b-6c06-463f-9b6c-5ea851540bf3", hoisted29, "onclick", function ($event) {
       var $element = this;
       ctrl.applyForAchievment();
     });
     incrementalDom.text("Apply");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("a", "0b105be7-73cc-4cab-a50c-c1a667899deb", hoisted30, "onclick", function ($event) {
+    incrementalDom.elementOpen("a", "3ef5cba2-1205-4f36-9fc8-ba2760a84f9e", hoisted30, "onclick", function ($event) {
       var $element = this;
       ctrl.hideSkillEditor();
     });
@@ -912,7 +912,7 @@ function render$6(ctrl) {
     incrementalDom.elementClose("skill-editor");
   }
   if (!ctrl.collapsed) {
-    incrementalDom.elementOpen("div", "52f310dd-c319-4b30-9ed7-83f8ece8c14a", hoisted31);
+    incrementalDom.elementOpen("div", "8e568858-ac01-494a-b0a0-3846075a1cc9", hoisted31);
     if (ctrl.html && ctrl.html !== '') {
       var el = incrementalDom.currentElement();
       el.innerHTML = ctrl.html;
@@ -923,7 +923,7 @@ function render$6(ctrl) {
   incrementalDom.elementClose("div");
 }
 
-var css$6 = "h1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n:host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n.collapsable-panel .panel {\n  border: 1px solid #ccc;\n  margin-bottom: 8px;\n}\n.collapsable-panel .panel .heading {\n  display: flex;\n  border-bottom: 1px solid #ccc;\n}\n.collapsable-panel .panel .heading .title {\n  font-size: 1.2em;\n  flex: 1;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .heading .button-group {\n  display: flex;\n  justify-content: flex-end;\n}\n.collapsable-panel .panel .heading .button-group button {\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: transparent;\n  border: 0;\n  outline: none;\n  width: 28px;\n  height: 28px;\n  border-left: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n  font-size: .5em;\n  cursor: pointer;\n  line-height: normal;\n}\n.collapsable-panel .panel .heading .button-group button img {\n  height: 100%;\n  width: 100%;\n}\n.collapsable-panel .panel .description {\n  font-size: 1em;\n  font-style: italic;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .html {\n  font-size: 1em;\n  padding: 1vw;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert {\n  display: flex;\n  padding: 1vh 1vw;\n  font-size: .75em;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert.good {\n  background-color: rgba(100, 200, 100, 0.1);\n}\n.collapsable-panel .panel alert.bad {\n  background-color: rgba(200, 100, 100, 0.1);\n}\n.collapsable-panel skill-editor {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  border: 2px solid gold;\n  font-size: .75em;\n  padding: 1vh 1vw;\n}\n.collapsable-panel skill-editor header {\n  display: block;\n  font-size: 1em;\n}\n.collapsable-panel skill-editor p {\n  font-size: .75em;\n}\n.collapsable-panel skill-editor .control-container,\n.collapsable-panel skill-editor .button-group {\n  display: flex;\n  font-size: .8em;\n  margin-top: 1vh;\n  align-items: center;\n}\n.collapsable-panel skill-editor input[type='checkbox'] {\n  margin-right: 2vw;\n}\n.collapsable-panel skill-editor .button-group a {\n  margin-left: 2vw;\n}\n.collapsable-panel achievements-wrapper {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  padding: 1vh 1vw;\n  background-color: rgba(245, 191, 35, 0.2);\n  font-size: .75em;\n}\n.collapsable-panel achievements-wrapper header {\n  display: flex;\n}\n.collapsable-panel achievements-wrapper header button {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  outline: none;\n  width: 16px;\n  height: 16px;\n  position: relative;\n  top: -1vh;\n}\n.collapsable-panel achievements-wrapper header button img {\n  width: inherit;\n  height: inherit;\n}\n.collapsable-panel achievements-wrapper header title {\n  display: block;\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section {\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section story {\n  font-size: .8em;\n}\n.collapsable-panel achievements-wrapper section status {\n  display: flex;\n  border-top: 1px solid #ccc;\n  align-items: flex-end;\n}\n.collapsable-panel achievements-wrapper section status state {\n  display: inline-block;\n  flex: 1;\n  font-size: .7em;\n}\n.collapsable-panel achievements-wrapper section status date {\n  display: inline-block;\n  font-size: .6em;\n}\n";
+var css$6 = "h1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n:host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n.collapsable-panel .panel {\n  border: 1px solid #ccc;\n  margin-bottom: 8px;\n}\n.collapsable-panel .panel .heading {\n  display: flex;\n  border-bottom: 1px solid #ccc;\n}\n.collapsable-panel .panel .heading .title {\n  font-size: 1.2em;\n  flex: 1;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .heading .button-group {\n  display: flex;\n  justify-content: flex-end;\n}\n.collapsable-panel .panel .heading .button-group button {\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: transparent;\n  border: 0;\n  outline: none;\n  width: 28px;\n  height: 28px;\n  border-left: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n  font-size: .75em;\n  cursor: pointer;\n  line-height: normal;\n}\n.collapsable-panel .panel .heading .button-group button img {\n  height: 100%;\n  width: 100%;\n}\n.collapsable-panel .panel .description {\n  font-size: 1em;\n  font-style: italic;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .html {\n  font-size: 1em;\n  padding: 1vw;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert {\n  display: flex;\n  padding: 1vh 1vw;\n  font-size: .75em;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert.good {\n  background-color: rgba(100, 200, 100, 0.1);\n}\n.collapsable-panel .panel alert.bad {\n  background-color: rgba(200, 100, 100, 0.1);\n}\n.collapsable-panel skill-editor {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  border: 2px solid gold;\n  font-size: .75em;\n  padding: 1vh 1vw;\n}\n.collapsable-panel skill-editor header {\n  display: block;\n  font-size: 1em;\n}\n.collapsable-panel skill-editor p {\n  font-size: .75em;\n}\n.collapsable-panel skill-editor .control-container,\n.collapsable-panel skill-editor .button-group {\n  display: flex;\n  font-size: .8em;\n  margin-top: 1vh;\n  align-items: center;\n}\n.collapsable-panel skill-editor input[type='checkbox'] {\n  margin-right: 2vw;\n}\n.collapsable-panel skill-editor .button-group a {\n  margin-left: 2vw;\n}\n.collapsable-panel achievements-wrapper {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  padding: 1vh 1vw;\n  background-color: rgba(245, 191, 35, 0.2);\n  font-size: .75em;\n}\n.collapsable-panel achievements-wrapper header {\n  display: flex;\n}\n.collapsable-panel achievements-wrapper header button {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  outline: none;\n  width: 16px;\n  height: 16px;\n  position: relative;\n  top: -1vh;\n}\n.collapsable-panel achievements-wrapper header button img {\n  width: inherit;\n  height: inherit;\n}\n.collapsable-panel achievements-wrapper header title {\n  display: block;\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section {\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section story {\n  font-size: .8em;\n}\n.collapsable-panel achievements-wrapper section status {\n  display: flex;\n  border-top: 1px solid #ccc;\n  align-items: flex-end;\n}\n.collapsable-panel achievements-wrapper section status state {\n  display: inline-block;\n  flex: 1;\n  font-size: .7em;\n}\n.collapsable-panel achievements-wrapper section status date {\n  display: inline-block;\n  font-size: .6em;\n}\n";
 
 var CollapsablePanel = function (_HTMLElement) {
   inherits(CollapsablePanel, _HTMLElement);
@@ -1033,8 +1033,10 @@ var CollapsablePanel = function (_HTMLElement) {
       this.element = this.shadowRoot.querySelector('.collapsable-panel');
       this.aColl = db.getCollection('awards');
       this.sColl = db.getCollection('skills');
+      this.tColl = db.getCollection('tickets');
       this.aColl.setChangesApi(true);
       this.sColl.setChangesApi(true);
+      this.tColl.setChangesApi(true);
       this.adv = this.aColl.addDynamicView('awards');
       this.sdv = this.sColl.addDynamicView('skills');
       this._updateView();
@@ -1076,7 +1078,26 @@ var CollapsablePanel = function (_HTMLElement) {
     }
   }, {
     key: 'disconnectedCallback',
-    value: function disconnectedCallback() {}
+    value: function disconnectedCallback() {
+      this.aColl.removeDynamicView('awards');
+      this.sColl.removeDynamicView('skills');
+      document.removeEventListener('awardsChanged', this._updateView.bind(this));
+      document.removeEventListener('skillsChanged', this._updateView.bind(this));
+    }
+  }, {
+    key: 'addTicket',
+    value: function addTicket(skillId) {
+      var ticket = this.tColl.findOne({ skillId: skillId, userId: user.id });
+      if (ticket) this.addAlert('You have already requested help with this skill. Someone will be contacting you shortly.', 'bad');else {
+        this.tColl.insertOne({
+          skillId: skillId,
+          userId: user.id,
+          date: new Date().toISOString(),
+          type: 'open'
+        });
+        this.addAlert('Your reqeust for help has been logged. You will be contacted shortly.', 'good');
+      }
+    }
   }, {
     key: 'hideAchievements',
     value: function hideAchievements(skillId) {
@@ -1199,6 +1220,11 @@ var HomeAuthenticated = function (_HTMLElement) {
     value: function disconnectedCallback() {
       this.adv.removeFilters();
       this.sdv.removeFilters();
+      document.removeEventListener('userUnauthenticated', function () {
+        router.navigate('/login');
+      });
+      document.removeEventListener('awardsChanged', this._updateView.bind(this));
+      document.removeEventListener('skillsChanged', this._updateView.bind(this));
     }
   }, {
     key: 'filterSkills',
@@ -1387,11 +1413,128 @@ function render$8(ctrl) {
 
 var css$8 = "h1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\nsys-admin {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\n#sys-admin {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n#sys-admin tabs {\n  display: flex;\n  margin: 2vw 2vw 0 2vw;\n  background-color: white;\n  justify-content: flex-start;\n}\n#sys-admin tab {\n  display: block;\n  flex: 1;\n}\n#sys-admin tab input[type=radio] {\n  display: none;\n}\n#sys-admin tab input[type=radio]:checked ~ label {\n  background: white;\n  border-bottom: 1px solid white;\n  z-index: 2;\n}\n#sys-admin tab label {\n  display: block;\n  background: #eee;\n  padding: 10px;\n  border: 1px solid #ccc;\n  font-size: 17px;\n  cursor: pointer;\n}\n#sys-admin content {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: white;\n  border-right: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n  border-left: 1px solid #ccc;\n  margin: 0 2vw 1vh 2vw;\n  padding: 2vw;\n  overflow: hidden;\n}\n";
 
-var css$9 = "";
+var css$9 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n}\nsection[name='header'] {\n  display: flex;\n  flex-direction: column;\n}\nsection[name='header'] input[name=\"search\"] {\n  height: 38px;\n  font-size: 1em;\n  padding-left: 1vw;\n}\nsection[name='header'] #filter {\n  display: flex;\n  align-items: center;\n  height: 38px;\n  border: 1px solid #ccc;\n  border-top: 0;\n}\nsection[name='header'] #filter label {\n  flex: 1;\n  padding-left: 1vw;\n}\nsection[name='tickets'] {\n  flex: 1;\n  overflow-x: hidden;\n  overflow-y: auto;\n  margin-top: 1vh;\n  border: 1px solid #ccc;\n  display: flex;\n  flex-direction: column;\n  padding: 1vw 1vh;\n}\nsection[name='tickets'] .row {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  font-size: .9em;\n  padding: 1vh 1vw;\n}\nsection[name='tickets'] .row.odd {\n  background-color: #f4f4f4;\n}\nsection[name='tickets'] .row user,\nsection[name='tickets'] .row skill,\nsection[name='tickets'] .row date,\nsection[name='tickets'] .row help,\nsection[name='tickets'] .row share,\nsection[name='tickets'] .row story,\nsection[name='tickets'] .row actions {\n  display: flex;\n  height: 28px;\n  width: 100%;\n  align-items: center;\n}\nsection[name='tickets'] .row user name,\nsection[name='tickets'] .row skill name,\nsection[name='tickets'] .row date name,\nsection[name='tickets'] .row help name,\nsection[name='tickets'] .row share name,\nsection[name='tickets'] .row story name,\nsection[name='tickets'] .row actions name {\n  flex: 1;\n  font-weight: bold;\n}\nsection[name='tickets'] .row user value,\nsection[name='tickets'] .row skill value,\nsection[name='tickets'] .row date value,\nsection[name='tickets'] .row help value,\nsection[name='tickets'] .row share value,\nsection[name='tickets'] .row story value,\nsection[name='tickets'] .row actions value {\n  display: inline-block;\n  flex: 4;\n}\nsection[name='tickets'] .row actions {\n  height: 48px;\n}\nsection[name='tickets'] .row actions value {\n  padding: 0;\n}\nsection[name='tickets'] .row actions value button {\n  margin-top: 2vh;\n  margin-right: 1vw;\n}\n";
+
+var hoisted1$9 = ["name", "header"];
+var hoisted2$7 = ["type", "text", "name", "search", "value", "", "placeholder", "Search ..."];
+var hoisted3$6 = ["id", "filter"];
+var hoisted4$5 = ["for", ""];
+var hoisted5$5 = ["type", "radio", "name", "ticketsType", "value", "", "checked", ""];
+var hoisted6$5 = ["for", ""];
+var hoisted7$5 = ["type", "radio", "name", "ticketsType", "value", "open"];
+var hoisted8$4 = ["for", ""];
+var hoisted9$3 = ["type", "radio", "name", "ticketsType", "value", "closed"];
+var hoisted10$3 = ["name", "tickets"];
+var hoisted11$1 = ["type", "button", "class", "primary", "name", "close"];
+var hoisted12$1 = ["type", "button", "class", "primary", "name", "reopen"];
+var hoisted13$1 = ["type", "button", "class", "danger", "name", "delete"];
+var __target$9;
 
 function render$9(ctrl) {
-  incrementalDom.text("Help \
-");
+  incrementalDom.elementOpen("section", "d9bfc71d-2a94-4eda-afc8-5f86cdffc494", hoisted1$9);
+  incrementalDom.elementOpen("input", "ae60bbba-992b-49bf-93a8-35e4ac8f3fd9", hoisted2$7, "onkeyup", function ($event) {
+    var $element = this;
+    ctrl.search.text = this.value;ctrl.filterTickets();
+  });
+  incrementalDom.elementClose("input");
+  incrementalDom.elementOpen("div", "d764e789-96db-4614-874e-901113529ed3", hoisted3$6);
+  incrementalDom.elementOpen("label", "9c4ad255-bc7b-4875-867e-ea11edeb7c2a", hoisted4$5);
+  incrementalDom.elementOpen("input", "4434ba43-266e-43d8-a523-de236c2775a0", hoisted5$5, "onchange", function ($event) {
+    var $element = this;
+    ctrl.search.type = this.value;ctrl.filterTickets();
+  });
+  incrementalDom.elementClose("input");
+  incrementalDom.text(" \
+            All \
+          ");
+  incrementalDom.elementClose("label");
+  incrementalDom.elementOpen("label", "6ab2b332-0a8e-4086-a683-ff9b0c04fc5b", hoisted6$5);
+  incrementalDom.elementOpen("input", "eadeb732-3bd7-4d79-a939-217e36cfb340", hoisted7$5, "onchange", function ($event) {
+    var $element = this;
+    ctrl.search.type = this.value;ctrl.filterTickets();
+  });
+  incrementalDom.elementClose("input");
+  incrementalDom.text(" \
+            Open \
+          ");
+  incrementalDom.elementClose("label");
+  incrementalDom.elementOpen("label", "c70b0178-6ca2-4dbc-8c9d-2d8337ed6401", hoisted8$4);
+  incrementalDom.elementOpen("input", "6fa190f5-ea5e-4cdc-a33e-a75745a03eeb", hoisted9$3, "onchange", function ($event) {
+    var $element = this;
+    ctrl.search.type = this.value;ctrl.filterTickets();
+  });
+  incrementalDom.elementClose("input");
+  incrementalDom.text(" \
+            Closed \
+          ");
+  incrementalDom.elementClose("label");
+  incrementalDom.elementClose("div");
+  incrementalDom.elementClose("section");
+  if (ctrl.tickets.length > 0) {
+    incrementalDom.elementOpen("section", "317163ec-81a8-4a89-9599-8a5a21ddb66a", hoisted10$3);
+    __target$9 = ctrl.tickets;
+    if (__target$9) {
+      (__target$9.forEach ? __target$9 : Object.keys(__target$9)).forEach(function ($value, $item, $target) {
+        var ticket = $value;
+        var $key = "b4282792-48d6-47c1-9837-e954da1acecf_" + $item;
+        incrementalDom.elementOpen("div", $key, null, "class", $item % 2 ? 'row odd' : 'row even');
+        incrementalDom.elementOpen("user");
+        incrementalDom.elementOpen("name");
+        incrementalDom.text("Name");
+        incrementalDom.elementClose("name");
+        incrementalDom.elementOpen("value");
+        incrementalDom.text("" + ticket.user.displayName + "");
+        incrementalDom.elementClose("value");
+        incrementalDom.elementClose("user");
+        incrementalDom.elementOpen("skill");
+        incrementalDom.elementOpen("name");
+        incrementalDom.text("Skill");
+        incrementalDom.elementClose("name");
+        incrementalDom.elementOpen("value");
+        incrementalDom.text("" + ticket.skill.title + "");
+        incrementalDom.elementClose("value");
+        incrementalDom.elementClose("skill");
+        incrementalDom.elementOpen("date");
+        incrementalDom.elementOpen("name");
+        incrementalDom.text("Date");
+        incrementalDom.elementClose("name");
+        incrementalDom.elementOpen("value");
+        incrementalDom.text("" + new Date(ticket.date).toLocaleDateString() + "");
+        incrementalDom.elementClose("value");
+        incrementalDom.elementClose("date");
+        incrementalDom.elementOpen("actions");
+        incrementalDom.elementOpen("name");
+        incrementalDom.elementClose("name");
+        incrementalDom.elementOpen("value");
+        if (ticket.type === 'open' || ticket.type === '') {
+          incrementalDom.elementOpen("button", "54b05e98-78de-4172-8b9c-d6e048387a73_" + $key, hoisted11$1, "onclick", function ($event) {
+            var $element = this;
+            ctrl.close(ticket);
+          });
+          incrementalDom.text("Close");
+          incrementalDom.elementClose("button");
+        }
+        if (ticket.type === 'closed') {
+          incrementalDom.elementOpen("button", "72595f16-66a3-4e1d-88c7-482ef911c1df_" + $key, hoisted12$1, "onclick", function ($event) {
+            var $element = this;
+            ctrl.open(ticket);
+          });
+          incrementalDom.text("Open");
+          incrementalDom.elementClose("button");
+        }
+        incrementalDom.elementOpen("button", "98aeb4f1-b485-46f4-a095-22b574cae7d3_" + $key, hoisted13$1, "onclick", function ($event) {
+          var $element = this;
+          ctrl.delete(ticket);
+        });
+        incrementalDom.text("Delete");
+        incrementalDom.elementClose("button");
+        incrementalDom.elementClose("value");
+        incrementalDom.elementClose("actions");
+        incrementalDom.elementClose("div");
+      }, this);
+    }
+    incrementalDom.elementClose("section");
+  }
 }
 
 var AssistanceAdmin = function (_HTMLElement) {
@@ -1405,6 +1548,27 @@ var AssistanceAdmin = function (_HTMLElement) {
     _this.attachShadow({ mode: 'open' });
     _this.shadowRoot.innerHTML = '<style>' + css$9 + '</style><container></container>';
     _this.element = _this.shadowRoot.querySelector('container');
+    _this.search = {};
+
+    _this._joinData = function () {
+      var tickets = _this.tdv.data();
+      var skills = _this.sdv.data();
+      var users = _this.udv.data();
+      tickets.forEach(function (ticket) {
+        ticket.skill = skills.find(function (skill) {
+          return skill.id === ticket.skillId;
+        });
+        ticket.user = users.find(function (user) {
+          return user.id === ticket.userId;
+        });
+      });
+      return tickets;
+    };
+
+    _this._updateView = function () {
+      _this.tickets = _this._joinData();
+      if (_this.element) incrementalDom.patch(_this.element, render$9, _this);
+    };
     return _this;
   }
 
@@ -1416,17 +1580,77 @@ var AssistanceAdmin = function (_HTMLElement) {
       }
     }
   }, {
+    key: 'close',
+    value: function close(ticket) {
+      ticket.type = 'closed';
+      this.tColl.update(ticket);
+      this._updateView();
+    }
+  }, {
     key: 'connectedCallback',
     value: function connectedCallback() {
+      this.sColl = db.getCollection('skills');
+      this.tColl = db.getCollection('tickets');
+      this.uColl = db.getCollection('users');
+
+      this.tColl.setChangesApi(true);
+
+      this.sdv = this.sColl.addDynamicView('skills');
+      this.tdv = this.tColl.addDynamicView('tickets');
+      this.udv = this.uColl.addDynamicView('users');
+
+      document.addEventListener('ticketsChanged', this._updateView.bind(this));
+      document.addEventListener('skillsChanged', this._updateView.bind(this));
+      document.addEventListener('usersChanged', this._updateView.bind(this));
+
+      this._updateView();
+    }
+  }, {
+    key: 'delete',
+    value: function _delete(ticket) {
+      this.tColl.remove(ticket);
       this._updateView();
     }
   }, {
     key: 'disconnectedCallback',
-    value: function disconnectedCallback() {}
+    value: function disconnectedCallback() {
+      this.sdv.removeFilters();
+      this.tdv.removeFilters();
+      this.udv.removeFilters();
+      document.removeEventListener('ticketsChanged', this._updateView.bind(this));
+      document.removeEventListener('skillsChanged', this._updateView.bind(this));
+      document.removeEventListener('usersChanged', this._updateView.bind(this));
+    }
   }, {
-    key: '_updateView',
-    value: function _updateView() {
-      if (this.element) incrementalDom.patch(this.element, render$9, this);
+    key: 'filterTickets',
+    value: function filterTickets() {
+      var _this2 = this;
+
+      // console.log("this.search", this.search)
+      this.tdv.removeFilters();
+      var re = this.search.text && this.search.text !== '' ? new RegExp(this.search.text) : null;
+
+      if (!!(this.search.type && this.search.type !== '' && re)) {
+        this.tdv.applyWhere(function (ticket) {
+          return ticket.type === _this2.search.type && ticket.skill && ticket.skill.title && re.test(ticket.skill.title) || ticket.type === _this2.search.type && ticket.skill && ticket.skill.description && re.test(ticket.skill.description) || ticket.type === _this2.search.type && ticket.user && ticket.user.displayName && re.test(ticket.user.displayName) || ticket.type === _this2.search.type && ticket.user && ticket.user.firstName && re.test(ticket.user.firstName) || ticket.type === _this2.search.type && ticket.user && ticket.user.lastName && re.test(ticket.user.lastName) || ticket.type === _this2.search.type && ticket.user && ticket.user.email && re.test(ticket.user.email);
+        });
+      } else if (!!re) {
+        this.tdv.applyWhere(function (ticket) {
+          return ticket.skill && ticket.skill.title && re.test(ticket.skill.title) || ticket.skill && ticket.skill.description && re.test(ticket.skill.description) || ticket.user && ticket.user.displayName && re.test(ticket.user.displayName) || ticket.user && ticket.user.firstName && re.test(ticket.user.firstName) || ticket.user && ticket.user.lastName && re.test(ticket.user.lastName) || ticket.user && ticket.user.email && re.test(ticket.user.email);
+        });
+      } else if (this.search.type !== '') {
+        this.tdv.applyWhere(function (ticket) {
+          return ticket.type === _this2.search.type;
+        });
+      }
+      this._updateView();
+    }
+  }, {
+    key: 'open',
+    value: function open(ticket) {
+      ticket.type = 'open';
+      this.tColl.update(ticket);
+      this._updateView();
     }
   }], [{
     key: 'observedAttributes',
@@ -1441,29 +1665,29 @@ customElements.define('assistance-admin', AssistanceAdmin);
 
 var css$10 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n}\nsection[name='header'] {\n  display: flex;\n  flex-direction: column;\n}\nsection[name='header'] input[name=\"search\"] {\n  height: 38px;\n  font-size: 1em;\n  padding-left: 1vw;\n}\nsection[name='header'] #filter {\n  display: flex;\n  align-items: center;\n  height: 38px;\n  border: 1px solid #ccc;\n  border-top: 0;\n}\nsection[name='header'] #filter label {\n  flex: 1;\n  padding-left: 1vw;\n}\nsection[name='awards'] {\n  flex: 1;\n  overflow-x: hidden;\n  overflow-y: auto;\n  margin-top: 1vh;\n  border: 1px solid #ccc;\n  display: flex;\n  flex-direction: column;\n  padding: 1vw 1vh;\n}\nsection[name='awards'] .row {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  font-size: .9em;\n  padding: 1vh 1vw;\n}\nsection[name='awards'] .row.odd {\n  background-color: #f4f4f4;\n}\nsection[name='awards'] .row user,\nsection[name='awards'] .row skill,\nsection[name='awards'] .row date,\nsection[name='awards'] .row help,\nsection[name='awards'] .row share,\nsection[name='awards'] .row story,\nsection[name='awards'] .row actions {\n  display: flex;\n  height: 28px;\n  width: 100%;\n  align-items: center;\n}\nsection[name='awards'] .row user name,\nsection[name='awards'] .row skill name,\nsection[name='awards'] .row date name,\nsection[name='awards'] .row help name,\nsection[name='awards'] .row share name,\nsection[name='awards'] .row story name,\nsection[name='awards'] .row actions name {\n  flex: 1;\n  font-weight: bold;\n}\nsection[name='awards'] .row user value,\nsection[name='awards'] .row skill value,\nsection[name='awards'] .row date value,\nsection[name='awards'] .row help value,\nsection[name='awards'] .row share value,\nsection[name='awards'] .row story value,\nsection[name='awards'] .row actions value {\n  display: inline-block;\n  flex: 4;\n}\nsection[name='awards'] .row story {\n  margin-top: 1vh;\n}\nsection[name='awards'] .row story value {\n  border: 1px solid #ccc;\n  padding: 1vh 1vw;\n  min-height: 3vh;\n}\nsection[name='awards'] .row actions {\n  height: 48px;\n}\nsection[name='awards'] .row actions value {\n  padding: 0;\n}\nsection[name='awards'] .row actions value button {\n  margin-top: 2vh;\n}\n";
 
-var hoisted1$9 = ["name", "header"];
-var hoisted2$7 = ["type", "text", "name", "search", "value", "", "placeholder", "Search ..."];
-var hoisted3$6 = ["id", "filter"];
-var hoisted4$5 = ["for", ""];
-var hoisted5$5 = ["type", "radio", "name", "awardsType", "value", "", "checked", ""];
-var hoisted6$5 = ["for", ""];
-var hoisted7$5 = ["type", "radio", "name", "awardsType", "value", "pending"];
-var hoisted8$4 = ["for", ""];
-var hoisted9$3 = ["type", "radio", "name", "awardsType", "value", "earned"];
-var hoisted10$3 = ["name", "awards"];
-var hoisted11$1 = ["type", "button", "class", "primary", "name", "accept"];
+var hoisted1$10 = ["name", "header"];
+var hoisted2$8 = ["type", "text", "name", "search", "value", "", "placeholder", "Search ..."];
+var hoisted3$7 = ["id", "filter"];
+var hoisted4$6 = ["for", ""];
+var hoisted5$6 = ["type", "radio", "name", "awardsType", "value", "", "checked", ""];
+var hoisted6$6 = ["for", ""];
+var hoisted7$6 = ["type", "radio", "name", "awardsType", "value", "pending"];
+var hoisted8$5 = ["for", ""];
+var hoisted9$4 = ["type", "radio", "name", "awardsType", "value", "earned"];
+var hoisted10$4 = ["name", "awards"];
+var hoisted11$2 = ["type", "button", "class", "primary", "name", "accept"];
 var __target$10;
 
 function render$10(ctrl) {
-  incrementalDom.elementOpen("section", "1340c379-d81c-4c80-9de1-2100d113f125", hoisted1$9);
-  incrementalDom.elementOpen("input", "5d1b7237-0456-468f-a17f-763078dede62", hoisted2$7, "onkeyup", function ($event) {
+  incrementalDom.elementOpen("section", "1340c379-d81c-4c80-9de1-2100d113f125", hoisted1$10);
+  incrementalDom.elementOpen("input", "5d1b7237-0456-468f-a17f-763078dede62", hoisted2$8, "onkeyup", function ($event) {
     var $element = this;
     ctrl.search.text = this.value;ctrl.filterAwards();
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("div", "7b1123a2-cb52-4024-abb8-dea05acf9275", hoisted3$6);
-  incrementalDom.elementOpen("label", "e0516b35-6180-4b2e-ad1a-cb3f6b629afd", hoisted4$5);
-  incrementalDom.elementOpen("input", "52b72882-e29a-4a87-a14f-9615e5d01766", hoisted5$5, "onchange", function ($event) {
+  incrementalDom.elementOpen("div", "7b1123a2-cb52-4024-abb8-dea05acf9275", hoisted3$7);
+  incrementalDom.elementOpen("label", "e0516b35-6180-4b2e-ad1a-cb3f6b629afd", hoisted4$6);
+  incrementalDom.elementOpen("input", "52b72882-e29a-4a87-a14f-9615e5d01766", hoisted5$6, "onchange", function ($event) {
     var $element = this;
     ctrl.search.type = this.value;ctrl.filterAwards();
   });
@@ -1472,8 +1696,8 @@ function render$10(ctrl) {
             All \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "e2ee3452-4487-4f57-81d2-58953b4ef7d3", hoisted6$5);
-  incrementalDom.elementOpen("input", "7c3a881f-9fc0-4889-9d45-465a1fc3bc99", hoisted7$5, "onchange", function ($event) {
+  incrementalDom.elementOpen("label", "e2ee3452-4487-4f57-81d2-58953b4ef7d3", hoisted6$6);
+  incrementalDom.elementOpen("input", "7c3a881f-9fc0-4889-9d45-465a1fc3bc99", hoisted7$6, "onchange", function ($event) {
     var $element = this;
     ctrl.search.type = this.value;ctrl.filterAwards();
   });
@@ -1482,8 +1706,8 @@ function render$10(ctrl) {
             Pending \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "8ba58b6e-f2b4-4ec5-9219-e0b68a86c53e", hoisted8$4);
-  incrementalDom.elementOpen("input", "ee53042b-9155-48e1-972e-f0bf1eb8fffe", hoisted9$3, "onchange", function ($event) {
+  incrementalDom.elementOpen("label", "8ba58b6e-f2b4-4ec5-9219-e0b68a86c53e", hoisted8$5);
+  incrementalDom.elementOpen("input", "ee53042b-9155-48e1-972e-f0bf1eb8fffe", hoisted9$4, "onchange", function ($event) {
     var $element = this;
     ctrl.search.type = this.value;ctrl.filterAwards();
   });
@@ -1495,7 +1719,7 @@ function render$10(ctrl) {
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("section");
   if (ctrl.awards.length > 0) {
-    incrementalDom.elementOpen("section", "dfc3d257-11ce-4636-8cfe-ca7012ea0e92", hoisted10$3);
+    incrementalDom.elementOpen("section", "dfc3d257-11ce-4636-8cfe-ca7012ea0e92", hoisted10$4);
     __target$10 = ctrl.awards;
     if (__target$10) {
       (__target$10.forEach ? __target$10 : Object.keys(__target$10)).forEach(function ($value, $item, $target) {
@@ -1569,7 +1793,7 @@ function render$10(ctrl) {
         incrementalDom.elementClose("name");
         incrementalDom.elementOpen("value");
         if (award.type === 'pending') {
-          incrementalDom.elementOpen("button", "cde31dad-916e-43de-b2b9-743065dc07dd_" + $key, hoisted11$1, "onclick", function ($event) {
+          incrementalDom.elementOpen("button", "cde31dad-916e-43de-b2b9-743065dc07dd_" + $key, hoisted11$2, "onclick", function ($event) {
             var $element = this;
             ctrl.grantAward(award);
           });
@@ -1644,6 +1868,11 @@ var AwardsAdmin = function (_HTMLElement) {
     key: 'disconnectedCallback',
     value: function disconnectedCallback() {
       this.adv.removeFilters();
+      this.sdv.removeFilters();
+      this.udv.removeFilters();
+      document.removeEventListener('awardsChanged', this._updateView.bind(this));
+      document.removeEventListener('skillsChanged', this._updateView.bind(this));
+      document.removeEventListener('usersChanged', this._updateView.bind(this));
     }
   }, {
     key: 'filterAwards',
@@ -1745,19 +1974,19 @@ customElements.define('reports-admin', ReportsAdmin);
 
 var css$12 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\nskills-admin container {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nskills-admin container skills-search {\n  display: flex;\n  align-items: center;\n}\nskills-admin container skills-search input {\n  margin-right: 1vw;\n  flex: 1;\n}\nskills-admin container skills-list {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nskills-admin container form,\nskills-admin container skill-item {\n  flex: 1;\n}\nskills-admin container form {\n  display: flex;\n  flex-direction: column;\n}\nskills-admin container form skill-editor-title,\nskills-admin container form skill-editor-description,\nskills-admin container form skill-editor-multiplicity,\nskills-admin container form skill-editor-category {\n  display: flex;\n  margin-bottom: 1vh;\n}\nskills-admin container form skill-editor-title label,\nskills-admin container form skill-editor-description label,\nskills-admin container form skill-editor-multiplicity label,\nskills-admin container form skill-editor-category label {\n  flex: 1;\n}\nskills-admin container form skill-editor-title input,\nskills-admin container form skill-editor-description input,\nskills-admin container form skill-editor-multiplicity input,\nskills-admin container form skill-editor-category input,\nskills-admin container form skill-editor-title select,\nskills-admin container form skill-editor-description select,\nskills-admin container form skill-editor-multiplicity select,\nskills-admin container form skill-editor-category select {\n  flex: 4;\n}\nskills-admin container form #skill-editor {\n  min-height: 20vh;\n  margin-bottom: 2vh;\n}\nskills-admin container form skill-editor-actions button {\n  margin-right: 1vw;\n}\nskills-admin container skill-item {\n  display: flex;\n  align-items: center;\n  border: 1px solid #ccc;\n  padding: 1vh 1vw;\n  margin-top: 1vh;\n}\nskills-admin container skill-item.even {\n  background-color: rgba(244, 244, 244, 0.5);\n}\nskills-admin container skill-item .info {\n  flex: 1;\n}\n";
 
-var hoisted1$10 = ["type", "text", "name", "skillsearch", "placeholder", "Search ..."];
-var hoisted2$8 = ["type", "button", "name", "add"];
-var hoisted3$7 = ["name", "skill"];
-var hoisted4$6 = ["type", "text", "required", ""];
-var hoisted5$6 = ["type", "text", "required", ""];
-var hoisted6$6 = ["name", "category", "required", ""];
-var hoisted7$6 = ["value", ""];
-var hoisted8$5 = ["value", "booklet"];
-var hoisted9$4 = ["value", "find"];
-var hoisted10$4 = ["value", "take"];
-var hoisted11$2 = ["value", "indexing"];
-var hoisted12$1 = ["type", "checkbox"];
-var hoisted13$1 = ["id", "skill-editor"];
+var hoisted1$11 = ["type", "text", "name", "skillsearch", "placeholder", "Search ..."];
+var hoisted2$9 = ["type", "button", "name", "add"];
+var hoisted3$8 = ["name", "skill"];
+var hoisted4$7 = ["type", "text", "required", ""];
+var hoisted5$7 = ["type", "text", "required", ""];
+var hoisted6$7 = ["name", "category", "required", ""];
+var hoisted7$7 = ["value", ""];
+var hoisted8$6 = ["value", "booklet"];
+var hoisted9$5 = ["value", "find"];
+var hoisted10$5 = ["value", "take"];
+var hoisted11$3 = ["value", "indexing"];
+var hoisted12$2 = ["type", "checkbox"];
+var hoisted13$2 = ["id", "skill-editor"];
 var hoisted14$1 = ["type", "button", "name", "save", "class", "primary"];
 var hoisted15$1 = ["type", "button", "name", "delete", "class", "danger"];
 var hoisted16$1 = ["type", "button", "name", "cancel"];
@@ -1771,12 +2000,12 @@ var __target$12;
 function render$12(ctrl) {
   if (!ctrl.skillEditor) {
     incrementalDom.elementOpen("skills-search");
-    incrementalDom.elementOpen("input", "5d9d24e8-eb88-4bf0-af99-bb219b769500", hoisted1$10, "onkeyup", function ($event) {
+    incrementalDom.elementOpen("input", "5d9d24e8-eb88-4bf0-af99-bb219b769500", hoisted1$11, "onkeyup", function ($event) {
       var $element = this;
       ctrl.filterSkills(this.value);
     });
     incrementalDom.elementClose("input");
-    incrementalDom.elementOpen("button", "8a7db5af-c256-43a5-b835-ba30b6aa4c50", hoisted2$8, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "8a7db5af-c256-43a5-b835-ba30b6aa4c50", hoisted2$9, "onclick", function ($event) {
       var $element = this;
       ctrl.addSkill();
     });
@@ -1786,12 +2015,12 @@ function render$12(ctrl) {
   }
   incrementalDom.elementOpen("skills-list");
   if (ctrl.skillEditor) {
-    incrementalDom.elementOpen("form", "d08598ac-6fda-43db-9f42-961e896485b0", hoisted3$7);
+    incrementalDom.elementOpen("form", "d08598ac-6fda-43db-9f42-961e896485b0", hoisted3$8);
     incrementalDom.elementOpen("skill-editor-title");
     incrementalDom.elementOpen("label");
     incrementalDom.text("Title:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "e0db97da-8a07-43e5-9ac2-803aa664ef0f", hoisted4$6, "name", ctrl.skill.title, "value", ctrl.skill.title, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "e0db97da-8a07-43e5-9ac2-803aa664ef0f", hoisted4$7, "name", ctrl.skill.title, "value", ctrl.skill.title, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.title = this.value;
     });
@@ -1801,7 +2030,7 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Description:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "0bf4fc64-8e93-40e4-90b6-a5b0b558c92d", hoisted5$6, "name", ctrl.skill.description, "value", ctrl.skill.description, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "0bf4fc64-8e93-40e4-90b6-a5b0b558c92d", hoisted5$7, "name", ctrl.skill.description, "value", ctrl.skill.description, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.description = this.value;
     });
@@ -1811,23 +2040,23 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Category:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("select", "3e69b64a-53d0-4364-8ab1-bc0153e1a096", hoisted6$6, "onchange", function ($event) {
+    incrementalDom.elementOpen("select", "3e69b64a-53d0-4364-8ab1-bc0153e1a096", hoisted6$7, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.category = this.value;
     });
-    incrementalDom.elementOpen("option", "bad53cfb-c9d6-433e-9970-7dd2fcde0f42", hoisted7$6);
+    incrementalDom.elementOpen("option", "bad53cfb-c9d6-433e-9970-7dd2fcde0f42", hoisted7$7);
     incrementalDom.text("Select");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "22a053c2-41ae-4596-bcb8-5601039a344f", hoisted8$5, "selected", ctrl.skill.category === 'booklet' ? true : null);
+    incrementalDom.elementOpen("option", "22a053c2-41ae-4596-bcb8-5601039a344f", hoisted8$6, "selected", ctrl.skill.category === 'booklet' ? true : null);
     incrementalDom.text("Booklet");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "162f403e-230a-4e59-a901-753eb20b0a9a", hoisted9$4, "selected", ctrl.skill.category === 'find' ? true : null);
+    incrementalDom.elementOpen("option", "162f403e-230a-4e59-a901-753eb20b0a9a", hoisted9$5, "selected", ctrl.skill.category === 'find' ? true : null);
     incrementalDom.text("Find");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "c1013dfc-7c81-4bee-9a2f-39f2285643db", hoisted10$4, "selected", ctrl.skill.category === 'take' ? true : null);
+    incrementalDom.elementOpen("option", "c1013dfc-7c81-4bee-9a2f-39f2285643db", hoisted10$5, "selected", ctrl.skill.category === 'take' ? true : null);
     incrementalDom.text("Take");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "33aba948-adf5-4eda-b97c-ecf2c28dafb4", hoisted11$2, "selected", ctrl.skill.category === 'indexing' ? true : null);
+    incrementalDom.elementOpen("option", "33aba948-adf5-4eda-b97c-ecf2c28dafb4", hoisted11$3, "selected", ctrl.skill.category === 'indexing' ? true : null);
     incrementalDom.text("Indexing");
     incrementalDom.elementClose("option");
     incrementalDom.elementClose("select");
@@ -1836,7 +2065,7 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Allow Multiple:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "b3af0ac0-2a9f-4865-85e9-95cab50efd74", hoisted12$1, "checked", ctrl.skill.multiple, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "b3af0ac0-2a9f-4865-85e9-95cab50efd74", hoisted12$2, "checked", ctrl.skill.multiple, "onchange", function ($event) {
       var $element = this;
       ctrl.skill.multiple = this.checked;
     });
@@ -1846,7 +2075,7 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Instructions:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("div", "e6694d3d-cd50-4ef5-bf31-1341a6975d89", hoisted13$1);
+    incrementalDom.elementOpen("div", "e6694d3d-cd50-4ef5-bf31-1341a6975d89", hoisted13$2);
     incrementalDom.elementClose("div");
     incrementalDom.elementClose("skill-editor-instructions");
     incrementalDom.elementOpen("skill-editor-actions");
@@ -2017,19 +2246,19 @@ customElements.define('skills-admin', SkillsAdmin);
 
 var css$13 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\n:host {\n  font-size: 1em;\n}\nusers-search {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 1vh;\n}\nusers-search input {\n  flex: 6;\n}\nusers-search button {\n  flex: 1;\n  margin-left: 8px;\n}\nusers-list {\n  display: flex;\n  flex-direction: column;\n}\nuser-item {\n  display: flex;\n  padding: 1vh 1vw;\n}\nuser-item .info {\n  display: flex;\n  flex: 6;\n  flex-direction: column;\n}\nuser-item .info .title {\n  font-size: 17px;\n  font-weight: bold;\n}\nuser-item .info .description {\n  font-size: 16px;\n}\nuser-item .info .category {\n  font-size: 15px;\n}\nuser-item .action {\n  display: flex;\n  flex: 1;\n  justify-content: center;\n  align-items: center;\n}\nuser-item .action button {\n  margin-right: 2vw;\n}\nuser-item.even {\n  background-color: #efefef;\n}\nform[name='user'] {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] > * {\n  display: flex;\n  justify-content: space-between;\n}\nform[name='user'] > * label {\n  font-size: 18px;\n  flex: 1.25;\n}\nform[name='user'] > * input,\nform[name='user'] > * select {\n  flex: 3;\n  margin-bottom: 1vh;\n}\nform[name='user'] skill-editor-instructions {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] skill-editor-instructions label {\n  font-size: 18px;\n}\nform[name='user'] skill-editor-instructions #skill-editor {\n  height: 40vh;\n  margin-bottom: 1vh;\n}\nform[name='user'] button[name='cancel'] {\n  margin: 0 1vw;\n}\n.bold {\n  font-weight: bold;\n}\nuser-editor-actions {\n  justify-content: flex-start !important;\n}\n";
 
-var hoisted1$11 = ["type", "text", "name", "usersearch", "placeholder", "Search ..."];
-var hoisted2$9 = ["name", "user"];
-var hoisted3$8 = ["type", "text", "required", ""];
-var hoisted4$7 = ["type", "text", "required", ""];
-var hoisted5$7 = ["type", "text", "disabled", "true"];
-var hoisted6$7 = ["name", "group", "required", ""];
-var hoisted7$7 = ["value", ""];
-var hoisted8$6 = ["value", "be"];
-var hoisted9$5 = ["value", "dn"];
-var hoisted10$5 = ["value", "eq"];
-var hoisted11$3 = ["value", "hp"];
-var hoisted12$2 = ["value", "ll"];
-var hoisted13$2 = ["value", "mm"];
+var hoisted1$12 = ["type", "text", "name", "usersearch", "placeholder", "Search ..."];
+var hoisted2$10 = ["name", "user"];
+var hoisted3$9 = ["type", "text", "required", ""];
+var hoisted4$8 = ["type", "text", "required", ""];
+var hoisted5$8 = ["type", "text", "disabled", "true"];
+var hoisted6$8 = ["name", "group", "required", ""];
+var hoisted7$8 = ["value", ""];
+var hoisted8$7 = ["value", "be"];
+var hoisted9$6 = ["value", "dn"];
+var hoisted10$6 = ["value", "eq"];
+var hoisted11$4 = ["value", "hp"];
+var hoisted12$3 = ["value", "ll"];
+var hoisted13$3 = ["value", "mm"];
 var hoisted14$2 = ["value", "pr"];
 var hoisted15$2 = ["value", "py"];
 var hoisted16$2 = ["value", "rs"];
@@ -2049,7 +2278,7 @@ var __target$13;
 function render$13(ctrl) {
   if (!ctrl.userEditor) {
     incrementalDom.elementOpen("users-search");
-    incrementalDom.elementOpen("input", "a237f8c0-b339-4115-85c8-a4578d4a512c", hoisted1$11, "onkeyup", function ($event) {
+    incrementalDom.elementOpen("input", "a237f8c0-b339-4115-85c8-a4578d4a512c", hoisted1$12, "onkeyup", function ($event) {
       var $element = this;
       ctrl.filterUsers(this.value);
     });
@@ -2058,12 +2287,12 @@ function render$13(ctrl) {
   }
   incrementalDom.elementOpen("users-list");
   if (ctrl.userEditor) {
-    incrementalDom.elementOpen("form", "b5f3e72e-4f5d-47a6-907b-71c7782163d0", hoisted2$9);
+    incrementalDom.elementOpen("form", "b5f3e72e-4f5d-47a6-907b-71c7782163d0", hoisted2$10);
     incrementalDom.elementOpen("user-editor-name");
     incrementalDom.elementOpen("label");
     incrementalDom.text("Certificate Name:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "b8b321e9-da7c-4be9-abc7-97d1591dffbd", hoisted3$8, "value", ctrl.user.name, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "b8b321e9-da7c-4be9-abc7-97d1591dffbd", hoisted3$9, "value", ctrl.user.name, "onchange", function ($event) {
       var $element = this;
       ctrl.user.name = this.value;
     });
@@ -2073,7 +2302,7 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Display Name:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "a814d09b-5c72-4279-9e4b-c40f13aa7146", hoisted4$7, "name", ctrl.user.displayName, "value", ctrl.user.displayName, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "a814d09b-5c72-4279-9e4b-c40f13aa7146", hoisted4$8, "name", ctrl.user.displayName, "value", ctrl.user.displayName, "onchange", function ($event) {
       var $element = this;
       ctrl.user.displayName = this.value;
     });
@@ -2083,7 +2312,7 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Email:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "d7ccbb81-18ab-4ea8-80bf-b6c30f568b6d", hoisted5$7, "name", ctrl.user.email, "value", ctrl.user.email, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "d7ccbb81-18ab-4ea8-80bf-b6c30f568b6d", hoisted5$8, "name", ctrl.user.email, "value", ctrl.user.email, "onchange", function ($event) {
       var $element = this;
       ctrl.user.email = this.value;
     });
@@ -2093,29 +2322,29 @@ function render$13(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Organization:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("select", "c6449f4b-f277-4dca-a40b-ce58375d3c4a", hoisted6$7, "onchange", function ($event) {
+    incrementalDom.elementOpen("select", "c6449f4b-f277-4dca-a40b-ce58375d3c4a", hoisted6$8, "onchange", function ($event) {
       var $element = this;
       ctrl.user.group = this.value;
     });
-    incrementalDom.elementOpen("option", "1c03e504-a60b-45a0-a0a9-c6b609b50771", hoisted7$7);
+    incrementalDom.elementOpen("option", "1c03e504-a60b-45a0-a0a9-c6b609b50771", hoisted7$8);
     incrementalDom.text("Select");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "f5f18adf-ed7d-440e-9e67-f2b92e16aeee", hoisted8$6, "selected", ctrl.user.group === 'be' ? true : null);
+    incrementalDom.elementOpen("option", "f5f18adf-ed7d-440e-9e67-f2b92e16aeee", hoisted8$7, "selected", ctrl.user.group === 'be' ? true : null);
     incrementalDom.text("Beehive");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "1c5ded39-9248-4074-8cd9-797e7d4ba8bb", hoisted9$5, "selected", ctrl.user.group === 'dn' ? true : null);
+    incrementalDom.elementOpen("option", "1c5ded39-9248-4074-8cd9-797e7d4ba8bb", hoisted9$6, "selected", ctrl.user.group === 'dn' ? true : null);
     incrementalDom.text("Deacon");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "639df48d-09bc-4c1b-97df-3621d639ff7b", hoisted10$5, "selected", ctrl.user.group === 'eq' ? true : null);
+    incrementalDom.elementOpen("option", "639df48d-09bc-4c1b-97df-3621d639ff7b", hoisted10$6, "selected", ctrl.user.group === 'eq' ? true : null);
     incrementalDom.text("Elders");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "0c1faead-6ae6-42ff-8d8f-9d460c651b37", hoisted11$3, "selected", ctrl.user.group === 'hp' ? true : null);
+    incrementalDom.elementOpen("option", "0c1faead-6ae6-42ff-8d8f-9d460c651b37", hoisted11$4, "selected", ctrl.user.group === 'hp' ? true : null);
     incrementalDom.text("High Priest");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "042ecb7a-97a7-4e74-8921-2fd7db77d280", hoisted12$2, "selected", ctrl.user.group === 'll' ? true : null);
+    incrementalDom.elementOpen("option", "042ecb7a-97a7-4e74-8921-2fd7db77d280", hoisted12$3, "selected", ctrl.user.group === 'll' ? true : null);
     incrementalDom.text("Laurel");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "f0d34398-fd7b-4b90-87dd-6111e0080b5b", hoisted13$2, "selected", ctrl.user.group === 'mm' ? true : null);
+    incrementalDom.elementOpen("option", "f0d34398-fd7b-4b90-87dd-6111e0080b5b", hoisted13$3, "selected", ctrl.user.group === 'mm' ? true : null);
     incrementalDom.text("Miamaid");
     incrementalDom.elementClose("option");
     incrementalDom.elementOpen("option", "70443041-8392-4e8c-a5e8-cb49f36a4325", hoisted14$2, "selected", ctrl.user.group === 'pr' ? true : null);
@@ -2406,9 +2635,9 @@ customElements.define('sys-admin', SysAdmin);
 
 var css$14 = ":host {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding: 2vh 2vw;\n  font-family: sans-serif;\n  font-size: .9em;\n}\n";
 
-var hoisted1$12 = ["type", "a"];
-var hoisted2$10 = ["type", "i"];
-var hoisted3$9 = ["type", "a"];
+var hoisted1$13 = ["type", "a"];
+var hoisted2$11 = ["type", "i"];
+var hoisted3$10 = ["type", "a"];
 function render$14(ctrl) {
   incrementalDom.elementOpen("h2");
   incrementalDom.text(" \
@@ -2431,14 +2660,14 @@ function render$14(ctrl) {
   	2. Use License \
   ");
   incrementalDom.elementClose("h3");
-  incrementalDom.elementOpen("ol", "574ca62c-2966-4af0-8fe6-a03e12b3cc6b", hoisted1$12);
+  incrementalDom.elementOpen("ol", "574ca62c-2966-4af0-8fe6-a03e12b3cc6b", hoisted1$13);
   incrementalDom.elementOpen("li");
   incrementalDom.text(" \
         Permission is granted to temporarily download one copy of the materials (information or software) on Manila 7th Ward's web site for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this \
         license you may not: \
      \
         ");
-  incrementalDom.elementOpen("ol", "59894e48-172e-4d64-937a-3a5be417b43e", hoisted2$10);
+  incrementalDom.elementOpen("ol", "59894e48-172e-4d64-937a-3a5be417b43e", hoisted2$11);
   incrementalDom.elementOpen("li");
   incrementalDom.text("modify or copy the materials;");
   incrementalDom.elementClose("li");
@@ -2468,7 +2697,7 @@ function render$14(ctrl) {
   	3. Disclaimer \
   ");
   incrementalDom.elementClose("h3");
-  incrementalDom.elementOpen("ol", "acccbf43-661b-4203-a1e0-1c09cc91c668", hoisted3$9);
+  incrementalDom.elementOpen("ol", "acccbf43-661b-4203-a1e0-1c09cc91c668", hoisted3$10);
   incrementalDom.elementOpen("li");
   incrementalDom.text(" \
         The materials on Manila 7th Ward's web site are provided 'as is'. Manila 7th Ward makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, \
@@ -2774,9 +3003,11 @@ db.loadDb = function (req, evt, next) {
     db.loadJSON(data, { disableChangesApi: false });
     var awards = db.getCollection('awards');
     var skills = db.getCollection('skills');
+    var tickets = db.getCollection('tickets');
     var users = db.getCollection('users');
     awards.on(['insert', 'update', 'delete'], changeHandler);
     skills.on(['insert', 'update', 'delete'], changeHandler);
+    tickets.on(['insert', 'update', 'delete'], changeHandler);
     users.on(['insert', 'update', 'delete'], changeHandler);
     db.loaded = true;
     // console.log('database loaded');

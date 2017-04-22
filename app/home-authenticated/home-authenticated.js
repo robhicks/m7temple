@@ -65,6 +65,9 @@ class HomeAuthenticated extends HTMLElement {
   disconnectedCallback() {
     this.adv.removeFilters();
     this.sdv.removeFilters();
+    document.removeEventListener('userUnauthenticated', () => {router.navigate('/login');});
+    document.removeEventListener('awardsChanged', this._updateView.bind(this));
+    document.removeEventListener('skillsChanged', this._updateView.bind(this));
   }
 
   filterSkills(val) {
