@@ -6,6 +6,7 @@ import '../home-authenticated/home-authenticated.js';
 import '../user-skills/component.js';
 import '../sys-admin/sys-admin.js';
 import '../p-policy/p-policy.js';
+import '../site-help/site-help.js';
 
 import {db} from "../db.js";
 import {user} from "../user.js";
@@ -46,7 +47,7 @@ class AppRouter extends HTMLElement {
     });
 
     router.add('/help', (req, evt, next) => {
-      router.navigate('/not-found');
+      this.innerHTML = `<site-help></site-help>`;
     });
 
     router.add('/admin', (req, evt, next) => {
