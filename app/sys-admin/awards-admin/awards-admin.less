@@ -1,3 +1,4 @@
+@import '../../css/variables.less';
 @import '../../css/wc/buttons.less';
 
 :host {
@@ -40,6 +41,10 @@ section[name='awards'] {
     flex-direction: column;
     align-items: flex-start;
     font-size: .9em;
+    padding: 1vh 1vw;
+    &.odd {
+      background-color: @odd-background;
+    }
     user, skill, date, help, share, story, actions {
       display: flex;
       height: 28px;

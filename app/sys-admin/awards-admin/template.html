@@ -1,22 +1,22 @@
 <section name="header">
-  <input type="text" name="search" value="" placeholder="Search ..." onkeyup="{ctrl.filterAwards(this.value)}">
+  <input type="text" name="search" value="" placeholder="Search ..." onkeyup="{ctrl.search.text = this.value; ctrl.filterAwards()}">
   <div id="filter">
     <label for="">
-      <input type="radio" name="awardsType" value="added" checked onchange="{ctrl.filterByType(this.value)}">
+      <input type="radio" name="awardsType" value="" checked onchange="{ctrl.search.type = this.value; ctrl.filterAwards()}">
       All
     </label>
     <label for="">
-      <input type="radio" name="awardsType" value="pending" onchange="{ctrl.filterByType(this.value)}">
+      <input type="radio" name="awardsType" value="pending" onchange="{ctrl.search.type = this.value; ctrl.filterAwards()}">
       Pending
     </label>
     <label for="">
-      <input type="radio" name="awardsType" value="earned" onchange="{ctrl.filterByType(this.value)}">
+      <input type="radio" name="awardsType" value="earned" onchange="{ctrl.search.type = this.value; ctrl.filterAwards()}">
       Earned
     </label>
   </div>
 </section>
 <section name="awards" if="ctrl.awards.length > 0">
-  <div class="row" each="award in ctrl.awards">
+  <div each="award in ctrl.awards" class="{ $item % 2 ? 'row odd' : 'row even' }">
     <user>
       <name>Name</name>
       <value>{award.user.displayName}</value>
@@ -27,7 +27,7 @@
     </skill>
     <date>
       <name>Date</name>
-      <value>{award.date}</value>
+      <value>{new Date(award.date).toLocaleDateString()}</value>
     </date>
     <help>
       <name>Will Help</name>
@@ -41,12 +41,12 @@
     </share>
     <story>
       <name>Story</name>
-      <value>{award.story}</value>
+      <value>{award.story ? award.story : ''}</value>
     </story>
     <actions>
       <name></name>
       <value>
-        <button if="award.pending" type="button" class="primary" name="accept">Accept</button>
+        <button if="award.type === 'pending'" type="button" class="primary" name="accept" onclick="{ctrl.grantAward(award)}">Accept</button>
       </value>
     </actions>
   </div>

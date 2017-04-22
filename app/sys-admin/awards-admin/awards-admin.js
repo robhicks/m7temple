@@ -10,6 +10,7 @@ class AwardsAdmin extends HTMLElement {
     this.attachShadow({mode: 'open'});
     this.shadowRoot.innerHTML = `<style>${css}</style><container></container>`;
     this.element = this.shadowRoot.querySelector('container');
+    this.search = {};
 
     document.addEventListener('awardsChanged', this._updateView.bind(this));
     document.addEventListener('skillsChanged', this._updateView.bind(this));
@@ -39,8 +40,8 @@ class AwardsAdmin extends HTMLElement {
     this.uColl = db.getCollection('users');
 
     this.adv = this.aColl.addDynamicView('awards');
-    this.sdv = this.aColl.addDynamicView('skills');
-    this.udv = this.aColl.addDynamicView('users');
+    this.sdv = this.sColl.addDynamicView('skills');
+    this.udv = this.uColl.addDynamicView('users');
 
     this._updateView();
   }
@@ -49,22 +50,34 @@ class AwardsAdmin extends HTMLElement {
     this.adv.removeFilters();
   }
 
-  filterAwards(val) {
-    let str = val ? val.toLowerCase() : null;
+  filterAwards() {
     this.adv.removeFilters();
+    let re = this.search.text && this.search.text !== '' ? new RegExp(this.search.text) : null;
 
-    if (str) {
+    if (!!(this.search.type && this.search.type !== '' && re)) {
       this.adv.applyWhere((award) => {
-
-      })
+        return award.type === this.search.type && award.skill && award.skill.title && re.test(award.skill.title)
+          || award.type === this.search.type && award.skill && award.skill.description && re.test(award.skill.description)
+          || award.type === this.search.type && award.user && award.user.displayName && re.test(award.user.displayName)
+          || award.type === this.search.type && award.user && award.user.firstName && re.test(award.user.firstName)
+          || award.type === this.search.type && award.user && award.user.lastName && re.test(award.user.lastName)
+          || award.type === this.search.type && award.user && award.user.email && re.test(award.user.email);
+      });
+    } else if (!!re) {
+      this.adv.applyWhere((award) => {
+        return award.skill && award.skill.title && re.test(award.skill.title)
+          || award.skill && award.skill.description && re.test(award.skill.description)
+          || award.user && award.user.displayName && re.test(award.user.displayName)
+          || award.user && award.user.firstName && re.test(award.user.firstName)
+          || award.user && award.user.lastName && re.test(award.user.lastName)
+          || award.user && award.user.email && re.test(award.user.email);
+      });
     }
     this._updateView();
   }
 
-  filterByType(type) {
-    this.adv.removeFilters();
-    this.adv.applyWhere((award) => award.type === type);
-    this._updateView();
+  grantAward(award) {
+    console.log("award", award)
   }
 
   _updateView() {
