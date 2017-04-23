@@ -17,12 +17,14 @@
     <skill-editor-category>
       <label>Category:</label>
       <select name="category" onchange="{ctrl.skill.category = this.value}" required>
-          <option value="">Select</option>
-          <option value="booklet" selected="{ctrl.skill.category ==='booklet' ? true : null}">Booklet</option>
-          <option value="find" selected="{ctrl.skill.category ==='find' ? true : null}">Find</option>
-          <option value="take" selected="{ctrl.skill.category ==='take' ? true : null}">Take</option>
-          <option value="indexing" selected="{ctrl.skill.category ==='indexing' ? true : null}">Indexing</option>
-        </select>
+        <option value="">Select</option>
+        <option value="booklet" selected="{ctrl.skill.category ==='booklet' ? true : null}">Booklet</option>
+        <option value="find" selected="{ctrl.skill.category ==='find' ? true : null}">Find</option>
+        <option value="take" selected="{ctrl.skill.category ==='take' ? true : null}">Take</option>
+        <option value="teach" selected="{ctrl.skill.category ==='teach' ? true : null}">Teach</option>
+        <option value="memories" selected="{ctrl.skill.category ==='memories' ? true : null}">Memories</option>
+        <option value="indexing" selected="{ctrl.skill.category ==='indexing' ? true : null}">Indexing</option>
+      </select>
     </skill-editor-category>
     <skill-editor-multiplicity>
       <label>Allow Multiple:</label>

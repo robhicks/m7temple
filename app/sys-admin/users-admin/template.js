@@ -32,7 +32,7 @@ var __target
 export function render (ctrl) {
 if (!ctrl.userEditor) {
   elementOpen("users-search")
-    elementOpen("input", "5f2afc06-27be-434c-8ec0-74ee6bee86d9", hoisted1, "onkeyup", function ($event) {
+    elementOpen("input", "5c801952-ed2e-439e-9a22-a70223319ae5", hoisted1, "onkeyup", function ($event) {
       var $element = this;
     ctrl.filterUsers(this.value)})
     elementClose("input")
@@ -40,12 +40,12 @@ if (!ctrl.userEditor) {
 }
 elementOpen("users-list")
   if (ctrl.userEditor) {
-    elementOpen("form", "370725ea-08ef-4de6-ade7-174a65e7a86a", hoisted2)
+    elementOpen("form", "e612f2c7-2889-4926-9692-50c833c23245", hoisted2)
       elementOpen("user-editor-name")
         elementOpen("label")
           text("Certificate Name:")
         elementClose("label")
-        elementOpen("input", "867f747e-f01f-4432-937b-b33ac497b963", hoisted3, "value", ctrl.user.name, "onchange", function ($event) {
+        elementOpen("input", "2eb4060e-9894-426d-91d7-6fbd456383f9", hoisted3, "value", ctrl.user.name, "onchange", function ($event) {
           var $element = this;
         ctrl.user.name = this.value})
         elementClose("input")
@@ -54,7 +54,7 @@ elementOpen("users-list")
         elementOpen("label")
           text("Display Name:")
         elementClose("label")
-        elementOpen("input", "e5181a3a-eea4-47ae-beef-8073e851ce39", hoisted4, "name", ctrl.user.displayName, "value", ctrl.user.displayName, "onchange", function ($event) {
+        elementOpen("input", "9966f3fd-392a-454e-97f1-42bca53730cb", hoisted4, "name", ctrl.user.displayName, "value", ctrl.user.displayName, "onchange", function ($event) {
           var $element = this;
         ctrl.user.displayName = this.value})
         elementClose("input")
@@ -63,7 +63,7 @@ elementOpen("users-list")
         elementOpen("label")
           text("Email:")
         elementClose("label")
-        elementOpen("input", "383b3e3d-f842-4a06-ad9e-42b25155f76e", hoisted5, "name", ctrl.user.email, "value", ctrl.user.email, "onchange", function ($event) {
+        elementOpen("input", "aa9b0e42-b836-4574-acdc-c68dfa4eadf8", hoisted5, "name", ctrl.user.email, "value", ctrl.user.email, "onchange", function ($event) {
           var $element = this;
         ctrl.user.email = this.value})
         elementClose("input")
@@ -72,40 +72,40 @@ elementOpen("users-list")
         elementOpen("label")
           text("Organization:")
         elementClose("label")
-        elementOpen("select", "0f9d5b1e-0f0b-4a7e-a615-366fee91ba62", hoisted6, "onchange", function ($event) {
+        elementOpen("select", "7dbe4d83-2a77-4ade-b91f-5ac21663e4a6", hoisted6, "onchange", function ($event) {
           var $element = this;
         ctrl.user.group = this.value})
-          elementOpen("option", "4a922d5f-90fa-47aa-89f4-307e3654e2f9", hoisted7)
+          elementOpen("option", "79fcd169-d7e5-47f6-acbe-cd39933cb717", hoisted7)
             text("Select")
           elementClose("option")
-          elementOpen("option", "dcd39826-a6e4-42c6-b93f-14dfeb61cb71", hoisted8, "selected", ctrl.user.group ==='be' ? true : null)
+          elementOpen("option", "80ff3528-85cf-429b-b1c3-7c47f8ab435c", hoisted8, "selected", ctrl.user.group ==='be' ? true : null)
             text("Beehive")
           elementClose("option")
-          elementOpen("option", "642d2f79-c69d-42fe-8ef9-90d22eb1ba59", hoisted9, "selected", ctrl.user.group ==='dn' ? true : null)
+          elementOpen("option", "32746540-d94a-493d-b417-0cc80a2c73c1", hoisted9, "selected", ctrl.user.group ==='dn' ? true : null)
             text("Deacon")
           elementClose("option")
-          elementOpen("option", "b4059d58-65e5-46e2-820e-c0528f0892c5", hoisted10, "selected", ctrl.user.group ==='eq' ? true : null)
+          elementOpen("option", "ab7f6015-de0f-43d5-bfd3-ab43ca482ddc", hoisted10, "selected", ctrl.user.group ==='eq' ? true : null)
             text("Elders")
           elementClose("option")
-          elementOpen("option", "cb8e6963-7b3f-497e-a6ab-17b5026b45cd", hoisted11, "selected", ctrl.user.group ==='hp' ? true : null)
+          elementOpen("option", "15e68c55-8e35-459d-a6f7-0605f63266db", hoisted11, "selected", ctrl.user.group ==='hp' ? true : null)
             text("High Priest")
           elementClose("option")
-          elementOpen("option", "4714b085-06e3-46fe-ac0f-a10f6fe2ef27", hoisted12, "selected", ctrl.user.group ==='ll' ? true : null)
+          elementOpen("option", "e8f3b0fe-f1e8-4cd1-a6e8-f944f4c373fa", hoisted12, "selected", ctrl.user.group ==='ll' ? true : null)
             text("Laurel")
           elementClose("option")
-          elementOpen("option", "1959c0dc-5b3d-4619-ad47-17de71e91c64", hoisted13, "selected", ctrl.user.group ==='mm' ? true : null)
+          elementOpen("option", "cbfb17f3-d8ed-4257-9da5-fb00043a6d41", hoisted13, "selected", ctrl.user.group ==='mm' ? true : null)
             text("Miamaid")
           elementClose("option")
-          elementOpen("option", "b6bce849-8983-4d17-9d96-9564d2ab4ded", hoisted14, "selected", ctrl.user.group ==='pr' ? true : null)
+          elementOpen("option", "69394b14-ed46-412b-b194-bec801aec027", hoisted14, "selected", ctrl.user.group ==='pr' ? true : null)
             text("Priest")
           elementClose("option")
-          elementOpen("option", "a33ac42d-2f63-4fe5-af64-6311eb1d6da2", hoisted15, "selected", ctrl.user.group ==='py' ? true : null)
+          elementOpen("option", "399b010c-2dc4-4507-8228-ba1e20b99dce", hoisted15, "selected", ctrl.user.group ==='py' ? true : null)
             text("Primary")
           elementClose("option")
-          elementOpen("option", "29798e9e-254e-472a-9746-c402ba663ef3", hoisted16, "selected", ctrl.user.group ==='rs' ? true : null)
+          elementOpen("option", "bc179c58-f01a-4568-8cba-2f6205506991", hoisted16, "selected", ctrl.user.group ==='rs' ? true : null)
             text("Relief Society")
           elementClose("option")
-          elementOpen("option", "acb8f7d1-9676-49fa-847d-dc6bc62481c6", hoisted17, "selected", ctrl.user.group ==='tr' ? true : null)
+          elementOpen("option", "3091d613-c8c0-465e-b587-4ee3c54abc79", hoisted17, "selected", ctrl.user.group ==='tr' ? true : null)
             text("Teacher")
           elementClose("option")
         elementClose("select")
@@ -114,18 +114,18 @@ elementOpen("users-list")
         elementOpen("label")
           text("Admin:")
         elementClose("label")
-        elementOpen("input", "a414d1b1-6598-480e-bf78-1d2e26adccef", hoisted18, "checked", ctrl.user.admin ? true : null, "onchange", function ($event) {
+        elementOpen("input", "cefc9caf-30d2-42dd-acb9-e21fbc7c2455", hoisted18, "checked", ctrl.user.admin ? true : null, "onchange", function ($event) {
           var $element = this;
         ctrl.user.admin = this.checked})
         elementClose("input")
       elementClose("user-admin")
       elementOpen("user-editor-actions")
-        elementOpen("button", "8ba5d81c-816b-4e22-8634-42103f3f42fc", hoisted19, "onclick", function ($event) {
+        elementOpen("button", "457ff94e-80b5-474a-a68d-de91e3b4b7e0", hoisted19, "onclick", function ($event) {
           var $element = this;
         ctrl.saveUser()})
           text("Save")
         elementClose("button")
-        elementOpen("button", "73cfbdab-1b37-4115-8f80-f1566003561d", hoisted20, "onclick", function ($event) {
+        elementOpen("button", "43649008-b44f-48e0-a532-37d8e51bd87b", hoisted20, "onclick", function ($event) {
           var $element = this;
         ctrl.cancelEdit()})
           text("Cancel")
@@ -138,28 +138,28 @@ elementOpen("users-list")
     if (__target) {
       ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
         var user = $value
-        var $key = "77f5973c-c954-40a6-95e1-400e2dee5a80_" + $item
+        var $key = "5d9cbbbf-ccef-4556-940b-d5b07d954bf7_" + $item
         elementOpen("user-item", $key, null, "class", $item % 2 ? 'odd' : 'even')
-          elementOpen("div", "974028fc-a834-4964-8aac-b374f25c9ea4_" + $key, hoisted21)
+          elementOpen("div", "75900e62-48a3-4b27-aaf8-13a42e57ca9e_" + $key, hoisted21)
             if (user.name) {
-              elementOpen("div", "805dca65-357c-42a3-baaa-b195bd06dca0_" + $key, hoisted22)
+              elementOpen("div", "73d71329-a285-4163-b2a2-1388d1f29ecd_" + $key, hoisted22)
                 text("" + (user.name) + "")
               elementClose("div")
             }
-            elementOpen("div", "68f13c59-a15d-4a00-bfd3-7a8effb11349_" + $key, hoisted23)
+            elementOpen("div", "58740a99-7f63-4cb6-bba0-5155c676e1a3_" + $key, hoisted23)
               text("" + (user.displayName) + "")
             elementClose("div")
-            elementOpen("div", "8cd8c9d8-e2dd-457a-8d1f-23ac85d44df9_" + $key, hoisted24)
+            elementOpen("div", "470199c0-27bb-4078-9f09-d5885c967464_" + $key, hoisted24)
               text("" + (user.email) + "")
             elementClose("div")
             if (user.group) {
-              elementOpen("div", "9da0cf36-61e4-494f-9f4f-57708ed48cbd_" + $key, hoisted25)
+              elementOpen("div", "2b8edc1d-b343-47f9-b031-1a81670ff78a_" + $key, hoisted25)
                 text("" + (ctrl.getGroupName(user)) + "")
               elementClose("div")
             }
           elementClose("div")
-          elementOpen("div", "2a630f7c-f1e2-4aa9-918e-14737a8e7d13_" + $key, hoisted26)
-            elementOpen("button", "daaf2d10-8a9c-428e-a0ce-d6c7bdcce011_" + $key, hoisted27, "disabled", ctrl.userFormValid, "onclick", function ($event) {
+          elementOpen("div", "e82e0c28-30e6-460a-ac56-0245bd0f71ef_" + $key, hoisted26)
+            elementOpen("button", "f10d9518-1577-4748-9442-a2d024251a5f_" + $key, hoisted27, "disabled", ctrl.userFormValid, "onclick", function ($event) {
               var $element = this;
             ctrl.editUser($value)})
               text("Edit")

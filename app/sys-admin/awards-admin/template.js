@@ -14,14 +14,14 @@ var hoisted11 = ["type", "button", "class", "primary", "name", "accept"]
 var __target
 
 export function render (ctrl) {
-elementOpen("section", "5389f653-170e-4a29-9892-916dcf206345", hoisted1)
-  elementOpen("input", "9f3ec6d1-848a-42ed-a6f2-c8d89f3f9929", hoisted2, "onkeyup", function ($event) {
+elementOpen("section", "41ae5521-d3cf-4678-b377-9ebc04def8ef", hoisted1)
+  elementOpen("input", "34c61170-2cb7-4b7f-a8af-9b63542af00b", hoisted2, "onkeyup", function ($event) {
     var $element = this;
   ctrl.search.text = this.value; ctrl.filterAwards()})
   elementClose("input")
-  elementOpen("div", "85c02181-4688-485c-9d3e-cff6b7b2cf61", hoisted3)
-    elementOpen("label", "21d4273a-7923-4ca7-992a-c32f30692711", hoisted4)
-      elementOpen("input", "8214295b-f06f-4c9e-9283-bd22eed45081", hoisted5, "onchange", function ($event) {
+  elementOpen("div", "62f01ce0-9a84-47a1-8f37-56be20f1c746", hoisted3)
+    elementOpen("label", "2edf4f3b-6ef1-402f-a68e-86108eb6ff89", hoisted4)
+      elementOpen("input", "45709f11-0e3c-44f9-9b2c-4138ac5c9f64", hoisted5, "onchange", function ($event) {
         var $element = this;
       ctrl.search.type = this.value; ctrl.filterAwards()})
       elementClose("input")
@@ -29,8 +29,8 @@ elementOpen("section", "5389f653-170e-4a29-9892-916dcf206345", hoisted1)
             All \
           ")
     elementClose("label")
-    elementOpen("label", "39e0b8a7-43d1-4f99-9aed-edc761315607", hoisted6)
-      elementOpen("input", "a6250657-f121-47c9-9a07-31d1360b098c", hoisted7, "onchange", function ($event) {
+    elementOpen("label", "8601a873-6919-4e9b-ace4-729ba88eb9a2", hoisted6)
+      elementOpen("input", "d4b6cc2a-2dd4-4930-8ce1-95b5670f0690", hoisted7, "onchange", function ($event) {
         var $element = this;
       ctrl.search.type = this.value; ctrl.filterAwards()})
       elementClose("input")
@@ -38,8 +38,8 @@ elementOpen("section", "5389f653-170e-4a29-9892-916dcf206345", hoisted1)
             Pending \
           ")
     elementClose("label")
-    elementOpen("label", "61ce470d-ed4f-48c6-a5c9-5c7583f4e4a4", hoisted8)
-      elementOpen("input", "1d1d2d4e-4ca7-4959-b200-2ea2fc7dd64d", hoisted9, "onchange", function ($event) {
+    elementOpen("label", "ea9f6dfe-92da-4248-9426-4b54ca149d82", hoisted8)
+      elementOpen("input", "57f6b210-dbb6-4bac-bc9e-a4d13e4efff3", hoisted9, "onchange", function ($event) {
         var $element = this;
       ctrl.search.type = this.value; ctrl.filterAwards()})
       elementClose("input")
@@ -50,12 +50,12 @@ elementOpen("section", "5389f653-170e-4a29-9892-916dcf206345", hoisted1)
   elementClose("div")
 elementClose("section")
 if (ctrl.awards.length > 0) {
-  elementOpen("section", "377862ce-8a8d-4169-97ac-91c39cb8f4ac", hoisted10)
+  elementOpen("section", "44b1d915-59c9-4e2e-bc2d-4374cdb98ef6", hoisted10)
     __target = ctrl.awards
     if (__target) {
       ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
         var award = $value
-        var $key = "2aaaf87b-e137-4df1-a488-e836026704a5_" + $item
+        var $key = "591c0504-c761-4f8a-94cd-a53bb7c5f2ff_" + $item
         elementOpen("div", $key, null, "class",  $item % 2 ? 'row odd' : 'row even' )
           elementOpen("user")
             elementOpen("name")
@@ -124,7 +124,7 @@ if (ctrl.awards.length > 0) {
             elementClose("name")
             elementOpen("value")
               if (award.type === 'pending') {
-                elementOpen("button", "417e739b-e4a7-4c80-b181-ed787c8ebaa8_" + $key, hoisted11, "onclick", function ($event) {
+                elementOpen("button", "a927234b-d864-42b5-acc4-77199df9da17_" + $key, hoisted11, "onclick", function ($event) {
                   var $element = this;
                 ctrl.grantAward(award)})
                   text("Accept")

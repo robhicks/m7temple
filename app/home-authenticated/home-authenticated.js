@@ -13,6 +13,7 @@ class HomeAuthenticated extends HTMLElement {
     this.skills = [];
     this.mySkills = [];
     this.mine = false;
+    this.search = {};
   }
 
   anchorClickHandler(evt) {
@@ -74,15 +75,28 @@ class HomeAuthenticated extends HTMLElement {
     document.removeEventListener('skillsChanged', this._updateView.bind(this));
   }
 
-  filterSkills(val) {
-    let str = val ? val.toLowerCase() : null;
-    // console.log("str", str);
+  filterSkills() {
+    let text = this.search.text && this.search.text !== '' ? this.search.text : null;
+    let category = this.search.category ? this.search.category : null;
+
     this.sdv.removeFilters();
-    if (str) {
+    if (text) {
+      if (category) {
+        this.sdv.applyWhere((skill) => {
+          if (skill.category === category && skill.title && skill.title.toLowerCase().indexOf(text) !== -1) return true;
+          if (skill.category === category && skill.description && skill.description.toLowerCase().indexOf(text) !== -1) return true;
+          if (skill.category === category && skill.category && skill.category.toLowerCase().indexOf(text) !== -1) return true;
+        });
+      } else {
+        this.sdv.applyWhere((skill) => {
+          if (skill.title && skill.title.toLowerCase().indexOf(text) !== -1) return true;
+          if (skill.description && skill.description.toLowerCase().indexOf(text) !== -1) return true;
+          if (skill.category && skill.category.toLowerCase().indexOf(text) !== -1) return true;
+        });
+      }
+    } else if (category) {
       this.sdv.applyWhere((skill) => {
-        if (skill.title && skill.title.toLowerCase().indexOf(str) !== -1) return true;
-        if (skill.description && skill.description.toLowerCase().indexOf(str) !== -1) return true;
-        if (skill.category && skill.category.toLowerCase().indexOf(str) !== -1) return true;
+        if (skill.category === category) return true;
       });
     }
     this._updateView();

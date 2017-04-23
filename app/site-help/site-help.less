@@ -19,6 +19,7 @@
     margin-bottom: 1vh;
   }
   p {
+    margn-top: 0.5em;
     line-height: 1.4;
   }
 }
@@ -37,7 +38,7 @@ general {
   }
 }
 
-working-on-skills {
+working-on-skills, technical-issues {
   display: block;
   background-color: @site-background;
   padding: 2vh 2vw;
@@ -50,13 +51,19 @@ working-on-skills {
     padding: .5vw;
     background-color: @orange;
     color: white;
+    margin-bottom: 1vh;
   }
   #skill-buttons {
     margin: 1vh 1vw;
     border: 1px solid #ccc;
   }
-  #add-button {
-    height: 16px;
-    width: 16px;
+  .action-button {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    top: 6px;
+  }
+  #my-skills {
+    max-width: 90%;
   }
 }
