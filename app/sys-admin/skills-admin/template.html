@@ -41,14 +41,16 @@
     </skill-editor-actions>
   </form>
 
-  <skill-item if="!ctrl.skillEditor" each="skill in ctrl.viewSkills" class="{$item % 2 ? 'odd' : 'even'}">
-    <div class="info">
-      <div class="title">{skill.title}</div>
-      <div class="description">{skill.description}</div>
-    </div>
-    <div class="action">
-      <button type="button" disabled="{ctrl.skillFormValid}" onclick="{ctrl.editSkill($value)}">Edit</button>
-    </div>
-  </skill-item>
+  <skills-list-container>
+    <skill-item if="!ctrl.skillEditor" each="skill in ctrl.viewSkills" class="{$item % 2 ? 'odd' : 'even'}">
+      <div class="info">
+        <div class="title">{skill.title}</div>
+        <div class="description">{skill.description}</div>
+      </div>
+      <div class="action">
+        <button type="button" disabled="{ctrl.skillFormValid}" onclick="{ctrl.editSkill($value)}">Edit</button>
+      </div>
+    </skill-item>
+  </skills-list-container>
 
 </skills-list>
