@@ -1,16 +1,14 @@
 <section id="search">
   <input type="text" name="search" placeholder="Search ..." onkeyup="{ctrl.search.text = this.value; ctrl.filterSkills()}">
-  <skill-editor-category>
-    <select name="category" onchange="{ctrl.search.category = this.value; ctrl.filterSkills()}" required>
-      <option value="">Select</option>
-      <option value="booklet" selected="{ctrl.search.category ==='booklet' ? true : null}">Booklet</option>
-      <option value="find" selected="{ctrl.search.category ==='find' ? true : null}">Find</option>
-      <option value="take" selected="{ctrl.search.category ==='take' ? true : null}">Take</option>
-      <option value="teach" selected="{ctrl.search.category ==='teach' ? true : null}">Teach</option>
-      <option value="memories" selected="{ctrl.search.category ==='memories' ? true : null}">Memories</option>
-      <option value="indexing" selected="{ctrl.search.category ==='indexing' ? true : null}">Indexing</option>
-    </select>
-  </skill-editor-category>
+  <select name="category" onchange="{ctrl.search.category = this.value; ctrl.filterSkills()}" required>
+    <option value="">Select</option>
+    <option value="booklet" selected="{ctrl.search.category ==='booklet' ? true : null}">Booklet</option>
+    <option value="find" selected="{ctrl.search.category ==='find' ? true : null}">Find</option>
+    <option value="take" selected="{ctrl.search.category ==='take' ? true : null}">Take</option>
+    <option value="teach" selected="{ctrl.search.category ==='teach' ? true : null}">Teach</option>
+    <option value="memories" selected="{ctrl.search.category ==='memories' ? true : null}">Memories</option>
+    <option value="indexing" selected="{ctrl.search.category ==='indexing' ? true : null}">Indexing</option>
+  </select>
   <label for="mine-checkbox" id="mine-wrapper">
     <input type="checkbox" id="mine-checkbox" onchange="{ctrl.toggleMine()}">
     <span>My Skills ({ctrl.mySkills.length})</span>

@@ -18,40 +18,38 @@ var hoisted15 = ["shared", "", "collapsed", "true"]
 var __target
 
 export function render (ctrl) {
-elementOpen("section", "3acd9870-2aca-4c6c-8344-28f142b0832d", hoisted1)
-  elementOpen("input", "d216df60-bf65-419d-84cb-a724f54172e6", hoisted2, "onkeyup", function ($event) {
+elementOpen("section", "154149a4-a496-4d46-a35e-72b397469ca9", hoisted1)
+  elementOpen("input", "b9638cc9-e5fb-4c1d-8ae5-c5ace73d48a6", hoisted2, "onkeyup", function ($event) {
     var $element = this;
   ctrl.search.text = this.value; ctrl.filterSkills()})
   elementClose("input")
-  elementOpen("skill-editor-category")
-    elementOpen("select", "1716d69c-da23-4108-ba23-bf94294b38a2", hoisted3, "onchange", function ($event) {
-      var $element = this;
-    ctrl.search.category = this.value; ctrl.filterSkills()})
-      elementOpen("option", "8c682475-9e20-4d68-9e22-5eca943a5019", hoisted4)
-        text("Select")
-      elementClose("option")
-      elementOpen("option", "962c93b3-9931-45a5-9bfd-7ea5e58f737e", hoisted5, "selected", ctrl.search.category ==='booklet' ? true : null)
-        text("Booklet")
-      elementClose("option")
-      elementOpen("option", "23d87cef-bd9a-4e43-a2f5-0a3f61b6f11b", hoisted6, "selected", ctrl.search.category ==='find' ? true : null)
-        text("Find")
-      elementClose("option")
-      elementOpen("option", "3e0b6f2f-c31a-426a-a1fe-852f87e75e96", hoisted7, "selected", ctrl.search.category ==='take' ? true : null)
-        text("Take")
-      elementClose("option")
-      elementOpen("option", "37eb9a3e-7270-4831-b11e-fb944b04d338", hoisted8, "selected", ctrl.search.category ==='teach' ? true : null)
-        text("Teach")
-      elementClose("option")
-      elementOpen("option", "13519062-9c65-4197-9634-36ab0327803e", hoisted9, "selected", ctrl.search.category ==='memories' ? true : null)
-        text("Memories")
-      elementClose("option")
-      elementOpen("option", "af398573-1719-40d2-a253-b7becdc8683c", hoisted10, "selected", ctrl.search.category ==='indexing' ? true : null)
-        text("Indexing")
-      elementClose("option")
-    elementClose("select")
-  elementClose("skill-editor-category")
-  elementOpen("label", "c116f99d-e84e-44a2-a136-d8fc61703a1d", hoisted11)
-    elementOpen("input", "94c3dd28-6545-4d57-b9a5-b5149fca2053", hoisted12, "onchange", function ($event) {
+  elementOpen("select", "0a9f0b91-3c07-4707-9cf0-2612b57f8edf", hoisted3, "onchange", function ($event) {
+    var $element = this;
+  ctrl.search.category = this.value; ctrl.filterSkills()})
+    elementOpen("option", "e4b33753-8864-4151-9115-57f0fabc6374", hoisted4)
+      text("Select")
+    elementClose("option")
+    elementOpen("option", "c7bf409d-a8f6-4c86-a4e2-60093510da74", hoisted5, "selected", ctrl.search.category ==='booklet' ? true : null)
+      text("Booklet")
+    elementClose("option")
+    elementOpen("option", "ae6c5d33-12df-4c1b-a663-05f002f30ee4", hoisted6, "selected", ctrl.search.category ==='find' ? true : null)
+      text("Find")
+    elementClose("option")
+    elementOpen("option", "ae20de2e-9573-4b54-84f6-1982d457a5a9", hoisted7, "selected", ctrl.search.category ==='take' ? true : null)
+      text("Take")
+    elementClose("option")
+    elementOpen("option", "1db65060-d7c9-4a62-b0ca-67920f20ff6e", hoisted8, "selected", ctrl.search.category ==='teach' ? true : null)
+      text("Teach")
+    elementClose("option")
+    elementOpen("option", "bccb180d-686f-4380-83f8-b11b20c62534", hoisted9, "selected", ctrl.search.category ==='memories' ? true : null)
+      text("Memories")
+    elementClose("option")
+    elementOpen("option", "51591f8a-77ea-4be6-9ab8-2a2c0deaa256", hoisted10, "selected", ctrl.search.category ==='indexing' ? true : null)
+      text("Indexing")
+    elementClose("option")
+  elementClose("select")
+  elementOpen("label", "f01b8193-3edf-4a95-a934-f5af9f03342b", hoisted11)
+    elementOpen("input", "0c8fd95d-0927-4b03-9d2b-00303c49b65d", hoisted12, "onchange", function ($event) {
       var $element = this;
     ctrl.toggleMine()})
     elementClose("input")
@@ -60,14 +58,14 @@ elementOpen("section", "3acd9870-2aca-4c6c-8344-28f142b0832d", hoisted1)
     elementClose("span")
   elementClose("label")
 elementClose("section")
-elementOpen("section", "7cf019de-6e8e-4c4b-9af7-ceb1e998c3a0", hoisted13)
+elementOpen("section", "eceefb81-cb9b-44df-b6bd-b6a86c4d9b12", hoisted13)
   __target = ctrl.viewSkills
   if (__target) {
     ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
       var item = $value
-      var $key = "16005b99-5bda-4154-934d-be996ede1900_" + $item
+      var $key = "7d9072b9-0d9c-440d-83ac-913a2f11c4cb_" + $item
       elementOpen("div", $key, hoisted14)
-        elementOpen("collapsable-panel", "756db349-33ea-4286-8a6d-1efed6a99be4_" + $key, hoisted15, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements)
+        elementOpen("collapsable-panel", "1a868e99-d210-4c51-a5d9-0724b4012b40_" + $key, hoisted15, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements)
         elementClose("collapsable-panel")
       elementClose("div")
     }, this)

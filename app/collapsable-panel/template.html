@@ -14,7 +14,7 @@
       <button if="ctrl.pending" type="button" name="pending" onclick="{ctrl.showAwards(ctrl.iid, 'pending')}">
         <img src="/img/skill-pending.svg" alt="">
       </button>
-      <button type="button" name="add" onclick="{ctrl.addTicket(ctrl.iid)}">
+      <button type="button" name="add" onclick="{ctrl.showTicketEditor(ctrl.iid)}">
         <img src="/img/help.svg" alt="">
       </button>
       <button if="ctrl.added || ctrl.pending || ctrl.earned" type="button" name="delete" onclick="{ctrl.delete(ctrl.iid)}">
@@ -53,6 +53,14 @@
     </section>
   </achievements-wrapper>
   <alert if="ctrl.showAlert" class="{ctrl.alertClass}">{ctrl.alertText}</alert>
+  <help-request if="ctrl.showHelpEditor">
+    <label for="">If you want or need special help, please tell us about it</label>
+    <textarea name="request" rows="8"></textarea>
+    <div class="button-group">
+      <button type="button" class="primary" onclick="{ctrl.addTicket()}">Apply</button>
+      <a href="javascript:void(0)" onclick="{ctrl.hideHelpEditor()}">Cancel</a>
+    </div>
+  </help-request>
   <skill-editor if="ctrl.showSkillEditor">
     <header>
       Applying for a Skill Achievement

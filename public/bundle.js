@@ -669,42 +669,40 @@ var hoisted15 = ["shared", "", "collapsed", "true"];
 var __target$5;
 
 function render$5(ctrl) {
-  incrementalDom.elementOpen("section", "3acd9870-2aca-4c6c-8344-28f142b0832d", hoisted1$5);
-  incrementalDom.elementOpen("input", "d216df60-bf65-419d-84cb-a724f54172e6", hoisted2$3, "onkeyup", function ($event) {
+  incrementalDom.elementOpen("section", "154149a4-a496-4d46-a35e-72b397469ca9", hoisted1$5);
+  incrementalDom.elementOpen("input", "b9638cc9-e5fb-4c1d-8ae5-c5ace73d48a6", hoisted2$3, "onkeyup", function ($event) {
     var $element = this;
     ctrl.search.text = this.value;ctrl.filterSkills();
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("skill-editor-category");
-  incrementalDom.elementOpen("select", "1716d69c-da23-4108-ba23-bf94294b38a2", hoisted3$3, "onchange", function ($event) {
+  incrementalDom.elementOpen("select", "0a9f0b91-3c07-4707-9cf0-2612b57f8edf", hoisted3$3, "onchange", function ($event) {
     var $element = this;
     ctrl.search.category = this.value;ctrl.filterSkills();
   });
-  incrementalDom.elementOpen("option", "8c682475-9e20-4d68-9e22-5eca943a5019", hoisted4$2);
+  incrementalDom.elementOpen("option", "e4b33753-8864-4151-9115-57f0fabc6374", hoisted4$2);
   incrementalDom.text("Select");
   incrementalDom.elementClose("option");
-  incrementalDom.elementOpen("option", "962c93b3-9931-45a5-9bfd-7ea5e58f737e", hoisted5$2, "selected", ctrl.search.category === 'booklet' ? true : null);
+  incrementalDom.elementOpen("option", "c7bf409d-a8f6-4c86-a4e2-60093510da74", hoisted5$2, "selected", ctrl.search.category === 'booklet' ? true : null);
   incrementalDom.text("Booklet");
   incrementalDom.elementClose("option");
-  incrementalDom.elementOpen("option", "23d87cef-bd9a-4e43-a2f5-0a3f61b6f11b", hoisted6$2, "selected", ctrl.search.category === 'find' ? true : null);
+  incrementalDom.elementOpen("option", "ae6c5d33-12df-4c1b-a663-05f002f30ee4", hoisted6$2, "selected", ctrl.search.category === 'find' ? true : null);
   incrementalDom.text("Find");
   incrementalDom.elementClose("option");
-  incrementalDom.elementOpen("option", "3e0b6f2f-c31a-426a-a1fe-852f87e75e96", hoisted7$2, "selected", ctrl.search.category === 'take' ? true : null);
+  incrementalDom.elementOpen("option", "ae20de2e-9573-4b54-84f6-1982d457a5a9", hoisted7$2, "selected", ctrl.search.category === 'take' ? true : null);
   incrementalDom.text("Take");
   incrementalDom.elementClose("option");
-  incrementalDom.elementOpen("option", "37eb9a3e-7270-4831-b11e-fb944b04d338", hoisted8$2, "selected", ctrl.search.category === 'teach' ? true : null);
+  incrementalDom.elementOpen("option", "1db65060-d7c9-4a62-b0ca-67920f20ff6e", hoisted8$2, "selected", ctrl.search.category === 'teach' ? true : null);
   incrementalDom.text("Teach");
   incrementalDom.elementClose("option");
-  incrementalDom.elementOpen("option", "13519062-9c65-4197-9634-36ab0327803e", hoisted9$1, "selected", ctrl.search.category === 'memories' ? true : null);
+  incrementalDom.elementOpen("option", "bccb180d-686f-4380-83f8-b11b20c62534", hoisted9$1, "selected", ctrl.search.category === 'memories' ? true : null);
   incrementalDom.text("Memories");
   incrementalDom.elementClose("option");
-  incrementalDom.elementOpen("option", "af398573-1719-40d2-a253-b7becdc8683c", hoisted10$1, "selected", ctrl.search.category === 'indexing' ? true : null);
+  incrementalDom.elementOpen("option", "51591f8a-77ea-4be6-9ab8-2a2c0deaa256", hoisted10$1, "selected", ctrl.search.category === 'indexing' ? true : null);
   incrementalDom.text("Indexing");
   incrementalDom.elementClose("option");
   incrementalDom.elementClose("select");
-  incrementalDom.elementClose("skill-editor-category");
-  incrementalDom.elementOpen("label", "c116f99d-e84e-44a2-a136-d8fc61703a1d", hoisted11);
-  incrementalDom.elementOpen("input", "94c3dd28-6545-4d57-b9a5-b5149fca2053", hoisted12, "onchange", function ($event) {
+  incrementalDom.elementOpen("label", "f01b8193-3edf-4a95-a934-f5af9f03342b", hoisted11);
+  incrementalDom.elementOpen("input", "0c8fd95d-0927-4b03-9d2b-00303c49b65d", hoisted12, "onchange", function ($event) {
     var $element = this;
     ctrl.toggleMine();
   });
@@ -714,14 +712,14 @@ function render$5(ctrl) {
   incrementalDom.elementClose("span");
   incrementalDom.elementClose("label");
   incrementalDom.elementClose("section");
-  incrementalDom.elementOpen("section", "7cf019de-6e8e-4c4b-9af7-ceb1e998c3a0", hoisted13);
+  incrementalDom.elementOpen("section", "eceefb81-cb9b-44df-b6bd-b6a86c4d9b12", hoisted13);
   __target$5 = ctrl.viewSkills;
   if (__target$5) {
     (__target$5.forEach ? __target$5 : Object.keys(__target$5)).forEach(function ($value, $item, $target) {
       var item = $value;
-      var $key = "16005b99-5bda-4154-934d-be996ede1900_" + $item;
+      var $key = "7d9072b9-0d9c-440d-83ac-913a2f11c4cb_" + $item;
       incrementalDom.elementOpen("div", $key, hoisted14);
-      incrementalDom.elementOpen("collapsable-panel", "756db349-33ea-4286-8a6d-1efed6a99be4_" + $key, hoisted15, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements);
+      incrementalDom.elementOpen("collapsable-panel", "1a868e99-d210-4c51-a5d9-0724b4012b40_" + $key, hoisted15, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements);
       incrementalDom.elementClose("collapsable-panel");
       incrementalDom.elementClose("div");
     }, this);
@@ -729,7 +727,7 @@ function render$5(ctrl) {
   incrementalDom.elementClose("section");
 }
 
-var css$5 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  font-size: 1.1em;\n}\n#home {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  margin-bottom: 2vh;\n  flex: 1;\n}\nsection#search {\n  display: flex;\n  margin: 2vw 2vh 0;\n  height: 42px;\n}\nsection#search input {\n  flex-grow: 1;\n  width: inherit;\n  height: 36px;\n  font-size: 1em;\n  padding-left: 2vw;\n}\nsection#search select {\n  flex: .5;\n  height: 42px;\n  font-size: 1em;\n  margin-left: 1vw;\n  border: 0;\n  outline: 1px solid #ccc;\n  background-color: white;\n  border-radius: 0;\n}\nsection#skills {\n  display: flex;\n  flex-direction: column;\n  flex: 6;\n  margin: 2vw 2vh 0;\n  background-color: #ffffff;\n  padding: 2vw 2vh;\n  overflow-y: auto;\n}\n#mine-wrapper {\n  display: flex;\n  background-color: #ffffff;\n  align-items: center;\n  height: 42px;\n  padding: 0 1vw;\n  margin-left: 1vw;\n}\n#mine-wrapper #mine-checkbox {\n  margin-right: 1vw;\n}\ncollapsable-panel {\n  display: block;\n  width: 100%;\n  height: auto;\n}\ncollapsable-panel.odd {\n  background-color: rgba(98, 171, 239, 0.15);\n}\n";
+var css$5 = ":host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n  font-size: 1.1em;\n  box-sizing: border-box;\n}\n#home {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  margin-bottom: 2vh;\n  flex: 1;\n}\nsection#search {\n  display: flex;\n  flex-direction: row;\n  background-color: #ffffff;\n  font-size: 1em;\n  justify-content: : center;\n  box-sizing: border-box;\n  margin: 2vh 2vh 0 2vh;\n}\nsection#search input[type=text] {\n  height: 36px;\n  flex: 1;\n  font-size: 1em;\n  padding: 1vw;\n}\nsection#search select[name=category] {\n  font-size: 1em;\n  flex: .5;\n  margin-right: 1vw;\n  background: transparent;\n  border: 0;\n}\nsection#search label {\n  display: flex;\n  align-items: center;\n  flex: .5;\n  border-left: 1px solid #ccc;\n  padding-left: 2vw;\n}\nsection#search label input[type=checkbox] {\n  margin-right: 2vw;\n}\nsection#skills {\n  display: flex;\n  flex-direction: column;\n  flex: 6;\n  margin: 2vw 2vh 0;\n  background-color: #ffffff;\n  padding: 2vw 2vh;\n  overflow-y: auto;\n}\ncollapsable-panel {\n  display: block;\n  width: 100%;\n  height: auto;\n}\ncollapsable-panel.odd {\n  background-color: rgba(98, 171, 239, 0.15);\n}\n@media (max-width: 500px) {\n  section#search {\n    flex-direction: column;\n  }\n}\n";
 
 var hoisted1$6 = ["class", "panel"];
 var hoisted2$4 = ["class", "heading"];
@@ -753,80 +751,85 @@ var hoisted19 = ["class", "description"];
 var hoisted20 = ["type", "button", "name", "close"];
 var hoisted21 = ["src", "/img/close.svg", "alt", ""];
 var hoisted22 = ["name", "achievements"];
-var hoisted23 = ["name", "achievement", "rows", "8"];
-var hoisted24 = ["class", "control-container"];
-var hoisted25 = ["type", "checkbox", "name", "share", "checked", ""];
-var hoisted26 = ["class", "control-container"];
-var hoisted27 = ["type", "checkbox", "name", "helping", "checked", ""];
-var hoisted28 = ["class", "button-group"];
-var hoisted29 = ["type", "button", "class", "primary"];
-var hoisted30 = ["href", "javascript:void(0)"];
-var hoisted31 = ["class", "html"];
+var hoisted23 = ["for", ""];
+var hoisted24 = ["name", "request", "rows", "8"];
+var hoisted25 = ["class", "button-group"];
+var hoisted26 = ["type", "button", "class", "primary"];
+var hoisted27 = ["href", "javascript:void(0)"];
+var hoisted28 = ["name", "achievement", "rows", "8"];
+var hoisted29 = ["class", "control-container"];
+var hoisted30 = ["type", "checkbox", "name", "share", "checked", ""];
+var hoisted31 = ["class", "control-container"];
+var hoisted32 = ["type", "checkbox", "name", "helping", "checked", ""];
+var hoisted33 = ["class", "button-group"];
+var hoisted34 = ["type", "button", "class", "primary"];
+var hoisted35 = ["href", "javascript:void(0)"];
+var hoisted36 = ["class", "html"];
 var __target$6;
 
 function render$6(ctrl) {
-  incrementalDom.elementOpen("div", "a44bb61c-aa22-41d9-b7c8-25a5aa9ae12d", hoisted1$6);
-  incrementalDom.elementOpen("div", "061e4082-8dd9-49fa-b932-5a98dc19d882", hoisted2$4);
-  incrementalDom.elementOpen("div", "67b6b2f5-0ec1-4da2-a7d3-9d30e8ebf449", hoisted3$4);
+  incrementalDom.elementOpen("div", "4bd52474-fa5c-415e-a398-256b72ebfceb", hoisted1$6);
+  incrementalDom.elementOpen("div", "906619a0-bca7-4e03-94cc-233989afbb92", hoisted2$4);
+  incrementalDom.elementOpen("div", "e2f71788-0f8f-4e38-beec-fe07c504b166", hoisted3$4);
   incrementalDom.text("" + ctrl.heading + "");
   incrementalDom.elementClose("div");
-  incrementalDom.elementOpen("div", "e424a77f-5442-42e9-b9f8-64b76c93c2f3", hoisted4$3);
+  incrementalDom.elementOpen("div", "3a394219-379a-4fbc-bf7c-8f89a86a101c", hoisted4$3);
   if (!ctrl.added && !ctrl.earned && !ctrl.pending && !ctrl.multiple) {
-    incrementalDom.elementOpen("button", "8d128b91-1e96-4a4a-b197-4e073c642e83", hoisted5$3, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "be94c88f-1ca6-4fab-be12-371f174a5b2f", hoisted5$3, "onclick", function ($event) {
       var $element = this;
       ctrl.add(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "8e048bdb-e5f6-4cb4-b655-89901b448b98", hoisted6$3);
+    incrementalDom.elementOpen("img", "f68ad030-60dd-4e40-b245-ea9fa21fa4b4", hoisted6$3);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (!ctrl.earned && !ctrl.multiple && !ctrl.pending) {
-    incrementalDom.elementOpen("button", "f8f7fe6b-8b12-4398-882b-a3774fc662ca", hoisted7$3, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "c9ca00fa-20b1-4d4f-83e1-38a80a07491b", hoisted7$3, "onclick", function ($event) {
       var $element = this;
       ctrl.addAndShowAchievementEditor(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "309a97f0-05d3-4a4f-96b2-e057adf21c6d", hoisted8$3);
+    incrementalDom.elementOpen("img", "2b483294-cf73-408b-86aa-9e3aec600197", hoisted8$3);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (ctrl.earned) {
-    incrementalDom.elementOpen("button", "e41c73df-6060-45d3-8392-95ae0a35fa8f", hoisted9$2, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "6a5948df-40cf-4881-aa4d-fdab98abd1c6", hoisted9$2, "onclick", function ($event) {
       var $element = this;
       ctrl.showAwards(ctrl.iid, 'earned');
     });
-    incrementalDom.elementOpen("img", "00ba83c1-b371-4611-91b1-d8d157e5558b", hoisted10$2);
+    incrementalDom.elementOpen("img", "94c95b5e-34da-4a81-a649-3e1c937fa882", hoisted10$2);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (ctrl.pending) {
-    incrementalDom.elementOpen("button", "88472643-75ca-4130-beb0-a20ca5dbb4fd", hoisted11$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "35b5c8d8-93f2-4a6d-a3cd-9ca801d3eb34", hoisted11$1, "onclick", function ($event) {
       var $element = this;
       ctrl.showAwards(ctrl.iid, 'pending');
     });
-    incrementalDom.elementOpen("img", "1ab8e017-1d01-46b5-a6b7-9994744b864a", hoisted12$1);
+    incrementalDom.elementOpen("img", "d6ac4928-b7f0-4657-8118-850ea7ba73ca", hoisted12$1);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
-  incrementalDom.elementOpen("button", "f974c494-9dd5-494b-9d5f-1c91847f221f", hoisted13$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("button", "8bf778e4-fbef-44ed-a451-19f8af2783de", hoisted13$1, "onclick", function ($event) {
     var $element = this;
-    ctrl.addTicket(ctrl.iid);
+    ctrl.showTicketEditor(ctrl.iid);
   });
-  incrementalDom.elementOpen("img", "f333c27e-0de4-4433-bbea-0091a3939b2c", hoisted14$1);
+  incrementalDom.elementOpen("img", "75c8ee86-6476-4753-ae41-49d21b6c68d9", hoisted14$1);
   incrementalDom.elementClose("img");
   incrementalDom.elementClose("button");
   if (ctrl.added || ctrl.pending || ctrl.earned) {
-    incrementalDom.elementOpen("button", "e29a1a66-fc4a-4ab6-9e3b-95fe78fb68d9", hoisted15$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "6e365d2f-f37d-458e-87ab-b86b2a286535", hoisted15$1, "onclick", function ($event) {
       var $element = this;
       ctrl.delete(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "d8787be4-fa64-4f76-844b-6df1fc11b590", hoisted16);
+    incrementalDom.elementOpen("img", "fbe51515-b8e9-4214-8cc4-91781614d67e", hoisted16);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
-  incrementalDom.elementOpen("button", "ca6d77d5-1fc1-4a1a-85e3-49163f060b19", hoisted17);
+  incrementalDom.elementOpen("button", "91823206-7fe2-44ae-9c96-67a86d302e46", hoisted17);
   incrementalDom.text("" + ctrl.achievements + "");
   incrementalDom.elementClose("button");
-  incrementalDom.elementOpen("button", "bc431865-ccc2-4665-9fc7-c29697c5d1e8", hoisted18, "onclick", function ($event) {
+  incrementalDom.elementOpen("button", "6d2d16a1-6bee-4c45-9f06-6efe0b4d4ea8", hoisted18, "onclick", function ($event) {
     var $element = this;
     ctrl.toggle();
   });
@@ -843,7 +846,7 @@ function render$6(ctrl) {
   incrementalDom.elementClose("button");
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("div");
-  incrementalDom.elementOpen("div", "e50cf46f-779e-4b66-9fd8-61e5260a24d5", hoisted19);
+  incrementalDom.elementOpen("div", "3000087d-568a-4536-a252-a2015023e301", hoisted19);
   incrementalDom.text("" + ctrl.description + "");
   incrementalDom.elementClose("div");
   if (ctrl.showAchievements) {
@@ -852,11 +855,11 @@ function render$6(ctrl) {
     incrementalDom.elementOpen("title");
     incrementalDom.text("Achievements:");
     incrementalDom.elementClose("title");
-    incrementalDom.elementOpen("button", "6de7770e-45fe-49dc-acb9-4887ef57da1a", hoisted20, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "96624b9f-f7ac-4d7b-a5df-8dd8080e8e7a", hoisted20, "onclick", function ($event) {
       var $element = this;
       ctrl.hideAchievements(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "b7f6f8b3-c83e-4680-a479-126f11269332", hoisted21);
+    incrementalDom.elementOpen("img", "2d12eda9-5e8f-41be-b684-7ed548cfa9d3", hoisted21);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
     incrementalDom.elementClose("header");
@@ -864,7 +867,7 @@ function render$6(ctrl) {
     if (__target$6) {
       (__target$6.forEach ? __target$6 : Object.keys(__target$6)).forEach(function ($value, $item, $target) {
         var item = $value;
-        var $key = "79a4e9b2-95a8-4851-8632-0f9ce14975a8_" + $item;
+        var $key = "8ee38371-0316-483c-b36c-7141555294c6_" + $item;
         incrementalDom.elementOpen("section", $key, hoisted22);
         if (ctrl.awards[item].pending && parseInt(ctrl.awards[item].skillId, 10) === parseInt(ctrl.iid, 10)) {
           incrementalDom.elementOpen("story");
@@ -902,6 +905,29 @@ function render$6(ctrl) {
     incrementalDom.text("" + ctrl.alertText + "");
     incrementalDom.elementClose("alert");
   }
+  if (ctrl.showHelpEditor) {
+    incrementalDom.elementOpen("help-request");
+    incrementalDom.elementOpen("label", "48ccd32b-9587-49fd-8082-dfeed1d46209", hoisted23);
+    incrementalDom.text("If you want or need special help, please tell us about it");
+    incrementalDom.elementClose("label");
+    incrementalDom.elementOpen("textarea", "615fcb86-c218-4626-8414-81b44604d8d1", hoisted24);
+    incrementalDom.elementClose("textarea");
+    incrementalDom.elementOpen("div", "7ab2f799-008a-4ece-8e0f-4f8538d0a813", hoisted25);
+    incrementalDom.elementOpen("button", "73e9fa92-dea8-439d-bd27-3cf93b18c784", hoisted26, "onclick", function ($event) {
+      var $element = this;
+      ctrl.addTicket();
+    });
+    incrementalDom.text("Apply");
+    incrementalDom.elementClose("button");
+    incrementalDom.elementOpen("a", "e5c16094-22bf-457e-94fa-49e1ee4bf8c8", hoisted27, "onclick", function ($event) {
+      var $element = this;
+      ctrl.hideHelpEditor();
+    });
+    incrementalDom.text("Cancel");
+    incrementalDom.elementClose("a");
+    incrementalDom.elementClose("div");
+    incrementalDom.elementClose("help-request");
+  }
   if (ctrl.showSkillEditor) {
     incrementalDom.elementOpen("skill-editor");
     incrementalDom.elementOpen("header");
@@ -915,30 +941,30 @@ function render$6(ctrl) {
               someone will review and approve it. Please share your experience, and sign up to help others. \
             ");
     incrementalDom.elementClose("p");
-    incrementalDom.elementOpen("textarea", "2f1a7a4b-092c-4dc9-a4f5-7f0ea143be43", hoisted23);
+    incrementalDom.elementOpen("textarea", "44f20f80-99eb-4cbc-8070-9da2066a231a", hoisted28);
     incrementalDom.elementClose("textarea");
-    incrementalDom.elementOpen("div", "cad3c676-f427-40dd-99df-253bdb55ab28", hoisted24);
-    incrementalDom.elementOpen("input", "b4d4d7d2-476c-4b1f-9bc8-2798b6ef693f", hoisted25);
+    incrementalDom.elementOpen("div", "99f226fa-13b5-42d8-947f-c701212ec023", hoisted29);
+    incrementalDom.elementOpen("input", "2d8d5ba0-249d-4ddb-855f-8356361b76dd", hoisted30);
     incrementalDom.elementClose("input");
     incrementalDom.elementOpen("span");
     incrementalDom.text("Yes, I'm willing to share my experience");
     incrementalDom.elementClose("span");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "4a829bb7-9aaf-45d3-bf19-126b8fd58eef", hoisted26);
-    incrementalDom.elementOpen("input", "2935a68b-8527-4d9b-be47-5e78c0f7086d", hoisted27);
+    incrementalDom.elementOpen("div", "a42ef929-d7c9-4ed2-9d89-a9457060c658", hoisted31);
+    incrementalDom.elementOpen("input", "dcb29777-3c31-4a04-ab0e-49333e6ebbc0", hoisted32);
     incrementalDom.elementClose("input");
     incrementalDom.elementOpen("span");
     incrementalDom.text("Yes, I'm willing to help others achieve this skill.");
     incrementalDom.elementClose("span");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "2b82197e-6d2f-4287-ae8c-242ebe0417ff", hoisted28);
-    incrementalDom.elementOpen("button", "b833a933-4f83-4a91-b273-cc55787f21c0", hoisted29, "onclick", function ($event) {
+    incrementalDom.elementOpen("div", "1e454b90-b228-4525-9256-8a3cbcbadeca", hoisted33);
+    incrementalDom.elementOpen("button", "7eb49a71-e7ba-40da-8397-d60ceaf4ae21", hoisted34, "onclick", function ($event) {
       var $element = this;
       ctrl.applyForAchievment();
     });
     incrementalDom.text("Apply");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("a", "14f1edb2-c61d-45ca-9492-fde303c49415", hoisted30, "onclick", function ($event) {
+    incrementalDom.elementOpen("a", "6bbe44d2-cd9b-43f6-86d8-250bc2c9d6c9", hoisted35, "onclick", function ($event) {
       var $element = this;
       ctrl.hideSkillEditor();
     });
@@ -948,7 +974,7 @@ function render$6(ctrl) {
     incrementalDom.elementClose("skill-editor");
   }
   if (!ctrl.collapsed) {
-    incrementalDom.elementOpen("div", "a6ae8ae0-cdf7-4712-83b4-6f1a973bb033", hoisted31);
+    incrementalDom.elementOpen("div", "934c8273-3a90-4a2d-bad3-cee1cdd81351", hoisted36);
     if (ctrl.html && ctrl.html !== '') {
       var el = incrementalDom.currentElement();
       el.innerHTML = ctrl.html;
@@ -1119,6 +1145,12 @@ var CollapsablePanel = function (_HTMLElement) {
       this.sColl.removeDynamicView('skills');
       document.removeEventListener('awardsChanged', this._updateView.bind(this));
       document.removeEventListener('skillsChanged', this._updateView.bind(this));
+    }
+  }, {
+    key: 'showTicketEditor',
+    value: function showTicketEditor(skillId) {
+      this.showHelpEditor = true;
+      this._updateView();
     }
   }, {
     key: 'addTicket',
@@ -1467,7 +1499,7 @@ function render$8(ctrl) {
 
 var css$8 = "h1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\nsys-admin {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: url('/img/background.svg');\n  background-size: cover;\n  background-color: #0f76a1;\n}\n#sys-admin {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n#sys-admin tabs {\n  display: flex;\n  margin: 2vw 2vw 0 2vw;\n  background-color: white;\n  justify-content: flex-start;\n}\n#sys-admin tab {\n  display: block;\n  flex: 1;\n}\n#sys-admin tab input[type=radio] {\n  display: none;\n}\n#sys-admin tab input[type=radio]:checked ~ label {\n  background: white;\n  border-bottom: 1px solid white;\n  z-index: 2;\n}\n#sys-admin tab label {\n  display: block;\n  background: #eee;\n  padding: 10px;\n  border: 1px solid #ccc;\n  font-size: 17px;\n  cursor: pointer;\n}\n#sys-admin content {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  background: white;\n  border-right: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n  border-left: 1px solid #ccc;\n  margin: 0 2vw 1vh 2vw;\n  padding: 2vw;\n  overflow: hidden;\n}\n";
 
-var css$9 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n}\nsection[name='header'] {\n  display: flex;\n  flex-direction: column;\n}\nsection[name='header'] input[name=\"search\"] {\n  height: 38px;\n  font-size: 1em;\n  padding-left: 1vw;\n}\nsection[name='header'] #filter {\n  display: flex;\n  align-items: center;\n  height: 38px;\n  border: 1px solid #ccc;\n  border-top: 0;\n}\nsection[name='header'] #filter label {\n  flex: 1;\n  padding-left: 1vw;\n}\nsection[name='tickets'] {\n  flex: 1;\n  overflow-x: hidden;\n  overflow-y: auto;\n  margin-top: 1vh;\n  border: 1px solid #ccc;\n  display: flex;\n  flex-direction: column;\n  padding: 1vw 1vh;\n}\nsection[name='tickets'] .row {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  font-size: .9em;\n  padding: 1vh 1vw;\n}\nsection[name='tickets'] .row.odd {\n  background-color: #f4f4f4;\n}\nsection[name='tickets'] .row user,\nsection[name='tickets'] .row skill,\nsection[name='tickets'] .row date,\nsection[name='tickets'] .row help,\nsection[name='tickets'] .row share,\nsection[name='tickets'] .row story,\nsection[name='tickets'] .row actions {\n  display: flex;\n  height: 28px;\n  width: 100%;\n  align-items: center;\n}\nsection[name='tickets'] .row user name,\nsection[name='tickets'] .row skill name,\nsection[name='tickets'] .row date name,\nsection[name='tickets'] .row help name,\nsection[name='tickets'] .row share name,\nsection[name='tickets'] .row story name,\nsection[name='tickets'] .row actions name {\n  flex: 1;\n  font-weight: bold;\n}\nsection[name='tickets'] .row user value,\nsection[name='tickets'] .row skill value,\nsection[name='tickets'] .row date value,\nsection[name='tickets'] .row help value,\nsection[name='tickets'] .row share value,\nsection[name='tickets'] .row story value,\nsection[name='tickets'] .row actions value {\n  display: inline-block;\n  flex: 4;\n}\nsection[name='tickets'] .row actions {\n  height: 48px;\n}\nsection[name='tickets'] .row actions value {\n  padding: 0;\n}\nsection[name='tickets'] .row actions value button {\n  margin-top: 2vh;\n  margin-right: 1vw;\n}\n";
+var css$9 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n:host {\n  display: flex;\n  flex-direction: column;\n}\nsection[name='header'] {\n  display: flex;\n  flex-direction: column;\n}\nsection[name='header'] input[name=\"search\"] {\n  height: 38px;\n  font-size: 1em;\n  padding-left: 1vw;\n}\nsection[name='header'] #filter {\n  display: flex;\n  align-items: center;\n  height: 38px;\n  border: 1px solid #ccc;\n  border-top: 0;\n}\nsection[name='header'] #filter label {\n  flex: 1;\n  padding-left: 1vw;\n}\nsection[name='tickets'] {\n  flex: 1;\n  overflow-x: hidden;\n  overflow-y: auto;\n  margin-top: 1vh;\n  border: 1px solid #ccc;\n  display: flex;\n  flex-direction: column;\n  padding: 1vw 1vh;\n}\nsection[name='tickets'] .row {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  font-size: .9em;\n  padding: 1vh 1vw;\n}\nsection[name='tickets'] .row.odd {\n  background-color: #f4f4f4;\n}\nsection[name='tickets'] .row user,\nsection[name='tickets'] .row skill,\nsection[name='tickets'] .row date,\nsection[name='tickets'] .row request,\nsection[name='tickets'] .row actions {\n  display: flex;\n  height: 28px;\n  width: 100%;\n  align-items: center;\n}\nsection[name='tickets'] .row user name,\nsection[name='tickets'] .row skill name,\nsection[name='tickets'] .row date name,\nsection[name='tickets'] .row request name,\nsection[name='tickets'] .row actions name {\n  flex: 1;\n  font-weight: bold;\n}\nsection[name='tickets'] .row user value,\nsection[name='tickets'] .row skill value,\nsection[name='tickets'] .row date value,\nsection[name='tickets'] .row request value,\nsection[name='tickets'] .row actions value {\n  display: inline-block;\n  flex: 4;\n}\nsection[name='tickets'] .row actions {\n  height: 48px;\n}\nsection[name='tickets'] .row actions value {\n  padding: 0;\n}\nsection[name='tickets'] .row actions value button {\n  margin-top: 2vh;\n  margin-right: 1vw;\n}\n";
 
 var hoisted1$9 = ["name", "header"];
 var hoisted2$7 = ["type", "text", "name", "search", "value", "", "placeholder", "Search ..."];
@@ -1485,15 +1517,15 @@ var hoisted13$2 = ["type", "button", "class", "danger", "name", "delete"];
 var __target$9;
 
 function render$9(ctrl) {
-  incrementalDom.elementOpen("section", "aea2d067-420e-43d1-a720-571241540811", hoisted1$9);
-  incrementalDom.elementOpen("input", "5a7b32a5-65da-4e66-97ca-339dafb7c726", hoisted2$7, "onkeyup", function ($event) {
+  incrementalDom.elementOpen("section", "7466dbe9-09aa-4aa9-bb18-f1906a7bea8a", hoisted1$9);
+  incrementalDom.elementOpen("input", "20b9aa25-72c2-4c19-b153-712d5c6912a4", hoisted2$7, "onkeyup", function ($event) {
     var $element = this;
     ctrl.search.text = this.value;ctrl.filterTickets();
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("div", "484b786a-7afa-4c39-b4c6-3102023e890c", hoisted3$6);
-  incrementalDom.elementOpen("label", "bbf5262b-b86d-4576-a85b-71233fc3c792", hoisted4$5);
-  incrementalDom.elementOpen("input", "3ddf300d-7f90-4129-87df-ee4a44f60a38", hoisted5$5, "onchange", function ($event) {
+  incrementalDom.elementOpen("div", "3c726a66-424c-47a8-a0f5-0cbe4e452a8c", hoisted3$6);
+  incrementalDom.elementOpen("label", "91d83a71-2b4e-4067-a1b6-a2cadad0cd05", hoisted4$5);
+  incrementalDom.elementOpen("input", "1f545177-e7f4-4fbd-8bb5-5b958234d7a4", hoisted5$5, "onchange", function ($event) {
     var $element = this;
     ctrl.search.type = this.value;ctrl.filterTickets();
   });
@@ -1502,8 +1534,8 @@ function render$9(ctrl) {
             All \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "5e63b931-172d-49d8-9c61-19847372800c", hoisted6$5);
-  incrementalDom.elementOpen("input", "226cc059-302d-4107-8d01-e08b3e208fb2", hoisted7$5, "onchange", function ($event) {
+  incrementalDom.elementOpen("label", "316fd778-e47d-45cd-a9eb-0231be910cf3", hoisted6$5);
+  incrementalDom.elementOpen("input", "602b9c39-653e-4d6a-857b-c341b6d05a32", hoisted7$5, "onchange", function ($event) {
     var $element = this;
     ctrl.search.type = this.value;ctrl.filterTickets();
   });
@@ -1512,8 +1544,8 @@ function render$9(ctrl) {
             Open \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "98f06861-3055-427c-8665-8f93e911d795", hoisted8$5);
-  incrementalDom.elementOpen("input", "d36baadf-c3da-4fdf-bdf7-9d3df93eaf39", hoisted9$4, "onchange", function ($event) {
+  incrementalDom.elementOpen("label", "fc266102-dab9-4908-ba3b-eaf1956693cf", hoisted8$5);
+  incrementalDom.elementOpen("input", "2f2bef38-9685-4b9b-8448-140ce9d4c77a", hoisted9$4, "onchange", function ($event) {
     var $element = this;
     ctrl.search.type = this.value;ctrl.filterTickets();
   });
@@ -1525,12 +1557,12 @@ function render$9(ctrl) {
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("section");
   if (ctrl.tickets.length > 0) {
-    incrementalDom.elementOpen("section", "acf32ba9-e283-49ae-817a-ff6deacb78e3", hoisted10$4);
+    incrementalDom.elementOpen("section", "8796c3d0-75f0-4573-94b1-615bbc59d3d9", hoisted10$4);
     __target$9 = ctrl.tickets;
     if (__target$9) {
       (__target$9.forEach ? __target$9 : Object.keys(__target$9)).forEach(function ($value, $item, $target) {
         var ticket = $value;
-        var $key = "eb3a00fe-a89d-4818-9d8d-1c110b4d7619_" + $item;
+        var $key = "5001d9b9-66e8-488c-9dd1-b016f9ce2d71_" + $item;
         incrementalDom.elementOpen("div", $key, null, "class", $item % 2 ? 'row odd' : 'row even');
         incrementalDom.elementOpen("user");
         incrementalDom.elementOpen("name");
@@ -1556,12 +1588,20 @@ function render$9(ctrl) {
         incrementalDom.text("" + new Date(ticket.date).toLocaleDateString() + "");
         incrementalDom.elementClose("value");
         incrementalDom.elementClose("date");
+        incrementalDom.elementOpen("request");
+        incrementalDom.elementOpen("name");
+        incrementalDom.text("Request");
+        incrementalDom.elementClose("name");
+        incrementalDom.elementOpen("value");
+        incrementalDom.text("" + ticket.request + "");
+        incrementalDom.elementClose("value");
+        incrementalDom.elementClose("request");
         incrementalDom.elementOpen("actions");
         incrementalDom.elementOpen("name");
         incrementalDom.elementClose("name");
         incrementalDom.elementOpen("value");
         if (ticket.type === 'open' || ticket.type === '') {
-          incrementalDom.elementOpen("button", "df0b9511-0c86-4adf-b341-3167dcd0fa09_" + $key, hoisted11$2, "onclick", function ($event) {
+          incrementalDom.elementOpen("button", "d6a66b3e-3842-462f-aaa7-d6c971a3a7d1_" + $key, hoisted11$2, "onclick", function ($event) {
             var $element = this;
             ctrl.close(ticket);
           });
@@ -1569,14 +1609,14 @@ function render$9(ctrl) {
           incrementalDom.elementClose("button");
         }
         if (ticket.type === 'closed') {
-          incrementalDom.elementOpen("button", "6faa64c2-b4c5-45b1-a80f-06a2224b5d9e_" + $key, hoisted12$2, "onclick", function ($event) {
+          incrementalDom.elementOpen("button", "e4519ba1-c6ca-447f-9411-f32a6983f577_" + $key, hoisted12$2, "onclick", function ($event) {
             var $element = this;
             ctrl.open(ticket);
           });
           incrementalDom.text("Open");
           incrementalDom.elementClose("button");
         }
-        incrementalDom.elementOpen("button", "cff2c40f-64e5-4672-a7d3-d07a7acd568e_" + $key, hoisted13$2, "onclick", function ($event) {
+        incrementalDom.elementOpen("button", "abca042a-2aac-4063-89ba-51c3de13e8c5_" + $key, hoisted13$2, "onclick", function ($event) {
           var $element = this;
           ctrl.delete(ticket);
         });

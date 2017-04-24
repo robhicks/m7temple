@@ -14,6 +14,7 @@
   background-size: cover;
   background-color: #0f76a1;
   font-size: 1.1em;
+  box-sizing: border-box;
 }
 
 #home {
@@ -26,24 +27,34 @@
 
 section#search {
   display: flex;
-  margin: @marging-h @marging-v 0;
-  height: 42px;;
-  input {
-    flex-grow: 1;
-    width: inherit;
+  flex-direction: row;
+  background-color: @site-background;
+  font-size: 1em;
+  justify-content: : center;
+  box-sizing: border-box;
+  margin: 2vh 2vh 0 2vh;
+  input[type=text] {
     height: 36px;
+    flex: 1;
     font-size: 1em;
-    padding-left: @marging-h
+    padding: 1vw;
   }
-  select {
-    flex: .5;
-    height: 42px;
+  select[name=category] {
     font-size: 1em;
-    margin-left: 1vw;
+    flex: .5;
+    margin-right: 1vw;
+    background: transparent;
     border: 0;
-    outline: 1px solid #ccc;
-    background-color: white;
-    border-radius: 0;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    flex: .5;
+    border-left: 1px solid #ccc;
+    padding-left: 2vw;
+    input[type=checkbox] {
+      margin-right: 2vw;
+    }
   }
 }
 
@@ -57,18 +68,6 @@ section#skills {
   overflow-y: auto;
 }
 
-#mine-wrapper {
-  display: flex;
-  background-color: @site-background;
-  align-items: center;
-  height: 42px;
-  padding: 0 1vw;
-  margin-left: 1vw;
-  #mine-checkbox {
-    margin-right: 1vw;
-  }
-}
-
 collapsable-panel {
   display: block;
   width: 100%;
@@ -79,5 +78,7 @@ collapsable-panel {
 }
 
 @media (max-width: 500px) {
-
+  section#search {
+    flex-direction: column;
+  }
 }

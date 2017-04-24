@@ -136,6 +136,11 @@ class CollapsablePanel extends HTMLElement {
     document.removeEventListener('skillsChanged', this._updateView.bind(this));
   }
 
+  showTicketEditor(skillId) {
+    this.showHelpEditor = true;
+    this._updateView();
+  }
+
   addTicket(skillId) {
     let ticket = this.tColl.findOne({skillId, userId: user.id});
     if (ticket) this.addAlert('You have already requested help with this skill. Someone will be contacting you shortly.', 'bad');
