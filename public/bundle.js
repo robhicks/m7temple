@@ -751,85 +751,84 @@ var hoisted19 = ["class", "description"];
 var hoisted20 = ["type", "button", "name", "close"];
 var hoisted21 = ["src", "/img/close.svg", "alt", ""];
 var hoisted22 = ["name", "achievements"];
-var hoisted23 = ["for", ""];
-var hoisted24 = ["name", "request", "rows", "8"];
-var hoisted25 = ["class", "button-group"];
-var hoisted26 = ["type", "button", "class", "primary"];
-var hoisted27 = ["href", "javascript:void(0)"];
-var hoisted28 = ["name", "achievement", "rows", "8"];
-var hoisted29 = ["class", "control-container"];
-var hoisted30 = ["type", "checkbox", "name", "share", "checked", ""];
-var hoisted31 = ["class", "control-container"];
-var hoisted32 = ["type", "checkbox", "name", "helping", "checked", ""];
-var hoisted33 = ["class", "button-group"];
-var hoisted34 = ["type", "button", "class", "primary"];
-var hoisted35 = ["href", "javascript:void(0)"];
-var hoisted36 = ["class", "html"];
+var hoisted23 = ["name", "request", "rows", "8", "placeholder", "Please tell us the nature of the help you need."];
+var hoisted24 = ["class", "button-group"];
+var hoisted25 = ["type", "button", "class", "primary"];
+var hoisted26 = ["href", "javascript:void(0)"];
+var hoisted27 = ["name", "achievement", "rows", "8"];
+var hoisted28 = ["class", "control-container"];
+var hoisted29 = ["type", "checkbox", "name", "share", "checked", ""];
+var hoisted30 = ["class", "control-container"];
+var hoisted31 = ["type", "checkbox", "name", "helping", "checked", ""];
+var hoisted32 = ["class", "button-group"];
+var hoisted33 = ["type", "button", "class", "primary"];
+var hoisted34 = ["href", "javascript:void(0)"];
+var hoisted35 = ["class", "html"];
 var __target$6;
 
 function render$6(ctrl) {
-  incrementalDom.elementOpen("div", "4bd52474-fa5c-415e-a398-256b72ebfceb", hoisted1$6);
-  incrementalDom.elementOpen("div", "906619a0-bca7-4e03-94cc-233989afbb92", hoisted2$4);
-  incrementalDom.elementOpen("div", "e2f71788-0f8f-4e38-beec-fe07c504b166", hoisted3$4);
+  incrementalDom.elementOpen("div", "4e2b9d5d-1447-4287-8c9e-14daf12dbba5", hoisted1$6);
+  incrementalDom.elementOpen("div", "bec83eb7-b67c-45ab-91c5-8af3c5a2a584", hoisted2$4);
+  incrementalDom.elementOpen("div", "f9b101ae-9f01-47d7-83f2-52b0693ce00a", hoisted3$4);
   incrementalDom.text("" + ctrl.heading + "");
   incrementalDom.elementClose("div");
-  incrementalDom.elementOpen("div", "3a394219-379a-4fbc-bf7c-8f89a86a101c", hoisted4$3);
+  incrementalDom.elementOpen("div", "027939dd-1d6f-4d7a-a31b-f16763f200c3", hoisted4$3);
   if (!ctrl.added && !ctrl.earned && !ctrl.pending && !ctrl.multiple) {
-    incrementalDom.elementOpen("button", "be94c88f-1ca6-4fab-be12-371f174a5b2f", hoisted5$3, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "2eb815d4-e48e-45fb-8ad1-6c7768084105", hoisted5$3, "onclick", function ($event) {
       var $element = this;
       ctrl.add(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "f68ad030-60dd-4e40-b245-ea9fa21fa4b4", hoisted6$3);
+    incrementalDom.elementOpen("img", "ec246e1b-19b9-4ed1-bab3-de35bd0e1e21", hoisted6$3);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (!ctrl.earned && !ctrl.multiple && !ctrl.pending) {
-    incrementalDom.elementOpen("button", "c9ca00fa-20b1-4d4f-83e1-38a80a07491b", hoisted7$3, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "17e097a6-7a08-48bf-9d8d-da4a37a6a87d", hoisted7$3, "onclick", function ($event) {
       var $element = this;
       ctrl.addAndShowAchievementEditor(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "2b483294-cf73-408b-86aa-9e3aec600197", hoisted8$3);
+    incrementalDom.elementOpen("img", "2ff2525c-d4c8-4024-b225-3ccfeba93575", hoisted8$3);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (ctrl.earned) {
-    incrementalDom.elementOpen("button", "6a5948df-40cf-4881-aa4d-fdab98abd1c6", hoisted9$2, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "22398695-1f10-46b3-8109-d31cc4d2b3ae", hoisted9$2, "onclick", function ($event) {
       var $element = this;
       ctrl.showAwards(ctrl.iid, 'earned');
     });
-    incrementalDom.elementOpen("img", "94c95b5e-34da-4a81-a649-3e1c937fa882", hoisted10$2);
+    incrementalDom.elementOpen("img", "07092f77-df6b-45d9-a0a8-a43fe1a96660", hoisted10$2);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
   if (ctrl.pending) {
-    incrementalDom.elementOpen("button", "35b5c8d8-93f2-4a6d-a3cd-9ca801d3eb34", hoisted11$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "369f7eda-bdc2-4506-9677-4c8a9bf35569", hoisted11$1, "onclick", function ($event) {
       var $element = this;
       ctrl.showAwards(ctrl.iid, 'pending');
     });
-    incrementalDom.elementOpen("img", "d6ac4928-b7f0-4657-8118-850ea7ba73ca", hoisted12$1);
+    incrementalDom.elementOpen("img", "52e96637-a266-4a42-aa61-0813efcb3b12", hoisted12$1);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
-  incrementalDom.elementOpen("button", "8bf778e4-fbef-44ed-a451-19f8af2783de", hoisted13$1, "onclick", function ($event) {
+  incrementalDom.elementOpen("button", "dd43d39b-9968-4f91-8f1a-8e20ad70685e", hoisted13$1, "onclick", function ($event) {
     var $element = this;
     ctrl.showTicketEditor(ctrl.iid);
   });
-  incrementalDom.elementOpen("img", "75c8ee86-6476-4753-ae41-49d21b6c68d9", hoisted14$1);
+  incrementalDom.elementOpen("img", "eaf84cac-037c-4c4f-990d-9e982e3ff944", hoisted14$1);
   incrementalDom.elementClose("img");
   incrementalDom.elementClose("button");
   if (ctrl.added || ctrl.pending || ctrl.earned) {
-    incrementalDom.elementOpen("button", "6e365d2f-f37d-458e-87ab-b86b2a286535", hoisted15$1, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "1ae89744-dd01-49ea-87d0-27d791f20814", hoisted15$1, "onclick", function ($event) {
       var $element = this;
       ctrl.delete(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "fbe51515-b8e9-4214-8cc4-91781614d67e", hoisted16);
+    incrementalDom.elementOpen("img", "5eb74d36-617e-4fc2-84d1-ad3829eb92b3", hoisted16);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
   }
-  incrementalDom.elementOpen("button", "91823206-7fe2-44ae-9c96-67a86d302e46", hoisted17);
+  incrementalDom.elementOpen("button", "ef31261b-566e-4a58-a7c4-c524e34dc3e4", hoisted17);
   incrementalDom.text("" + ctrl.achievements + "");
   incrementalDom.elementClose("button");
-  incrementalDom.elementOpen("button", "6d2d16a1-6bee-4c45-9f06-6efe0b4d4ea8", hoisted18, "onclick", function ($event) {
+  incrementalDom.elementOpen("button", "590c0f9e-ebd9-4474-ae3b-dc7dd146aafc", hoisted18, "onclick", function ($event) {
     var $element = this;
     ctrl.toggle();
   });
@@ -846,7 +845,7 @@ function render$6(ctrl) {
   incrementalDom.elementClose("button");
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("div");
-  incrementalDom.elementOpen("div", "3000087d-568a-4536-a252-a2015023e301", hoisted19);
+  incrementalDom.elementOpen("div", "f7f8d081-89bc-4680-a327-b119eeffb21d", hoisted19);
   incrementalDom.text("" + ctrl.description + "");
   incrementalDom.elementClose("div");
   if (ctrl.showAchievements) {
@@ -855,11 +854,11 @@ function render$6(ctrl) {
     incrementalDom.elementOpen("title");
     incrementalDom.text("Achievements:");
     incrementalDom.elementClose("title");
-    incrementalDom.elementOpen("button", "96624b9f-f7ac-4d7b-a5df-8dd8080e8e7a", hoisted20, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "edfeb738-f3a2-4cb4-840d-7a08f2e1cec2", hoisted20, "onclick", function ($event) {
       var $element = this;
       ctrl.hideAchievements(ctrl.iid);
     });
-    incrementalDom.elementOpen("img", "2d12eda9-5e8f-41be-b684-7ed548cfa9d3", hoisted21);
+    incrementalDom.elementOpen("img", "9a4ab49c-49d6-499a-be87-108039aa9a49", hoisted21);
     incrementalDom.elementClose("img");
     incrementalDom.elementClose("button");
     incrementalDom.elementClose("header");
@@ -867,7 +866,7 @@ function render$6(ctrl) {
     if (__target$6) {
       (__target$6.forEach ? __target$6 : Object.keys(__target$6)).forEach(function ($value, $item, $target) {
         var item = $value;
-        var $key = "8ee38371-0316-483c-b36c-7141555294c6_" + $item;
+        var $key = "d21602c8-a0bf-42a4-86ce-478816049178_" + $item;
         incrementalDom.elementOpen("section", $key, hoisted22);
         if (ctrl.awards[item].pending && parseInt(ctrl.awards[item].skillId, 10) === parseInt(ctrl.iid, 10)) {
           incrementalDom.elementOpen("story");
@@ -907,21 +906,18 @@ function render$6(ctrl) {
   }
   if (ctrl.showHelpEditor) {
     incrementalDom.elementOpen("help-request");
-    incrementalDom.elementOpen("label", "48ccd32b-9587-49fd-8082-dfeed1d46209", hoisted23);
-    incrementalDom.text("If you want or need special help, please tell us about it");
-    incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("textarea", "615fcb86-c218-4626-8414-81b44604d8d1", hoisted24);
+    incrementalDom.elementOpen("textarea", "a19b6028-4ae7-4350-b012-8a26558533c5", hoisted23);
     incrementalDom.elementClose("textarea");
-    incrementalDom.elementOpen("div", "7ab2f799-008a-4ece-8e0f-4f8538d0a813", hoisted25);
-    incrementalDom.elementOpen("button", "73e9fa92-dea8-439d-bd27-3cf93b18c784", hoisted26, "onclick", function ($event) {
+    incrementalDom.elementOpen("div", "d69341bc-06c9-4ef7-aee9-554f2f0f8ced", hoisted24);
+    incrementalDom.elementOpen("button", "4b3cb080-fc20-4b78-97ae-0632b88bfd4c", hoisted25, "onclick", function ($event) {
       var $element = this;
       ctrl.addTicket();
     });
-    incrementalDom.text("Apply");
+    incrementalDom.text("Make Request");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("a", "e5c16094-22bf-457e-94fa-49e1ee4bf8c8", hoisted27, "onclick", function ($event) {
+    incrementalDom.elementOpen("a", "e6a1d8fa-735e-47d3-ab47-c09bdaeca45c", hoisted26, "onclick", function ($event) {
       var $element = this;
-      ctrl.hideHelpEditor();
+      ctrl._cancelEdit();
     });
     incrementalDom.text("Cancel");
     incrementalDom.elementClose("a");
@@ -941,30 +937,30 @@ function render$6(ctrl) {
               someone will review and approve it. Please share your experience, and sign up to help others. \
             ");
     incrementalDom.elementClose("p");
-    incrementalDom.elementOpen("textarea", "44f20f80-99eb-4cbc-8070-9da2066a231a", hoisted28);
+    incrementalDom.elementOpen("textarea", "5b2048df-8ade-452e-9a27-4e5e247e444e", hoisted27);
     incrementalDom.elementClose("textarea");
-    incrementalDom.elementOpen("div", "99f226fa-13b5-42d8-947f-c701212ec023", hoisted29);
-    incrementalDom.elementOpen("input", "2d8d5ba0-249d-4ddb-855f-8356361b76dd", hoisted30);
+    incrementalDom.elementOpen("div", "caae6ad3-27da-44c6-ae7f-c913e9ac7c1b", hoisted28);
+    incrementalDom.elementOpen("input", "7efeff6e-704c-4789-9f6e-d1e40f306d97", hoisted29);
     incrementalDom.elementClose("input");
     incrementalDom.elementOpen("span");
     incrementalDom.text("Yes, I'm willing to share my experience");
     incrementalDom.elementClose("span");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "a42ef929-d7c9-4ed2-9d89-a9457060c658", hoisted31);
-    incrementalDom.elementOpen("input", "dcb29777-3c31-4a04-ab0e-49333e6ebbc0", hoisted32);
+    incrementalDom.elementOpen("div", "15d73115-5c7d-4449-94c6-32ea464b0270", hoisted30);
+    incrementalDom.elementOpen("input", "36a778ef-ecf7-45ad-b641-da612561bd47", hoisted31);
     incrementalDom.elementClose("input");
     incrementalDom.elementOpen("span");
     incrementalDom.text("Yes, I'm willing to help others achieve this skill.");
     incrementalDom.elementClose("span");
     incrementalDom.elementClose("div");
-    incrementalDom.elementOpen("div", "1e454b90-b228-4525-9256-8a3cbcbadeca", hoisted33);
-    incrementalDom.elementOpen("button", "7eb49a71-e7ba-40da-8397-d60ceaf4ae21", hoisted34, "onclick", function ($event) {
+    incrementalDom.elementOpen("div", "c07bffb7-edb5-4e58-9646-bc603387e5d5", hoisted32);
+    incrementalDom.elementOpen("button", "94cc1717-821c-42f1-a8f9-c42bac13c2c8", hoisted33, "onclick", function ($event) {
       var $element = this;
       ctrl.applyForAchievment();
     });
     incrementalDom.text("Apply");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("a", "6bbe44d2-cd9b-43f6-86d8-250bc2c9d6c9", hoisted35, "onclick", function ($event) {
+    incrementalDom.elementOpen("a", "764031fe-9f09-450a-8326-832200f439db", hoisted34, "onclick", function ($event) {
       var $element = this;
       ctrl.hideSkillEditor();
     });
@@ -974,7 +970,7 @@ function render$6(ctrl) {
     incrementalDom.elementClose("skill-editor");
   }
   if (!ctrl.collapsed) {
-    incrementalDom.elementOpen("div", "934c8273-3a90-4a2d-bad3-cee1cdd81351", hoisted36);
+    incrementalDom.elementOpen("div", "6009bd3d-acc8-4ef4-a419-02e6a93da945", hoisted35);
     if (ctrl.html && ctrl.html !== '') {
       var el = incrementalDom.currentElement();
       el.innerHTML = ctrl.html;
@@ -985,7 +981,7 @@ function render$6(ctrl) {
   incrementalDom.elementClose("div");
 }
 
-var css$6 = "h1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n:host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n.collapsable-panel .panel {\n  border: 1px solid #ccc;\n  margin-bottom: 8px;\n}\n.collapsable-panel .panel .heading {\n  display: flex;\n  border-bottom: 1px solid #ccc;\n}\n.collapsable-panel .panel .heading .title {\n  font-size: 1.2em;\n  flex: 1;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .heading .button-group {\n  display: flex;\n  justify-content: flex-end;\n}\n.collapsable-panel .panel .heading .button-group button {\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: transparent;\n  border: 0;\n  outline: none;\n  width: 28px;\n  height: 28px;\n  border-left: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n  font-size: .75em;\n  cursor: pointer;\n  line-height: normal;\n}\n.collapsable-panel .panel .heading .button-group button img {\n  height: 100%;\n  width: 100%;\n}\n.collapsable-panel .panel .description {\n  font-size: 1em;\n  font-style: italic;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .html {\n  font-size: 1em;\n  padding: 1vw;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert {\n  display: flex;\n  padding: 1vh 1vw;\n  font-size: .75em;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert.good {\n  background-color: rgba(100, 200, 100, 0.1);\n}\n.collapsable-panel .panel alert.bad {\n  background-color: rgba(200, 100, 100, 0.1);\n}\n.collapsable-panel skill-editor {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  border: 2px solid gold;\n  font-size: .75em;\n  padding: 1vh 1vw;\n}\n.collapsable-panel skill-editor header {\n  display: block;\n  font-size: 1em;\n}\n.collapsable-panel skill-editor p {\n  font-size: .75em;\n}\n.collapsable-panel skill-editor .control-container,\n.collapsable-panel skill-editor .button-group {\n  display: flex;\n  font-size: .8em;\n  margin-top: 1vh;\n  align-items: center;\n}\n.collapsable-panel skill-editor input[type='checkbox'] {\n  margin-right: 2vw;\n}\n.collapsable-panel skill-editor .button-group a {\n  margin-left: 2vw;\n}\n.collapsable-panel achievements-wrapper {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  padding: 1vh 1vw;\n  background-color: rgba(245, 191, 35, 0.2);\n  font-size: .75em;\n}\n.collapsable-panel achievements-wrapper header {\n  display: flex;\n}\n.collapsable-panel achievements-wrapper header button {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  outline: none;\n  width: 16px;\n  height: 16px;\n  position: relative;\n  top: -1vh;\n}\n.collapsable-panel achievements-wrapper header button img {\n  width: inherit;\n  height: inherit;\n}\n.collapsable-panel achievements-wrapper header title {\n  display: block;\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section {\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section story {\n  font-size: .8em;\n}\n.collapsable-panel achievements-wrapper section status {\n  display: flex;\n  border-top: 1px solid #ccc;\n  align-items: flex-end;\n}\n.collapsable-panel achievements-wrapper section status state {\n  display: inline-block;\n  flex: 1;\n  font-size: .7em;\n}\n.collapsable-panel achievements-wrapper section status date {\n  display: inline-block;\n  font-size: .6em;\n}\n";
+var css$6 = "h1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300;\n}\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -0.1rem;\n}\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -0.1rem;\n}\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -0.1rem;\n}\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -0.08rem;\n}\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -0.05rem;\n}\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0;\n}\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem;\n  }\n  h2 {\n    font-size: 4.2rem;\n  }\n  h3 {\n    font-size: 3.6rem;\n  }\n  h4 {\n    font-size: 3.0rem;\n  }\n  h5 {\n    font-size: 2.4rem;\n  }\n  h6 {\n    font-size: 1.5rem;\n  }\n}\np {\n  margin-top: 0;\n}\na {\n  color: #f26100;\n}\na:hover {\n  color: #f26100;\n}\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\n:host {\n  font-size: 1em;\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: 'Roboto', Helvetica, sans-serif;\n  color: #222;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n.collapsable-panel .panel {\n  border: 1px solid #ccc;\n  margin-bottom: 8px;\n}\n.collapsable-panel .panel .heading {\n  display: flex;\n  border-bottom: 1px solid #ccc;\n}\n.collapsable-panel .panel .heading .title {\n  font-size: 1.2em;\n  flex: 1;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .heading .button-group {\n  display: flex;\n  justify-content: flex-end;\n}\n.collapsable-panel .panel .heading .button-group button {\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: transparent;\n  border: 0;\n  outline: none;\n  width: 28px;\n  height: 28px;\n  border-left: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n  font-size: .75em;\n  cursor: pointer;\n  line-height: normal;\n}\n.collapsable-panel .panel .heading .button-group button img {\n  height: 100%;\n  width: 100%;\n}\n.collapsable-panel .panel .description {\n  font-size: 1em;\n  font-style: italic;\n  padding-left: 1vw;\n}\n.collapsable-panel .panel .html {\n  font-size: 1em;\n  padding: 1vw;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert {\n  display: flex;\n  padding: 1vh 1vw;\n  font-size: .75em;\n  border-top: 1px solid #ccc;\n}\n.collapsable-panel .panel alert.good {\n  background-color: rgba(100, 200, 100, 0.1);\n}\n.collapsable-panel .panel alert.bad {\n  background-color: rgba(200, 100, 100, 0.1);\n}\n.collapsable-panel skill-editor {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  border: 2px solid gold;\n  font-size: 1em;\n  padding: 1vh 1vw;\n}\n.collapsable-panel skill-editor textarea {\n  font-size: .9em;\n  padding: 1vh;\n}\n.collapsable-panel skill-editor header {\n  display: block;\n  font-size: 1em;\n}\n.collapsable-panel skill-editor p {\n  font-size: .75em;\n}\n.collapsable-panel skill-editor .control-container,\n.collapsable-panel skill-editor .button-group {\n  display: flex;\n  font-size: .8em;\n  margin-top: 1vh;\n  align-items: center;\n}\n.collapsable-panel skill-editor input[type='checkbox'] {\n  margin-right: 2vw;\n}\n.collapsable-panel skill-editor .button-group a {\n  margin-left: 2vw;\n}\n.collapsable-panel achievements-wrapper {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  padding: 1vh 1vw;\n  background-color: rgba(245, 191, 35, 0.2);\n  font-size: .75em;\n}\n.collapsable-panel achievements-wrapper header {\n  display: flex;\n}\n.collapsable-panel achievements-wrapper header button {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  outline: none;\n  width: 16px;\n  height: 16px;\n  position: relative;\n  top: -1vh;\n}\n.collapsable-panel achievements-wrapper header button img {\n  width: inherit;\n  height: inherit;\n}\n.collapsable-panel achievements-wrapper header title {\n  display: block;\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section {\n  flex: 1;\n}\n.collapsable-panel achievements-wrapper section story {\n  font-size: .8em;\n}\n.collapsable-panel achievements-wrapper section status {\n  display: flex;\n  border-top: 1px solid #ccc;\n  align-items: flex-end;\n}\n.collapsable-panel achievements-wrapper section status state {\n  display: inline-block;\n  flex: 1;\n  font-size: .7em;\n}\n.collapsable-panel achievements-wrapper section status date {\n  display: inline-block;\n  font-size: .6em;\n}\nhelp-request {\n  display: flex;\n  flex-direction: column;\n  margin: 1vh 1vw;\n  border: 2px solid gold;\n  font-size: 1em;\n  padding: 1vh 1vw;\n}\nhelp-request textarea {\n  font-size: .9em;\n  padding: 1vh;\n}\nhelp-request .button-group {\n  margin: 2vh 1vw;\n}\nhelp-request .button-group a {\n  margin-left: 1vw;\n}\n";
 
 var CollapsablePanel = function (_HTMLElement) {
   inherits(CollapsablePanel, _HTMLElement);
@@ -1082,7 +1078,10 @@ var CollapsablePanel = function (_HTMLElement) {
     key: '_cancelEdit',
     value: function _cancelEdit() {
       this.showSkillEditor = false;
+      this.showHelpEditor = false;
       this.skill = null;
+      this.ticket = null;
+      this._updateView();
     }
   }, {
     key: 'connectedCallback',
@@ -1150,19 +1149,22 @@ var CollapsablePanel = function (_HTMLElement) {
     key: 'showTicketEditor',
     value: function showTicketEditor(skillId) {
       this.showHelpEditor = true;
+      this.ticket = {
+        date: new Date().toISOString(),
+        skillId: skillId,
+        id: uuid(),
+        userId: user.id,
+        type: 'open'
+      };
       this._updateView();
     }
   }, {
     key: 'addTicket',
-    value: function addTicket(skillId) {
-      var ticket = this.tColl.findOne({ skillId: skillId, userId: user.id });
+    value: function addTicket() {
+      var ticket = this.tColl.findOne({ id: this.ticket.id });
       if (ticket) this.addAlert('You have already requested help with this skill. Someone will be contacting you shortly.', 'bad');else {
-        this.tColl.insertOne({
-          skillId: skillId,
-          userId: user.id,
-          date: new Date().toISOString(),
-          type: 'open'
-        });
+        this.tColl.insertOne(Object.assign(this.ticket, { request: this.element.querySelector('textarea[name=request]').value }));
+        this._cancelEdit();
         this.addAlert('Your reqeust for help has been logged. You will be contacted shortly.', 'good');
       }
     }

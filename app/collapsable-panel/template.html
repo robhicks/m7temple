@@ -54,11 +54,10 @@
   </achievements-wrapper>
   <alert if="ctrl.showAlert" class="{ctrl.alertClass}">{ctrl.alertText}</alert>
   <help-request if="ctrl.showHelpEditor">
-    <label for="">If you want or need special help, please tell us about it</label>
-    <textarea name="request" rows="8"></textarea>
+    <textarea name="request" rows="8" placeholder="Please tell us the nature of the help you need."></textarea>
     <div class="button-group">
-      <button type="button" class="primary" onclick="{ctrl.addTicket()}">Apply</button>
-      <a href="javascript:void(0)" onclick="{ctrl.hideHelpEditor()}">Cancel</a>
+      <button type="button" class="primary" onclick="{ctrl.addTicket()}">Make Request</button>
+      <a href="javascript:void(0)" onclick="{ctrl._cancelEdit()}">Cancel</a>
     </div>
   </help-request>
   <skill-editor if="ctrl.showSkillEditor">

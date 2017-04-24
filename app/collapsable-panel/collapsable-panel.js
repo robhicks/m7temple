@@ -79,7 +79,10 @@ class CollapsablePanel extends HTMLElement {
 
   _cancelEdit() {
     this.showSkillEditor = false;
+    this.showHelpEditor = false;
     this.skill = null;
+    this.ticket = null;
+    this._updateView();
   }
 
   connectedCallback() {
@@ -138,19 +141,22 @@ class CollapsablePanel extends HTMLElement {
 
   showTicketEditor(skillId) {
     this.showHelpEditor = true;
+    this.ticket = {
+      date: new Date().toISOString(),
+      skillId: skillId,
+      id: uuid(),
+      userId: user.id,
+      type: 'open'
+    };
     this._updateView();
   }
 
-  addTicket(skillId) {
-    let ticket = this.tColl.findOne({skillId, userId: user.id});
+  addTicket() {
+    let ticket = this.tColl.findOne({id: this.ticket.id});
     if (ticket) this.addAlert('You have already requested help with this skill. Someone will be contacting you shortly.', 'bad');
     else {
-      this.tColl.insertOne({
-        skillId,
-        userId: user.id,
-        date: new Date().toISOString(),
-        type: 'open'
-      });
+      this.tColl.insertOne(Object.assign(this.ticket, {request: this.element.querySelector('textarea[name=request]').value}));
+      this._cancelEdit();
       this.addAlert('Your reqeust for help has been logged. You will be contacted shortly.', 'good');
     }
   }
