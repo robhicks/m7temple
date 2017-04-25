@@ -16,6 +16,7 @@
     "ioredis": "^2.5.0",
     "loki-redis-adapter": "git+https://github.com/robhicks/loki-redis-adapter.git",
     "lokijs": "^1.4.3",
+    "mongodb": "^2.2.26",
     "morgan": "^1.8.1",
     "page": "^1.7.1",
     "pug": "^2.0.0-beta11",

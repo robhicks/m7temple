@@ -15,47 +15,47 @@ var __target
 export function render (ctrl) {
 elementOpen("tabs")
   elementOpen("tab")
-    elementOpen("input", "eda01e25-99c5-4233-b311-0a3db4b81460", hoisted1, "onclick", function ($event) {
+    elementOpen("input", "8646f88f-93e6-4365-a26c-31e502ad5e98", hoisted1, "onclick", function ($event) {
       var $element = this;
     ctrl.selectTab(this.value)})
     elementClose("input")
-    elementOpen("label", "701c7af9-d449-423c-a384-b0ecb9f3ab55", hoisted2)
+    elementOpen("label", "80b18f6b-126b-4be1-98b9-9a4a4db29a28", hoisted2)
       text("Users")
     elementClose("label")
   elementClose("tab")
   elementOpen("tab")
-    elementOpen("input", "216e3e35-ec07-42c3-a25a-6ead006eb4b1", hoisted3, "onclick", function ($event) {
+    elementOpen("input", "7a18284c-b9ff-48d0-b443-34d0e103bb44", hoisted3, "onclick", function ($event) {
       var $element = this;
     ctrl.selectTab(this.value)})
     elementClose("input")
-    elementOpen("label", "0f49ed4f-5af8-4f6d-a775-2cb89bb39bb4", hoisted4)
+    elementOpen("label", "516fa073-edfd-44c3-bd48-9cea3bbabf10", hoisted4)
       text("Skills")
     elementClose("label")
   elementClose("tab")
   elementOpen("tab")
-    elementOpen("input", "9a75246b-e2f9-4020-bc40-80dc4983867b", hoisted5, "onclick", function ($event) {
+    elementOpen("input", "53961a82-ae78-40a4-a1db-e78010f04c50", hoisted5, "onclick", function ($event) {
       var $element = this;
     ctrl.selectTab(this.value)})
     elementClose("input")
-    elementOpen("label", "de249aa3-914c-47e4-9e6e-14f29988064a", hoisted6)
+    elementOpen("label", "a3f5e658-ea09-42a3-820f-2134e140b328", hoisted6)
       text("Awards")
     elementClose("label")
   elementClose("tab")
   elementOpen("tab")
-    elementOpen("input", "14749a92-36c8-4d22-b40d-ad601c1fe4d7", hoisted7, "onclick", function ($event) {
+    elementOpen("input", "33556202-0e62-4435-bb28-3efa4abd169c", hoisted7, "onclick", function ($event) {
       var $element = this;
     ctrl.selectTab(this.value)})
     elementClose("input")
-    elementOpen("label", "f76537c4-8dbf-402a-a027-e524510137b0", hoisted8)
+    elementOpen("label", "d26f4030-aa79-48d3-9948-362bf0ba8192", hoisted8)
       text("Assistance")
     elementClose("label")
   elementClose("tab")
   elementOpen("tab")
-    elementOpen("input", "19023313-966b-4e7e-90ae-3b04f18bcaaf", hoisted9, "onclick", function ($event) {
+    elementOpen("input", "96bb09a4-3fc1-4e2b-8548-3aeff308d456", hoisted9, "onclick", function ($event) {
       var $element = this;
     ctrl.selectTab(this.value)})
     elementClose("input")
-    elementOpen("label", "63bd400b-550d-4a6d-b5c9-680b443650f7", hoisted10)
+    elementOpen("label", "c4a3bfd3-59ba-4ab6-a62a-a03052259f98", hoisted10)
       text("Reports")
     elementClose("label")
   elementClose("tab")
