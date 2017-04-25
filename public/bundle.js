@@ -241,8 +241,6 @@ var user = {
   initialized: false
 };
 
-console.log("window.SERVER_ENV", window.SERVER_ENV);
-
 hello.init({
   facebook: window.SERVER_ENV.FACEBOOK_KEY,
   github: window.SERVER_ENV.GITHUB_KEY,
@@ -3271,7 +3269,6 @@ customElements.define('app-router', AppRouter);
 
 var socket = socketCluster.connect();
 
-// const idbAdapter = new LokiIndexedAdapter('loki');
 var db = new loki('m7temple.db', { autosave: true });
 
 var updateDbChannel = socket.subscribe('updateDbChannel');

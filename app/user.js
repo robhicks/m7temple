@@ -10,8 +10,6 @@ let user = {
   initialized: false
 };
 
-console.log("window.SERVER_ENV", window.SERVER_ENV)
-
 hello.init({
   facebook: window.SERVER_ENV.FACEBOOK_KEY,
   github: window.SERVER_ENV.GITHUB_KEY,
