@@ -73,7 +73,7 @@ elementOpen("working-on-skills")
         Most actions involving skills are available through the skills button bar, highlighted with a green \
         rectangle. We'll explain below what the buttons are for and what they do. \
         ")
-    elementOpen("img", "8e5e97a5-5daa-4141-b59c-c21e048269ff", hoisted1)
+    elementOpen("img", "c2d51951-265e-4e73-aba2-5b436e01b147", hoisted1)
     elementClose("img")
   elementClose("p")
   elementOpen("h2")
@@ -82,26 +82,26 @@ elementOpen("working-on-skills")
   elementOpen("p")
     text(" \
         Add a skill by clicking on the green add button: ")
-    elementOpen("img", "3cb55f26-d561-4173-90b3-9139bef8dd68", hoisted2)
+    elementOpen("img", "1765a754-6a74-4a4e-8f8c-7ade9db846c0", hoisted2)
     elementClose("img")
     text(". \
         Once a skill has been added, it can be deleted by clicking the delete button: \
         ")
-    elementOpen("img", "d49141bb-0209-468c-a293-e6b9305b3976", hoisted3)
+    elementOpen("img", "2bcba76f-bbfa-4dc1-88d7-914edf7a2c73", hoisted3)
     elementClose("img")
     text(", or you can apply for certification by \
         clicking the award button. The award button can take three forms: 1) \
         ")
-    elementOpen("img", "8c512eb7-7cbf-4b12-a7a5-f59cfefe1bb4", hoisted4)
+    elementOpen("img", "e51dc067-391c-43b9-97c3-c6b28fa053ca", hoisted4)
     elementClose("img")
     text(" when you have added the skill as a \
         goal haven't yet applied for certification, 2) \
         ")
-    elementOpen("img", "418b1c1d-e3b8-4363-85d6-06bde212232c", hoisted5)
+    elementOpen("img", "a2d489f4-8af7-4141-95af-c449e8d0b070", hoisted5)
     elementClose("img")
     text(" when certification is pending, and \
         3) ")
-    elementOpen("img", "57659a4a-50f5-449a-a504-41898ad37b0c", hoisted6)
+    elementOpen("img", "4f58b8ec-b059-40f4-b56f-f92262150689", hoisted6)
     elementClose("img")
     text(" when you have earned the skill. \
       ")
@@ -116,7 +116,7 @@ elementOpen("working-on-skills")
     text(" \
         You can request for a skill by clicking the life perserver button: \
         ")
-    elementOpen("img", "2ec84376-92d7-4490-9007-99bee0b49217", hoisted7)
+    elementOpen("img", "bad29ade-71d7-4be8-8b5f-d7129ea3a729", hoisted7)
     elementClose("img")
     text(". Your request will be acknowledged and \
         someone with has earned the skill will be asked to contact you to help you achieve the skill. \
@@ -129,7 +129,7 @@ elementOpen("working-on-skills")
     text(" \
         As mentioned above, you can get recognized for completing a skill by submitting an application. \
         You submit application by clicking the apply button: ")
-    elementOpen("img", "908180c2-1818-4005-bf02-b1235b3d0a42", hoisted8)
+    elementOpen("img", "96a515b2-fc5e-46a2-8a8c-2c2d8fd60374", hoisted8)
     elementClose("img")
     text(". \
         You will be asked to explain your experience in working on the skill and if you are willing to \
@@ -144,7 +144,7 @@ elementOpen("working-on-skills")
         You can see your own skills simply by clicking the My Skills checkbox in the upper right part of \
         of the home view. \
         ")
-    elementOpen("img", "e7cbf8f2-3237-47b9-bd39-6b0c442ce35b", hoisted9)
+    elementOpen("img", "a0622b6f-eb74-48ab-8728-02ea363bd267", hoisted9)
     elementClose("img")
   elementClose("p")
 elementClose("working-on-skills")
