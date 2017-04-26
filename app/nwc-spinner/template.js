@@ -4,6 +4,6 @@ var hoisted1 = ["class", "spinner medium"]
 var __target
 
 export function render (ctrl) {
-elementOpen("div", "028400fd-92f6-484f-a002-7ba69f3f7b34", hoisted1)
+elementOpen("div", "9bdb5694-44a0-443f-91b7-dc71a1960e58", hoisted1)
 elementClose("div")
 }

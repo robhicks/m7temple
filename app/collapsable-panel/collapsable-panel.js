@@ -14,7 +14,7 @@ class CollapsablePanel extends HTMLElement {
   }
 
   add(giftId, addAlert = true, type = 'added', share = false, help = false) {
-    this.gift = this.sColl.findOne({id: giftId});
+    this.gift = this.gColl.findOne({id: giftId});
     let award = this.aColl.findOne({giftId, userId: user.id});
     if (this.gift && award && !this.gift.multiple) {
       if (addAlert) this.addAlert('This gift was not added to your list of gifts because it has already been added to your list. To see your list, check the My Gifts checkbox.', 'bad');
@@ -90,13 +90,13 @@ class CollapsablePanel extends HTMLElement {
     this.shadowRoot.innerHTML = `<style>${css}</style><div class="collapsable-panel"></div>`;
     this.element = this.shadowRoot.querySelector('.collapsable-panel');
     this.aColl = db.getCollection('awards');
-    this.sColl = db.getCollection('gifts');
+    this.gColl = db.getCollection('gifts');
     this.tColl = db.getCollection('tickets');
     this.aColl.setChangesApi(true);
-    this.sColl.setChangesApi(true);
+    this.gColl.setChangesApi(true);
     this.tColl.setChangesApi(true);
     this.adv = this.aColl.addDynamicView('awards');
-    this.sdv = this.sColl.addDynamicView('gifts');
+    this.gdv = this.gColl.addDynamicView('gifts');
 
     document.addEventListener('awardsChanged', this._updateView.bind(this));
     document.addEventListener('giftsChanged', this._updateView.bind(this));
@@ -108,10 +108,12 @@ class CollapsablePanel extends HTMLElement {
   }
 
   delete(giftId) {
-    let gift = this.sColl.findOne({id: giftId});
-    let pendingOrEarned = this.aColl.where((award) => award.giftId === giftId && award.userId === user.id && award.type === 'pending' || award.type === 'earned');
+    let gift = this.gColl.findOne({id: giftId});
+    let pending = this.aColl.count({giftId: giftId, userId: user.id, type: 'pending'});
+    let earned = this.aColl.count({giftId: giftId, userId: user.id, type: 'earned'});
+    let pendingOrEarned = pending > 0 || earned > 0;
     this._cancelEdit();
-    if (pendingOrEarned.length > 0) {
+    if (pendingOrEarned) {
       let modal = new RbhModal();
       modal.heading = 'Already Pending or Awarded';
       modal.body = 'Deleting this gift will remove all awards and pending awards. Click "OK" to delete this gift and all awards and pending awards.';
@@ -120,8 +122,14 @@ class CollapsablePanel extends HTMLElement {
       document.querySelector('body').appendChild(modal);
       document.addEventListener('rbhModalButtonClick', (evt) => {
         if (evt.detail === 'primary') {
-          this.aColl.findAndRemove({giftId, userId: user.id});
           this.addAlert('This gift has been removed. You may add it again at any time.', 'bad');
+          if (earned) {
+            if (gift.achievements > 0) {
+              gift.achievements--;
+              this.gColl.update(gift);
+            }
+          }
+          this.aColl.findAndRemove({giftId, userId: user.id});
         }
         modal.remove();
       });
@@ -134,7 +142,7 @@ class CollapsablePanel extends HTMLElement {
 
   disconnectedCallback() {
     this.aColl.removeDynamicView('awards');
-    this.sColl.removeDynamicView('gifts');
+    this.gColl.removeDynamicView('gifts');
     document.removeEventListener('awardsChanged', this._updateView.bind(this));
     document.removeEventListener('giftsChanged', this._updateView.bind(this));
   }
@@ -184,7 +192,7 @@ class CollapsablePanel extends HTMLElement {
 
   _updateView() {
     this.awards = this.adv.data();
-    this.gifts = this.sdv.data();
+    this.gifts = this.gdv.data();
     if (this.element) patch(this.element, render, this);
   }
 

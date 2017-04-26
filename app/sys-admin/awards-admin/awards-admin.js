@@ -25,7 +25,7 @@ class AwardsAdmin extends HTMLElement {
 
   _joinData() {
     let awards = this.adv.data();
-    let gifts = this.sdv.data();
+    let gifts = this.gdv.data();
     let users = this.udv.data();
     awards.forEach((award) => {
       award.gift = gifts.find((gift) => gift.id === award.giftId);
@@ -36,11 +36,13 @@ class AwardsAdmin extends HTMLElement {
 
   connectedCallback() {
     this.aColl = db.getCollection('awards');
-    this.sColl = db.getCollection('gifts');
+    this.gColl = db.getCollection('gifts');
     this.uColl = db.getCollection('users');
+    this.aColl.setChangesApi(true);
+    this.gColl.setChangesApi(true);
 
     this.adv = this.aColl.addDynamicView('awards');
-    this.sdv = this.sColl.addDynamicView('gifts');
+    this.gdv = this.gColl.addDynamicView('gifts');
     this.udv = this.uColl.addDynamicView('users');
 
     this._updateView();
@@ -48,7 +50,7 @@ class AwardsAdmin extends HTMLElement {
 
   disconnectedCallback() {
     this.adv.removeFilters();
-    this.sdv.removeFilters();
+    this.gdv.removeFilters();
     this.udv.removeFilters();
     document.removeEventListener('awardsChanged', this._updateView.bind(this));
     document.removeEventListener('giftsChanged', this._updateView.bind(this));
@@ -87,7 +89,15 @@ class AwardsAdmin extends HTMLElement {
   }
 
   grantAward(award) {
-    console.log("award", award)
+    let gift = this.gColl.findOne({id: award.giftId});
+    if (gift) {
+      gift.achievements++;
+      this.gColl.update(gift);
+    }
+    award.date = new Date().toISOString();
+    award.type = 'earned';
+    this.aColl.update(award);
+    this._updateView();
   }
 
   _updateView() {

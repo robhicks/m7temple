@@ -73,7 +73,7 @@ elementOpen("working-on-gifts")
         Most actions involving gifts are available through the gifts button bar, highlighted with a green \
         rectangle. We'll explain below what the buttons are for and what they do. \
         ")
-    elementOpen("img", "d144aa85-6b03-4456-8016-e1aeb6dfadcb", hoisted1)
+    elementOpen("img", "ec454c08-244d-4571-869e-0beaa1845a08", hoisted1)
     elementClose("img")
   elementClose("p")
   elementOpen("h2")
@@ -82,26 +82,26 @@ elementOpen("working-on-gifts")
   elementOpen("p")
     text(" \
         Add a gift by clicking on the green add button: ")
-    elementOpen("img", "8c7fec1e-ec1b-4dca-af8e-5f0cddccfa08", hoisted2)
+    elementOpen("img", "8089fcaa-3e95-4ca0-9f9a-769347354481", hoisted2)
     elementClose("img")
     text(". \
         Once a gift has been added, it can be deleted by clicking the delete button: \
         ")
-    elementOpen("img", "cfe1568e-170f-4685-ba1d-36cbea48056a", hoisted3)
+    elementOpen("img", "eaec708c-5a0d-4d24-ad38-de05df5fdafa", hoisted3)
     elementClose("img")
     text(", or you can apply for certification by \
         clicking the award button. The award button can take three forms: 1) \
         ")
-    elementOpen("img", "2687f656-3be7-4b73-8517-27e0ef3c345c", hoisted4)
+    elementOpen("img", "4919c7b1-c5b2-4a09-a8e9-77ada7a7b183", hoisted4)
     elementClose("img")
     text(" when you have added the gift as a \
         goal haven't yet applied for certification, 2) \
         ")
-    elementOpen("img", "a6730e09-0693-4dc6-8d0f-a56e9ab19ee0", hoisted5)
+    elementOpen("img", "6c758df4-3406-45c2-ba21-2a4df8c9aecd", hoisted5)
     elementClose("img")
     text(" when certification is pending, and \
         3) ")
-    elementOpen("img", "38318422-fbbf-4f04-bf0e-12781b33d003", hoisted6)
+    elementOpen("img", "df2392e7-26b1-4f0d-8c6e-129530f27e6c", hoisted6)
     elementClose("img")
     text(" when you have earned the gift. \
       ")
@@ -116,7 +116,7 @@ elementOpen("working-on-gifts")
     text(" \
         You can request for a gift by clicking the life perserver button: \
         ")
-    elementOpen("img", "13d63002-7507-4168-bb23-c329edc46519", hoisted7)
+    elementOpen("img", "a71c3ad7-98ff-49a8-b7e6-41704c55aed3", hoisted7)
     elementClose("img")
     text(". Your request will be acknowledged and \
         someone with has earned the gift will be asked to contact you to help you achieve the gift. \
@@ -129,7 +129,7 @@ elementOpen("working-on-gifts")
     text(" \
         As mentioned above, you can get recognized for completing a gift by submitting an application. \
         You submit application by clicking the apply button: ")
-    elementOpen("img", "84fc4e04-1ebc-4b83-b30e-d38314874f3d", hoisted8)
+    elementOpen("img", "a930e552-4b75-4ca8-876f-2ae236ce67ae", hoisted8)
     elementClose("img")
     text(". \
         You will be asked to explain your experience in working on the gift and if you are willing to \
@@ -144,7 +144,7 @@ elementOpen("working-on-gifts")
         You can see your own gifts simply by clicking the My Gifts checkbox in the upper right part of \
         of the home view. \
         ")
-    elementOpen("img", "ea7d893e-9853-4386-9256-e1eb6dca6109", hoisted9)
+    elementOpen("img", "3db7215b-5690-4398-9b51-d10b10f68f0d", hoisted9)
     elementClose("img")
   elementClose("p")
 elementClose("working-on-gifts")
