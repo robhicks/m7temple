@@ -3,7 +3,6 @@ import '../login-view/component.js';
 import '../nav-bar/nav-bar.js';
 import '../not-found/not-found.js';
 import '../home-authenticated/home-authenticated.js';
-import '../user-skills/component.js';
 import '../sys-admin/sys-admin.js';
 import '../p-policy/p-policy.js';
 import '../site-help/site-help.js';

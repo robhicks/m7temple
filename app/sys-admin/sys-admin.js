@@ -6,7 +6,7 @@ import css from './sys-admin.less';
 import './assistance-admin/assistance-admin.js';
 import './awards-admin/awards-admin.js';
 import './reports-admin/reports-admin.js';
-import './skills-admin/skills-admin.js';
+import './gifts-admin/gifts-admin.js';
 import './users-admin/users-admin.js';
 
 class SysAdmin extends HTMLElement {
@@ -18,8 +18,8 @@ class SysAdmin extends HTMLElement {
     router.add('/admin/users', (req, evt, next) => {
       if (this.content) this.content.innerHTML = `<users-admin></users-admin>`;
     });
-    router.add('/admin/skills', (req, evt, next) => {
-      if (this.content) this.content.innerHTML = `<skills-admin></skills-admin>`;
+    router.add('/admin/gifts', (req, evt, next) => {
+      if (this.content) this.content.innerHTML = `<gifts-admin></gifts-admin>`;
     });
     router.add('/admin/awards', (req, evt, next) => {
       if (this.content) this.content.innerHTML = `<awards-admin><awards-admin>`;

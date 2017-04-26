@@ -13,22 +13,22 @@ class CollapsablePanel extends HTMLElement {
     this.collapsed = true;
   }
 
-  add(skillId, addAlert = true, type = 'added', share = false, help = false) {
-    this.skill = this.sColl.findOne({id: skillId});
-    let award = this.aColl.findOne({skillId, userId: user.id});
-    if (this.skill && award && !this.skill.multiple) {
-      if (addAlert) this.addAlert('This skill was not added to your list of skills because it has already been added to your list. To see your list, check the My Skills checkbox.', 'bad');
-    } else if (this.skill && !award) {
+  add(giftId, addAlert = true, type = 'added', share = false, help = false) {
+    this.gift = this.sColl.findOne({id: giftId});
+    let award = this.aColl.findOne({giftId, userId: user.id});
+    if (this.gift && award && !this.gift.multiple) {
+      if (addAlert) this.addAlert('This gift was not added to your list of gifts because it has already been added to your list. To see your list, check the My Gifts checkbox.', 'bad');
+    } else if (this.gift && !award) {
       this.aColl.insert({
         id: uuid(),
-        skillId,
+        giftId,
         userId: user.id,
         type,
         date: new Date().toISOString(),
         share,
         help
       });
-      if (addAlert) this.addAlert('This skill has been added. You may apply for achieving this skill at any time.', 'good');
+      if (addAlert) this.addAlert('This gift has been added. You may apply for achieving this gift at any time.', 'good');
     }
   }
 
@@ -47,12 +47,12 @@ class CollapsablePanel extends HTMLElement {
 
   addAndShowAchievementEditor(id) {
     this.add(id, false);
-    this.showSkillEditor = true;
+    this.showGiftEditor = true;
     this._updateView();
   }
 
   applyForAchievment() {
-    let userAwardEntry = this.aColl.findOne({skillId: this.skill.id, userId: user.id});
+    let userAwardEntry = this.aColl.findOne({giftId: this.gift.id, userId: user.id});
     let story = this.element.querySelector("textarea[name='achievement']").value;
     let share = this.element.querySelector("input[name='share']").value;
     let help = this.element.querySelector("input[name='helping']").value;
@@ -64,7 +64,7 @@ class CollapsablePanel extends HTMLElement {
       userAwardEntry.share = share;
       userAwardEntry.help = help;
       this.aColl.update(userAwardEntry);
-      this.addAlert('You achievement application has been received. You will hear back shortly. While you are waiting, don\'t delete this skill from your list.', 'good');
+      this.addAlert('You achievement application has been received. You will hear back shortly. While you are waiting, don\'t delete this gift from your list.', 'good');
       this._cancelEdit();
     }
   }
@@ -78,9 +78,9 @@ class CollapsablePanel extends HTMLElement {
   }
 
   _cancelEdit() {
-    this.showSkillEditor = false;
+    this.showGiftEditor = false;
     this.showHelpEditor = false;
-    this.skill = null;
+    this.gift = null;
     this.ticket = null;
     this._updateView();
   }
@@ -90,60 +90,60 @@ class CollapsablePanel extends HTMLElement {
     this.shadowRoot.innerHTML = `<style>${css}</style><div class="collapsable-panel"></div>`;
     this.element = this.shadowRoot.querySelector('.collapsable-panel');
     this.aColl = db.getCollection('awards');
-    this.sColl = db.getCollection('skills');
+    this.sColl = db.getCollection('gifts');
     this.tColl = db.getCollection('tickets');
     this.aColl.setChangesApi(true);
     this.sColl.setChangesApi(true);
     this.tColl.setChangesApi(true);
     this.adv = this.aColl.addDynamicView('awards');
-    this.sdv = this.sColl.addDynamicView('skills');
+    this.sdv = this.sColl.addDynamicView('gifts');
 
     document.addEventListener('awardsChanged', this._updateView.bind(this));
-    document.addEventListener('skillsChanged', this._updateView.bind(this));
+    document.addEventListener('giftsChanged', this._updateView.bind(this));
     this._updateView();
   }
 
-  _combineSkillsAndAwards() {
+  _combineGiftsAndAwards() {
     this._updateView();
   }
 
-  delete(skillId) {
-    let skill = this.sColl.findOne({id: skillId});
-    let pendingOrEarned = this.aColl.where((award) => award.skillId === skillId && award.userId === user.id && award.type === 'pending' || award.type === 'earned');
+  delete(giftId) {
+    let gift = this.sColl.findOne({id: giftId});
+    let pendingOrEarned = this.aColl.where((award) => award.giftId === giftId && award.userId === user.id && award.type === 'pending' || award.type === 'earned');
     this._cancelEdit();
     if (pendingOrEarned.length > 0) {
       let modal = new RbhModal();
       modal.heading = 'Already Pending or Awarded';
-      modal.body = 'Deleting this skill will remove all awards and pending awards. Click "OK" to delete this skill and all awards and pending awards.';
+      modal.body = 'Deleting this gift will remove all awards and pending awards. Click "OK" to delete this gift and all awards and pending awards.';
       modal.primary = 'OK';
       modal.cancel = 'Cancel';
       document.querySelector('body').appendChild(modal);
       document.addEventListener('rbhModalButtonClick', (evt) => {
         if (evt.detail === 'primary') {
-          this.aColl.findAndRemove({skillId, userId: user.id});
-          this.addAlert('This skill has been removed. You may add it again at any time.', 'bad');
+          this.aColl.findAndRemove({giftId, userId: user.id});
+          this.addAlert('This gift has been removed. You may add it again at any time.', 'bad');
         }
         modal.remove();
       });
     } else {
-      this.aColl.findAndRemove({skillId, userId: user.id});
-      this.addAlert('This skill has been removed. You may add it again at any time.', 'bad');
+      this.aColl.findAndRemove({giftId, userId: user.id});
+      this.addAlert('This gift has been removed. You may add it again at any time.', 'bad');
     }
     this._updateView();
   }
 
   disconnectedCallback() {
     this.aColl.removeDynamicView('awards');
-    this.sColl.removeDynamicView('skills');
+    this.sColl.removeDynamicView('gifts');
     document.removeEventListener('awardsChanged', this._updateView.bind(this));
-    document.removeEventListener('skillsChanged', this._updateView.bind(this));
+    document.removeEventListener('giftsChanged', this._updateView.bind(this));
   }
 
-  showTicketEditor(skillId) {
+  showTicketEditor(giftId) {
     this.showHelpEditor = true;
     this.ticket = {
       date: new Date().toISOString(),
-      skillId: skillId,
+      giftId: giftId,
       id: uuid(),
       userId: user.id,
       type: 'open'
@@ -153,7 +153,7 @@ class CollapsablePanel extends HTMLElement {
 
   addTicket() {
     let ticket = this.tColl.findOne({id: this.ticket.id});
-    if (ticket) this.addAlert('You have already requested help with this skill. Someone will be contacting you shortly.', 'bad');
+    if (ticket) this.addAlert('You have already requested help with this gift. Someone will be contacting you shortly.', 'bad');
     else {
       this.tColl.insertOne(Object.assign(this.ticket, {request: this.element.querySelector('textarea[name=request]').value}));
       this._cancelEdit();
@@ -161,18 +161,18 @@ class CollapsablePanel extends HTMLElement {
     }
   }
 
-  hideAchievements(skillId) {
+  hideAchievements(giftId) {
     // TODO: fix this
     this.showAchievements = false;
     this._updateView();
   }
 
-  hideSkillEditor() {
-    this.showSkillEditor = false;
+  hideGiftEditor() {
+    this.showGiftEditor = false;
     this._updateView();
   }
 
-  showAwards(skillId, type) {
+  showAwards(giftId, type) {
     // TODO: fix this too
     this._updateView();
   }
@@ -184,7 +184,7 @@ class CollapsablePanel extends HTMLElement {
 
   _updateView() {
     this.awards = this.adv.data();
-    this.skills = this.sdv.data();
+    this.gifts = this.sdv.data();
     if (this.element) patch(this.element, render, this);
   }
 

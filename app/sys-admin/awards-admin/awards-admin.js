@@ -13,7 +13,7 @@ class AwardsAdmin extends HTMLElement {
     this.search = {};
 
     document.addEventListener('awardsChanged', this._updateView.bind(this));
-    document.addEventListener('skillsChanged', this._updateView.bind(this));
+    document.addEventListener('giftsChanged', this._updateView.bind(this));
     document.addEventListener('usersChanged', this._updateView.bind(this));
   }
 
@@ -25,10 +25,10 @@ class AwardsAdmin extends HTMLElement {
 
   _joinData() {
     let awards = this.adv.data();
-    let skills = this.sdv.data();
+    let gifts = this.sdv.data();
     let users = this.udv.data();
     awards.forEach((award) => {
-      award.skill = skills.find((skill) => skill.id === award.skillId);
+      award.gift = gifts.find((gift) => gift.id === award.giftId);
       award.user = users.find((user) => user.id === award.userId);
     });
     return awards;
@@ -36,11 +36,11 @@ class AwardsAdmin extends HTMLElement {
 
   connectedCallback() {
     this.aColl = db.getCollection('awards');
-    this.sColl = db.getCollection('skills');
+    this.sColl = db.getCollection('gifts');
     this.uColl = db.getCollection('users');
 
     this.adv = this.aColl.addDynamicView('awards');
-    this.sdv = this.sColl.addDynamicView('skills');
+    this.sdv = this.sColl.addDynamicView('gifts');
     this.udv = this.uColl.addDynamicView('users');
 
     this._updateView();
@@ -51,7 +51,7 @@ class AwardsAdmin extends HTMLElement {
     this.sdv.removeFilters();
     this.udv.removeFilters();
     document.removeEventListener('awardsChanged', this._updateView.bind(this));
-    document.removeEventListener('skillsChanged', this._updateView.bind(this));
+    document.removeEventListener('giftsChanged', this._updateView.bind(this));
     document.removeEventListener('usersChanged', this._updateView.bind(this));
   }
 
@@ -62,8 +62,8 @@ class AwardsAdmin extends HTMLElement {
 
     if (!!(this.search.type && this.search.type !== '' && re)) {
       this.adv.applyWhere((award) => {
-        return award.type === this.search.type && award.skill && award.skill.title && re.test(award.skill.title)
-          || award.type === this.search.type && award.skill && award.skill.description && re.test(award.skill.description)
+        return award.type === this.search.type && award.gift && award.gift.title && re.test(award.gift.title)
+          || award.type === this.search.type && award.gift && award.gift.description && re.test(award.gift.description)
           || award.type === this.search.type && award.user && award.user.displayName && re.test(award.user.displayName)
           || award.type === this.search.type && award.user && award.user.firstName && re.test(award.user.firstName)
           || award.type === this.search.type && award.user && award.user.lastName && re.test(award.user.lastName)
@@ -71,8 +71,8 @@ class AwardsAdmin extends HTMLElement {
       });
     } else if (!!re) {
       this.adv.applyWhere((award) => {
-        return award.skill && award.skill.title && re.test(award.skill.title)
-          || award.skill && award.skill.description && re.test(award.skill.description)
+        return award.gift && award.gift.title && re.test(award.gift.title)
+          || award.gift && award.gift.description && re.test(award.gift.description)
           || award.user && award.user.displayName && re.test(award.user.displayName)
           || award.user && award.user.firstName && re.test(award.user.firstName)
           || award.user && award.user.lastName && re.test(award.user.lastName)

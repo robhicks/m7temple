@@ -14,10 +14,10 @@ class AssistanceAdmin extends HTMLElement {
 
     this._joinData = () => {
       let tickets = this.tdv.data();
-      let skills = this.sdv.data();
+      let gifts = this.sdv.data();
       let users = this.udv.data();
       tickets.forEach((ticket) => {
-        ticket.skill = skills.find((skill) => skill.id === ticket.skillId);
+        ticket.gift = gifts.find((gift) => gift.id === ticket.giftId);
         ticket.user = users.find((user) => user.id === ticket.userId);
       });
       return tickets;
@@ -42,18 +42,18 @@ class AssistanceAdmin extends HTMLElement {
   }
 
   connectedCallback() {
-    this.sColl = db.getCollection('skills');
+    this.sColl = db.getCollection('gifts');
     this.tColl = db.getCollection('tickets');
     this.uColl = db.getCollection('users');
 
     this.tColl.setChangesApi(true);
 
-    this.sdv = this.sColl.addDynamicView('skills');
+    this.sdv = this.sColl.addDynamicView('gifts');
     this.tdv = this.tColl.addDynamicView('tickets');
     this.udv = this.uColl.addDynamicView('users');
 
     document.addEventListener('ticketsChanged', this._updateView.bind(this));
-    document.addEventListener('skillsChanged', this._updateView.bind(this));
+    document.addEventListener('giftsChanged', this._updateView.bind(this));
     document.addEventListener('usersChanged', this._updateView.bind(this));
 
     this._updateView();
@@ -69,7 +69,7 @@ class AssistanceAdmin extends HTMLElement {
     this.tdv.removeFilters();
     this.udv.removeFilters();
     document.removeEventListener('ticketsChanged', this._updateView.bind(this));
-    document.removeEventListener('skillsChanged', this._updateView.bind(this));
+    document.removeEventListener('giftsChanged', this._updateView.bind(this));
     document.removeEventListener('usersChanged', this._updateView.bind(this));
   }
 
@@ -80,8 +80,8 @@ class AssistanceAdmin extends HTMLElement {
 
     if (!!(this.search.type && this.search.type !== '' && re)) {
       this.tdv.applyWhere((ticket) => {
-        return ticket.type === this.search.type && ticket.skill && ticket.skill.title && re.test(ticket.skill.title)
-          || ticket.type === this.search.type && ticket.skill && ticket.skill.description && re.test(ticket.skill.description)
+        return ticket.type === this.search.type && ticket.gift && ticket.gift.title && re.test(ticket.gift.title)
+          || ticket.type === this.search.type && ticket.gift && ticket.gift.description && re.test(ticket.gift.description)
           || ticket.type === this.search.type && ticket.user && ticket.user.displayName && re.test(ticket.user.displayName)
           || ticket.type === this.search.type && ticket.user && ticket.user.firstName && re.test(ticket.user.firstName)
           || ticket.type === this.search.type && ticket.user && ticket.user.lastName && re.test(ticket.user.lastName)
@@ -89,8 +89,8 @@ class AssistanceAdmin extends HTMLElement {
       });
     } else if (!!re) {
       this.tdv.applyWhere((ticket) => {
-        return ticket.skill && ticket.skill.title && re.test(ticket.skill.title)
-          || ticket.skill && ticket.skill.description && re.test(ticket.skill.description)
+        return ticket.gift && ticket.gift.title && re.test(ticket.gift.title)
+          || ticket.gift && ticket.gift.description && re.test(ticket.gift.description)
           || ticket.user && ticket.user.displayName && re.test(ticket.user.displayName)
           || ticket.user && ticket.user.firstName && re.test(ticket.user.firstName)
           || ticket.user && ticket.user.lastName && re.test(ticket.user.lastName)

@@ -12,60 +12,60 @@ var hoisted9 = ["value", "memories"]
 var hoisted10 = ["value", "indexing"]
 var hoisted11 = ["for", "mine-checkbox", "id", "mine-wrapper"]
 var hoisted12 = ["type", "checkbox", "id", "mine-checkbox"]
-var hoisted13 = ["id", "skills"]
+var hoisted13 = ["id", "gifts"]
 var hoisted14 = ["class", "item"]
 var hoisted15 = ["shared", "", "collapsed", "true"]
 var __target
 
 export function render (ctrl) {
-elementOpen("section", "b1b36bf0-8da9-49d0-bac8-e66fd865aa9a", hoisted1)
-  elementOpen("input", "13d4c6fb-65e8-4126-8e05-2b6d1be5f555", hoisted2, "onkeyup", function ($event) {
+elementOpen("section", "2e6fef9d-98ef-43f0-8959-14486f2534c7", hoisted1)
+  elementOpen("input", "03031dd8-95af-4c66-83f4-43e1a1f23238", hoisted2, "onkeyup", function ($event) {
     var $element = this;
-  ctrl.search.text = this.value; ctrl.filterSkills()})
+  ctrl.search.text = this.value; ctrl.filterGifts()})
   elementClose("input")
-  elementOpen("select", "89537df9-9a3e-46bc-8137-5461e70c59f2", hoisted3, "onchange", function ($event) {
+  elementOpen("select", "e1751522-dd17-4fc2-98ed-19daa6378e37", hoisted3, "onchange", function ($event) {
     var $element = this;
-  ctrl.search.category = this.value; ctrl.filterSkills()})
-    elementOpen("option", "c06fda67-eb2b-486e-885e-a5583680219d", hoisted4)
+  ctrl.search.category = this.value; ctrl.filterGifts()})
+    elementOpen("option", "88bde696-de40-4d87-8b10-13120cfffbb8", hoisted4)
       text("Select")
     elementClose("option")
-    elementOpen("option", "9610c04f-a918-4d14-8a9b-cec1977bcd8c", hoisted5, "selected", ctrl.search.category ==='booklet' ? true : null)
+    elementOpen("option", "502bd23a-26d8-4897-add7-9e0822be99cf", hoisted5, "selected", ctrl.search.category ==='booklet' ? true : null)
       text("Booklet")
     elementClose("option")
-    elementOpen("option", "2ef563ce-9561-41d0-bd14-cf283dd2cb1d", hoisted6, "selected", ctrl.search.category ==='find' ? true : null)
+    elementOpen("option", "d18e14e7-2c25-49b5-9051-7b5850c4bb80", hoisted6, "selected", ctrl.search.category ==='find' ? true : null)
       text("Find")
     elementClose("option")
-    elementOpen("option", "23fded2e-0241-46ad-ae06-2819be3fbcd3", hoisted7, "selected", ctrl.search.category ==='take' ? true : null)
+    elementOpen("option", "4907c871-b2de-4a2d-802a-a6734e702209", hoisted7, "selected", ctrl.search.category ==='take' ? true : null)
       text("Take")
     elementClose("option")
-    elementOpen("option", "780850e1-6402-439d-82d8-6a90ab13b274", hoisted8, "selected", ctrl.search.category ==='teach' ? true : null)
+    elementOpen("option", "1c0eba56-305e-4efa-8e22-1d8ec2922488", hoisted8, "selected", ctrl.search.category ==='teach' ? true : null)
       text("Teach")
     elementClose("option")
-    elementOpen("option", "b699e707-4665-4639-8d7e-2dbabf15e37e", hoisted9, "selected", ctrl.search.category ==='memories' ? true : null)
+    elementOpen("option", "bf339ef6-40e9-4b94-9590-c6729a975569", hoisted9, "selected", ctrl.search.category ==='memories' ? true : null)
       text("Memories")
     elementClose("option")
-    elementOpen("option", "11f18d0d-dfac-4cbf-93d6-98c369f07d9b", hoisted10, "selected", ctrl.search.category ==='indexing' ? true : null)
+    elementOpen("option", "748187d1-10f8-42c9-bd8b-c5139910cd37", hoisted10, "selected", ctrl.search.category ==='indexing' ? true : null)
       text("Indexing")
     elementClose("option")
   elementClose("select")
-  elementOpen("label", "7efbdb06-8628-4414-943c-b5481c1fd21d", hoisted11)
-    elementOpen("input", "8f7181ca-f54a-4c90-a736-f7234726f79c", hoisted12, "onchange", function ($event) {
+  elementOpen("label", "5dfcb7b4-52a8-4050-94ac-ba5ed7db0eb4", hoisted11)
+    elementOpen("input", "d57ec8eb-40b2-4782-b095-5c53f5446808", hoisted12, "onchange", function ($event) {
       var $element = this;
     ctrl.toggleMine()})
     elementClose("input")
     elementOpen("span")
-      text("My Skills (" + (ctrl.mySkills.length) + ")")
+      text("My Gifts (" + (ctrl.myGifts.length) + ")")
     elementClose("span")
   elementClose("label")
 elementClose("section")
-elementOpen("section", "d313bfa3-dd64-4497-91da-07f7af826d43", hoisted13)
-  __target = ctrl.viewSkills
+elementOpen("section", "c614f552-ba1a-4048-81e3-a576b443e174", hoisted13)
+  __target = ctrl.viewGifts
   if (__target) {
     ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
       var item = $value
-      var $key = "9fe6d159-e68c-46a2-acc0-481c01622373_" + $item
+      var $key = "96bd6408-f576-4343-a5e8-200abb082288_" + $item
       elementOpen("div", $key, hoisted14)
-        elementOpen("collapsable-panel", "9bfb0d34-9c0e-4ccd-aa5b-c9e10a7ed75a_" + $key, hoisted15, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements)
+        elementOpen("collapsable-panel", "a58457bf-7be5-472d-b636-45508d32502a_" + $key, hoisted15, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "achievements", item.achievements)
         elementClose("collapsable-panel")
       elementClose("div")
     }, this)

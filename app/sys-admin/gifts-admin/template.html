@@ -1,0 +1,56 @@
+<gifts-search if="!ctrl.giftEditor">
+  <input type="text" name="giftsearch" placeholder="Search ..." onkeyup="{ctrl.filterGifts(this.value)}">
+  <button type="button" name="add" onclick="{ctrl.addGift()}">Add</button>
+</gifts-search>
+
+<gifts-list>
+
+  <form name="gift" if="ctrl.giftEditor">
+    <gift-editor-title>
+      <label>Title:</label>
+      <input type="text" name="{ctrl.gift.title}" value="{ctrl.gift.title}" onchange="{ctrl.gift.title = this.value}" required>
+    </gift-editor-title>
+    <gift-editor-description>
+      <label>Description:</label>
+      <input type="text" name="{ctrl.gift.description}" value="{ctrl.gift.description}" onchange="{ctrl.gift.description = this.value}" required>
+    </gift-editor-description>
+    <gift-editor-category>
+      <label>Category:</label>
+      <select name="category" onchange="{ctrl.gift.category = this.value}" required>
+        <option value="">Select</option>
+        <option value="booklet" selected="{ctrl.gift.category ==='booklet' ? true : null}">Booklet</option>
+        <option value="find" selected="{ctrl.gift.category ==='find' ? true : null}">Find</option>
+        <option value="take" selected="{ctrl.gift.category ==='take' ? true : null}">Take</option>
+        <option value="teach" selected="{ctrl.gift.category ==='teach' ? true : null}">Teach</option>
+        <option value="memories" selected="{ctrl.gift.category ==='memories' ? true : null}">Memories</option>
+        <option value="indexing" selected="{ctrl.gift.category ==='indexing' ? true : null}">Indexing</option>
+      </select>
+    </gift-editor-category>
+    <gift-editor-multiplicity>
+      <label>Allow Multiple:</label>
+      <input type="checkbox" checked="{ctrl.gift.multiple}" onchange="{ctrl.gift.multiple = this.checked}">
+    </gift-editor-multiplicity>
+    <gift-editor-instructions>
+      <label>Instructions:</label>
+      <div id="gift-editor"></div>
+    </gift-editor-instructions>
+    <gift-editor-actions>
+      <button type="button" name="save" onclick="{ctrl.saveGift()}" class="primary">Save</button>
+      <button type="button" name="delete" onclick="{ctrl.deleteGift()}" class="danger">Delete</button>
+      <button type="button" name="cancel" onclick="{ctrl.cancelEdit()}">Cancel</button>
+    </gift-editor-actions>
+  </form>
+
+  <gifts-list-container>
+    <gift-item if="!ctrl.giftEditor" each="gift in ctrl.viewGifts" class="{$item % 2 ? 'odd' : 'even'}">
+      <div class="info">
+        <div class="title">{gift.title}</div>
+        <div class="description">{gift.description}</div>
+      </div>
+      <div class="action">
+        <button type="button" disabled="{ctrl.giftFormValid}" onclick="{ctrl.editGift($value)}">Edit</button>
+      </div>
+    </gift-item>
+  </gifts-list-container>
+
+</gifts-list>

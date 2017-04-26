@@ -1,6 +1,6 @@
 <section id="search">
-  <input type="text" name="search" placeholder="Search ..." onkeyup="{ctrl.search.text = this.value; ctrl.filterSkills()}">
-  <select name="category" onchange="{ctrl.search.category = this.value; ctrl.filterSkills()}" required>
+  <input type="text" name="search" placeholder="Search ..." onkeyup="{ctrl.search.text = this.value; ctrl.filterGifts()}">
+  <select name="category" onchange="{ctrl.search.category = this.value; ctrl.filterGifts()}" required>
     <option value="">Select</option>
     <option value="booklet" selected="{ctrl.search.category ==='booklet' ? true : null}">Booklet</option>
     <option value="find" selected="{ctrl.search.category ==='find' ? true : null}">Find</option>
@@ -11,12 +11,12 @@
   </select>
   <label for="mine-checkbox" id="mine-wrapper">
     <input type="checkbox" id="mine-checkbox" onchange="{ctrl.toggleMine()}">
-    <span>My Skills ({ctrl.mySkills.length})</span>
+    <span>My Gifts ({ctrl.myGifts.length})</span>
   </label>
 </section>
 
-<section id="skills">
-  <div class="item" each="item in ctrl.viewSkills">
+<section id="gifts">
+  <div class="item" each="item in ctrl.viewGifts">
     <collapsable-panel
     class="{$item % 2 ? 'odd' : 'even'}"
     earned="{item.earned}"

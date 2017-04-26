@@ -26,7 +26,7 @@ class UsersAdmin extends HTMLElement {
   }
 
   cancelEdit() {
-    this.skill = null;
+    this.gift = null;
     this.user = null;
     this.userId = null;
     this.userEditor = false;

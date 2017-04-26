@@ -3,7 +3,7 @@
   <span>Home</span>
 </a>
 <nav role="navigation" id="navigation">
-  <!-- <a if="ctrl.user.authenticated" onclick="{ctrl.go('/skills')}" class="{ctrl.state === 'skills' ? 'active': ''}">Achievments</a> -->
+  <!-- <a if="ctrl.user.authenticated" onclick="{ctrl.go('/gifts')}" class="{ctrl.state === 'gifts' ? 'active': ''}">Achievments</a> -->
   <a onclick="{ctrl.go('/help')}" class="{ctrl.stateContains('help')}">Help</a>
   <a if="ctrl.user.admin" onclick="{ctrl.go('/admin/users')}" class="{ctrl.stateContains('admin')}">Admin</a>
   <a if="!ctrl.user.authenticated" onclick="{ctrl.go('/login')}" class="{ctrl.stateContains('login')}">Login</a>

@@ -24,15 +24,15 @@ const db = new Loki('m7temple.db', {
 function loadHandler() {
   if (!db.getCollection('awards')) db.addCollection('awards');
   if (!db.getCollection('tickets')) db.addCollection('tickets');
-  if (!db.getCollection('skills')) db.addCollection('skills');
+  if (!db.getCollection('gifts')) db.addCollection('gifts');
   if (!db.getCollection('users')) db.addCollection('users');
 }
 
-let awards = {}, skills = {}, users = {};
+let awards = {}, gifts = {}, users = {};
 
 // db.on('loaded', () => {
 //   awards = db.getCollection('awards');
-//   skills = db.getCollection('skills');
+//   gifts = db.getCollection('gifts');
 //   users = db.getCollection('users');
 // });
 

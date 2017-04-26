@@ -1,14 +1,14 @@
 @import '../../css/wc/buttons.less';
 @import '../../css/wc/forms.less';
 
-skills-admin {
+gifts-admin {
   display: flex;
   flex-direction: column;
   flex: 1;
   container {
     display: flex;
     flex-direction: column;
-    skills-search {
+    gifts-search {
       display: flex;
       align-items: center;
       input {
@@ -16,22 +16,22 @@ skills-admin {
         flex: 1;
       }
     }
-    skills-list {
+    gifts-list {
       display: flex;
       flex-direction: column;
       flex: 1;
       overflow-y: auto;
     }
-    form, skill-item {
+    form, gift-item {
       flex: 1;
     }
     form {
       display: flex;
       flex-direction: column;
-      skill-editor-title,
-      skill-editor-description,
-      skill-editor-multiplicity,
-      skill-editor-category {
+      gift-editor-title,
+      gift-editor-description,
+      gift-editor-multiplicity,
+      gift-editor-category {
         display: flex;
         margin-bottom: 1vh;
         label {
@@ -41,17 +41,17 @@ skills-admin {
           flex: 4;
         }
       }
-      #skill-editor {
+      #gift-editor {
         min-height: 20vh;
         margin-bottom: 2vh;
       }
-      skill-editor-actions {
+      gift-editor-actions {
         button {
           margin-right: 1vw;
         }
       }
     }
-    skill-item {
+    gift-item {
       display: flex;
       align-items: center;
       border: 1px solid #ccc;

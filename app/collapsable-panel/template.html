@@ -6,13 +6,13 @@
         <img src="/img/add.svg" alt="">
       </button>
       <button if="!ctrl.earned && !ctrl.multiple && !ctrl.pending" type="button" name="apply" onclick="{ctrl.addAndShowAchievementEditor(ctrl.iid)}">
-        <img src="/img/skill-apply.svg" alt="">
+        <img src="/img/gift-apply.svg" alt="">
       </button>
       <button if="ctrl.earned" type="button" name="earned" onclick="{ctrl.showAwards(ctrl.iid, 'earned')}">
-        <img src="/img/skill-earned.svg" alt="">
+        <img src="/img/gift-earned.svg" alt="">
       </button>
       <button if="ctrl.pending" type="button" name="pending" onclick="{ctrl.showAwards(ctrl.iid, 'pending')}">
-        <img src="/img/skill-pending.svg" alt="">
+        <img src="/img/gift-pending.svg" alt="">
       </button>
       <button type="button" name="add" onclick="{ctrl.showTicketEditor(ctrl.iid)}">
         <img src="/img/help.svg" alt="">
@@ -36,14 +36,14 @@
       </button>
     </header>
     <section name="achievements" each="item in ctrl.awards">
-      <if condition="ctrl.awards[item].pending && parseInt(ctrl.awards[item].skillId, 10) === parseInt(ctrl.iid, 10)">
+      <if condition="ctrl.awards[item].pending && parseInt(ctrl.awards[item].giftId, 10) === parseInt(ctrl.iid, 10)">
         <story>{ctrl.awards[item].pending.story}</story>
         <status>
           <state>Pending</state>
           <date>Date: ({new Date(ctrl.awards[item].pending.date).toLocaleString()})</date>
         </status>
       </if>
-      <if condition="ctrl.awards[item].awarded && ctrl.awards[item].skillId === ctrl.iid">
+      <if condition="ctrl.awards[item].awarded && ctrl.awards[item].giftId === ctrl.iid">
         <story>{ctrl.awards[item].awarded.story}</story>
         <status>
           <state>Awarded</state>
@@ -60,12 +60,12 @@
       <a href="javascript:void(0)" onclick="{ctrl._cancelEdit()}">Cancel</a>
     </div>
   </help-request>
-  <skill-editor if="ctrl.showSkillEditor">
+  <gift-editor if="ctrl.showGiftEditor">
     <header>
-      Applying for a Skill Achievement
+      Applying for a Gift Achievement
     </header>
     <p>
-      Congratultions on applying for a skill achievment award! Once you submit your request,
+      Congratultions on applying for a gift achievment award! Once you submit your request,
       someone will review and approve it. Please share your experience, and sign up to help others.
     </p>
     <textarea name="achievement" rows="8"></textarea>
@@ -75,13 +75,13 @@
     </div>
     <div class="control-container">
       <input type="checkbox" name="helping" checked>
-      <span>Yes, I'm willing to help others achieve this skill.</span>
+      <span>Yes, I'm willing to help others achieve this gift.</span>
     </div>
     <div class="button-group">
       <button type="button" class="primary" onclick="{ctrl.applyForAchievment()}">Apply</button>
-      <a href="javascript:void(0)" onclick="{ctrl.hideSkillEditor()}">Cancel</a>
+      <a href="javascript:void(0)" onclick="{ctrl.hideGiftEditor()}">Cancel</a>
     </div>
-  </skill-editor>
+  </gift-editor>
   <div class="html" if="!ctrl.collapsed">
     <script>
       if (ctrl.html && ctrl.html !== '') {

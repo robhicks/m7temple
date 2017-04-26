@@ -60,11 +60,11 @@ db.loadDb = (req, evt, next) => {
   socket.on('loadDatabase', (data) => {
     db.loadJSON(data, {disableChangesApi: false});
     let awards = db.getCollection('awards');
-    let skills = db.getCollection('skills');
+    let gifts = db.getCollection('gifts');
     let tickets = db.getCollection('tickets');
     let users = db.getCollection('users');
     awards.on(['insert', 'update', 'delete'], changeHandler);
-    skills.on(['insert', 'update', 'delete'], changeHandler);
+    gifts.on(['insert', 'update', 'delete'], changeHandler);
     tickets.on(['insert', 'update', 'delete'], changeHandler);
     users.on(['insert', 'update', 'delete'], changeHandler);
     db.loaded = true;

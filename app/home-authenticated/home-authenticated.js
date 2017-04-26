@@ -10,8 +10,8 @@ class HomeAuthenticated extends HTMLElement {
   constructor() {
     super();
     this.user = user;
-    this.skills = [];
-    this.mySkills = [];
+    this.gifts = [];
+    this.myGifts = [];
     this.mine = false;
     this.search = {};
   }
@@ -32,32 +32,32 @@ class HomeAuthenticated extends HTMLElement {
     this.shadowRoot.addEventListener('click', this.anchorClickHandler.bind(this));
     this.element = this.shadowRoot.querySelector('div#home');
     this.aColl = db.getCollection('awards');
-    this.sColl = db.getCollection('skills');
+    this.sColl = db.getCollection('gifts');
 
     this.aColl.setChangesApi(true);
     this.sColl.setChangesApi(true);
 
     this.adv = this.aColl.addDynamicView('awards');
-    this.sdv = this.sColl.addDynamicView('skills');
+    this.sdv = this.sColl.addDynamicView('gifts');
 
     document.addEventListener('userUnauthenticated', () => {router.navigate('/login');});
     document.addEventListener('awardsChanged', this._updateView.bind(this));
-    document.addEventListener('skillsChanged', this._updateView.bind(this));
+    document.addEventListener('giftsChanged', this._updateView.bind(this));
 
     this._updateView();
   }
 
-  _combineSkillsAndAwards(_awards = [], _skills = []) {
+  _combineGiftsAndAwards(_awards = [], _gifts = []) {
     // console.log("_awards", _awards)
-    return _skills.map((skill) => {
-      let award = _awards.find((awrd) => awrd.skillId === skill.id && awrd.userId === this.user.id);
+    return _gifts.map((gift) => {
+      let award = _awards.find((awrd) => awrd.giftId === gift.id && awrd.userId === this.user.id);
       return {
-        id: skill.id,
-        title: skill.title,
-        description: skill.description,
-        multiple: !!skill.multiple,
-        achievements: skill.achievements,
-        html: skill.html,
+        id: gift.id,
+        title: gift.title,
+        description: gift.description,
+        multiple: !!gift.multiple,
+        achievements: gift.achievements,
+        html: gift.html,
         added: !!award && award.type === 'added',
         earned: !!award && award.type === 'earned',
         pending: !!award && award.type === 'pending',
@@ -72,38 +72,38 @@ class HomeAuthenticated extends HTMLElement {
     this.sdv.removeFilters();
     document.removeEventListener('userUnauthenticated', () => {router.navigate('/login');});
     document.removeEventListener('awardsChanged', this._updateView.bind(this));
-    document.removeEventListener('skillsChanged', this._updateView.bind(this));
+    document.removeEventListener('giftsChanged', this._updateView.bind(this));
   }
 
-  filterSkills() {
+  filterGifts() {
     let text = this.search.text && this.search.text !== '' ? this.search.text : null;
     let category = this.search.category ? this.search.category : null;
 
     this.sdv.removeFilters();
     if (text) {
       if (category) {
-        this.sdv.applyWhere((skill) => {
-          if (skill.category === category && skill.title && skill.title.toLowerCase().indexOf(text) !== -1) return true;
-          if (skill.category === category && skill.description && skill.description.toLowerCase().indexOf(text) !== -1) return true;
-          if (skill.category === category && skill.category && skill.category.toLowerCase().indexOf(text) !== -1) return true;
+        this.sdv.applyWhere((gift) => {
+          if (gift.category === category && gift.title && gift.title.toLowerCase().indexOf(text) !== -1) return true;
+          if (gift.category === category && gift.description && gift.description.toLowerCase().indexOf(text) !== -1) return true;
+          if (gift.category === category && gift.category && gift.category.toLowerCase().indexOf(text) !== -1) return true;
         });
       } else {
-        this.sdv.applyWhere((skill) => {
-          if (skill.title && skill.title.toLowerCase().indexOf(text) !== -1) return true;
-          if (skill.description && skill.description.toLowerCase().indexOf(text) !== -1) return true;
-          if (skill.category && skill.category.toLowerCase().indexOf(text) !== -1) return true;
+        this.sdv.applyWhere((gift) => {
+          if (gift.title && gift.title.toLowerCase().indexOf(text) !== -1) return true;
+          if (gift.description && gift.description.toLowerCase().indexOf(text) !== -1) return true;
+          if (gift.category && gift.category.toLowerCase().indexOf(text) !== -1) return true;
         });
       }
     } else if (category) {
-      this.sdv.applyWhere((skill) => {
-        if (skill.category === category) return true;
+      this.sdv.applyWhere((gift) => {
+        if (gift.category === category) return true;
       });
     }
     this._updateView();
   }
 
-  filterMine(skills) {
-    return skills.filter((skill) => skill.added || skill.earned || skill.pending);
+  filterMine(gifts) {
+    return gifts.filter((gift) => gift.added || gift.earned || gift.pending);
   }
 
   toggleMine() {
@@ -113,11 +113,11 @@ class HomeAuthenticated extends HTMLElement {
 
   _updateView() {
     let _awards = this.adv.data();
-    let _skills = this.sdv.data();
-    this.skills = this._combineSkillsAndAwards(_awards, _skills);
-    this.mySkills = this.filterMine(this.skills);
-    this.viewSkills = this.mine ? this.mySkills : this.skills;
-    // console.log("this.viewSkills", this.viewSkills)
+    let _gifts = this.sdv.data();
+    this.gifts = this._combineGiftsAndAwards(_awards, _gifts);
+    this.myGifts = this.filterMine(this.gifts);
+    this.viewGifts = this.mine ? this.myGifts : this.gifts;
+    // console.log("this.viewGifts", this.viewGifts)
     if (this.element) patch(this.element, render, this);
   }
 

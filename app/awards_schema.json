@@ -5,7 +5,7 @@
     "id": "String",
     "share": "Boolean",
     "story": "String",
-    "skillId": "String",
+    "giftId": "String",
     "type": "String: added, pending or earned",
     "userId": "String"
   }
