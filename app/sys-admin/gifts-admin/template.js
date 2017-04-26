@@ -28,11 +28,11 @@ var __target
 export function render (ctrl) {
 if (!ctrl.giftEditor) {
   elementOpen("gifts-search")
-    elementOpen("input", "e043437f-db6e-433c-90e0-c44cb38ca5ed", hoisted1, "onkeyup", function ($event) {
+    elementOpen("input", "7f9a2808-f983-4aea-8b2a-0208091441af", hoisted1, "onkeyup", function ($event) {
       var $element = this;
     ctrl.filterGifts(this.value)})
     elementClose("input")
-    elementOpen("button", "8e8d828e-36e8-4747-8e16-ccce5b573f63", hoisted2, "onclick", function ($event) {
+    elementOpen("button", "bf25756a-45dc-4d78-a1f8-575c8320b165", hoisted2, "onclick", function ($event) {
       var $element = this;
     ctrl.addGift()})
       text("Add")
@@ -41,12 +41,12 @@ if (!ctrl.giftEditor) {
 }
 elementOpen("gifts-list")
   if (ctrl.giftEditor) {
-    elementOpen("form", "0546f06f-ec19-41f3-a861-930909fdef2b", hoisted3)
+    elementOpen("form", "e2bb27cd-dcb4-4797-9e47-09be62b59646", hoisted3)
       elementOpen("gift-editor-title")
         elementOpen("label")
           text("Title:")
         elementClose("label")
-        elementOpen("input", "2c0221f5-78ad-43fd-831c-83daf4b568ae", hoisted4, "name", ctrl.gift.title, "value", ctrl.gift.title, "onchange", function ($event) {
+        elementOpen("input", "a7d6f37c-393b-43ce-b588-fe6dd1e3f080", hoisted4, "name", ctrl.gift.title, "value", ctrl.gift.title, "onchange", function ($event) {
           var $element = this;
         ctrl.gift.title = this.value})
         elementClose("input")
@@ -55,7 +55,7 @@ elementOpen("gifts-list")
         elementOpen("label")
           text("Description:")
         elementClose("label")
-        elementOpen("input", "fdb02832-5238-4f46-941e-5adbeb0eac12", hoisted5, "name", ctrl.gift.description, "value", ctrl.gift.description, "onchange", function ($event) {
+        elementOpen("input", "fff3ba35-f27f-4b35-be96-5fec60526d2c", hoisted5, "name", ctrl.gift.description, "value", ctrl.gift.description, "onchange", function ($event) {
           var $element = this;
         ctrl.gift.description = this.value})
         elementClose("input")
@@ -64,28 +64,28 @@ elementOpen("gifts-list")
         elementOpen("label")
           text("Category:")
         elementClose("label")
-        elementOpen("select", "31914479-d509-4ea2-9d17-2fa56763ec4e", hoisted6, "onchange", function ($event) {
+        elementOpen("select", "ad9de612-85e2-4a3c-88f8-8bacb591fa8e", hoisted6, "onchange", function ($event) {
           var $element = this;
         ctrl.gift.category = this.value})
-          elementOpen("option", "5a2110c7-d7a7-4783-b8ba-69ce0250345f", hoisted7)
+          elementOpen("option", "62bf9c06-36f3-41ea-863f-5dc76e30e268", hoisted7)
             text("Select")
           elementClose("option")
-          elementOpen("option", "820cfdfb-4a5a-4827-b950-4ec10fb4b7a5", hoisted8, "selected", ctrl.gift.category ==='booklet' ? true : null)
+          elementOpen("option", "a3914686-caa6-445b-8e7e-8d962617f10d", hoisted8, "selected", ctrl.gift.category ==='booklet' ? true : null)
             text("Booklet")
           elementClose("option")
-          elementOpen("option", "37b2519b-df76-4776-b538-426eaccba2ab", hoisted9, "selected", ctrl.gift.category ==='find' ? true : null)
+          elementOpen("option", "0fca3d53-ead8-490d-9a39-c258c6af3c46", hoisted9, "selected", ctrl.gift.category ==='find' ? true : null)
             text("Find")
           elementClose("option")
-          elementOpen("option", "a40b852f-8ada-4787-a0ec-1268181a1875", hoisted10, "selected", ctrl.gift.category ==='take' ? true : null)
+          elementOpen("option", "f9db1363-9ecd-45ee-8073-2dbab891790c", hoisted10, "selected", ctrl.gift.category ==='take' ? true : null)
             text("Take")
           elementClose("option")
-          elementOpen("option", "fb3aecbf-5357-47e1-b675-a53559ff23e7", hoisted11, "selected", ctrl.gift.category ==='teach' ? true : null)
+          elementOpen("option", "adfea74a-fd87-4128-9253-f11e8afdded9", hoisted11, "selected", ctrl.gift.category ==='teach' ? true : null)
             text("Teach")
           elementClose("option")
-          elementOpen("option", "be53b5b8-fab7-41d4-bbfc-12a318320b0f", hoisted12, "selected", ctrl.gift.category ==='memories' ? true : null)
+          elementOpen("option", "c53eef3a-0cab-4ccf-9000-8be050324ab5", hoisted12, "selected", ctrl.gift.category ==='memories' ? true : null)
             text("Memories")
           elementClose("option")
-          elementOpen("option", "02736cde-b943-4705-842a-4cdd320fe457", hoisted13, "selected", ctrl.gift.category ==='indexing' ? true : null)
+          elementOpen("option", "cbfbb73e-a648-4ee4-9f0d-9ff7bd3a4ec3", hoisted13, "selected", ctrl.gift.category ==='indexing' ? true : null)
             text("Indexing")
           elementClose("option")
         elementClose("select")
@@ -94,7 +94,7 @@ elementOpen("gifts-list")
         elementOpen("label")
           text("Allow Multiple:")
         elementClose("label")
-        elementOpen("input", "2c851710-b451-4421-b88a-0a45c83ce772", hoisted14, "checked", ctrl.gift.multiple, "onchange", function ($event) {
+        elementOpen("input", "59f6cc6b-6a51-4743-8a5a-c8793e26a5f0", hoisted14, "checked", ctrl.gift.multiple, "onchange", function ($event) {
           var $element = this;
         ctrl.gift.multiple = this.checked})
         elementClose("input")
@@ -103,21 +103,21 @@ elementOpen("gifts-list")
         elementOpen("label")
           text("Instructions:")
         elementClose("label")
-        elementOpen("div", "f09cbe92-26f0-473c-b60a-d534e7820452", hoisted15)
+        elementOpen("div", "fc2760d5-cbbe-4820-8040-43ecea27b3b2", hoisted15)
         elementClose("div")
       elementClose("gift-editor-instructions")
       elementOpen("gift-editor-actions")
-        elementOpen("button", "54c1e654-4186-4082-a66b-dc764c218e4d", hoisted16, "onclick", function ($event) {
+        elementOpen("button", "7dc3047c-f94e-475a-89e0-a19875a43335", hoisted16, "onclick", function ($event) {
           var $element = this;
         ctrl.saveGift()})
           text("Save")
         elementClose("button")
-        elementOpen("button", "e6c9a735-2585-48fd-9079-ab2ab0b7df25", hoisted17, "onclick", function ($event) {
+        elementOpen("button", "762d1bbd-8919-473e-a8f7-b5f653584549", hoisted17, "onclick", function ($event) {
           var $element = this;
         ctrl.deleteGift()})
           text("Delete")
         elementClose("button")
-        elementOpen("button", "1b41a15f-9be7-4c40-aa4b-d4c12d5a139a", hoisted18, "onclick", function ($event) {
+        elementOpen("button", "719c0c55-ea7b-424c-894a-49ed89b86068", hoisted18, "onclick", function ($event) {
           var $element = this;
         ctrl.cancelEdit()})
           text("Cancel")
@@ -131,18 +131,18 @@ elementOpen("gifts-list")
       if (__target) {
         ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
           var gift = $value
-          var $key = "f417db65-eeef-4e4f-a9ed-7a46990487c1_" + $item
+          var $key = "aa77ebcc-adbd-4d93-95cf-ecb9aae540d1_" + $item
           elementOpen("gift-item", $key, null, "class", $item % 2 ? 'odd' : 'even')
-            elementOpen("div", "9dba15f2-df5a-4861-b92c-cf287ae80eca_" + $key, hoisted19)
-              elementOpen("div", "12e37c37-be6f-424b-a4c1-8983b0ecac1e_" + $key, hoisted20)
+            elementOpen("div", "ab364270-eb5d-40d3-b458-2ee348fb0fb0_" + $key, hoisted19)
+              elementOpen("div", "173aa510-28af-4410-a7c8-866f7abecc14_" + $key, hoisted20)
                 text("" + (gift.title) + "")
               elementClose("div")
-              elementOpen("div", "2339cc06-0004-4382-a8ba-bedffdf328bd_" + $key, hoisted21)
+              elementOpen("div", "8dfca9b4-0434-489e-b763-f822604ee26f_" + $key, hoisted21)
                 text("" + (gift.description) + "")
               elementClose("div")
             elementClose("div")
-            elementOpen("div", "f8144e18-6a71-40a6-99cc-6cfddc683bf1_" + $key, hoisted22)
-              elementOpen("button", "99d47953-2776-4c28-a7b6-47af9c0a582b_" + $key, hoisted23, "disabled", ctrl.giftFormValid, "onclick", function ($event) {
+            elementOpen("div", "cabc4a8b-a765-488d-8e6e-8a462da6154c_" + $key, hoisted22)
+              elementOpen("button", "35b06bb6-98db-4a69-a443-17d1d7503ce1_" + $key, hoisted23, "disabled", ctrl.giftFormValid, "onclick", function ($event) {
                 var $element = this;
               ctrl.editGift($value)})
                 text("Edit")
