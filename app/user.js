@@ -24,10 +24,10 @@ hello.on('auth.login', (auth) => {
   // console.log("auth", auth)
   hello(auth.network).api('me')
   .then((r) => {
-    // console.log("hellojs:auth.login user", r);
-    // console.log("socket.authState", socket.authState)
+    console.log("hellojs:auth.login user", r);
+    console.log("socket.authState", socket.authState)
     if (socket.authState !== 'authenticated') socket.emit('auth', r);
-    if ((/.+\/login/).test(window.location.href)) router.navigate('/home/authenticated');
+    if (/\/oauth2callback/.test(router.state.value)) router.navigate('/home/authenticated');
   }, (err) => {
     let modal = new RbhModal();
     modal.heading = 'Authentication Provider Error';

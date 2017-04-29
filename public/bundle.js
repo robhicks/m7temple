@@ -254,10 +254,10 @@ hello.init({
 hello.on('auth.login', function (auth) {
   // console.log("auth", auth)
   hello(auth.network).api('me').then(function (r) {
-    // console.log("hellojs:auth.login user", r);
-    // console.log("socket.authState", socket.authState)
+    console.log("hellojs:auth.login user", r);
+    console.log("socket.authState", socket$2.authState);
     if (socket$2.authState !== 'authenticated') socket$2.emit('auth', r);
-    if (/.+\/login/.test(window.location.href)) router.navigate('/home/authenticated');
+    if (/\/oauth2callback/.test(router.state.value)) router.navigate('/home/authenticated');
   }, function (err) {
     var modal = new RbhModal();
     modal.heading = 'Authentication Provider Error';
@@ -3167,7 +3167,9 @@ var AppRouter = function (_HTMLElement) {
         _this2.innerHTML = '<not-found></not-found>';
       });
 
-      router.add('/oauth2callback', function (req, evt, next) {});
+      router.add('/oauth2callback', function (req, evt, next) {
+        console.log("req", req);
+      });
 
       router.add('/privacy-policy', function (req, evt, next) {
         _this2.innerHTML = '<p-policy></p-policy';
