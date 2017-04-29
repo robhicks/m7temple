@@ -63,6 +63,7 @@ class AppRouter extends HTMLElement {
     });
 
     router.add('/oauth2callback', (req, evt, next) => {
+      console.log("req", req)
     });
 
     router.add('/privacy-policy', (req, evt, next) => {
