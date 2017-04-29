@@ -16,14 +16,14 @@ var hoisted13 = ["type", "button", "class", "danger", "name", "delete"]
 var __target
 
 export function render (ctrl) {
-elementOpen("section", "77672a63-0cac-4872-9679-a77cfc539bf4", hoisted1)
-  elementOpen("input", "9f622950-6861-4a38-8f68-85efe3a0d8e8", hoisted2, "onkeyup", function ($event) {
+elementOpen("section", "6727e55b-08eb-495f-98dc-eb28fff512fd", hoisted1)
+  elementOpen("input", "eff7a4df-74ef-442e-9723-424ad103b6e3", hoisted2, "onkeyup", function ($event) {
     var $element = this;
   ctrl.search.text = this.value; ctrl.filterTickets()})
   elementClose("input")
-  elementOpen("div", "47f00564-b928-481f-8be1-c679b40c6192", hoisted3)
-    elementOpen("label", "1e4dbbf0-efe3-4759-885d-78ad3e0c3a2d", hoisted4)
-      elementOpen("input", "e698bc66-9d08-44df-b559-944b07a112aa", hoisted5, "onchange", function ($event) {
+  elementOpen("div", "ac4f52d9-476a-411a-82e5-93eecb0083fa", hoisted3)
+    elementOpen("label", "d2b44024-4673-457f-9eac-e68de1818796", hoisted4)
+      elementOpen("input", "05d09b96-557a-4460-bd06-be7f86cc6190", hoisted5, "onchange", function ($event) {
         var $element = this;
       ctrl.search.type = this.value; ctrl.filterTickets()})
       elementClose("input")
@@ -31,8 +31,8 @@ elementOpen("section", "77672a63-0cac-4872-9679-a77cfc539bf4", hoisted1)
             All \
           ")
     elementClose("label")
-    elementOpen("label", "2767a63d-b5a8-48ea-b98c-dc517761af3e", hoisted6)
-      elementOpen("input", "b4a9a07a-09ef-43b7-9112-3cbfb54018a6", hoisted7, "onchange", function ($event) {
+    elementOpen("label", "5a6250ac-6cc9-49f8-8f3b-1dbd7d2a4509", hoisted6)
+      elementOpen("input", "2c6b7f9f-8553-4b0f-855b-e12c236824ae", hoisted7, "onchange", function ($event) {
         var $element = this;
       ctrl.search.type = this.value; ctrl.filterTickets()})
       elementClose("input")
@@ -40,8 +40,8 @@ elementOpen("section", "77672a63-0cac-4872-9679-a77cfc539bf4", hoisted1)
             Open \
           ")
     elementClose("label")
-    elementOpen("label", "768b402a-de25-45c2-a97c-96f84d7d1986", hoisted8)
-      elementOpen("input", "53ee2565-e81e-4f74-82cb-b24ab00781fb", hoisted9, "onchange", function ($event) {
+    elementOpen("label", "7ffa1f46-8d54-466f-a85d-1cf5e5afdffc", hoisted8)
+      elementOpen("input", "d3eefa94-a626-4691-8288-139662efde27", hoisted9, "onchange", function ($event) {
         var $element = this;
       ctrl.search.type = this.value; ctrl.filterTickets()})
       elementClose("input")
@@ -52,12 +52,12 @@ elementOpen("section", "77672a63-0cac-4872-9679-a77cfc539bf4", hoisted1)
   elementClose("div")
 elementClose("section")
 if (ctrl.tickets.length > 0) {
-  elementOpen("section", "542c6097-3c2b-4f7d-8a19-6b074ce9cec2", hoisted10)
+  elementOpen("section", "fe69ad04-0291-4cdc-8d02-211f38850e78", hoisted10)
     __target = ctrl.tickets
     if (__target) {
       ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
         var ticket = $value
-        var $key = "bdcf12ef-de14-45d2-bb0d-90b4d7596334_" + $item
+        var $key = "14327738-2287-43d2-8196-23c1afa40032_" + $item
         elementOpen("div", $key, null, "class",  $item % 2 ? 'row odd' : 'row even' )
           elementOpen("user")
             elementOpen("name")
@@ -96,20 +96,20 @@ if (ctrl.tickets.length > 0) {
             elementClose("name")
             elementOpen("value")
               if (ticket.type === 'open' || ticket.type === '') {
-                elementOpen("button", "68a99261-aab8-48c3-a10c-9221a25ef328_" + $key, hoisted11, "onclick", function ($event) {
+                elementOpen("button", "c411f5b8-bf8b-40b1-9ec6-90d539c29e14_" + $key, hoisted11, "onclick", function ($event) {
                   var $element = this;
                 ctrl.close(ticket)})
                   text("Close")
                 elementClose("button")
               }
               if (ticket.type === 'closed') {
-                elementOpen("button", "6616a3f5-8af1-493d-a56e-f5f0c19bd530_" + $key, hoisted12, "onclick", function ($event) {
+                elementOpen("button", "194206c7-9b56-48ae-a033-5a6ded5e371a_" + $key, hoisted12, "onclick", function ($event) {
                   var $element = this;
                 ctrl.open(ticket)})
                   text("Open")
                 elementClose("button")
               }
-              elementOpen("button", "740a6e5c-cc8a-4a78-b48d-7f8fd063a5ff_" + $key, hoisted13, "onclick", function ($event) {
+              elementOpen("button", "f9e41052-bb57-4101-824b-7bbc78ca0af0_" + $key, hoisted13, "onclick", function ($event) {
                 var $element = this;
               ctrl.delete(ticket)})
                 text("Delete")
