@@ -2905,6 +2905,7 @@ var hoisted7$8 = ["class", "action-button", "src", "/img/help.svg", "alt", ""];
 var hoisted8$8 = ["class", "action-button", "src", "/img/gift-apply.svg", "alt", ""];
 var hoisted9$7 = ["id", "my-gifts", "src", "/img/my-gifts.png", "alt", ""];
 var hoisted10$7 = ["href", "https://github.com/robhicks/m7temple/issues"];
+var hoisted11$6 = ["href", "https://gitter.im/Manila-7th-Ward/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link"];
 function render$14(ctrl) {
   incrementalDom.elementOpen("general");
   incrementalDom.elementOpen("general-overlay");
@@ -2967,7 +2968,7 @@ function render$14(ctrl) {
         Most actions involving gifts are available through the gifts button bar, highlighted with a green \
         rectangle. We'll explain below what the buttons are for and what they do. \
         ");
-  incrementalDom.elementOpen("img", "c42bcc12-8c40-474c-bc59-8bd5f6736479", hoisted1$13);
+  incrementalDom.elementOpen("img", "834142b8-3583-4d51-93f5-5746dfa2dca8", hoisted1$13);
   incrementalDom.elementClose("img");
   incrementalDom.elementClose("p");
   incrementalDom.elementOpen("h2");
@@ -2976,26 +2977,26 @@ function render$14(ctrl) {
   incrementalDom.elementOpen("p");
   incrementalDom.text(" \
         Add a gift by clicking on the green add button: ");
-  incrementalDom.elementOpen("img", "1fae4225-3300-4459-abfd-23e2706e5d9a", hoisted2$11);
+  incrementalDom.elementOpen("img", "5ed9d4d7-803d-49f7-aa01-cfd5c8cf3c23", hoisted2$11);
   incrementalDom.elementClose("img");
   incrementalDom.text(". \
         Once a gift has been added, it can be deleted by clicking the delete button: \
         ");
-  incrementalDom.elementOpen("img", "84dd861d-3a89-4f87-bcfa-3699d26e3a89", hoisted3$11);
+  incrementalDom.elementOpen("img", "85410791-2b84-4e16-bc47-6d52af3bb86a", hoisted3$11);
   incrementalDom.elementClose("img");
   incrementalDom.text(", or you can apply for certification by \
         clicking the award button. The award button can take three forms: 1) \
         ");
-  incrementalDom.elementOpen("img", "c62a01df-f7cf-44de-a99a-c79fd13ada84", hoisted4$9);
+  incrementalDom.elementOpen("img", "74599497-f025-4c1e-b4d6-42dcf23b924e", hoisted4$9);
   incrementalDom.elementClose("img");
   incrementalDom.text(" when you have added the gift as a \
         goal haven't yet applied for certification, 2) \
         ");
-  incrementalDom.elementOpen("img", "c245ab10-3ac4-4cb8-a79c-9605e41f53e3", hoisted5$9);
+  incrementalDom.elementOpen("img", "0c24f9ec-db53-4cc0-910e-f867ffbda525", hoisted5$9);
   incrementalDom.elementClose("img");
   incrementalDom.text(" when certification is pending, and \
         3) ");
-  incrementalDom.elementOpen("img", "823b8f3d-b50a-4909-ba0a-bdbaf4dafdc0", hoisted6$9);
+  incrementalDom.elementOpen("img", "90971fdc-a672-4cf9-b9f8-ba79655e950b", hoisted6$9);
   incrementalDom.elementClose("img");
   incrementalDom.text(" when you have earned the gift. \
       ");
@@ -3010,7 +3011,7 @@ function render$14(ctrl) {
   incrementalDom.text(" \
         You can request for a gift by clicking the life perserver button: \
         ");
-  incrementalDom.elementOpen("img", "c6a526fa-0de9-480d-9659-9870e38ffad2", hoisted7$8);
+  incrementalDom.elementOpen("img", "fb9357fc-d460-46d5-bba7-45d8f7623f13", hoisted7$8);
   incrementalDom.elementClose("img");
   incrementalDom.text(". Your request will be acknowledged and \
         someone with has earned the gift will be asked to contact you to help you achieve the gift. \
@@ -3023,7 +3024,7 @@ function render$14(ctrl) {
   incrementalDom.text(" \
         As mentioned above, you can get recognized for completing a gift by submitting an application. \
         You submit application by clicking the apply button: ");
-  incrementalDom.elementOpen("img", "b7de6bca-87a5-48b1-a9f0-0baa1dfd6198", hoisted8$8);
+  incrementalDom.elementOpen("img", "ebfaabff-7c0d-486e-932b-d6b1bbbc6b9b", hoisted8$8);
   incrementalDom.elementClose("img");
   incrementalDom.text(". \
         You will be asked to explain your experience in working on the gift and if you are willing to \
@@ -3038,7 +3039,7 @@ function render$14(ctrl) {
         You can see your own gifts simply by clicking the My Gifts checkbox in the upper right part of \
         of the home view. \
         ");
-  incrementalDom.elementOpen("img", "481f95e5-b2e6-4755-8733-3e86410561f2", hoisted9$7);
+  incrementalDom.elementOpen("img", "4d12e7bc-6ea8-4d90-9a4c-34672c6f7e26", hoisted9$7);
   incrementalDom.elementClose("img");
   incrementalDom.elementClose("p");
   incrementalDom.elementClose("working-on-gifts");
@@ -3057,7 +3058,7 @@ function render$14(ctrl) {
   incrementalDom.text(" \
         When you run into technical issues, please let us know. You can do so by logging an issue \
         on ");
-  incrementalDom.elementOpen("a", "978bc1a0-2cd7-4e98-a5db-f7a31ed1643c", hoisted10$7);
+  incrementalDom.elementOpen("a", "7569777c-74fc-47cc-aa41-8651f8bd670e", hoisted10$7);
   incrementalDom.text("Github");
   incrementalDom.elementClose("a");
   incrementalDom.text(". ");
@@ -3065,6 +3066,13 @@ function render$14(ctrl) {
   incrementalDom.text("You don't need a Github \
           account to log and track issues.");
   incrementalDom.elementClose("b");
+  incrementalDom.text(" You can also try to get immediat support on \
+        ");
+  incrementalDom.elementOpen("a", "9d5d9040-503d-4a07-9bf3-1668f371aab2", hoisted11$6);
+  incrementalDom.text("Gitter");
+  incrementalDom.elementClose("a");
+  incrementalDom.text(". \
+      ");
   incrementalDom.elementClose("p");
   incrementalDom.elementOpen("p");
   incrementalDom.text(" \
