@@ -6,16 +6,16 @@ var hoisted3 = ["role", "navigation", "id", "navigation"]
 var __target
 
 export function render (ctrl) {
-elementOpen("a", "aea060fe-188e-4a94-83e0-d34119b73bbe", hoisted1, "onclick", function ($event) {
+elementOpen("a", "2d794915-3ee9-4bfb-8ba3-bcbd5dc5918b", hoisted1, "onclick", function ($event) {
   var $element = this;
 ctrl.go('/home/authenticated')}, "class", ctrl.stateContains('home'))
-  elementOpen("img", "ca27fc14-3257-4c56-af82-0e11b613e5c5", hoisted2)
+  elementOpen("img", "f8a88b57-5164-4b4c-9160-491db52f131d", hoisted2)
   elementClose("img")
   elementOpen("span")
     text("Home")
   elementClose("span")
 elementClose("a")
-elementOpen("nav", "9f168789-b788-476d-b13c-ddce2beaf4d6", hoisted3)
+elementOpen("nav", "404aaa0a-f324-47c3-9590-cddb17fcfaf4", hoisted3)
   elementOpen("a", null, null, "onclick", function ($event) {
     var $element = this;
   ctrl.go('/help')}, "class", ctrl.stateContains('help'))

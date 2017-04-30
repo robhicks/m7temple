@@ -9,6 +9,7 @@ var hoisted6 = ["class", "action-button", "src", "/img/gift-earned.svg", "alt", 
 var hoisted7 = ["class", "action-button", "src", "/img/help.svg", "alt", ""]
 var hoisted8 = ["class", "action-button", "src", "/img/gift-apply.svg", "alt", ""]
 var hoisted9 = ["id", "my-gifts", "src", "/img/my-gifts.png", "alt", ""]
+var hoisted10 = ["href", "https://github.com/robhicks/m7temple/issues"]
 var __target
 
 export function render (ctrl) {
@@ -73,7 +74,7 @@ elementOpen("working-on-gifts")
         Most actions involving gifts are available through the gifts button bar, highlighted with a green \
         rectangle. We'll explain below what the buttons are for and what they do. \
         ")
-    elementOpen("img", "be9995de-5684-4609-9255-9610751c73d2", hoisted1)
+    elementOpen("img", "c42bcc12-8c40-474c-bc59-8bd5f6736479", hoisted1)
     elementClose("img")
   elementClose("p")
   elementOpen("h2")
@@ -82,26 +83,26 @@ elementOpen("working-on-gifts")
   elementOpen("p")
     text(" \
         Add a gift by clicking on the green add button: ")
-    elementOpen("img", "3313189a-2d37-4c9c-ab3c-e5fd152ef7d3", hoisted2)
+    elementOpen("img", "1fae4225-3300-4459-abfd-23e2706e5d9a", hoisted2)
     elementClose("img")
     text(". \
         Once a gift has been added, it can be deleted by clicking the delete button: \
         ")
-    elementOpen("img", "5376ad88-2270-4d20-bb69-e4c39908fe89", hoisted3)
+    elementOpen("img", "84dd861d-3a89-4f87-bcfa-3699d26e3a89", hoisted3)
     elementClose("img")
     text(", or you can apply for certification by \
         clicking the award button. The award button can take three forms: 1) \
         ")
-    elementOpen("img", "d17a3bd8-af90-4677-950c-f146b8cf8e0b", hoisted4)
+    elementOpen("img", "c62a01df-f7cf-44de-a99a-c79fd13ada84", hoisted4)
     elementClose("img")
     text(" when you have added the gift as a \
         goal haven't yet applied for certification, 2) \
         ")
-    elementOpen("img", "2845e985-986f-413f-ac30-82edced5b024", hoisted5)
+    elementOpen("img", "c245ab10-3ac4-4cb8-a79c-9605e41f53e3", hoisted5)
     elementClose("img")
     text(" when certification is pending, and \
         3) ")
-    elementOpen("img", "09be8465-969e-455d-9d3d-d4a916cfc228", hoisted6)
+    elementOpen("img", "823b8f3d-b50a-4909-ba0a-bdbaf4dafdc0", hoisted6)
     elementClose("img")
     text(" when you have earned the gift. \
       ")
@@ -116,7 +117,7 @@ elementOpen("working-on-gifts")
     text(" \
         You can request for a gift by clicking the life perserver button: \
         ")
-    elementOpen("img", "46d4c34e-0343-4047-8371-6508d2ac9a39", hoisted7)
+    elementOpen("img", "c6a526fa-0de9-480d-9659-9870e38ffad2", hoisted7)
     elementClose("img")
     text(". Your request will be acknowledged and \
         someone with has earned the gift will be asked to contact you to help you achieve the gift. \
@@ -129,7 +130,7 @@ elementOpen("working-on-gifts")
     text(" \
         As mentioned above, you can get recognized for completing a gift by submitting an application. \
         You submit application by clicking the apply button: ")
-    elementOpen("img", "01a4412b-feff-4f89-9c65-b915d85564b2", hoisted8)
+    elementOpen("img", "b7de6bca-87a5-48b1-a9f0-0baa1dfd6198", hoisted8)
     elementClose("img")
     text(". \
         You will be asked to explain your experience in working on the gift and if you are willing to \
@@ -144,7 +145,7 @@ elementOpen("working-on-gifts")
         You can see your own gifts simply by clicking the My Gifts checkbox in the upper right part of \
         of the home view. \
         ")
-    elementOpen("img", "5c51dfb4-ee85-41a8-8b4b-347748322ebf", hoisted9)
+    elementOpen("img", "481f95e5-b2e6-4755-8733-3e86410561f2", hoisted9)
     elementClose("img")
   elementClose("p")
 elementClose("working-on-gifts")
@@ -155,15 +156,22 @@ elementOpen("technical-issues")
   elementOpen("p")
     text(" \
         While we would like to hope the site works flawlessly, it won't. But please don't give up. \
-        It has been designed to help us help yourself and others take important steps to work on \
+        It has been designed to help us help you and others take important steps to work on \
         temple and family history work. \
       ")
   elementClose("p")
   elementOpen("p")
     text(" \
-        When you run into technical issues, please let us know. You can do so by contacting a member of \
-        of the high priest group leadership and/or Rob Hicks. Contact information is in the ward directory. \
-      ")
+        When you run into technical issues, please let us know. You can do so by logging an issue \
+        on ")
+    elementOpen("a", "978bc1a0-2cd7-4e98-a5db-f7a31ed1643c", hoisted10)
+      text("Github")
+    elementClose("a")
+    text(". ")
+    elementOpen("b")
+      text("You don't need a Github \
+          account to log and track issues.")
+    elementClose("b")
   elementClose("p")
   elementOpen("p")
     text(" \
