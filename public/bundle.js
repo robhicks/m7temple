@@ -2273,7 +2273,7 @@ var GiftsAdmin = function (_HTMLElement) {
 
 customElements.define('gifts-admin', GiftsAdmin);
 
-var css$12 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\n:host {\n  font-size: 1em;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\ncontainer {\n  font-size: 1em;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nusers-search {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 1vh;\n}\nusers-search input {\n  flex: 6;\n}\nusers-search button {\n  flex: 1;\n  margin-left: 8px;\n}\nusers-list {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  overflow-y: auto;\n}\nuser-item {\n  display: flex;\n  padding: 1vh 1vw;\n}\nuser-item .info {\n  display: flex;\n  flex: 6;\n  flex-direction: column;\n}\nuser-item .info .title {\n  font-size: 17px;\n  font-weight: bold;\n}\nuser-item .info .description {\n  font-size: 16px;\n}\nuser-item .info .category {\n  font-size: 15px;\n}\nuser-item .action {\n  display: flex;\n  flex: 1;\n  justify-content: center;\n  align-items: center;\n}\nuser-item .action button {\n  margin-right: 2vw;\n}\nuser-item.even {\n  background-color: #efefef;\n}\nform[name='user'] {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] > * {\n  display: flex;\n  justify-content: space-between;\n}\nform[name='user'] > * label {\n  font-size: 18px;\n  flex: 1.25;\n}\nform[name='user'] > * input,\nform[name='user'] > * select {\n  flex: 3;\n  margin-bottom: 1vh;\n}\nform[name='user'] gift-editor-instructions {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] gift-editor-instructions label {\n  font-size: 18px;\n}\nform[name='user'] gift-editor-instructions #gift-editor {\n  height: 40vh;\n  margin-bottom: 1vh;\n}\nform[name='user'] button[name='cancel'] {\n  margin: 0 1vw;\n}\n.bold {\n  font-weight: bold;\n}\nuser-editor-actions {\n  justify-content: flex-start !important;\n}\n";
+var css$12 = ".button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box;\n}\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0;\n}\n.button.primary,\nbutton.primary,\ninput[type=\"submit\"].primary,\ninput[type=\"reset\"].primary,\ninput[type=\"button\"].primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0;\n}\n.button.primary:hover,\nbutton.primary:hover,\ninput[type=\"submit\"].primary:hover,\ninput[type=\"reset\"].primary:hover,\ninput[type=\"button\"].primary:hover,\n.button.primary:focus,\nbutton.primary:focus,\ninput[type=\"submit\"].primary:focus,\ninput[type=\"reset\"].primary:focus,\ninput[type=\"button\"].primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB;\n}\n.button.danger,\nbutton.danger,\ninput[type=\"submit\"].danger,\ninput[type=\"reset\"].danger,\ninput[type=\"button\"].danger {\n  color: #FFF;\n  background-color: rgba(255, 0, 0, 0.75);\n  border-color: #ff0000;\n}\n.button.danger:hover,\nbutton.danger:hover,\ninput[type=\"submit\"].danger:hover,\ninput[type=\"reset\"].danger:hover,\ninput[type=\"button\"].danger:hover,\n.button.danger:focus,\nbutton.danger:focus,\ninput[type=\"submit\"].danger:focus,\ninput[type=\"reset\"].danger:focus,\ninput[type=\"button\"].danger:focus {\n  color: #FFF;\n  background-color: #ff0000;\n  border-color: #ff0000;\n}\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  box-shadow: none;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  font-size: .8em;\n}\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0;\n}\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600;\n}\nfieldset {\n  padding: 0;\n  border-width: 0;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline;\n}\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal;\n}\n:host {\n  font-size: 1em;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\ncontainer {\n  font-size: 1em;\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\nusers-search {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 1vh;\n}\nusers-search input {\n  flex: 6;\n}\nusers-search button {\n  flex: 1;\n  margin-left: 8px;\n}\nusers-list {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  overflow-y: auto;\n}\nuser-item {\n  display: flex;\n  padding: 1vh 1vw;\n  min-height: 96px;\n}\nuser-item .info {\n  display: flex;\n  flex: 6;\n  flex-direction: column;\n}\nuser-item .info .title {\n  font-size: 17px;\n  font-weight: bold;\n}\nuser-item .info .description {\n  font-size: 16px;\n}\nuser-item .info .category {\n  font-size: 15px;\n}\nuser-item .action {\n  display: flex;\n  flex: 1;\n  justify-content: center;\n  align-items: center;\n}\nuser-item .action button {\n  margin-right: 2vw;\n}\nuser-item.even {\n  background-color: #efefef;\n}\nform[name='user'] {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] > * {\n  display: flex;\n  justify-content: space-between;\n}\nform[name='user'] > * label {\n  font-size: 18px;\n  flex: 1.25;\n}\nform[name='user'] > * input,\nform[name='user'] > * select {\n  flex: 3;\n  margin-bottom: 1vh;\n}\nform[name='user'] gift-editor-instructions {\n  display: flex;\n  flex-direction: column;\n}\nform[name='user'] gift-editor-instructions label {\n  font-size: 18px;\n}\nform[name='user'] gift-editor-instructions #gift-editor {\n  height: 40vh;\n  margin-bottom: 1vh;\n}\nform[name='user'] button[name='cancel'] {\n  margin: 0 1vw;\n}\n.bold {\n  font-weight: bold;\n}\nuser-editor-actions {\n  justify-content: flex-start !important;\n}\n";
 
 var hoisted1$11 = ["type", "text", "name", "usersearch", "placeholder", "Search ..."];
 var hoisted2$9 = ["name", "user"];
@@ -2301,13 +2301,15 @@ var hoisted23$2 = ["class", "display-name bold"];
 var hoisted24$1 = ["class", "email"];
 var hoisted25$1 = ["class", "group"];
 var hoisted26$1 = ["class", "action"];
-var hoisted27$1 = ["type", "button"];
+var hoisted27$1 = ["type", "button", "class", "danger"];
+var hoisted28$1 = ["type", "button"];
+var hoisted29$1 = ["type", "button"];
 var __target$12;
 
 function render$12(ctrl) {
   if (!ctrl.userEditor) {
     incrementalDom.elementOpen("users-search");
-    incrementalDom.elementOpen("input", "b2422d81-3f3d-492a-8d18-6859656c5f9a", hoisted1$11, "onkeyup", function ($event) {
+    incrementalDom.elementOpen("input", "e3b3df78-f745-406c-901b-d2680a4c5944", hoisted1$11, "onkeyup", function ($event) {
       var $element = this;
       ctrl.filterUsers(this.value);
     });
@@ -2316,12 +2318,12 @@ function render$12(ctrl) {
   }
   incrementalDom.elementOpen("users-list");
   if (ctrl.userEditor) {
-    incrementalDom.elementOpen("form", "d5947ce8-ed97-4fbf-a10b-1988aac70b0a", hoisted2$9);
+    incrementalDom.elementOpen("form", "1e09d29f-4eb4-4988-89d4-1586449b2846", hoisted2$9);
     incrementalDom.elementOpen("user-editor-name");
     incrementalDom.elementOpen("label");
     incrementalDom.text("Certificate Name:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "754c54ce-bbe6-4d32-af00-2956a246d1a8", hoisted3$9, "value", ctrl.user.name, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "8af02b3b-3c98-433a-bc1d-ede613100732", hoisted3$9, "value", ctrl.user.name, "onchange", function ($event) {
       var $element = this;
       ctrl.user.name = this.value;
     });
@@ -2331,7 +2333,7 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Display Name:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "98a437ea-8664-4dd5-a3ff-a90ce774f996", hoisted4$8, "name", ctrl.user.displayName, "value", ctrl.user.displayName, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "013ed280-2083-4ddd-bf35-032551ec8d8c", hoisted4$8, "name", ctrl.user.displayName, "value", ctrl.user.displayName, "onchange", function ($event) {
       var $element = this;
       ctrl.user.displayName = this.value;
     });
@@ -2341,7 +2343,7 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Email:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "21bf9a84-1cd7-404b-a02f-96e98fb5822c", hoisted5$8, "name", ctrl.user.email, "value", ctrl.user.email, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "6dd5894b-7fb8-4286-af3b-327b6cdc2353", hoisted5$8, "name", ctrl.user.email, "value", ctrl.user.email, "onchange", function ($event) {
       var $element = this;
       ctrl.user.email = this.value;
     });
@@ -2351,41 +2353,41 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Organization:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("select", "03422272-8b52-43f6-9bab-9df98dc093f7", hoisted6$8, "onchange", function ($event) {
+    incrementalDom.elementOpen("select", "88cc4aea-5fcb-4044-bc7e-b37524e9c8d8", hoisted6$8, "onchange", function ($event) {
       var $element = this;
       ctrl.user.group = this.value;
     });
-    incrementalDom.elementOpen("option", "bd061250-3f95-45df-8378-18f6310f55e4", hoisted7$7);
+    incrementalDom.elementOpen("option", "7cdb9d48-50f8-4d2e-9946-3ca1e250605d", hoisted7$7);
     incrementalDom.text("Select");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "0b6c3a94-5de3-4bf4-87c5-19fd4764882b", hoisted8$7, "selected", ctrl.user.group === 'be' ? true : null);
+    incrementalDom.elementOpen("option", "9e2da9fa-760c-4993-8c16-5c955efe761c", hoisted8$7, "selected", ctrl.user.group === 'be' ? true : null);
     incrementalDom.text("Beehive");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "faa04034-d55f-4262-a751-fa7de1919831", hoisted9$6, "selected", ctrl.user.group === 'dn' ? true : null);
+    incrementalDom.elementOpen("option", "a0615677-78ca-4f4d-bad6-032c4c84d524", hoisted9$6, "selected", ctrl.user.group === 'dn' ? true : null);
     incrementalDom.text("Deacon");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "6d8954db-3ea8-40dc-8340-6544cf61489f", hoisted10$6, "selected", ctrl.user.group === 'eq' ? true : null);
+    incrementalDom.elementOpen("option", "e2db312b-bc8f-47e5-9f51-558e32e6458d", hoisted10$6, "selected", ctrl.user.group === 'eq' ? true : null);
     incrementalDom.text("Elders");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "f5215fc9-a86f-457b-b845-4e4d6756c69f", hoisted11$5, "selected", ctrl.user.group === 'hp' ? true : null);
+    incrementalDom.elementOpen("option", "280030d6-a512-46b9-b518-ae3330888b05", hoisted11$5, "selected", ctrl.user.group === 'hp' ? true : null);
     incrementalDom.text("High Priest");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "9009579e-2805-48d5-a065-a9f86864a4d2", hoisted12$4, "selected", ctrl.user.group === 'll' ? true : null);
+    incrementalDom.elementOpen("option", "2fdcb9bc-42f3-4412-89c3-0971f6297d00", hoisted12$4, "selected", ctrl.user.group === 'll' ? true : null);
     incrementalDom.text("Laurel");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "90cb85b1-74c9-4f24-afc2-de37feac7470", hoisted13$4, "selected", ctrl.user.group === 'mm' ? true : null);
+    incrementalDom.elementOpen("option", "ca18a71f-78a0-48d3-9055-1d4994bda2c6", hoisted13$4, "selected", ctrl.user.group === 'mm' ? true : null);
     incrementalDom.text("Miamaid");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "afead5cf-9276-4f31-974e-c80e5b40c354", hoisted14$3, "selected", ctrl.user.group === 'pr' ? true : null);
+    incrementalDom.elementOpen("option", "7834ee4b-652c-4097-bb51-2de437eb8bd7", hoisted14$3, "selected", ctrl.user.group === 'pr' ? true : null);
     incrementalDom.text("Priest");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "4c61f873-54d7-48c3-b69d-ae07ff34b72f", hoisted15$3, "selected", ctrl.user.group === 'py' ? true : null);
+    incrementalDom.elementOpen("option", "de0500dd-6bcc-4a10-813b-2f398d13a936", hoisted15$3, "selected", ctrl.user.group === 'py' ? true : null);
     incrementalDom.text("Primary");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "7aaf2488-c434-410d-9da2-a81458b30ed8", hoisted16$2, "selected", ctrl.user.group === 'rs' ? true : null);
+    incrementalDom.elementOpen("option", "e7301868-e6b3-4571-b5e4-b1f5cf0a53cc", hoisted16$2, "selected", ctrl.user.group === 'rs' ? true : null);
     incrementalDom.text("Relief Society");
     incrementalDom.elementClose("option");
-    incrementalDom.elementOpen("option", "ab90da3b-e138-47d6-87ff-845460570b99", hoisted17$2, "selected", ctrl.user.group === 'tr' ? true : null);
+    incrementalDom.elementOpen("option", "57809fe5-bf71-4be8-bac2-c77892d34474", hoisted17$2, "selected", ctrl.user.group === 'tr' ? true : null);
     incrementalDom.text("Teacher");
     incrementalDom.elementClose("option");
     incrementalDom.elementClose("select");
@@ -2394,20 +2396,20 @@ function render$12(ctrl) {
     incrementalDom.elementOpen("label");
     incrementalDom.text("Admin:");
     incrementalDom.elementClose("label");
-    incrementalDom.elementOpen("input", "517dbe44-1bb4-410e-ae6e-4f1812893509", hoisted18$2, "checked", ctrl.user.admin ? true : null, "onchange", function ($event) {
+    incrementalDom.elementOpen("input", "b7dc6697-cbe4-4706-ad40-f0b8b0cdd334", hoisted18$2, "checked", ctrl.user.admin ? true : null, "onchange", function ($event) {
       var $element = this;
       ctrl.user.admin = this.checked;
     });
     incrementalDom.elementClose("input");
     incrementalDom.elementClose("user-admin");
     incrementalDom.elementOpen("user-editor-actions");
-    incrementalDom.elementOpen("button", "ec1714b8-f95a-415e-a095-6dc2f2d770cc", hoisted19$2, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "5c9aab26-fecd-4a49-bfa6-c50fc3d4619e", hoisted19$2, "onclick", function ($event) {
       var $element = this;
       ctrl.saveUser();
     });
     incrementalDom.text("Save");
     incrementalDom.elementClose("button");
-    incrementalDom.elementOpen("button", "1115c291-8d30-4b80-9d76-41c56d1f66ef", hoisted20$2, "onclick", function ($event) {
+    incrementalDom.elementOpen("button", "e3a6d742-480c-4762-8b19-72588d1e4f13", hoisted20$2, "onclick", function ($event) {
       var $element = this;
       ctrl.cancelEdit();
     });
@@ -2421,28 +2423,40 @@ function render$12(ctrl) {
     if (__target$12) {
       (__target$12.forEach ? __target$12 : Object.keys(__target$12)).forEach(function ($value, $item, $target) {
         var user = $value;
-        var $key = "efffee48-dc9f-4fe3-9543-833c7c79e9a5_" + $item;
+        var $key = "4287697e-0583-43cc-bf8f-7b81cf242f2c_" + $item;
         incrementalDom.elementOpen("user-item", $key, null, "class", $item % 2 ? 'odd' : 'even');
-        incrementalDom.elementOpen("div", "b68f823b-b0c3-4161-8e72-1348ff2308f2_" + $key, hoisted21$2);
+        incrementalDom.elementOpen("div", "36f1df45-e398-4bb5-b344-285f6b3f8dc2_" + $key, hoisted21$2);
         if (user.name) {
-          incrementalDom.elementOpen("div", "f22ce280-b8a3-4740-86b9-77b968332bc9_" + $key, hoisted22$2);
+          incrementalDom.elementOpen("div", "71704139-3bed-430d-af1f-3bc306adb737_" + $key, hoisted22$2);
           incrementalDom.text("" + user.name + "");
           incrementalDom.elementClose("div");
         }
-        incrementalDom.elementOpen("div", "4e547dd6-f951-4341-b0eb-c21f49df7858_" + $key, hoisted23$2);
+        incrementalDom.elementOpen("div", "86d8c4fa-b4dd-41c2-a561-31c28d63ddc4_" + $key, hoisted23$2);
         incrementalDom.text("" + user.displayName + "");
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "4b322c92-692e-4ef7-b226-51e291bbdca1_" + $key, hoisted24$1);
+        incrementalDom.elementOpen("div", "78389ac5-3030-40ca-807d-e72c14f90d8e_" + $key, hoisted24$1);
         incrementalDom.text("" + user.email + "");
         incrementalDom.elementClose("div");
         if (user.group) {
-          incrementalDom.elementOpen("div", "9bf3bb54-1c1f-49e9-9b6f-47a053c1ed7e_" + $key, hoisted25$1);
+          incrementalDom.elementOpen("div", "a40fee3b-9f4c-4e05-8250-09ab6412f682_" + $key, hoisted25$1);
           incrementalDom.text("" + ctrl.getGroupName(user) + "");
           incrementalDom.elementClose("div");
         }
         incrementalDom.elementClose("div");
-        incrementalDom.elementOpen("div", "c5d1a566-1378-405a-894d-0535bd906928_" + $key, hoisted26$1);
-        incrementalDom.elementOpen("button", "7c9e2747-5904-4b99-b16e-161d888af6c8_" + $key, hoisted27$1, "disabled", ctrl.userFormValid, "onclick", function ($event) {
+        incrementalDom.elementOpen("div", "ee7160aa-9fe5-480f-8a4d-6777c4fff0b8_" + $key, hoisted26$1);
+        incrementalDom.elementOpen("button", "0a1deacb-2f00-453e-8ba0-2c2d0d89c81f_" + $key, hoisted27$1, "disabled", ctrl.userFormValid, "onclick", function ($event) {
+          var $element = this;
+          ctrl.deleteUser($value);
+        });
+        incrementalDom.text("Remove");
+        incrementalDom.elementClose("button");
+        incrementalDom.elementOpen("button", "fa9e51f3-b2fb-470b-9781-1de9a47b54eb_" + $key, hoisted28$1, "disabled", ctrl.userFormValid, "onclick", function ($event) {
+          var $element = this;
+          ctrl.disableUser($value);
+        });
+        incrementalDom.text("Disable");
+        incrementalDom.elementClose("button");
+        incrementalDom.elementOpen("button", "afad93ce-b248-456e-be8a-71984cf3e2f5_" + $key, hoisted29$1, "disabled", ctrl.userFormValid, "onclick", function ($event) {
           var $element = this;
           ctrl.editUser($value);
         });

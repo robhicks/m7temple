@@ -50,6 +50,8 @@
       <div if="user.group" class="group">{ctrl.getGroupName(user)}</div>
     </div>
     <div class="action">
+      <button type="button" disabled="{ctrl.userFormValid}" class="danger" onclick="{ctrl.deleteUser($value)}">Remove</button>
+      <button type="button" disabled="{ctrl.userFormValid}" onclick="{ctrl.disableUser($value)}">Disable</button>
       <button type="button" disabled="{ctrl.userFormValid}" onclick="{ctrl.editUser($value)}">Edit</button>
     </div>
   </user-item>
