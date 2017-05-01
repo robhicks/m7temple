@@ -1689,15 +1689,15 @@ var hoisted11$3 = ["type", "button", "class", "primary", "name", "accept"];
 var __target$9;
 
 function render$9(ctrl) {
-  incrementalDom.elementOpen("section", "3789b3c5-c903-4971-8764-cadbda115247", hoisted1$9);
-  incrementalDom.elementOpen("input", "c84f1337-5535-4afd-82b2-0b5c4c23729d", hoisted2$7, "onkeyup", function ($event) {
+  incrementalDom.elementOpen("section", "a1788178-0e5b-41ca-b84c-1b84b1881f48", hoisted1$9);
+  incrementalDom.elementOpen("input", "60ed50ea-3d58-49a8-a6e2-86febd26d362", hoisted2$7, "onkeyup", function ($event) {
     var $element = this;
     ctrl.search.text = this.value;ctrl.filterAwards();
   });
   incrementalDom.elementClose("input");
-  incrementalDom.elementOpen("div", "bf6f5eab-92a4-47ac-aedf-55fb9a7049b3", hoisted3$7);
-  incrementalDom.elementOpen("label", "bde0e29b-9776-4151-95d5-d7486ad07c28", hoisted4$6);
-  incrementalDom.elementOpen("input", "bca069a0-29ab-47ca-a0ba-dd523c12a563", hoisted5$6, "onchange", function ($event) {
+  incrementalDom.elementOpen("div", "c874ae89-ae2b-489f-b547-e8d90c476dff", hoisted3$7);
+  incrementalDom.elementOpen("label", "255308c4-abe7-4d7d-bc27-2ac0621588a8", hoisted4$6);
+  incrementalDom.elementOpen("input", "3fa473c2-63ee-4724-a1e5-83907ca25868", hoisted5$6, "onchange", function ($event) {
     var $element = this;
     ctrl.search.type = this.value;ctrl.filterAwards();
   });
@@ -1706,8 +1706,8 @@ function render$9(ctrl) {
             All \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "ff569f9a-d82c-4790-bdb0-a156137a1502", hoisted6$6);
-  incrementalDom.elementOpen("input", "020670a0-380e-4a61-a5d8-5ca2dee027c2", hoisted7$5, "onchange", function ($event) {
+  incrementalDom.elementOpen("label", "27cd77a2-3787-4fc3-a0fd-51647bb95c4c", hoisted6$6);
+  incrementalDom.elementOpen("input", "320a39d1-ba37-48a7-be2c-937db8dafa0a", hoisted7$5, "onchange", function ($event) {
     var $element = this;
     ctrl.search.type = this.value;ctrl.filterAwards();
   });
@@ -1716,8 +1716,8 @@ function render$9(ctrl) {
             Pending \
           ");
   incrementalDom.elementClose("label");
-  incrementalDom.elementOpen("label", "390944ca-4caa-452d-8c82-089ff6f9cd7d", hoisted8$5);
-  incrementalDom.elementOpen("input", "97413699-ba90-4d4b-9ea8-f8cf1256f829", hoisted9$4, "onchange", function ($event) {
+  incrementalDom.elementOpen("label", "a517829d-e144-4a32-b23a-77fc200dad38", hoisted8$5);
+  incrementalDom.elementOpen("input", "ef996999-b393-4a9f-bf02-00cd4d8c2c10", hoisted9$4, "onchange", function ($event) {
     var $element = this;
     ctrl.search.type = this.value;ctrl.filterAwards();
   });
@@ -1729,12 +1729,12 @@ function render$9(ctrl) {
   incrementalDom.elementClose("div");
   incrementalDom.elementClose("section");
   if (ctrl.awards.length > 0) {
-    incrementalDom.elementOpen("section", "d6491b43-2656-4e98-b342-5f8bf14f650a", hoisted10$4);
+    incrementalDom.elementOpen("section", "3516d0d7-6ad6-45f4-8b66-3d52b4f5bd3c", hoisted10$4);
     __target$9 = ctrl.awards;
     if (__target$9) {
       (__target$9.forEach ? __target$9 : Object.keys(__target$9)).forEach(function ($value, $item, $target) {
         var award = $value;
-        var $key = "69caa979-948f-4125-baa6-ad10d8878b5f_" + $item;
+        var $key = "ddb3eec9-a443-431a-8562-1ea0dd6f44bd_" + $item;
         incrementalDom.elementOpen("div", $key, null, "class", $item % 2 ? 'row odd' : 'row even');
         incrementalDom.elementOpen("user");
         incrementalDom.elementOpen("name");
@@ -1790,28 +1790,32 @@ function render$9(ctrl) {
           incrementalDom.elementClose("value");
         }
         incrementalDom.elementClose("share");
-        incrementalDom.elementOpen("story");
-        incrementalDom.elementOpen("name");
-        incrementalDom.text("Story");
-        incrementalDom.elementClose("name");
-        incrementalDom.elementOpen("value");
-        incrementalDom.text("" + (award.story ? award.story : '') + "");
-        incrementalDom.elementClose("value");
-        incrementalDom.elementClose("story");
-        incrementalDom.elementOpen("actions");
-        incrementalDom.elementOpen("name");
-        incrementalDom.elementClose("name");
-        incrementalDom.elementOpen("value");
-        if (award.type === 'pending') {
-          incrementalDom.elementOpen("button", "d3088459-6340-4e52-9d54-a4b23e3341dc_" + $key, hoisted11$3, "onclick", function ($event) {
-            var $element = this;
-            ctrl.grantAward(award);
-          });
-          incrementalDom.text("Accept");
-          incrementalDom.elementClose("button");
+        if (award.story) {
+          incrementalDom.elementOpen("story");
+          incrementalDom.elementOpen("name");
+          incrementalDom.text("Story");
+          incrementalDom.elementClose("name");
+          incrementalDom.elementOpen("value");
+          incrementalDom.text("" + (award.story ? award.story : '') + "");
+          incrementalDom.elementClose("value");
+          incrementalDom.elementClose("story");
         }
-        incrementalDom.elementClose("value");
-        incrementalDom.elementClose("actions");
+        if (award.type === 'pending') {
+          incrementalDom.elementOpen("actions");
+          incrementalDom.elementOpen("name");
+          incrementalDom.elementClose("name");
+          incrementalDom.elementOpen("value");
+          if (award.type === 'pending') {
+            incrementalDom.elementOpen("button", "6ae9a514-03fa-46f8-95fa-b8f74929192c_" + $key, hoisted11$3, "onclick", function ($event) {
+              var $element = this;
+              ctrl.grantAward(award);
+            });
+            incrementalDom.text("Accept");
+            incrementalDom.elementClose("button");
+          }
+          incrementalDom.elementClose("value");
+          incrementalDom.elementClose("actions");
+        }
         incrementalDom.elementClose("div");
       }, this);
     }
@@ -3227,7 +3231,6 @@ customElements.define('app-router', AppRouter);
 
 var socket = socketCluster.connect();
 
-// const idbAdapter = new LokiIndexedAdapter('loki');
 var db = new loki('m7temple.db', { autosave: true });
 
 var updateDbChannel = socket.subscribe('updateDbChannel');

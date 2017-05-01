@@ -39,11 +39,11 @@
       <value if="award.share">Yes</value>
       <value if="!award.share">No</value>
     </share>
-    <story>
+    <story if="award.story">
       <name>Story</name>
       <value>{award.story ? award.story : ''}</value>
     </story>
-    <actions>
+    <actions if="award.type==='pending'">
       <name></name>
       <value>
         <button if="award.type === 'pending'" type="button" class="primary" name="accept" onclick="{ctrl.grantAward(award)}">Accept</button>
