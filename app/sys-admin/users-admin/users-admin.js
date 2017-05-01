@@ -41,6 +41,10 @@ class UsersAdmin extends HTMLElement {
     this._updateView();
   }
 
+  deleteUser(_user) {
+    console.log("_user", _user)
+  }
+
   disconnectedCallback() {
     this.dv.removeFilters();
   }
