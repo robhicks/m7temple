@@ -6,6 +6,7 @@ import {router} from '../../app-router/app-router.js';
 import {user} from '../../user.js';
 import {debounce} from '../../utilities.js';
 import {db} from '../../db.js';
+import {RbhModal} from '../../rbh-modal/rbh-modal.js';
 
 class UsersAdmin extends HTMLElement {
   constructor() {
@@ -42,7 +43,26 @@ class UsersAdmin extends HTMLElement {
   }
 
   deleteUser(_user) {
-    console.log("_user", _user)
+    let modal = new RbhModal();
+    modal.heading = 'Delete: ' + (_user.displayName && _user.displayName !== '' ? _user.displayName : _user.email);
+    modal.body = 'Deleting a user cannot be undone. All data associated with the user will be removed, including any added, pending and earned awards.';
+    modal.primary = 'OK';
+    modal.cancel = 'Cancel';
+    document.querySelector('body').appendChild(modal);
+
+     let modalEventHandler = (evt) => {
+      if (evt.detail === 'primary') {
+        let awards = db.getCollection('awards');
+        awards.setChangesApi(true);
+        awards.findAndRemove({userId: _user.id});
+        this.uColl.remove(_user);
+        modal.remove();
+      } else {
+        document.removeEventListener('rbhModalButtonClick', modalEventHandler);
+        modal.remove();
+      }
+    };
+    document.addEventListener('rbhModalButtonClick', modalEventHandler);
   }
 
   disconnectedCallback() {
