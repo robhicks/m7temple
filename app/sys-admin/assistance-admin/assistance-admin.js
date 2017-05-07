@@ -12,17 +12,6 @@ class AssistanceAdmin extends HTMLElement {
     this.element = this.shadowRoot.querySelector('container');
     this.search = {};
 
-    this._joinData = () => {
-      let tickets = this.tdv.data();
-      let gifts = this.sdv.data();
-      let users = this.udv.data();
-      tickets.forEach((ticket) => {
-        ticket.gift = gifts.find((gift) => gift.id === ticket.giftId);
-        ticket.user = users.find((user) => user.id === ticket.userId);
-      });
-      return tickets;
-    };
-
     this._updateView = () => {
       this.tickets = this._joinData();
       if (this.element) patch(this.element, render, this);
@@ -48,9 +37,9 @@ class AssistanceAdmin extends HTMLElement {
 
     this.tColl.setChangesApi(true);
 
-    this.sdv = this.sColl.addDynamicView('gifts');
-    this.tdv = this.tColl.addDynamicView('tickets');
-    this.udv = this.uColl.addDynamicView('users');
+    this.sdv = this.sColl.getDynamicView('gifts') || this.sColl.addDynamicView('gifts');
+    this.tdv = this.tColl.getDynamicView('tickets') || this.tColl.addDynamicView('tickets');
+    this.udv = this.uColl.getDynamicView('users') || this.uColl.addDynamicView('users');
 
     document.addEventListener('ticketsChanged', this._updateView.bind(this));
     document.addEventListener('giftsChanged', this._updateView.bind(this));
@@ -102,6 +91,17 @@ class AssistanceAdmin extends HTMLElement {
       });
     }
     this._updateView();
+  }
+
+  _joinData() {
+    let tickets = this.tdv.data();
+    let gifts = this.sdv.data();
+    let users = this.udv.data();
+    tickets.forEach((ticket) => {
+      ticket.gift = gifts.find((gift) => gift.id === ticket.giftId);
+      ticket.user = users.find((user) => user.id === ticket.userId);
+    });
+    return tickets;
   }
 
   open(ticket) {

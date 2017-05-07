@@ -32,7 +32,7 @@ class GiftsAdmin extends HTMLElement {
   connectedCallback() {
     this.sColl = db.getCollection('gifts');
     this.sColl.setChangesApi(true);
-    this.dv = this.sColl.addDynamicView('gifts');
+    this.dv = this.sColl.getDynamicView('gifts') || this.sColl.addDynamicView('gifts');
     this.innerHTML = `<style>${css}</style><container></container>`;
     this.element = this.querySelector('container');
     this._updateView();

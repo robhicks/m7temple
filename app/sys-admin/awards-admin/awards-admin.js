@@ -1,8 +1,9 @@
-import css from './awards-admin.less';
-import {render} from './template.js';
-import {patch} from 'incremental-dom';
-import isJson from './isJson.js';
+const socket = socketCluster.connect();
 import {db} from '../../db.js';
+import {patch} from 'incremental-dom';
+import {render} from './template.js';
+import css from './awards-admin.less';
+import isJson from './isJson.js';
 
 class AwardsAdmin extends HTMLElement {
   constructor() {
@@ -41,9 +42,9 @@ class AwardsAdmin extends HTMLElement {
     this.aColl.setChangesApi(true);
     this.gColl.setChangesApi(true);
 
-    this.adv = this.aColl.addDynamicView('awards');
-    this.gdv = this.gColl.addDynamicView('gifts');
-    this.udv = this.uColl.addDynamicView('users');
+    this.adv = this.aColl.getDynamicView('awards') || this.aColl.addDynamicView('awards');
+    this.gdv = this.gColl.getDynamicView('gifts') || this.gColl.addDynamicView('gifts');
+    this.udv = this.uColl.getDynamicView('users') || this.uColl.addDynamicView('users');
 
     this._updateView();
   }

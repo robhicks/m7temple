@@ -15,7 +15,7 @@ class CollapsablePanel extends HTMLElement {
 
   add(giftId, addAlert = true, type = 'added', share = false, help = false) {
     this.gift = this.gColl.findOne({id: giftId});
-    let award = this.aColl.findOne({giftId, userId: user.id});
+    let award = this.aColl.findOne({userId: user.id, giftId});
     if (this.gift && award && !this.gift.multiple) {
       if (addAlert) this.addAlert('This gift was not added to your list of gifts because it has already been added to your list. To see your list, check the My Gifts checkbox.', 'bad');
     } else if (this.gift && !award) {
@@ -95,8 +95,8 @@ class CollapsablePanel extends HTMLElement {
     this.aColl.setChangesApi(true);
     this.gColl.setChangesApi(true);
     this.tColl.setChangesApi(true);
-    this.adv = this.aColl.addDynamicView('awards');
-    this.gdv = this.gColl.addDynamicView('gifts');
+    this.adv = this.aColl.getDynamicView('awards') || this.aColl.addDynamicView('awards');
+    this.gdv = this.gColl.getDynamicView('gifts') || this.gColl.addDynamicView('gifts');
 
     document.addEventListener('awardsChanged', this._updateView.bind(this));
     document.addEventListener('giftsChanged', this._updateView.bind(this));

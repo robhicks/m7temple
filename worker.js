@@ -1,11 +1,12 @@
 const db = require('./db').db;
+const emailer = require('./emailer');
 const express = require("express");
+const getUsers = require('./db').getUsers;
 const join = require('path').join;
 const logger = require('morgan');
 const path = require('path');
 const updateDb = require('./db.js').updateDb;
 const util = require('util');
-const getUsers = require('./db').getUsers;
 
 module.exports.run = (worker) => {
   console.info('   >> Worker PID:', process.pid);
@@ -72,6 +73,8 @@ module.exports.run = (worker) => {
     socket.on('loadDatabase', () => {
       socket.emit('loadDatabase', db.serialize());
     });
+
+    socket.on('sendEmail', (data) => emailer(data));
 
     socket.on('logout', (data) => {
       // console.log("data", data)

@@ -38,7 +38,7 @@ class UsersAdmin extends HTMLElement {
   connectedCallback() {
     this.uColl = db.getCollection('users');
     this.uColl.setChangesApi(true);
-    this.dv = this.uColl.addDynamicView('users');
+    this.dv = this.uColl.getDynamicView('users') || this.uColl.addDynamicView('users');
     this._updateView();
   }
 

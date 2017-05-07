@@ -32,13 +32,13 @@ class HomeAuthenticated extends HTMLElement {
     this.shadowRoot.addEventListener('click', this.anchorClickHandler.bind(this));
     this.element = this.shadowRoot.querySelector('div#home');
     this.aColl = db.getCollection('awards');
-    this.sColl = db.getCollection('gifts');
+    this.gColl = db.getCollection('gifts');
 
     this.aColl.setChangesApi(true);
-    this.sColl.setChangesApi(true);
+    this.gColl.setChangesApi(true);
 
-    this.adv = this.aColl.addDynamicView('awards');
-    this.sdv = this.sColl.addDynamicView('gifts');
+    this.adv = this.aColl.getDynamicView('awards') || this.aColl.addDynamicView('awards');
+    this.sdv = this.gColl.getDynamicView('gifts') || this.gColl.addDynamicView('gifts');
 
     document.addEventListener('userUnauthenticated', () => {router.navigate('/login');});
     document.addEventListener('awardsChanged', this._updateView.bind(this));
