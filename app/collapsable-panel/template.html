@@ -17,7 +17,7 @@
       <button type="button" name="add" onclick="{ctrl.showTicketEditor(ctrl.iid)}">
         <img src="/img/help.svg" alt="">
       </button>
-      <button type="button" name="shared" if="ctrl.shared && ctrl.earned" onclick="{ctrl.showSharedExperiences(ctrl.iid)}">
+      <button type="button" name="shared" if="ctrl.achievements > 0" onclick="{ctrl.showSharedExperiences(ctrl.iid)}">
         <img src="/img/shared-with.svg" alt="">
       </button>
       <button if="ctrl.added || ctrl.pending || ctrl.earned" type="button" name="delete" onclick="{ctrl.delete(ctrl.iid)}">
