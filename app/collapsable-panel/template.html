@@ -17,6 +17,9 @@
       <button type="button" name="add" onclick="{ctrl.showTicketEditor(ctrl.iid)}">
         <img src="/img/help.svg" alt="">
       </button>
+      <button type="button" name="shared" if="ctrl.shared && ctrl.earned" onclick="{ctrl.showSharedExperiences(ctrl.iid)}">
+        <img src="/img/shared-with.svg" alt="">
+      </button>
       <button if="ctrl.added || ctrl.pending || ctrl.earned" type="button" name="delete" onclick="{ctrl.delete(ctrl.iid)}">
         <img src="/img/delete.svg" alt="">
       </button>
@@ -53,6 +56,14 @@
     </section>
   </achievements-wrapper>
   <alert if="ctrl.showAlert" class="{ctrl.alertClass}">{ctrl.alertText}</alert>
+
+  <stories if="ctrl.showStories">
+    <story each="story in ctrl.stories">
+      <text>{story.text}</text>
+      <username>{story.username}</username>
+    </story>
+  </stories>
+
   <help-request if="ctrl.showHelpEditor">
     <textarea name="request" rows="8" placeholder="Please tell us the nature of the help you need."></textarea>
     <div class="button-group">

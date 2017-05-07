@@ -15,26 +15,26 @@ elementClose("h1")
 elementOpen("h3")
   text("Select a Provider")
 elementClose("h3")
-elementOpen("div", "6450d24b-1dd7-4789-ac80-0385c1fc8481", hoisted1)
-  elementOpen("a", "cd877e64-5d2d-46ee-ad16-3361f41a356b", hoisted2, "onclick", function ($event) {
+elementOpen("div", "7d8d3932-e4a7-4c16-8715-02e8f8575e99", hoisted1)
+  elementOpen("a", "c8d63832-4406-4d7f-8e5f-871e76e42962", hoisted2, "onclick", function ($event) {
     var $element = this;
   ctrl.hello('facebook', {display: 'page'}).login()})
-    elementOpen("img", "07169705-a23b-4fbe-a69e-412951a9aa53", hoisted3)
+    elementOpen("img", "41ea8096-2db5-48e1-916e-744b9e37e1c1", hoisted3)
     elementClose("img")
     elementOpen("span")
       text("Facebook")
     elementClose("span")
   elementClose("a")
-  elementOpen("a", "d57895a3-a90a-4a38-9231-642c8501318c", hoisted4, "onclick", function ($event) {
+  elementOpen("a", "14844fe5-54b1-4f1d-b7ea-db5a9ea44fbc", hoisted4, "onclick", function ($event) {
     var $element = this;
   ctrl.hello('google', {display: 'page'}).login()})
-    elementOpen("img", "589a3281-5d0f-4b68-b8ff-8ceadb495544", hoisted5)
+    elementOpen("img", "73114230-933e-4fb9-abc1-cd59cc69a16e", hoisted5)
     elementClose("img")
     elementOpen("span")
       text("Google")
     elementClose("span")
   elementClose("a")
-  elementOpen("a", "652e0824-e73d-4032-b340-35387c6234ad", hoisted6)
+  elementOpen("a", "52a5b4db-964d-4b96-a3d8-5612a81ea940", hoisted6)
     text("Privacy Policy")
   elementClose("a")
 elementClose("div")

@@ -14,86 +14,96 @@ var hoisted11 = ["type", "button", "name", "pending"]
 var hoisted12 = ["src", "/img/gift-pending.svg", "alt", ""]
 var hoisted13 = ["type", "button", "name", "add"]
 var hoisted14 = ["src", "/img/help.svg", "alt", ""]
-var hoisted15 = ["type", "button", "name", "delete"]
-var hoisted16 = ["src", "/img/delete.svg", "alt", ""]
-var hoisted17 = ["class", "achievements"]
-var hoisted18 = ["type", "button", "class", "collapser", "name", "collapser"]
-var hoisted19 = ["class", "description"]
-var hoisted20 = ["type", "button", "name", "close"]
-var hoisted21 = ["src", "/img/close.svg", "alt", ""]
-var hoisted22 = ["name", "achievements"]
-var hoisted23 = ["name", "request", "rows", "8", "placeholder", "Please tell us the nature of the help you need."]
-var hoisted24 = ["class", "button-group"]
-var hoisted25 = ["type", "button", "class", "primary"]
-var hoisted26 = ["href", "javascript:void(0)"]
-var hoisted27 = ["name", "achievement", "rows", "8"]
-var hoisted28 = ["class", "control-container"]
-var hoisted29 = ["type", "checkbox", "name", "share", "checked", ""]
+var hoisted15 = ["type", "button", "name", "shared"]
+var hoisted16 = ["src", "/img/shared-with.svg", "alt", ""]
+var hoisted17 = ["type", "button", "name", "delete"]
+var hoisted18 = ["src", "/img/delete.svg", "alt", ""]
+var hoisted19 = ["class", "achievements"]
+var hoisted20 = ["type", "button", "class", "collapser", "name", "collapser"]
+var hoisted21 = ["class", "description"]
+var hoisted22 = ["type", "button", "name", "close"]
+var hoisted23 = ["src", "/img/close.svg", "alt", ""]
+var hoisted24 = ["name", "achievements"]
+var hoisted25 = ["name", "request", "rows", "8", "placeholder", "Please tell us the nature of the help you need."]
+var hoisted26 = ["class", "button-group"]
+var hoisted27 = ["type", "button", "class", "primary"]
+var hoisted28 = ["href", "javascript:void(0)"]
+var hoisted29 = ["name", "achievement", "rows", "8"]
 var hoisted30 = ["class", "control-container"]
-var hoisted31 = ["type", "checkbox", "name", "helping", "checked", ""]
-var hoisted32 = ["class", "button-group"]
-var hoisted33 = ["type", "button", "class", "primary"]
-var hoisted34 = ["href", "javascript:void(0)"]
-var hoisted35 = ["class", "html"]
+var hoisted31 = ["type", "checkbox", "name", "share", "checked", ""]
+var hoisted32 = ["class", "control-container"]
+var hoisted33 = ["type", "checkbox", "name", "helping", "checked", ""]
+var hoisted34 = ["class", "button-group"]
+var hoisted35 = ["type", "button", "class", "primary"]
+var hoisted36 = ["href", "javascript:void(0)"]
+var hoisted37 = ["class", "html"]
 var __target
 
 export function render (ctrl) {
-elementOpen("div", "420c56cd-1ab5-4d6a-8311-fe1db0a68fb8", hoisted1)
-  elementOpen("div", "20ff96e0-555f-4601-a622-05c65d1c67a7", hoisted2)
-    elementOpen("div", "3d06aedc-95d0-44e9-a2a2-de9b8cbb5ad1", hoisted3)
+elementOpen("div", "a2563804-cf46-43eb-93e5-b919db05b8f7", hoisted1)
+  elementOpen("div", "f47f8a3a-6783-4c25-8120-c0e59c670ae3", hoisted2)
+    elementOpen("div", "54c1087f-04c2-4876-9e7e-e74909ef592a", hoisted3)
       text("" + (ctrl.heading) + "")
     elementClose("div")
-    elementOpen("div", "42a2045d-ff08-4c71-becf-2f37e9c5ec08", hoisted4)
+    elementOpen("div", "d705a89c-9c6e-400b-825c-761852089a4f", hoisted4)
       if (!ctrl.added && !ctrl.earned && !ctrl.pending && !ctrl.multiple) {
-        elementOpen("button", "f46a6e54-1892-485b-b7a8-f0733f78de32", hoisted5, "onclick", function ($event) {
+        elementOpen("button", "16645ea8-0a82-4dff-aadc-23c65e084a09", hoisted5, "onclick", function ($event) {
           var $element = this;
         ctrl.add(ctrl.iid)})
-          elementOpen("img", "95ba2da7-e5de-445f-a1d6-c127b600584b", hoisted6)
+          elementOpen("img", "10d3a098-93c7-4eeb-816b-7bc5ea6ecae0", hoisted6)
           elementClose("img")
         elementClose("button")
       }
       if (!ctrl.earned && !ctrl.multiple && !ctrl.pending) {
-        elementOpen("button", "bb07b22a-5b56-4bf3-b9cb-7a440a82dc4b", hoisted7, "onclick", function ($event) {
+        elementOpen("button", "1f972f1d-f19f-4bf3-8f7b-69a60055440f", hoisted7, "onclick", function ($event) {
           var $element = this;
         ctrl.addAndShowAchievementEditor(ctrl.iid)})
-          elementOpen("img", "c8f40777-a824-494f-8ab4-ce59aaaf6a7f", hoisted8)
+          elementOpen("img", "46de20ae-2331-4854-bbdd-ea42a300d445", hoisted8)
           elementClose("img")
         elementClose("button")
       }
       if (ctrl.earned) {
-        elementOpen("button", "04812530-18cf-4297-a082-f93e5bfe3137", hoisted9, "onclick", function ($event) {
+        elementOpen("button", "06b997a2-20f8-44ab-8f60-cf6d7447b373", hoisted9, "onclick", function ($event) {
           var $element = this;
         ctrl.showAwards(ctrl.iid, 'earned')})
-          elementOpen("img", "dd231fd6-d25f-49a1-967b-60d3c6fb5a8a", hoisted10)
+          elementOpen("img", "735b3e6a-4721-43bd-813f-8251d64a7349", hoisted10)
           elementClose("img")
         elementClose("button")
       }
       if (ctrl.pending) {
-        elementOpen("button", "d027476e-7cbf-4ab6-b182-ddd1d293b63f", hoisted11, "onclick", function ($event) {
+        elementOpen("button", "4d18d810-7887-4cff-bffc-b63104442c7d", hoisted11, "onclick", function ($event) {
           var $element = this;
         ctrl.showAwards(ctrl.iid, 'pending')})
-          elementOpen("img", "633b00c7-a2ef-42aa-827a-16eb5636254d", hoisted12)
+          elementOpen("img", "f3fc9583-d9c2-41fb-9b60-79ace852cb5e", hoisted12)
           elementClose("img")
         elementClose("button")
       }
-      elementOpen("button", "56fc5f88-5237-4cce-816d-e5050c51d13a", hoisted13, "onclick", function ($event) {
+      elementOpen("button", "82c60d1b-69ea-4bea-bd3d-dd1a0cb8008a", hoisted13, "onclick", function ($event) {
         var $element = this;
       ctrl.showTicketEditor(ctrl.iid)})
-        elementOpen("img", "69fe07c3-a7fb-403b-ba2d-33cb1621e43f", hoisted14)
+        elementOpen("img", "04e6c080-3429-4c0c-b8f5-bb1fbef7335a", hoisted14)
         elementClose("img")
       elementClose("button")
-      if (ctrl.added || ctrl.pending || ctrl.earned) {
-        elementOpen("button", "442c85dc-d7bf-4d0e-bf3d-159900a3ec42", hoisted15, "onclick", function ($event) {
+      if (ctrl.shared && ctrl.earned) {
+        elementOpen("button", "e7984aa6-2ab0-492a-9c1b-0aa8fc27b51f", hoisted15, "onclick", function ($event) {
           var $element = this;
-        ctrl.delete(ctrl.iid)})
-          elementOpen("img", "985de966-5044-4bd4-987f-b60357c08b15", hoisted16)
+        ctrl.showSharedExperiences(ctrl.iid)})
+          elementOpen("img", "2be146ed-a39c-4afe-a995-1a4c9c95d6d4", hoisted16)
           elementClose("img")
         elementClose("button")
       }
-      elementOpen("button", "34c75c83-f09a-47f5-938d-601721db4e1e", hoisted17)
+      if (ctrl.added || ctrl.pending || ctrl.earned) {
+        elementOpen("button", "d7c3a9df-62f2-4de1-83f3-8cf1d62b8449", hoisted17, "onclick", function ($event) {
+          var $element = this;
+        ctrl.delete(ctrl.iid)})
+          elementOpen("img", "e616c94e-121b-455d-9ff0-d39dfd3f0ffa", hoisted18)
+          elementClose("img")
+        elementClose("button")
+      }
+      elementOpen("button", "e629ab2f-a718-4d6b-a2e1-aa980fca4aa7", hoisted19)
         text("" + (ctrl.achievements) + "")
       elementClose("button")
-      elementOpen("button", "6affcc3d-d764-477d-8cf0-0c4d93ef6c45", hoisted18, "onclick", function ($event) {
+      elementOpen("button", "4849b566-f0b7-4251-b710-61c69ce206c7", hoisted20, "onclick", function ($event) {
         var $element = this;
       ctrl.toggle()})
         if (!ctrl.collapsed) {
@@ -109,7 +119,7 @@ elementOpen("div", "420c56cd-1ab5-4d6a-8311-fe1db0a68fb8", hoisted1)
       elementClose("button")
     elementClose("div")
   elementClose("div")
-  elementOpen("div", "b0d05da2-2e62-4712-93f9-0800a9a6193a", hoisted19)
+  elementOpen("div", "505513fe-4644-4bfb-9602-dbfc7586e79a", hoisted21)
     text("" + (ctrl.description) + "")
   elementClose("div")
   if (ctrl.showAchievements) {
@@ -118,10 +128,10 @@ elementOpen("div", "420c56cd-1ab5-4d6a-8311-fe1db0a68fb8", hoisted1)
         elementOpen("title")
           text("Achievements:")
         elementClose("title")
-        elementOpen("button", "2925aad3-7c5d-472e-80b7-30e8ecb502d9", hoisted20, "onclick", function ($event) {
+        elementOpen("button", "4f7bc8a4-16fe-4a24-b627-ab1c24830435", hoisted22, "onclick", function ($event) {
           var $element = this;
         ctrl.hideAchievements(ctrl.iid)})
-          elementOpen("img", "7a4f6079-bde0-4c4f-bf00-ea60ff3649a1", hoisted21)
+          elementOpen("img", "6823f346-311f-426b-90ff-69a17754aa43", hoisted23)
           elementClose("img")
         elementClose("button")
       elementClose("header")
@@ -129,8 +139,8 @@ elementOpen("div", "420c56cd-1ab5-4d6a-8311-fe1db0a68fb8", hoisted1)
       if (__target) {
         ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
           var item = $value
-          var $key = "0efdc131-1eee-4bc0-a32a-7f803195d5a5_" + $item
-          elementOpen("section", $key, hoisted22)
+          var $key = "afce6b9f-4449-41f4-9e36-32d27008475e_" + $item
+          elementOpen("section", $key, hoisted24)
             if (ctrl.awards[item].pending && parseInt(ctrl.awards[item].giftId, 10) === parseInt(ctrl.iid, 10)) {
               elementOpen("story")
                 text("" + (ctrl.awards[item].pending.story) + "")
@@ -167,17 +177,36 @@ elementOpen("div", "420c56cd-1ab5-4d6a-8311-fe1db0a68fb8", hoisted1)
       text("" + (ctrl.alertText) + "")
     elementClose("alert")
   }
+  if (ctrl.showStories) {
+    elementOpen("stories")
+      __target = ctrl.stories
+      if (__target) {
+        ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
+          var story = $value
+          var $key = "262db998-9a41-49af-b59b-2ce1a093d51a_" + $item
+          elementOpen("story", $key)
+            elementOpen("text")
+              text("" + (story.text) + "")
+            elementClose("text")
+            elementOpen("username")
+              text("" + (story.username) + "")
+            elementClose("username")
+          elementClose("story")
+        }, this)
+      }
+    elementClose("stories")
+  }
   if (ctrl.showHelpEditor) {
     elementOpen("help-request")
-      elementOpen("textarea", "1b503a33-1d22-4eaf-a54f-26e28e4a37c8", hoisted23)
+      elementOpen("textarea", "76085b7e-3610-4be3-8d4b-2257e76d7743", hoisted25)
       elementClose("textarea")
-      elementOpen("div", "bef55d7b-8309-45d3-a570-3d5691f396e5", hoisted24)
-        elementOpen("button", "eb37e316-62d9-4e3f-9805-1c83f325fdc5", hoisted25, "onclick", function ($event) {
+      elementOpen("div", "5675e641-1e2d-4748-9dc0-521ad9d275a9", hoisted26)
+        elementOpen("button", "6ba72e5b-657f-47e6-a4aa-501c2ad01945", hoisted27, "onclick", function ($event) {
           var $element = this;
         ctrl.addTicket()})
           text("Make Request")
         elementClose("button")
-        elementOpen("a", "a1f03d7a-002a-4afd-b8b4-f6b4d71cb9a9", hoisted26, "onclick", function ($event) {
+        elementOpen("a", "4f373764-4bd7-4c9c-899d-2f405f376656", hoisted28, "onclick", function ($event) {
           var $element = this;
         ctrl._cancelEdit()})
           text("Cancel")
@@ -198,29 +227,29 @@ elementOpen("div", "420c56cd-1ab5-4d6a-8311-fe1db0a68fb8", hoisted1)
               someone will review and approve it. Please share your experience, and sign up to help others. \
             ")
       elementClose("p")
-      elementOpen("textarea", "f5790e0f-5fa9-416f-abe1-e3a536641e23", hoisted27)
+      elementOpen("textarea", "f8061ed7-275f-4cbf-93c8-5c11541c0de5", hoisted29)
       elementClose("textarea")
-      elementOpen("div", "2ae82cee-9501-4729-b8da-fc76ed9f3583", hoisted28)
-        elementOpen("input", "7bf01de3-8296-420f-bf3d-dd6b31457467", hoisted29)
+      elementOpen("div", "26b2f1ea-6e03-4f67-9ecd-7d32e3d85dfd", hoisted30)
+        elementOpen("input", "60df6ed2-556f-498d-8fa9-d7c45a517605", hoisted31)
         elementClose("input")
         elementOpen("span")
           text("Yes, I'm willing to share my experience")
         elementClose("span")
       elementClose("div")
-      elementOpen("div", "29c34b9f-bf3f-4a1a-8986-9411e60cff40", hoisted30)
-        elementOpen("input", "863d8dfc-41d6-4ed8-bdf6-fe1dda67722c", hoisted31)
+      elementOpen("div", "a60fc664-15f3-43f2-bd3a-8d8bcc1b81f4", hoisted32)
+        elementOpen("input", "29552c61-065c-4adc-9373-62f7cbf09e23", hoisted33)
         elementClose("input")
         elementOpen("span")
           text("Yes, I'm willing to help others achieve this gift.")
         elementClose("span")
       elementClose("div")
-      elementOpen("div", "7687a320-4a4d-4c7b-8899-96d5d40411d9", hoisted32)
-        elementOpen("button", "d1684c0b-2ee3-4282-9929-3be054cb0468", hoisted33, "onclick", function ($event) {
+      elementOpen("div", "3cfae6aa-7d5d-4e80-ae4d-739623085fd8", hoisted34)
+        elementOpen("button", "1a95d48f-7d25-41c5-898b-c7c978d741eb", hoisted35, "onclick", function ($event) {
           var $element = this;
         ctrl.applyForAchievment()})
           text("Apply")
         elementClose("button")
-        elementOpen("a", "e2dd4d37-b562-4106-b7b3-0a3cc5d0f15b", hoisted34, "onclick", function ($event) {
+        elementOpen("a", "3fb3787e-16ba-45c8-8eed-1f489eaaac55", hoisted36, "onclick", function ($event) {
           var $element = this;
         ctrl.hideGiftEditor()})
           text("Cancel")
@@ -229,7 +258,7 @@ elementOpen("div", "420c56cd-1ab5-4d6a-8311-fe1db0a68fb8", hoisted1)
     elementClose("gift-editor")
   }
   if (!ctrl.collapsed) {
-    elementOpen("div", "76e6ead8-a11c-411d-902a-d34983f7cc61", hoisted35)
+    elementOpen("div", "0c7053ce-8fa5-4a14-b95c-7cd98abe7730", hoisted37)
       if (ctrl.html && ctrl.html !== '') {
               var el = currentElement();
               el.innerHTML = ctrl.html;

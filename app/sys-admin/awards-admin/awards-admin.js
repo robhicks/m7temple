@@ -99,6 +99,7 @@ class AwardsAdmin extends HTMLElement {
     award.type = 'earned';
     this.aColl.update(award);
     this._updateView();
+    socket.emit('sendEmail', award);
   }
 
   _updateView() {

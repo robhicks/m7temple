@@ -75,7 +75,7 @@ elementOpen("working-on-gifts")
         Most actions involving gifts are available through the gifts button bar, highlighted with a green \
         rectangle. We'll explain below what the buttons are for and what they do. \
         ")
-    elementOpen("img", "0d1bf366-b650-4a4b-b7c6-e132adc3a28f", hoisted1)
+    elementOpen("img", "2421271c-e246-41ab-924d-88989e237432", hoisted1)
     elementClose("img")
   elementClose("p")
   elementOpen("h2")
@@ -84,26 +84,26 @@ elementOpen("working-on-gifts")
   elementOpen("p")
     text(" \
         Add a gift by clicking on the green add button: ")
-    elementOpen("img", "bac69988-d384-4f78-b094-d980b33614b0", hoisted2)
+    elementOpen("img", "7bfa0086-16d8-4ba1-94b9-1dc690b559c6", hoisted2)
     elementClose("img")
     text(". \
         Once a gift has been added, it can be deleted by clicking the delete button: \
         ")
-    elementOpen("img", "e4c70d22-82c6-4106-a05f-0768bb2c4505", hoisted3)
+    elementOpen("img", "db5cd010-0f29-4ac6-9ff5-7c9b0fc55831", hoisted3)
     elementClose("img")
     text(", or you can apply for certification by \
         clicking the award button. The award button can take three forms: 1) \
         ")
-    elementOpen("img", "8ae9f9dd-1512-4ce3-a6d6-d5d5fa6da236", hoisted4)
+    elementOpen("img", "23b65254-ba00-4885-a396-dff092aef4d6", hoisted4)
     elementClose("img")
     text(" when you have added the gift as a \
         goal haven't yet applied for certification, 2) \
         ")
-    elementOpen("img", "82f855e2-cfc4-411e-9b3f-2f57b12b406a", hoisted5)
+    elementOpen("img", "cb3d9813-1710-4049-90fc-52a09d4200d4", hoisted5)
     elementClose("img")
     text(" when certification is pending, and \
         3) ")
-    elementOpen("img", "2ab100d3-b96b-443e-9b3a-5d20156b23e5", hoisted6)
+    elementOpen("img", "d3fb47d5-caa9-4a77-b68b-274d5d424946", hoisted6)
     elementClose("img")
     text(" when you have earned the gift. \
       ")
@@ -118,7 +118,7 @@ elementOpen("working-on-gifts")
     text(" \
         You can request for a gift by clicking the life perserver button: \
         ")
-    elementOpen("img", "37f4aab4-aad8-434c-b26c-4549c69b11b0", hoisted7)
+    elementOpen("img", "aab4bec7-e6c4-490b-a505-218f7f2e0463", hoisted7)
     elementClose("img")
     text(". Your request will be acknowledged and \
         someone with has earned the gift will be asked to contact you to help you achieve the gift. \
@@ -131,7 +131,7 @@ elementOpen("working-on-gifts")
     text(" \
         As mentioned above, you can get recognized for completing a gift by submitting an application. \
         You submit application by clicking the apply button: ")
-    elementOpen("img", "b44f6681-8873-4094-bcf2-61db621e9f10", hoisted8)
+    elementOpen("img", "4f6c244b-04d5-494d-942b-b1075fa0ac1a", hoisted8)
     elementClose("img")
     text(". \
         You will be asked to explain your experience in working on the gift and if you are willing to \
@@ -146,7 +146,7 @@ elementOpen("working-on-gifts")
         You can see your own gifts simply by clicking the My Gifts checkbox in the upper right part of \
         of the home view. \
         ")
-    elementOpen("img", "f4433432-5fb6-4711-ab5f-ab4d0c33f133", hoisted9)
+    elementOpen("img", "9aa1208c-9acb-4437-a84a-533bb134fe25", hoisted9)
     elementClose("img")
   elementClose("p")
 elementClose("working-on-gifts")
@@ -165,7 +165,7 @@ elementOpen("technical-issues")
     text(" \
         When you run into technical issues, please let us know. You can do so by logging an issue \
         on ")
-    elementOpen("a", "f6b490fa-43da-49b5-a3ff-dc6424b25ef1", hoisted10)
+    elementOpen("a", "3b669eaf-1770-46f9-8f85-154e8cd2f181", hoisted10)
       text("Github")
     elementClose("a")
     text(". ")
@@ -175,7 +175,7 @@ elementOpen("technical-issues")
     elementClose("b")
     text(" You can also try to get immediat support on \
         ")
-    elementOpen("a", "512cf8e2-4fed-4755-a7c8-aed955182d8a", hoisted11)
+    elementOpen("a", "d8c2e496-2596-4457-941f-04e32977b145", hoisted11)
       text("Gitter")
     elementClose("a")
     text(". \

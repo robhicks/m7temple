@@ -14,6 +14,8 @@ class CollapsablePanel extends HTMLElement {
   }
 
   add(giftId, addAlert = true, type = 'added', share = false, help = false) {
+    this.stories = [];
+    this.showStories = false;
     this.gift = this.gColl.findOne({id: giftId});
     let award = this.aColl.findOne({userId: user.id, giftId});
     if (this.gift && award && !this.gift.multiple) {
@@ -70,8 +72,9 @@ class CollapsablePanel extends HTMLElement {
   }
 
   attributeChangedCallback(name, oVal, nVal) {
+    // console.log("name, nVal", name, nVal)
     if (name && nVal !== oVal) {
-      if (name === 'earned' || name === 'added' || name === 'pending') this[name] = Boolean(nVal === 'true');
+      if (name === 'earned' || name === 'added' || name === 'pending' || name === 'shared') this[name] = Boolean(nVal === 'true');
       else this[name] = nVal;
       this._updateView();
     }
@@ -108,6 +111,8 @@ class CollapsablePanel extends HTMLElement {
   }
 
   delete(giftId) {
+    this.stories = [];
+    this.showStories = false;
     let gift = this.gColl.findOne({id: giftId});
     let pending = this.aColl.count({giftId: giftId, userId: user.id, type: 'pending'});
     let earned = this.aColl.count({giftId: giftId, userId: user.id, type: 'earned'});
@@ -147,7 +152,20 @@ class CollapsablePanel extends HTMLElement {
     document.removeEventListener('giftsChanged', this._updateView.bind(this));
   }
 
+  showSharedExperiences(giftId) {
+    if (giftId) {
+      let awards = this.aColl.find({giftId});
+      this.stories = awards.map((award) => ({text: award.story, username: award.user.displayName}));
+    } else {
+      this.stories = [];
+    }
+    this.showStories = !this.showStories;
+    this._updateView();
+  }
+
   showTicketEditor(giftId) {
+    this.stories = [];
+    this.showStories = false;
     this.showHelpEditor = true;
     this.ticket = {
       date: new Date().toISOString(),
@@ -160,6 +178,8 @@ class CollapsablePanel extends HTMLElement {
   }
 
   addTicket() {
+    this.stories = [];
+    this.showStories = false;
     let ticket = this.tColl.findOne({id: this.ticket.id});
     if (ticket) this.addAlert('You have already requested help with this gift. Someone will be contacting you shortly.', 'bad');
     else {
@@ -186,6 +206,8 @@ class CollapsablePanel extends HTMLElement {
   }
 
   toggle() {
+    this.stories = [];
+    this.showStories = false;
     this.collapsed = !this.collapsed;
     this._updateView();
   }

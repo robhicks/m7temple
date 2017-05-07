@@ -61,7 +61,7 @@ class HomeAuthenticated extends HTMLElement {
         added: !!award && award.type === 'added',
         earned: !!award && award.type === 'earned',
         pending: !!award && award.type === 'pending',
-        shared: !!award && award.share,
+        shared: !!award && award.share === 'on',
         type: award ? award.type: null
       };
     });

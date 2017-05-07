@@ -2,10 +2,11 @@ const helper = require('sendgrid').mail;
 const sg = require('sendgrid')(process.env.SENGRID_API_KEY);
 
 module.exports = function(data) {
+  console.log("data", data)
   let from = new helper.Email('rob@hixfamily.org');
-  let to = new helper.Email('rob@hixfamily.org');
-  let subject = 'Congratulations - You have received a Temple & Family History Gift';
-  let content = new helper.Content('text/plain', 'You did it!');
+  let to = new helper.Email(data.user.email);
+  let subject = 'You have received a Temple & Family History Gift!';
+  let content = new helper.Content('text/plain', 'Congratulations! You have received a temple and family history gift for ' + data.gift.title + '.');
   let mail = new helper.Mail(from, subject, to, content);
 
   let request = sg.emptyRequest({
