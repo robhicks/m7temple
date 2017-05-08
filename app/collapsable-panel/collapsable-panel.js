@@ -15,8 +15,8 @@ class CollapsablePanel extends HTMLElement {
 
   add(giftId, addAlert = true, type = 'added', share = false, help = false) {
     this.showStories = false;
-    this.gift = this.gColl.findOne({id: giftId});
-    let award = this.aColl.findOne({userId: user.id, giftId});
+    this.gift = this.gColl.find().find((g) => g.id === giftId);
+    let award = this.aColl.find().find((awrd) => awrd.giftId === giftId && awrd.userId === user.id);
     if (this.gift && award && !this.gift.multiple) {
       if (addAlert) this.addAlert('This gift was not added to your list of gifts because it has already been added to your list. To see your list, check the My Gifts checkbox.', 'bad');
     } else if (this.gift && !award) {
@@ -53,7 +53,7 @@ class CollapsablePanel extends HTMLElement {
   }
 
   applyForAchievment() {
-    let userAwardEntry = this.aColl.findOne({giftId: this.gift.id, userId: user.id});
+    let userAwardEntry = this.aColl.find().find((a) => a.giftId === this.gift.id && a.userId === user.id);
     let story = this.element.querySelector("textarea[name='achievement']").value;
     let share = this.element.querySelector("input[name='share']").value;
     let help = this.element.querySelector("input[name='helping']").value;
@@ -112,11 +112,14 @@ class CollapsablePanel extends HTMLElement {
 
   delete(giftId) {
     this.showStories = false;
-    let gift = this.gColl.findOne({id: giftId});
-    let pending = this.aColl.count({giftId: giftId, userId: user.id, type: 'pending'});
-    let earned = this.aColl.count({giftId: giftId, userId: user.id, type: 'earned'});
+    let gift = this.gColl.find().find((gft) => gft.id === giftId);
+    let pending = this.aColl.find().filter((a) => a.userId === user.id && a.type === 'pending').length;
+    let earned = this.aColl.find().filter((a) => a.userId === user.id && a.type === 'earned').length;
+    // let pending = this.aColl.count({giftId: giftId, userId: user.id, type: 'pending'});
+    // let earned = this.aColl.count({giftId: giftId, userId: user.id, type: 'earned'});
     let pendingOrEarned = pending > 0 || earned > 0;
     this._cancelEdit();
+
     if (pendingOrEarned) {
       let modal = new RbhModal();
       modal.heading = 'Already Pending or Awarded';
@@ -133,12 +136,14 @@ class CollapsablePanel extends HTMLElement {
               this.gColl.update(gift);
             }
           }
-          this.aColl.findAndRemove({giftId, userId: user.id});
+          let award = this.aColl.find().find((a) => a.giftId === giftId && a.userId === user.id);
+          if (award) this.aColl.remove(award);
         }
         modal.remove();
       });
     } else {
-      this.aColl.findAndRemove({giftId, userId: user.id});
+      let award = this.aColl.find().find((a) => a.giftId === giftId && a.userId === user.id);
+      if (award) this.aColl.remove(award);
       this.addAlert('This gift has been removed. You may add it again at any time.', 'bad');
     }
     this._updateView();
@@ -182,7 +187,7 @@ class CollapsablePanel extends HTMLElement {
 
   addTicket() {
     this.showStories = false;
-    let ticket = this.tColl.findOne({id: this.ticket.id});
+    let ticket = this.tColl.find().find((t) => t.id === this.ticke.id);
     if (ticket) this.addAlert('You have already requested help with this gift. Someone will be contacting you shortly.', 'bad');
     else {
       this.tColl.insertOne(Object.assign(this.ticket, {request: this.element.querySelector('textarea[name=request]').value}));

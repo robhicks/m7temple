@@ -1,13 +1,7 @@
 const Loki = require('./node_modules/lokijs/src/lokijs.js');
 const Lfsa = require('./node_modules/lokijs/src/loki-fs-structured-adapter.js');
 const LokiRedisAdapter = require('loki-redis-adapter');
-const MongoClient = require('mongodb').MongoClient;
-let mdb;
-
-MongoClient.connect(process.env.MONGODB_URI, (err, _mdb) => {
-  if (err) console.error("err", err);
-  else mdb = _mdb;
-});
+const join = require('path').join;
 
 const db = new Loki('m7temple.db', {
   // adapter: new Lfsa(),
@@ -64,8 +58,6 @@ function getUsers() {
   let _users = db.getCollection('users');
   return Promise.resolve(_users);
 }
-
-
 
 // module.exports.awards = awards;
 module.exports.db = db;

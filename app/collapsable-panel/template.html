@@ -8,10 +8,10 @@
       <button if="!ctrl.earned && !ctrl.multiple && !ctrl.pending" type="button" name="apply" onclick="{ctrl.addAndShowAchievementEditor(ctrl.iid)}">
         <img src="/img/gift-apply.svg" alt="">
       </button>
-      <button if="ctrl.earned" type="button" name="earned" onclick="{ctrl.showAwards(ctrl.iid, 'earned')}">
+      <button if="ctrl.earned" type="button" name="earned">
         <img src="/img/gift-earned.svg" alt="">
       </button>
-      <button if="ctrl.pending" type="button" name="pending" onclick="{ctrl.showAwards(ctrl.iid, 'pending')}">
+      <button if="ctrl.pending" type="button" name="pending">
         <img src="/img/gift-pending.svg" alt="">
       </button>
       <button type="button" name="add" onclick="{ctrl.showTicketEditor(ctrl.iid)}">
