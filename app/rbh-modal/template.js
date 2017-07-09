@@ -12,25 +12,25 @@ var __target
 
 export function render (ctrl) {
 if (ctrl._show) {
-  elementOpen("div", "c2fc669d-9ac0-4fa9-ace0-59f102b54188", hoisted1)
-    elementOpen("div", "c8acca5e-8fd2-4ea1-ae92-7384c5b4ff3d", hoisted2)
-      elementOpen("div", "dff54f84-56e6-42f2-a91f-53075da622fa", hoisted3)
-        elementOpen("div", "e98b773b-e83a-48d4-aba3-7f52615c4d74", hoisted4)
+  elementOpen("div", "220e8912-caf9-4019-9371-41ad745763fe", hoisted1)
+    elementOpen("div", "0d22a927-7eec-4143-86ed-3792c3240f1e", hoisted2)
+      elementOpen("div", "da26e4c3-1bd2-4ff0-b6f7-ff6000016081", hoisted3)
+        elementOpen("div", "8b9f6b52-cb1a-477f-bf2c-1abc960b9a9c", hoisted4)
           elementOpen("h4")
             text("" + (ctrl._heading) + "")
           elementClose("h4")
         elementClose("div")
-        elementOpen("div", "e0eac7af-71ed-4217-9387-4c3651796672", hoisted5)
+        elementOpen("div", "856c569d-ca63-43bc-82a7-e9a6c4524aa4", hoisted5)
           text("" + (ctrl._body) + "")
         elementClose("div")
-        elementOpen("div", "d1a3e24f-f4f8-4018-b009-b154fdb25f12", hoisted6)
-          elementOpen("button", "976493d7-b00f-4a0c-ba6c-65ed8cfb3930", hoisted7, "onclick", function ($event) {
+        elementOpen("div", "152356da-6655-42b2-9a7e-8a6458fbc02e", hoisted6)
+          elementOpen("button", "a3affd6d-ca57-4b80-ac39-39b295889c7b", hoisted7, "onclick", function ($event) {
             var $element = this;
           ctrl._clickButton('primary')})
             text("" + (ctrl._primary) + "")
           elementClose("button")
           if (ctrl._cancel) {
-            elementOpen("button", "d021de46-9d11-4d1a-8a27-35dae4c94419", hoisted8, "onclick", function ($event) {
+            elementOpen("button", "a0ea7e24-1aca-49ff-b3a2-5ef548ab5be4", hoisted8, "onclick", function ($event) {
               var $element = this;
             ctrl._clickButton('cancel')})
               text("" + (ctrl._cancel) + "")

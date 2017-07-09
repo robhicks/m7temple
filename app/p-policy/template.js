@@ -27,14 +27,14 @@ elementOpen("h3")
   	2. Use License \
   ")
 elementClose("h3")
-elementOpen("ol", "9a927de7-56d5-4f78-b904-52f63b132ac5", hoisted1)
+elementOpen("ol", "0e924c09-2d38-4d94-afd6-2174f8fafb91", hoisted1)
   elementOpen("li")
     text(" \
         Permission is granted to temporarily download one copy of the materials (information or software) on Manila 7th Ward's web site for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this \
         license you may not: \
      \
         ")
-    elementOpen("ol", "e964210e-0e62-482c-ad31-8b39bf326c40", hoisted2)
+    elementOpen("ol", "c33dc6b2-3569-4a9b-ae4e-5dad5cb483f9", hoisted2)
       elementOpen("li")
         text("modify or copy the materials;")
       elementClose("li")
@@ -64,7 +64,7 @@ elementOpen("h3")
   	3. Disclaimer \
   ")
 elementClose("h3")
-elementOpen("ol", "651263e6-7d3f-4b0c-8e52-ede5184563e1", hoisted3)
+elementOpen("ol", "cfd1df69-b13b-4f58-bd55-f7d06de4a170", hoisted3)
   elementOpen("li")
     text(" \
         The materials on Manila 7th Ward's web site are provided 'as is'. Manila 7th Ward makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, \

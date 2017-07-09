@@ -18,38 +18,38 @@ var hoisted15 = ["collapsed", "true"]
 var __target
 
 export function render (ctrl) {
-elementOpen("section", "f797d7df-405f-4185-9ac6-973a3447f829", hoisted1)
-  elementOpen("input", "7427bcd7-6dc6-4ec9-9c54-605a65529f5e", hoisted2, "onkeyup", function ($event) {
+elementOpen("section", "a5b39350-88c5-48b8-8068-ec228e10e191", hoisted1)
+  elementOpen("input", "3621ae6c-1090-4405-8b3f-969b6ebd8f57", hoisted2, "onkeyup", function ($event) {
     var $element = this;
   ctrl.search.text = this.value; ctrl.filterGifts()})
   elementClose("input")
-  elementOpen("select", "7bf76a0f-550f-4cb4-8e75-73b59b1f2cbf", hoisted3, "onchange", function ($event) {
+  elementOpen("select", "681d94a2-a31b-419e-bf70-a82fff5cc885", hoisted3, "onchange", function ($event) {
     var $element = this;
   ctrl.search.category = this.value; ctrl.filterGifts()})
-    elementOpen("option", "74ab644f-8335-4605-a024-e5de78cdd6ab", hoisted4)
+    elementOpen("option", "65c37e2f-3048-445b-af04-1871aa5be051", hoisted4)
       text("Select")
     elementClose("option")
-    elementOpen("option", "60f481e8-c8a8-4fd3-9290-ab7ee362e127", hoisted5, "selected", ctrl.search.category ==='booklet' ? true : null)
+    elementOpen("option", "0d90b7b2-6876-47eb-8a44-156fa65bcc14", hoisted5, "selected", ctrl.search.category ==='booklet' ? true : null)
       text("Booklet")
     elementClose("option")
-    elementOpen("option", "ac1fb14b-7759-40eb-9c81-f54c63e8383c", hoisted6, "selected", ctrl.search.category ==='find' ? true : null)
+    elementOpen("option", "504443ef-4ad4-4f2b-83c3-26d46eb9936d", hoisted6, "selected", ctrl.search.category ==='find' ? true : null)
       text("Find")
     elementClose("option")
-    elementOpen("option", "020ca725-182b-41e1-b797-c5cc181d4a0f", hoisted7, "selected", ctrl.search.category ==='take' ? true : null)
+    elementOpen("option", "0f28c05f-9bc2-417d-8877-39db8de28d52", hoisted7, "selected", ctrl.search.category ==='take' ? true : null)
       text("Take")
     elementClose("option")
-    elementOpen("option", "5ae44e7f-5356-4963-a647-705b3f9c25f4", hoisted8, "selected", ctrl.search.category ==='teach' ? true : null)
+    elementOpen("option", "af441d82-11ec-4201-965d-f9076cefd98c", hoisted8, "selected", ctrl.search.category ==='teach' ? true : null)
       text("Teach")
     elementClose("option")
-    elementOpen("option", "f19be84b-d8e5-4439-a26f-c385fe387a21", hoisted9, "selected", ctrl.search.category ==='memories' ? true : null)
+    elementOpen("option", "515d1c81-ccf7-4ab9-ae24-2cb8c3072bea", hoisted9, "selected", ctrl.search.category ==='memories' ? true : null)
       text("Memories")
     elementClose("option")
-    elementOpen("option", "e575940e-1c27-44c9-9507-ba8bbbe01231", hoisted10, "selected", ctrl.search.category ==='indexing' ? true : null)
+    elementOpen("option", "f1cfbc7e-fe08-4aee-8702-b1aacb3baa4b", hoisted10, "selected", ctrl.search.category ==='indexing' ? true : null)
       text("Indexing")
     elementClose("option")
   elementClose("select")
-  elementOpen("label", "42c33586-ed4c-4b37-8c24-c062e17ba110", hoisted11)
-    elementOpen("input", "ee44cc8f-3830-47cf-bb9b-764433467e3b", hoisted12, "onchange", function ($event) {
+  elementOpen("label", "25b045d5-cb36-48f1-b8c2-cb9adfda36d1", hoisted11)
+    elementOpen("input", "f0d26346-107e-42c9-bc4c-50c043e5106b", hoisted12, "onchange", function ($event) {
       var $element = this;
     ctrl.toggleMine()})
     elementClose("input")
@@ -58,14 +58,14 @@ elementOpen("section", "f797d7df-405f-4185-9ac6-973a3447f829", hoisted1)
     elementClose("span")
   elementClose("label")
 elementClose("section")
-elementOpen("section", "36d973b9-9fa9-4f19-b62e-4f7f0024e9b9", hoisted13)
+elementOpen("section", "d8367fa7-3cd3-487d-bb9d-362ce53e1ea1", hoisted13)
   __target = ctrl.viewGifts
   if (__target) {
     ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
       var item = $value
-      var $key = "3a3d943c-515d-45dc-814c-e7bdbc89647b_" + $item
+      var $key = "1e152482-8a3b-46be-98ad-8fcc3af12887_" + $item
       elementOpen("div", $key, hoisted14)
-        elementOpen("collapsable-panel", "05d538ca-a6ae-41b6-8590-3ec4413162d4_" + $key, hoisted15, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "shared", item.shared, "achievements", item.achievements)
+        elementOpen("collapsable-panel", "5023f2c6-1fef-421d-9688-7c63d081884c_" + $key, hoisted15, "class", $item % 2 ? 'odd' : 'even', "earned", item.earned, "pending", item.pending, "added", item.added, "heading", item.title, "iid", item.id, "description", item.description, "html", item.html, "shared", item.shared, "achievements", item.achievements)
         elementClose("collapsable-panel")
       elementClose("div")
     }, this)
